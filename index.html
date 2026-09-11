@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow">
 <title>Japan 2026 · Osaka · Kinosaki · Tokio · Familienplaner</title>
 <style>
 :root{
@@ -243,6 +244,11 @@ td.num{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap}
 tr.sum td{font-weight:700; border-bottom:0; border-top:2px solid var(--line)}
 
 .hotel{border:1px solid var(--line); border-left:3px solid var(--gold); border-radius:10px; padding:13px 15px; margin-bottom:10px; background:var(--paper)}
+.hotel .hbanner{position:relative; margin:-13px -15px 12px; height:132px; overflow:hidden; border-radius:8px 8px 0 0; background:var(--line)}
+.hotel .hbanner img{width:100%; height:100%; object-fit:cover; display:block}
+.hotel .hbanner.noimg img{display:none}
+.hotel .hbanner .hb-veil{position:absolute; inset:auto 0 0 0; height:56%; background:linear-gradient(transparent, rgba(0,0,0,.55))}
+.hotel .hbanner .hb-cr{position:absolute; right:7px; bottom:5px; font-size:10px; color:rgba(255,255,255,.8); letter-spacing:.02em}
 .hotel .h-top{display:flex; justify-content:space-between; gap:10px; align-items:baseline; flex-wrap:wrap}
 .hotel .h-name{font-size:15.5px; font-weight:700}
 .hotel .h-nights{font-size:12.5px; color:var(--ink3); white-space:nowrap}
@@ -271,7 +277,7 @@ footer b{color:var(--ink2)}
 
 <header>
   <div class="kanjibg">日本</div>
-  <div class="eyebrow">Familie Störkel · KUL ⇄ KIX</div>
+  <div class="eyebrow">KUL ⇄ KIX · Dezember 2026</div>
   <h1>Japan 2026 <span class="sub">· Osaka · Kinosaki · Tokio</span></h1>
   <div class="dates">Sa 12. – Sa 26. Dezember 2026 · 14 Nächte · 2 Erwachsene + Kind 1 (11) &amp; Kind 2 (9)</div>
   <div class="savestate" id="savestate">Speicher: wird geprüft…</div>
@@ -969,7 +975,7 @@ const CHECKS = [
 
 /* ================= INFOS ================= */
 const HOTELS = [
- {name:"Osaka — Block 1", nights:"5 Nächte · Sa 12.12. → Do 17.12.",
+ {name:"Osaka — Block 1", img:W("f/f4/Osaka_Dotonbori_Ebisu_Bridge.jpg/1200px-Osaka_Dotonbori_Ebisu_Bridge.jpg"), cr:"Dotonbori, Ebisu-Brücke · Wikimedia Commons", nights:"5 Nächte · Sa 12.12. → Do 17.12.",
   lage:"Namba / Nipponbashi / Shinsaibashi",
   warum:"Nankai-Linie direkt zum Flughafen (Ankunft und Abreise), Midosuji-U-Bahn nach Umeda, Chuo- und Yotsubashi-Linie zum Aquarium, JR-Loop nach USJ. Dotonbori und Kuromon-Markt zu Fuß.",
   typ:"Apartment-Hotel, ein Vierbett-Raum mit Küchenzeile und Waschmaschine",
@@ -985,7 +991,7 @@ const HOTELS = [
    {n:"MIMARU Namba Station Annex", m:"Nankai Namba 5 Min. · bis 45 m², 4 Einzelbetten", w:"Eröffnet am 1.10.2026, also zwei Monate vor eurer Reise, und hat als einziges MIMARU einen Waschtrockner im Zimmer. Haken: Preis völlig unbekannt, bei einem Neubau eher MIMARU-Niveau.", u:"https://mimaruhotels.com/en/hotel/namba-station-annex/"},
    {n:"WELLSTAY Namba", m:"Nankai Namba 7 Min. · echte Vierbettzimmer · Waschmaschine gratis", w:"Mit Abstand am günstigsten, hier bleibt Budget für anderes. Haken: 7 Minuten reißen euer Limit, die Ausstattung ist hostelnah, Zimmergrößen nirgends belegt.", u:"https://well-stay.com/en/namba/"}
   ]},
- {name:"Kinosaki Onsen", nights:"2 Nächte · Do 17.12. → Sa 19.12.",
+ {name:"Kinosaki Onsen", img:W("3/35/Kinosaki_Onsen_by_day.jpg/1200px-Kinosaki_Onsen_by_day.jpg"), cr:"Kinosaki Onsen · Wikimedia Commons", nights:"2 Nächte · Do 17.12. → Sa 19.12.",
   lage:"Ortskern Kinosaki, Gehweite vom Bahnhof",
   warum:"Der ganze Ort ist zu Fuß machbar; viele Ryokan holen am Bahnhof ab. Als Ryokan-Gast ist der Yumepa für alle sechs offenen Badehäuser kostenlos.",
   typ:"Klassisches Ryokan mit Halbpension, Familienzimmer, eigenes Bad im Haus",
@@ -1000,7 +1006,7 @@ const HOTELS = [
    {n:"Morizuya (森津屋)", m:"Bahnhof 10 Min. + Shuttle · ausgewiesenes 4-Personen-Zimmer · Felsenbad", w:"Das einzige Haus mit einem als solchem benannten Vierpersonenzimmer, dazu ein aus dem Fels geschlagenes Freiluftbad. Haken: nur 12 Zimmer, Abendessen im Restaurant statt im Zimmer, und Check-in nur bis 17 Uhr — das kann mit einem späten Kounotori kollidieren.", u:"https://www.kinosaki-web.com/en/yado/index.php?mode=yado_detail&YadoNo=76"},
    {n:"Sennen no Yu Koman (古まん)", m:"Zimmer 2–5 Pers. · eigenes Onsen + Familienbad · ab ¥12.100 p.P. mit HP", w:"Bestes belegtes Preis-Leistungs-Verhältnis und das älteste Gasthaus des Ortes, gegründet 717. Haken: ausgerechnet Kindermenü und Gehweg vom Bahnhof sind nicht dokumentiert — beides erfragen.", u:"https://www.sennennoyu-koman.com/"}
   ]},
- {name:"Tokio", nights:"6 Nächte · Sa 19.12. → Fr 25.12.",
+ {name:"Tokio", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Night%20in%20Shinjuku%203.JPG?width=1200", cr:"Shinjuku bei Nacht · Wikimedia Commons", nights:"6 Nächte · Sa 19.12. → Fr 25.12.",
   lage:"Shinjuku",
   warum:"Beste Anbindung der Stadt: JR Chuo direkt nach Mitaka (Ghibli, 20 Min.), Yamanote nach Shibuya, Harajuku und Ueno, Marunouchi-Linie in die Mitte, DisneySea in ~50 Min.",
   typ:"Apartment-Hotel, Vierbett-Raum",
@@ -1015,7 +1021,7 @@ const HOTELS = [
    {n:"MIMARU Tokyo Ueno North", m:"JR Ueno 4 Min. · Premium 50 m² · Zimmer mit Gleisblick", w:"Die Premium-Kategorien sind die geräumigste Ueno-Option, und das Train-View-Zimmer ist für Kinder ein Erlebnis. Haken: die Standard-Familienzimmer sind mit 34 m² die kleinsten im Vergleich.", u:"https://mimaruhotels.com/en/hotel/ueno-north/"},
    {n:"MIMARU Tokyo Shinjuku West", m:"Tochomae 8 Min. laut Haus, real eher 10–15 · 40–42 m²", w:"Inhaltlich genau euer Wunschformat und laut Reiseführern am unteren Rand der Mittelklasse. Haken: reißt euer 7-Minuten-Kriterium, und die Quellen zur Gehzeit widersprechen sich deutlich.", u:"https://mimaruhotels.com/en/hotel/shinjuku-west/"}
   ]},
- {name:"Osaka — Abreisenacht", nights:"1 Nacht · Fr 25.12. → Sa 26.12.",
+ {name:"Osaka — Abreisenacht", img:W("5/56/%E9%96%A2%E8%A5%BF%E5%9B%BD%E9%9A%9B%E7%A9%BA%E6%B8%AF%E5%85%A8%E4%BD%93%E5%86%99%E7%9C%9F20220811.jpg/1200px-%E9%96%A2%E8%A5%BF%E5%9B%BD%E9%9A%9B%E7%A9%BA%E6%B8%AF%E5%85%A8%E4%BD%93%E5%86%99%E7%9C%9F20220811.jpg"), cr:"Kansai International Airport · Wikimedia Commons", nights:"1 Nacht · Fr 25.12. → Sa 26.12.",
   lage:"Namba, direkt an der Nankai-Linie",
   warum:"Am 26.12. geht es um 07:15 los. Jede Minute Weg zum Bahnhof zählt.",
   typ:"Einfaches Hotel reicht — ihr seid nur zum Schlafen da",
@@ -1026,7 +1032,8 @@ const HOTELS = [
   kand:[
    {n:"&Here OSAKA NAMBA", m:"Nankai Namba 3 Min.", w:"Für diese eine Nacht die beste Wahl: der kürzeste belegte Weg zum Bahnhof, und um 07:15 zählt jede Minute.", u:"https://andherehotels-osakanamba.com/en/"},
    {n:"Fraser Residence Nankai Osaka", m:"Namba 2–3 Min.", w:"Gleichwertig kurz, zusätzlich Waschtrockner — praktisch, wenn ihr vor dem Rückflug noch Wäsche machen wollt.", u:"https://www.frasershospitality.com/en/japan/osaka/fraser-residence-nankai-osaka/"},
-   {n:"MIMARU Osaka Namba Station", m:"Nankai Namba 4 Min.", w:"Wenn ihr Block A schon dort gebucht habt, ist die Wiederholung naheliegend — dann auch gleich nach dem Koffer-Depot fragen.", u:"https://mimaruhotels.com/en/hotel/namba-station/"}
+   {n:"MIMARU Osaka Namba Station", m:"Nankai Namba 4 Min.", w:"Wenn ihr Block A schon dort gebucht habt, ist die Wiederholung naheliegend — dann auch gleich nach dem Koffer-Depot fragen.", u:"https://mimaruhotels.com/en/hotel/namba-station/"},
+   {n:"MIMARU Namba Station Annex", m:"Nankai Namba 5 Min.", w:"Liegt mit 5 Minuten noch im Limit und ist am 1.10.2026 neu eröffnet, also zwei Monate vor eurer Reise. Haken: der Preis ist nirgends belegt, und ob ein Neubau dieser Kategorie einzelne Nächte annimmt, ist offen — vorher anfragen.", u:"https://mimaruhotels.com/en/hotel/namba-station-annex/"}
   ]}
 ];
 
@@ -1203,7 +1210,9 @@ function renderInfo(){
   + '<p><b>Preise für Dezember 2026 sind nirgends öffentlich abrufbar.</b> Booking.com und Agoda geben ihre Raten nicht automatisiert heraus, und mehrere Häuser hatten noch keine Dezember-Preise freigeschaltet. Die Budgetangaben sind Zielkorridore, keine Angebote — die echten Preise bekommt ihr nur über die verlinkten Seiten mit euren Daten.</p>'
   + '<p><b>Wichtig beim Buchen:</b> Kind 1 und Kind 2 zählen in Japan als vollwertige Gäste. MIMARU hat die Grenze 2022 ausdrücklich von unter 12 auf unter 6 Jahre gesenkt, WELLSTAY liegt bei 7 Jahren. Gebt immer <b>vier Personen</b> an — sonst steht ihr mit einem zu kleinen Zimmer an der Rezeption.</p>'
   + HOTELS.map(h=>
-      '<div class="hotel"><div class="h-top"><span class="h-name">'+h.name+'</span><span class="h-nights">'+h.nights+'</span></div>'
+      '<div class="hotel">'
+      + (h.img?'<div class="hbanner"><img src="'+h.img+'" alt="" loading="lazy" onerror="this.closest(\'.hbanner\').classList.add(\'noimg\')"><div class="hb-veil"></div><span class="hb-cr">'+h.cr+'</span></div>':"")
+      + '<div class="h-top"><span class="h-name">'+h.name+'</span><span class="h-nights">'+h.nights+'</span></div>'
       + '<dl>'
       + '<dt>Lage</dt><dd>'+h.lage+'</dd>'
       + '<dt>Warum</dt><dd>'+h.warum+'</dd>'
