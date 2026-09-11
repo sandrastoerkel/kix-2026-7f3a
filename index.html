@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Japan 2026 · Osaka · Kinosaki · Tokio · Familienplaner</title>
+<style>
+:root{
+  --ink:#1b1a22; --ink2:#4a4757; --ink3:#7d7a8c;
+  --paper:#f6f2ea; --card:#fffdf8; --line:#e4ddd0;
+  --seal:#b8322f; --seal-soft:#f2dedd;
+  --indigo:#28356b; --indigo-soft:#e5e8f4;
+  --gold:#a8813a; --green:#3f6b4a;
+  --shadow:0 1px 2px rgba(27,26,34,.05), 0 8px 24px rgba(27,26,34,.07);
+  --r:14px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#eceaf2; --ink2:#b6b2c4; --ink3:#8a8699;
+    --paper:#14131a; --card:#1e1d26; --line:#31303c;
+    --seal:#e0665f; --seal-soft:#3a2422;
+    --indigo:#9fb0e8; --indigo-soft:#232a44;
+    --gold:#d8b061; --green:#7cb08c;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+    --ink:#eceaf2; --ink2:#b6b2c4; --ink3:#8a8699;
+    --paper:#14131a; --card:#1e1d26; --line:#31303c;
+    --seal:#e0665f; --seal-soft:#3a2422;
+    --indigo:#9fb0e8; --indigo-soft:#232a44;
+    --gold:#d8b061; --green:#7cb08c;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans",Roboto,Helvetica,Arial,sans-serif;
+  padding-bottom:env(safe-area-inset-bottom);
+}
+img{max-width:100%; display:block}
+a{color:inherit}
+button{font:inherit; color:inherit}
+
+/* ---------- HEADER ---------- */
+header{
+  position:relative; overflow:hidden;
+  background:linear-gradient(135deg,#1a2350 0%,#2c3a72 45%,#5a3c5e 100%);
+  color:#fff; padding:26px 20px 20px;
+}
+header .kanjibg{
+  position:absolute; right:-14px; top:-30px; font-size:150px; line-height:1;
+  opacity:.11; font-weight:700; letter-spacing:-6px; pointer-events:none;
+}
+header .eyebrow{font-size:12px; letter-spacing:.22em; text-transform:uppercase; opacity:.72}
+header h1{margin:6px 0 4px; font-size:29px; line-height:1.15; font-weight:700; letter-spacing:-.5px}
+header h1 .sub{font-weight:400; opacity:.8}
+header .dates{font-size:14.5px; opacity:.86}
+header .savestate{margin-top:10px; font-size:12px; opacity:.6}
+
+/* ---------- TABS ---------- */
+nav.tabs{
+  position:sticky; top:0; z-index:40; display:flex; gap:0;
+  background:var(--card); border-bottom:1px solid var(--line);
+  box-shadow:0 1px 0 rgba(0,0,0,.02);
+}
+nav.tabs button{
+  flex:1; background:none; border:0; padding:13px 6px 11px; cursor:pointer;
+  font-size:13.5px; font-weight:600; color:var(--ink3);
+  border-bottom:2.5px solid transparent; transition:.15s;
+}
+nav.tabs button .k{display:block; font-size:16px; margin-bottom:1px; opacity:.55}
+nav.tabs button.active{color:var(--seal); border-bottom-color:var(--seal)}
+nav.tabs button.active .k{opacity:1}
+
+/* ---------- DAY BAR ---------- */
+#daybar{
+  display:flex; gap:7px; overflow-x:auto; padding:11px 14px;
+  background:var(--card); border-bottom:1px solid var(--line);
+  position:sticky; top:49px; z-index:35; scrollbar-width:none;
+}
+#daybar::-webkit-scrollbar{display:none}
+.daychip{
+  flex:0 0 auto; width:54px; padding:7px 0 6px; border-radius:11px; cursor:pointer;
+  background:var(--paper); border:1px solid var(--line); text-align:center; transition:.15s;
+  position:relative;
+}
+.daychip .kanji{display:block; font-size:16px; font-weight:600; color:var(--ink2)}
+.daychip .dt{display:block; font-size:10.5px; color:var(--ink3); margin-top:1px}
+.daychip.active{background:var(--indigo); border-color:var(--indigo)}
+.daychip.active .kanji,.daychip.active .dt{color:#fff}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .daychip.active .kanji,:root:not([data-theme="light"]) .daychip.active .dt{color:#0f0e14} }
+[data-theme="dark"] .daychip.active .kanji,[data-theme="dark"] .daychip.active .dt{color:#0f0e14}
+.daychip .dot{
+  position:absolute; top:5px; right:6px; width:6px; height:6px; border-radius:50%;
+  background:var(--seal); opacity:0; transition:.15s;
+}
+.daychip.has-picks .dot{opacity:1}
+
+/* ---------- LAYOUT ---------- */
+main{max-width:760px; margin:0 auto; padding:0 14px 60px}
+@media(min-width:800px){ main{padding:0 20px 70px} }
+
+/* ---------- DAY HERO ---------- */
+.dayhero{
+  position:relative; margin:16px 0 0; border-radius:var(--r); overflow:hidden;
+  aspect-ratio:16/8; max-width:100%; background:var(--indigo-soft); box-shadow:var(--shadow);
+}
+.dayhero img{width:100%; height:100%; object-fit:cover}
+.dayhero.noimg{aspect-ratio:16/7; background:linear-gradient(140deg,hsl(var(--h) 42% 30%) 0%,hsl(var(--h2) 38% 20%) 100%)}
+.dayhero.noimg img{display:none}
+.dayhero.noimg .dh-veil{background:linear-gradient(to top,rgba(8,6,14,.55) 0%,rgba(8,6,14,.10) 55%,rgba(8,6,14,0) 100%)}
+.dayhero.noimg .credit{display:none}
+.dh-kanji{
+  position:absolute; right:14px; top:50%; transform:translateY(-58%);
+  font-size:clamp(76px,20vw,130px); line-height:1; font-weight:700; color:#fff;
+  opacity:.17; letter-spacing:-4px; pointer-events:none; display:none;
+}
+.dayhero.noimg .dh-kanji{display:block}
+.dh-num{
+  position:absolute; left:16px; top:14px; font-size:11px; letter-spacing:.2em;
+  text-transform:uppercase; color:rgba(255,255,255,.6); display:none;
+}
+.dayhero.noimg .dh-num{display:block}
+.dh-veil{position:absolute; inset:0; background:linear-gradient(to top,rgba(12,10,20,.78) 0%,rgba(12,10,20,.30) 38%,rgba(12,10,20,.02) 72%,rgba(12,10,20,0) 100%)}
+.dh-txt{position:absolute; left:16px; right:16px; bottom:13px; color:#fff}
+.dh-txt .d-eyebrow{font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; opacity:.82}
+.dh-txt h2{margin:3px 0 0; font-size:24px; line-height:1.2; font-weight:700; letter-spacing:-.3px; text-shadow:0 1px 12px rgba(0,0,0,.4)}
+.credit{
+  position:absolute; right:8px; top:8px; font-size:9.5px; color:rgba(255,255,255,.72);
+  background:rgba(0,0,0,.32); padding:2px 7px; border-radius:20px; backdrop-filter:blur(3px);
+}
+.d-note{
+  margin:13px 0 0; padding:12px 14px; background:var(--indigo-soft); border-radius:var(--r);
+  font-size:14.5px; color:var(--ink2); line-height:1.55;
+}
+
+/* ---------- FIXPUNKTE ---------- */
+.fix{
+  display:flex; gap:12px; align-items:flex-start; margin-top:10px;
+  padding:12px 14px; background:var(--card); border:1px solid var(--line);
+  border-left:3px solid var(--seal); border-radius:10px;
+}
+.ft{flex:0 0 78px; font-size:12.5px; line-height:1.35; font-weight:700; color:var(--seal); font-variant-numeric:tabular-nums; padding-top:2px}
+.fb{display:flex; flex-direction:column; gap:2px; min-width:0}
+.fb strong{font-size:15px; font-weight:650}
+.fb span{font-size:13px; color:var(--ink3); line-height:1.5}
+
+/* ---------- MEIN PLAN ---------- */
+.myplan{
+  margin-top:14px; padding:13px 15px; border-radius:var(--r);
+  background:var(--seal-soft); border:1px dashed var(--seal);
+  font-size:14.5px; color:var(--ink);
+}
+.myplan .mp-title{font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--seal); font-weight:700; margin-bottom:5px}
+.myplan em{color:var(--ink3); font-style:normal; font-size:13.5px}
+
+/* ---------- SLOTS ---------- */
+.slot{margin-top:26px}
+.slot-h{display:flex; align-items:baseline; gap:10px; margin-bottom:10px; flex-wrap:wrap}
+.slot-h h3{margin:0; font-size:17px; font-weight:700; letter-spacing:-.2px}
+.slot-h .hint{font-size:12.5px; color:var(--ink3)}
+.opts{display:grid; gap:10px}
+@media(min-width:660px){ .opts{grid-template-columns:1fr 1fr} }
+
+.opt{
+  position:relative; background:var(--card); border:1px solid var(--line);
+  border-radius:var(--r); padding:14px 15px 13px; cursor:pointer; transition:.16s;
+  overflow:hidden;
+}
+.opt:hover{border-color:var(--ink3); transform:translateY(-1px); box-shadow:var(--shadow)}
+.opt.picked{border-color:var(--seal); background:var(--seal-soft)}
+.hanko{
+  position:absolute; right:11px; top:11px; width:34px; height:34px; border-radius:6px;
+  border:2px solid var(--seal); color:var(--seal); font-size:13px; font-weight:700;
+  display:flex; align-items:center; justify-content:center; opacity:0; transform:rotate(-14deg) scale(.6);
+  transition:.2s cubic-bezier(.2,1.4,.4,1); pointer-events:none;
+}
+.opt.picked .hanko{opacity:1; transform:rotate(-9deg) scale(1)}
+.o-eyebrow{display:flex; align-items:center; gap:6px; flex-wrap:wrap; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink3); margin-bottom:5px; padding-right:40px}
+.cat-k{
+  display:inline-flex; align-items:center; justify-content:center; width:17px; height:17px;
+  background:var(--indigo); color:var(--paper); border-radius:4px; font-size:11px; letter-spacing:0;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .cat-k{color:#14131a} }
+[data-theme="dark"] .cat-k{color:#14131a}
+.tag{font-size:9.5px; padding:2px 6px; border-radius:20px; letter-spacing:.06em; font-weight:700}
+.tag.tip{background:var(--gold); color:#fff}
+.tag.kid{background:var(--green); color:#fff}
+.tag.lux{background:var(--seal); color:#fff}
+.tag.rain{background:var(--indigo); color:var(--paper)}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .tag.rain,:root:not([data-theme="light"]) .tag.tip,:root:not([data-theme="light"]) .tag.kid,:root:not([data-theme="light"]) .tag.lux{color:#14131a} }
+[data-theme="dark"] .tag.rain,[data-theme="dark"] .tag.tip,[data-theme="dark"] .tag.kid,[data-theme="dark"] .tag.lux{color:#14131a}
+.opt h4{margin:0 0 5px; font-size:16.5px; line-height:1.28; font-weight:700; letter-spacing:-.2px; padding-right:38px}
+.opt .what{margin:0 0 6px; font-size:14px; line-height:1.55; color:var(--ink2)}
+.opt .why{margin:0 0 6px; font-size:13.5px; line-height:1.55; color:var(--ink2); padding-left:11px; border-left:2px solid var(--line)}
+.opt .why b{color:var(--ink); font-weight:650}
+.o-meta{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:9px; padding-top:9px; border-top:1px solid var(--line); font-size:12.5px; color:var(--ink3)}
+.o-meta .maps{color:var(--indigo); text-decoration:none; font-weight:650; white-space:nowrap}
+.o-meta .maps:hover{text-decoration:underline}
+
+/* ---------- CHECKLISTE ---------- */
+.section-intro{margin:20px 0 4px; padding:14px 16px; background:var(--indigo-soft); border-radius:var(--r); font-size:14.5px; line-height:1.6; color:var(--ink2)}
+.chk-group-h{margin:26px 0 10px; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--seal); font-weight:700}
+.chk{
+  display:flex; gap:12px; align-items:flex-start; padding:13px 15px; margin-bottom:9px;
+  background:var(--card); border:1px solid var(--line); border-radius:var(--r); cursor:pointer; transition:.15s;
+}
+.chk:hover{border-color:var(--ink3)}
+.chk.done{opacity:.5}
+.chk.done .c-t{text-decoration:line-through}
+.chk .box{
+  flex:0 0 21px; height:21px; margin-top:1px; border:2px solid var(--ink3); border-radius:6px;
+  display:flex; align-items:center; justify-content:center; font-size:12px; color:#fff; transition:.15s;
+}
+.chk.done .box{background:var(--green); border-color:var(--green)}
+.chk .c-body{min-width:0; flex:1}
+.c-t{font-size:15px; font-weight:650; line-height:1.35}
+.c-s{font-size:13px; color:var(--ink3); line-height:1.5; margin-top:3px}
+.c-due{display:inline-block; margin-top:6px; font-size:10.5px; font-weight:700; letter-spacing:.06em; padding:3px 8px; border-radius:20px; background:var(--indigo-soft); color:var(--indigo)}
+.c-due.hard{background:var(--seal); color:#fff}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .c-due.hard{color:#14131a} }
+[data-theme="dark"] .c-due.hard{color:#14131a}
+
+/* ---------- INFO ---------- */
+.info-card{background:var(--card); border:1px solid var(--line); border-radius:var(--r); padding:16px 17px; margin-bottom:12px}
+.info-card h3{margin:0 0 10px; font-size:17px; font-weight:700; letter-spacing:-.2px; display:flex; align-items:center; gap:8px}
+.info-card h3 .k{display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; background:var(--seal); color:#fff; border-radius:6px; font-size:13px}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .info-card h3 .k{color:#14131a} }
+[data-theme="dark"] .info-card h3 .k{color:#14131a}
+.info-card p{margin:0 0 9px; font-size:14.5px; line-height:1.6; color:var(--ink2)}
+.info-card ul{margin:0 0 9px; padding-left:19px}
+.info-card li{font-size:14.5px; line-height:1.6; color:var(--ink2); margin-bottom:5px}
+.info-card b{color:var(--ink)}
+.info-card:last-child{margin-bottom:0}
+.tbl-wrap{overflow-x:auto; margin:0 0 10px; -webkit-overflow-scrolling:touch}
+table{border-collapse:collapse; width:100%; font-size:13.5px; min-width:420px}
+th,td{text-align:left; padding:8px 10px; border-bottom:1px solid var(--line)}
+th{font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink3); font-weight:700}
+td.num{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap}
+tr.sum td{font-weight:700; border-bottom:0; border-top:2px solid var(--line)}
+
+.hotel{border:1px solid var(--line); border-left:3px solid var(--gold); border-radius:10px; padding:13px 15px; margin-bottom:10px; background:var(--paper)}
+.hotel .h-top{display:flex; justify-content:space-between; gap:10px; align-items:baseline; flex-wrap:wrap}
+.hotel .h-name{font-size:15.5px; font-weight:700}
+.hotel .h-nights{font-size:12.5px; color:var(--ink3); white-space:nowrap}
+.hotel dl{margin:9px 0 0; display:grid; grid-template-columns:auto 1fr; gap:5px 12px; font-size:13.5px}
+.hotel dt{color:var(--ink3); white-space:nowrap}
+.hotel dd{margin:0; color:var(--ink2)}
+.hotel .hwarn{margin-top:10px; padding:10px 12px; background:var(--seal-soft); border-left:3px solid var(--seal); border-radius:0 8px 8px 0; font-size:13.5px; line-height:1.55; color:var(--ink2)}
+.kand-h{margin:14px 0 8px; font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink3); font-weight:700}
+.kand{padding:10px 0; border-top:1px solid var(--line)}
+.kand .k-top{display:flex; justify-content:space-between; gap:10px; align-items:baseline; flex-wrap:wrap; margin-bottom:4px}
+.kand .k-top a{font-size:14.5px; font-weight:700; color:var(--indigo); text-decoration:none}
+.kand .k-top a:hover{text-decoration:underline}
+.kand .k-meta{font-size:12px; color:var(--ink3); font-variant-numeric:tabular-nums}
+.kand p{margin:0; font-size:13.5px; line-height:1.55; color:var(--ink2)}
+.hotel .slotline{margin-top:10px; padding:9px 11px; border:1px dashed var(--ink3); border-radius:8px; font-size:13px; color:var(--ink3)}
+
+footer{max-width:760px; margin:0 auto; padding:26px 16px 40px; font-size:12px; line-height:1.65; color:var(--ink3)}
+footer b{color:var(--ink2)}
+.eur{color:var(--ink3); font-size:.88em; white-space:nowrap}
+.hidden{display:none !important}
+:focus-visible{outline:2px solid var(--seal); outline-offset:2px; border-radius:6px}
+@media (prefers-reduced-motion: reduce){ *{transition:none !important; animation:none !important} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="kanjibg">日本</div>
+  <div class="eyebrow">Familie Störkel · KUL ⇄ KIX</div>
+  <h1>Japan 2026 <span class="sub">· Osaka · Kinosaki · Tokio</span></h1>
+  <div class="dates">Sa 12. – Sa 26. Dezember 2026 · 14 Nächte · 2 Erwachsene + Kind 1 (11) &amp; Kind 2 (9)</div>
+  <div class="savestate" id="savestate">Speicher: wird geprüft…</div>
+</header>
+
+<nav class="tabs" role="tablist">
+  <button id="tab-days"  class="active" role="tab"><span class="k">旅</span>Tage</button>
+  <button id="tab-checks" role="tab"><span class="k">✓</span>Buchen</button>
+  <button id="tab-info"  role="tab"><span class="k">〒</span>Infos</button>
+</nav>
+
+<div id="daybar" role="tablist"></div>
+<main id="main"></main>
+
+<footer id="foot"></footer>
+
+<script>
+/* ================= DATEN ================= */
+const CATS = {
+  tempel:["寺","Tempel & Schrein"], natur:["園","Natur & Garten"], museum:["館","Museum"],
+  kids:["子","Kids-Highlight"],     essen:["食","Essen"],          aussicht:["景","Aussicht"],
+  shopping:["買","Shopping"],       transfer:["車","Transfer"],    onsen:["湯","Onsen & Ruhe"],
+  viertel:["街","Viertel"],         aktiv:["遊","Action"],         kultur:["和","Kultur-Erlebnis"],
+  licht:["灯","Illumination"]
+};
+const M = q => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q);
+const W = f => "https://upload.wikimedia.org/wikipedia/commons/thumb/" + f;
+
+const DAYS = [
+
+/* ---------- 1 ---------- */
+{k:"土", dt:"Sa 12.12.", title:"Ankunft in Osaka",
+ img:W("5/56/%E9%96%A2%E8%A5%BF%E5%9B%BD%E9%9A%9B%E7%A9%BA%E6%B8%AF%E5%85%A8%E4%BD%93%E5%86%99%E7%9C%9F20220811.jpg/1920px-%E9%96%A2%E8%A5%BF%E5%9B%BD%E9%9A%9B%E7%A9%BA%E6%B8%AF%E5%85%A8%E4%BD%93%E5%86%99%E7%9C%9F20220811.jpg"), cr:"Kansai International Airport · Wikimedia Commons",
+ note:"Ein reiner Ankunftstag. Landung erst 19:20 — mit Immigration und Bahn seid ihr gegen 21:30 im Hotel. Nichts vornehmen außer ankommen.",
+ fix:[
+  {t:"09:30", b:"Abflug KUL → KIX", s:"AirAsia X D7378 · 8 Std. 50 Min. · eine technische Zwischenlandung · Sitze 36A–36D"},
+  {t:"19:20", b:"Landung Kansai International", s:"Immigration mit Visit-Japan-Web-QR ca. 30–45 Min., dann Gepäck und Zoll"},
+  {t:"~21:30", b:"Check-in Hotel Osaka", s:"Platzhalter — Lage Namba/Nipponbashi, siehe Reiter „Infos“"}
+ ],
+ slots:[
+  {h:"Vom Flughafen in die Stadt", hint:"eine Option wählen", opts:[
+   {id:"d1a", c:"transfer", n:"Nankai Airport Express nach Namba", tags:["tip"],
+    what:"Der normale Nahverkehrszug der Nankai-Linie, fährt alle 15–20 Min. direkt von der Ankunftshalle bis Namba. Keine Reservierung, keine Sitzplatzgarantie.",
+    why:"Mit Abstand das beste Preis-Leistungs-Verhältnis, und um diese Uhrzeit ist der Zug leer genug, dass ihr mit vier Koffern bequem sitzt. <b>Für die Kinder:</b> nach neun Stunden Flug ist ein Zug, in dem man aufstehen und aus dem Fenster gucken kann, angenehmer als ein enges Taxi.",
+    meta:"45 Min. · ¥970 Erw. / ¥490 Kind · Familie ¥2.920", maps:M("Kansai Airport Station Nankai")},
+   {id:"d1b", c:"transfer", n:"Nankai Rapi:t — der blaue Schnellzug",
+    what:"Der Designzug der Nankai-Linie mit runden Bullaugen-Fenstern und reservierten Ledersitzen. Sieht aus wie ein U-Boot auf Schienen.",
+    why:"Zehn Minuten schneller und garantierte Sitzplätze nebeneinander. <b>Für die Kinder:</b> der Zug selbst ist die Attraktion — die Bullaugen und die Retro-Futurismus-Nase sind das erste richtige Japan-Foto der Reise.",
+    meta:"34–39 Min. · ¥1.670 Erw. / ¥840 Kind · Familie ~¥5.020", maps:M("Nankai Rapi:t Kansai Airport")},
+   {id:"d1c", c:"transfer", n:"Taxi direkt zum Hotel",
+    what:"Ab dem Terminal per Taxistand oder GO-App. Für vier Personen mit Gepäck braucht es meist ein Großraumtaxi (Jumbo Taxi).",
+    why:"Null Umsteigen, Tür zu Tür, Koffer im Kofferraum. <b>Wenn die Kinder im Flieger nicht geschlafen haben,</b> ist das die ruhigste Variante — nur eben die teuerste.",
+    meta:"50–65 Min. · ~¥18.000–22.000 gesamt", maps:M("Kansai International Airport Taxi Stand")}
+  ]},
+  {h:"Falls doch noch Energie da ist", hint:"alles optional", opts:[
+   {id:"d1d", c:"licht", n:"Dotonbori bei Nacht", tags:["tip"],
+    what:"Die Kanalpromenade mit dem Glico-Läufer-Neonschild, dem beweglichen Krabbenschild und einer Wand aus Leuchtreklame. Vom Namba-Bahnhof fünf Gehminuten.",
+    why:"Das ist der Moment, in dem alle vier merken: wir sind wirklich in Japan. Die Schilder leuchten bis Mitternacht, es ist warm angezogen gut auszuhalten und man muss nichts können außer staunen. <b>Für die Kinder:</b> 15 Minuten reichen völlig und sind trotzdem das Erinnerungsfoto.",
+    meta:"20–30 Min. · gratis", maps:M("Dotonbori Glico Sign Osaka")},
+   {id:"d1e", c:"essen", n:"Konbini-Abendessen im Zimmer",
+    what:"Lawson, FamilyMart oder 7-Eleven — an jeder Ecke, 24 Stunden offen. Onigiri, Karaage, Instant-Ramen, Sandwiches, Pudding.",
+    why:"Um halb zehn abends mit müden Kindern das Vernünftigste, was man tun kann. <b>Für die Kinder:</b> ein japanischer Konbini ist selbst schon ein Erlebnis — jeder darf sich drei Dinge aussuchen, die er nicht kennt.",
+    meta:"20 Min. · ~¥3.000 Familie", maps:M("Lawson Namba Osaka")},
+   {id:"d1f", c:"essen", n:"Erste Ramen in Namba",
+    what:"Rund um den Bahnhof haben viele Ramen-Läden bis 1 Uhr nachts offen, bestellt wird am Automaten am Eingang.",
+    why:"Warme Brühe nach einem langen Flugtag. Der Ticketautomat mit Bildern ist die erste kleine Japan-Hürde, die man gemeinsam nimmt.",
+    meta:"40 Min. · ~¥1.000–1.500 p.P.", maps:M("Ramen Namba Osaka")}
+  ]}
+ ]},
+
+/* ---------- 2 ---------- */
+{k:"日", dt:"So 13.12.", title:"Osaka ankommen",
+ img:W("c/ca/Osaka_Castle_03bs3200.jpg/1920px-Osaka_Castle_03bs3200.jpg"), cr:"Osaka Castle · Wikimedia Commons",
+ note:"Erster ganzer Tag, bewusst ohne festen Termin. Nicht zu früh los — der Jetlag ist mit einer Stunde Zeitverschiebung mild, aber der Flugtag steckt allen in den Knochen.",
+ fix:[],
+ slots:[
+  {h:"Vormittag", hint:"eines aussuchen", opts:[
+   {id:"d2a", c:"kultur", n:"Osaka Castle", tags:["tip"],
+    what:"Die weiße Burg mit den goldenen Ziergiebeln steht auf einem gewaltigen Steinwall mitten im Park. Innen ein modernes Museum über acht Etagen, ganz oben eine Aussichtsplattform mit Blick über die Stadt.",
+    why:"Die Anlage ist so groß, dass man auch ohne Innenbesuch einen schönen Vormittag hat: Wassergräben, Kirschbäume, Straßenmusik. <b>Für die Kinder:</b> im Museum gibt es Rüstungen, Helme mit Hörnern und eine Filmstation zur Belagerung von 1615 — Ritterburg auf Japanisch.",
+    meta:"2–3 Std. · Park gratis · Turm ¥600 Erw., unter 15 frei", maps:M("Osaka Castle")},
+   {id:"d2b", c:"essen", n:"Kuromon-Markt",
+    what:"Eine 580 m lange überdachte Markthalle mit rund 150 Ständen: Fisch, Wagyu-Spieße, Tako-Yaki, Erdbeeren im Winter, frisch aufgeschnittene Melone. Viele Stände grillen direkt vor Ort.",
+    why:"Osaka nennt sich selbst „die Küche Japans“ — hier sieht man warum. Man isst sich einmal quer durch, im Stehen, für wenig Geld. <b>Für die Kinder:</b> alles ist sichtbar, riecht gut und wird vor ihren Augen gemacht. Wer nichts Rohes mag, findet trotzdem zehn Sachen.",
+    meta:"1–1,5 Std. · ~¥3.000–5.000 Familie · 9–18 Uhr", maps:M("Kuromon Ichiba Market Osaka")},
+   {id:"d2c", c:"museum", n:"Museum of Housing and Living", tags:["rain","kid"],
+    what:"Im 8. Stock eines Hochhauses ist eine komplette Edo-Straße von 1830 nachgebaut — Häuser zum Betreten, wechselndes Tageslicht von Morgen bis Gewitter, Geräuschkulisse.",
+    why:"Kein Museum zum Anschauen, sondern eins zum Hineinlaufen. <b>Für die Kinder:</b> man darf für ~¥1.000 einen Kimono leihen und in dem Straßenset herumlaufen — das ist der Fotospot der ganzen Osaka-Woche. Perfekt bei Regen.",
+    meta:"1,5–2 Std. · Erw. ¥600, Schüler frei · Di geschlossen", maps:M("Osaka Museum of Housing and Living")},
+   {id:"d2d", c:"kids", n:"Pokémon Center Osaka + Nintendo Osaka",
+    what:"Beide im Daimaru-Kaufhaus in Shinsaibashi, zwei Etagen übereinander. Riesige Figuren am Eingang, exklusive Ware, die es nur in Japan gibt.",
+    why:"Ehrlich: das ist ein Laden. Aber es ist der Laden, von dem die Kinder zuhause erzählen werden. <b>Tipp:</b> vorher ein Taschengeld-Budget festlegen, sonst wird es teuer.",
+    meta:"1–1,5 Std. · Eintritt frei", maps:M("Pokemon Center Osaka Daimaru Shinsaibashi")}
+  ]},
+  {h:"Nachmittag", opts:[
+   {id:"d2e", c:"viertel", n:"Shinsekai & Tsutenkaku-Turm",
+    what:"Ein Viertel, das 1912 nach dem Vorbild von Paris und Coney Island gebaut wurde und seither stehengeblieben ist. In der Mitte der Tsutenkaku-Turm, drumherum grelle Reklame und Kushikatsu-Buden (frittierte Spieße).",
+    why:"Das schrillste, unaufgeräumteste Osaka — ein bewusster Kontrast zur ordentlichen Burg vom Vormittag. <b>Für die Kinder:</b> im Turm gibt es eine Rutsche vom 3. in den 1. Stock, die „Tower Slider“, 60 Meter in zehn Sekunden.",
+    meta:"2 Std. · Turm ¥1.200 Erw. / ¥600 Kind · Rutsche ¥1.000 extra", maps:M("Tsutenkaku Shinsekai Osaka")},
+   {id:"d2f", c:"natur", n:"Nakanoshima-Insel & Bibliothek",
+    what:"Eine schmale Insel zwischen zwei Flussarmen mitten in der Stadt, mit Rosengarten, alter Backsteinbibliothek und Uferpromenade.",
+    why:"Der ruhige Gegenentwurf. Wenn nach dem Flugtag jemand nur spazieren will, ist das der richtige Ort — und abends startet hier die Illumination (siehe unten).",
+    meta:"1–1,5 Std. · gratis", maps:M("Nakanoshima Park Osaka")},
+   {id:"d2g", c:"aussicht", n:"Hep Five Riesenrad, Umeda",
+    what:"Ein knallrotes Riesenrad, das aus dem Dach eines Kaufhauses wächst. Eine Runde dauert 15 Minuten, die Gondeln haben Bluetooth-Lautsprecher.",
+    why:"Kurz, warm, kein Anstehen, und man sieht Osaka von oben, ohne für ein Observatorium zu zahlen. <b>Für die Kinder:</b> man darf die eigene Musik in der Gondel abspielen.",
+    meta:"45 Min. · ¥800 p.P., unter 6 frei", maps:M("HEP FIVE Ferris Wheel Osaka")}
+  ]},
+  {h:"Abend", hint:"Dezember-Highlight", opts:[
+   {id:"d2h", c:"licht", n:"Midosuji-Illumination", tags:["tip"],
+    what:"Die Midosuji ist Osakas Prachtstraße. Vier Kilometer Ginkgo-Bäume werden von Umeda bis Namba komplett in Licht gehüllt — offiziell die längste beleuchtete Straße der Welt.",
+    why:"Ihr wohnt an einem Ende und müsst nur die Straße entlanggehen. Kostet nichts, dauert so lange wie ihr wollt, und es gibt an jedem Abschnitt eine andere Lichtfarbe. <b>Für die Kinder:</b> zwischendurch Konbini-Kakao, dann läuft es sich gut.",
+    meta:"1 Std. · gratis · voraussichtlich bis 31.12., 2026er Termin noch offen", maps:M("Midosuji Osaka")},
+   {id:"d2i", c:"licht", n:"Osaka Hikari Renaissance, Nakanoshima",
+    what:"Osakas großes Winterlichtfest: die Fassade der Zentralen Öffentlichen Halle wird bespielt, dazu eine Lichtallee entlang des Flusses und Buden mit Glühwein und Suppe.",
+    why:"Läuft 2025 vom 14. bis 25.12. — 2026 also mit hoher Wahrscheinlichkeit genau in eurer Osaka-Woche, aber der Termin ist noch nicht bestätigt. Wenn er passt, ist das der schönste Abend in Osaka.",
+    meta:"1–1,5 Std. · gratis · Termin 2026 noch nicht veröffentlicht", maps:M("Nakanoshima Osaka Hikari Renaissance")},
+   {id:"d2j", c:"essen", n:"Okonomiyaki selbst braten",
+    what:"Osakas Nationalgericht: ein herzhafter Pfannkuchen aus Kohl, Teig und Zutaten nach Wahl. In vielen Lokalen ist eine heiße Platte in den Tisch eingelassen und man brät selbst.",
+    why:"Essen und Beschäftigung in einem. <b>Für die Kinder:</b> jeder gestaltet seinen eigenen, wenden ist der Höhepunkt des Abends. Nichts ist roh, nichts ist scharf.",
+    meta:"1,5 Std. · ~¥1.200–2.000 p.P.", maps:M("Okonomiyaki Dotonbori Osaka")}
+  ]}
+ ]},
+
+/* ---------- 3 ---------- */
+{k:"月", dt:"Mo 14.12.", title:"Universal Studios Japan",
+ img:"https://upload.wikimedia.org/wikipedia/commons/f/fd/USJ_5years.JPG", cr:"Universal Studios Japan · Wikimedia Commons",
+ note:"Der Tag, auf den die Kinder hinfiebern. Bewusst auf Montag gelegt: unter der Woche im Dezember ist USJ am leersten und in der günstigsten Preisstufe des Jahres. Park öffnet meist 9 Uhr — um 8:15 am Tor stehen.",
+ fix:[
+  {t:"08:15", b:"Am Eingang sein", s:"JR-Loop bis Nishikujo, umsteigen in die Yumesaki-Linie bis Universal City · ~20 Min. ab Namba"},
+  {t:"direkt nach Eintritt", b:"Super-Nintendo-World-Zeitfenster ziehen", s:"Kostenlos über die USJ-App im Park — das ist der einzige Schritt, den man nicht verschieben kann"}
+ ],
+ slots:[
+  {h:"Das Muss", opts:[
+   {id:"d3a", c:"kids", n:"Wizarding World of Harry Potter", tags:["tip","kid"],
+    what:"Ein komplett nachgebautes Hogsmeade mit schneebedeckten Dächern, dem Hogwarts Express am Bahnsteig und dem Schloss darüber. Hauptattraktion ist „Harry Potter and the Forbidden Journey“, ein Flugsimulator durch das Schloss; daneben die Familienachterbahn „Flight of the Hippogriff“.",
+    why:"Der Bereich sieht im Dezember am besten aus, weil der künstliche Schnee zur echten Kälte passt. <b>Für die Kinder:</b> mit 9 und 11 sind beide auf der sicheren Seite — Forbidden Journey verlangt 122 cm, Hippogriff 122 cm mit Begleitung. Zauberstab-Läden und die Chocolate Frog Ecke funktionieren auch ohne Anstehen.",
+    meta:"3–4 Std. · im Studio Pass enthalten", maps:M("Wizarding World of Harry Potter Universal Studios Japan")},
+   {id:"d3b", c:"kids", n:"Super Nintendo World", tags:["kid"],
+    what:"Ein begehbares Mario-Level mit Fragezeichen-Blöcken zum Schlagen, Yoshis Abenteuer als ruhige Fahrt und „Mario Kart: Koopas Herausforderung“ als AR-Fahrgeschäft mit Brille.",
+    why:"Der Bereich ist gebaut wie ein Videospiel, in dem man wirklich drinsteht. <b>Für die Kinder:</b> Mario Kart verlangt 107 cm, Yoshi 92 cm — beide passen locker. Das optionale Power-Up-Band (~¥3.800) verwandelt den ganzen Bereich in ein Punktesammelspiel; das ist die eine Ausgabe, die sich hier wirklich lohnt.",
+    meta:"3 Std. · Zeitfenster-Ticket nötig (gratis über App)", maps:M("Super Nintendo World Universal Studios Japan")}
+  ]},
+  {h:"Wenn noch Zeit ist", hint:"nach Laune", opts:[
+   {id:"d3c", c:"kids", n:"Minion Park",
+    what:"Der größte Minion-Bereich der Welt, mit einem wilden Simulator-Ride und einem ganzen Straßenzug voller Snacks in Bananenform.",
+    why:"Kurze Wartezeiten, viel zu gucken, keine Größenangst. Guter Puffer, wenn zwischendurch die Luft raus ist.",
+    meta:"1–1,5 Std.", maps:M("Minion Park Universal Studios Japan")},
+   {id:"d3d", c:"aktiv", n:"Hollywood Dream & Flying Dinosaur",
+    what:"Die zwei großen Achterbahnen des Parks — Hollywood Dream fährt man mit selbstgewählter Musik, Flying Dinosaur hängt man bäuchlings unter der Schiene.",
+    why:"Nur wenn Kind 1 Lust hat: Hollywood Dream verlangt 132 cm, Flying Dinosaur 132 cm. <b>Ehrlich:</b> Flying Dinosaur ist auch für Erwachsene heftig, Hollywood Dream ist der bessere Einstieg.",
+    meta:"je 45–70 Min. inkl. Warten", maps:M("Hollywood Dream The Ride Universal Studios Japan")},
+   {id:"d3e", c:"licht", n:"Winterabend im Park bleiben", tags:["tip"],
+    what:"USJ fährt im Dezember ein Winterprogramm mit Lichtinstallationen im ganzen Park und einer Projektionsshow auf Hogwarts Castle nach Einbruch der Dunkelheit.",
+    why:"Der Park sieht nach 17 Uhr komplett anders aus, und viele Tagesgäste sind dann schon weg. <b>Für die Kinder:</b> Hogwarts im Licht ist der Abschluss, an den sie sich erinnern. Warm anziehen — es wird kalt.",
+    meta:"bis Parkschluss · im Ticket enthalten · Showplan 2026 noch offen", maps:M("Universal Studios Japan")},
+   {id:"d3f", c:"aktiv", n:"Express Pass 4 dazubuchen", tags:["lux"],
+    what:"Ein Zusatzticket, das euch bei vier ausgewählten Attraktionen in eine kurze Extraschlange lässt. Es gibt Varianten mit und ohne Harry Potter bzw. Nintendo.",
+    why:"An einem Dezember-Montag braucht ihr ihn wahrscheinlich nicht — aber wenn ihr sichergehen wollt, dass beide Harry-Potter-Fahrten und Mario Kart garantiert klappen, ist das die Versicherung. <b>Muss zusammen mit dem Eintritt gebucht werden</b>, nicht spontan vor Ort.",
+    meta:"ab ~¥9.800 p.P. · Familie ~¥39.000", maps:M("Universal Studios Japan Express Pass")}
+  ]}
+ ]},
+
+/* ---------- 4 ---------- */
+{k:"火", dt:"Di 15.12.", title:"Aquarium & Aussicht",
+ img:W("f/f4/Kaiy%C5%ABkan.jpg/1920px-Kaiy%C5%ABkan.jpg"), cr:"Osaka Aquarium Kaiyukan · Wikimedia Commons",
+ note:"Nach dem Parktag ein ruhigerer Rhythmus: vormittags Aquarium, nachmittags Hafen, abends Aussicht. Alles indoor-tauglich.",
+ fix:[
+  {t:"~10:00", b:"Kaiyukan", s:"U-Bahn Chuo-Linie bis Osakako, 5 Min. zu Fuß · ~25 Min. ab Namba"}
+ ],
+ slots:[
+  {h:"Vormittag", opts:[
+   {id:"d4a", c:"kids", n:"Kaiyukan — Osaka Aquarium", tags:["tip","kid"],
+    what:"Eines der größten Aquarien der Welt, gebaut als eine einzige Spirale: man fährt in den 8. Stock hoch und geht dann langsam an einem 9 m tiefen Zentralbecken nach unten. In diesem Becken schwimmen zwei Walhaie — die größten Fische der Erde.",
+    why:"Der Aufbau ist genial, weil man dasselbe Becken auf jeder Etage aus einer anderen Tiefe sieht. Dazu 15 Themenzonen von der Antarktis bis zum Great Barrier Reef. <b>Für die Kinder:</b> im Erdgeschoss gibt es ein Anfassbecken mit Rochen und Kleinhaien, und die Kapuzineraffen und Otter am Anfang holen auch Museumsmuffel ab. Rechnet mit 3 Stunden, nicht mit 1,5.",
+    meta:"2,5–3 Std. · Erw. ~¥2.700 / Kind 7–15 ~¥1.400 · Familie ~¥8.200 · online vorab", maps:M("Osaka Aquarium Kaiyukan")},
+   {id:"d4b", c:"kids", n:"Legoland Discovery Center Osaka", tags:["rain"],
+    what:"Direkt neben dem Kaiyukan im Tempozan-Marktplatz: Miniatur-Osaka aus Lego, zwei kleine Fahrgeschäfte, 4D-Kino und ein großer Baubereich.",
+    why:"Nur sinnvoll als Ersatz, nicht zusätzlich — ist eher für jüngere Kinder gemacht. <b>Ehrlich:</b> mit 9 und 11 seid ihr am oberen Rand der Zielgruppe, das Miniatur-Osaka ist trotzdem sehenswert.",
+    meta:"2 Std. · online günstiger · nur mit Kind zugänglich", maps:M("Legoland Discovery Center Osaka")}
+  ]},
+  {h:"Nachmittag", opts:[
+   {id:"d4c", c:"aussicht", n:"Tempozan-Riesenrad",
+    what:"112 m hoch, direkt neben dem Aquarium, eine Runde dauert 17 Minuten. Einige Gondeln haben durchsichtige Böden. Nachts leuchtet das Rad als Wetterbericht: rot heißt morgen sonnig, grün bewölkt, blau Regen.",
+    why:"Von oben sieht man die Bucht, den Hafen und bei klarem Wetter bis Kobe. <b>Für die Kinder:</b> die Glasboden-Gondel ist ein kleiner Mutbeweis, man kann aber auch eine normale nehmen.",
+    meta:"30 Min. · ¥900 p.P., unter 3 frei", maps:M("Tempozan Ferris Wheel Osaka")},
+   {id:"d4d", c:"aktiv", n:"Santa-Maria-Bootstour",
+    what:"Ein Nachbau von Kolumbus' Schiff, das eine 45-Minuten-Runde durch die Bucht von Osaka fährt. Ab dem Anleger am Aquarium.",
+    why:"Man sieht die Hafenkräne, die Brücken und die Skyline vom Wasser. <b>Für die Kinder:</b> unter Deck ist ein kleines Museum über Kolumbus eingerichtet — bei Kälte kann man dort sitzen.",
+    meta:"45 Min. · ~¥1.800 Erw. / ¥900 Kind", maps:M("Santa Maria Cruise Osaka")},
+   {id:"d4e", c:"shopping", n:"Den-Den Town, Nipponbashi",
+    what:"Osakas Elektronik- und Anime-Viertel: mehrere Straßenzüge mit Spielkonsolen, Retro-Games, Gashapon-Automaten und Modellbau.",
+    why:"Die Gashapon-Hallen — hunderte Kapselautomaten nebeneinander — sind für Kinder in dem Alter ein eigenes Universum. <b>Tipp:</b> ¥1.000 Münzgeld pro Kind mitgeben und laufen lassen.",
+    meta:"1,5 Std. · Eintritt frei · zu Fuß von Namba", maps:M("Den Den Town Nipponbashi Osaka")}
+  ]},
+  {h:"Abend", opts:[
+   {id:"d4f", c:"aussicht", n:"Umeda Sky Building", tags:["tip"],
+    what:"Zwei Hochhaustürme, oben durch eine schwebende Ringplattform verbunden — dem „Floating Garden Observatory“ in 173 m Höhe. Die letzte Etappe fährt man mit einer verglasten Rolltreppe frei durch die Luft zwischen den Türmen.",
+    why:"Der Weg nach oben ist besser als die Aussicht, und die Aussicht ist schon sehr gut. Die oberste Ebene ist offen — es zieht, aber man steht wirklich draußen über der Stadt. <b>Für die Kinder:</b> die Rolltreppe ist der Nervenkitzel des Tages. Sonnenuntergang gegen 16:50, also gegen 16:15 oben sein.",
+    meta:"1,5 Std. · Erw. ¥2.000 / Kind ¥500 · Familie ~¥5.000", maps:M("Umeda Sky Building Osaka")},
+   {id:"d4g", c:"essen", n:"Weihnachtsmarkt am Umeda Sky Building",
+    what:"Direkt unter dem Gebäude findet jedes Jahr ein deutscher Weihnachtsmarkt statt, mit Holzbuden, Pyramide, Glühwein und Bratwurst.",
+    why:"Kurios und tröstlich zugleich: ein deutscher Weihnachtsmarkt in Osaka, gebaut von Japanern, mit sehr ernst genommener Bratwurst. <b>Wenn die Kinder Heimweh nach Advent haben,</b> ist das genau der richtige Abend. Termin 2026 noch nicht veröffentlicht.",
+    meta:"1 Std. · Eintritt frei, Verzehr extra · Termin 2026 offen", maps:M("German Christmas Market Umeda Sky Building Osaka")}
+  ]}
+ ]},
+
+/* ---------- 5 ---------- */
+{k:"水", dt:"Mi 16.12.", title:"Tagesausflug Nara",
+ img:W("b/b4/Nara_Park_-_panoramio_%282%29.jpg/1920px-Nara_Park_-_panoramio_%282%29.jpg"), cr:"Nara Park · Wikimedia Commons",
+ note:"Der erste richtige Ausflugstag. Nara ist 40 Minuten weg und lässt sich komplett zu Fuß erlaufen — Bahnhof, Park, Tempel und zurück liegen auf einer Linie.",
+ fix:[
+  {t:"~09:30", b:"Kintetsu Namba → Kintetsu Nara", s:"40 Min. · ¥680 Erw. / ¥340 Kind · Familie ¥2.040 je Richtung"}
+ ],
+ slots:[
+  {h:"In Nara", hint:"lässt sich alles kombinieren", opts:[
+   {id:"d5a", c:"natur", n:"Nara-Park und die Rehe", tags:["tip","kid"],
+    what:"Über 1.000 frei lebende Sikahirsche laufen durch einen 500 Hektar großen Stadtpark. Sie gelten seit dem 8. Jahrhundert als Boten der Götter und sind entsprechend zutraulich. An Ständen gibt es Reiskleie-Kekse (Shika-Senbei) für ¥200.",
+    why:"Es gibt wenige Orte auf der Welt, an denen Kinder Wildtieren so nah kommen dürfen. <b>Für die Kinder:</b> viele Rehe verbeugen sich, wenn man sich vor ihnen verbeugt — das ist antrainiert und funktioniert erstaunlich zuverlässig. <b>Aber ehrlich:</b> sie sind auch frech, zupfen an Jacken und Papiertüten. Kekse erst kaufen, wenn man bereit ist, sie sofort loszuwerden, sonst wird man umringt.",
+    meta:"2–3 Std. · gratis · Kekse ¥200", maps:M("Nara Park deer")},
+   {id:"d5b", c:"tempel", n:"Todai-ji mit dem Großen Buddha", tags:["tip"],
+    what:"Die Haupthalle war lange das größte Holzgebäude der Welt. Darin sitzt ein 15 m hoher Buddha aus Bronze, gegossen im Jahr 752. Allein seine Hand ist über zwei Meter groß.",
+    why:"Die Halle wirkt selbst auf Erwachsene, die genug Tempel gesehen haben. <b>Für die Kinder:</b> in einer der Holzsäulen ist ein Loch, exakt so groß wie ein Nasenloch des Buddha — wer hindurchkriecht, dem wird Erleuchtung nachgesagt. Für Kinder in dem Alter ist das machbar und der Höhepunkt des Besuchs.",
+    meta:"1,5 Std. · Erw. ¥800 / Kind ¥400 · Familie ¥2.400", maps:M("Todai-ji Nara")},
+   {id:"d5c", c:"tempel", n:"Kasuga-Taisha-Schrein",
+    what:"Zinnoberroter Schrein am Waldrand, gesäumt von 3.000 Stein- und Bronzelaternen, die Pilger über tausend Jahre gestiftet haben. Ein Innenraum ist dauerhaft dunkel und nur von Laternen erhellt.",
+    why:"Der Weg dorthin führt durch einen moosigen Zedernwald, in dem oft Rehe stehen — das ist die Bilderbuch-Version von Japan. <b>Für die Kinder:</b> die Laternenhalle ist ein bisschen gruselig-schön und dauert nur zehn Minuten.",
+    meta:"1 Std. · Außenbereich gratis, Innenhof ¥500", maps:M("Kasuga Taisha Nara")},
+   {id:"d5d", c:"natur", n:"Mount Wakakusa",
+    what:"Ein kahler Grashügel direkt hinter dem Park, 342 m hoch, in 30 Minuten zu erwandern.",
+    why:"Oben sieht man ganz Nara und das Umland, und meistens grasen Rehe mit auf der Wiese. Kostet fast nichts und bringt Bewegung in den Tag. <b>Für die Kinder:</b> runter kann man rennen.",
+    meta:"1,5 Std. · ¥150 p.P.", maps:M("Mount Wakakusa Nara")}
+  ]},
+  {h:"Statt Nara", hint:"Alternative für den ganzen Tag", opts:[
+   {id:"d5e", c:"tempel", n:"Kyoto: Fushimi Inari",
+    what:"Ein Schrein am Berghang, durch den sich mehrere tausend zinnoberrote Torii-Tore zu einem kilometerlangen Tunnel reihen. Der volle Rundweg zum Gipfel dauert 2–3 Stunden, der schöne Teil beginnt aber schon nach 15 Minuten.",
+    why:"Das bekannteste Japan-Bild überhaupt, und es funktioniert auch in echt. <b>Für die Kinder:</b> es ist ein Wanderweg, kein Museum — man läuft, klettert Stufen, findet Steinfüchse. Ab dem mittleren Abschnitt wird es deutlich leerer, das lohnt sich.",
+    meta:"halber Tag · gratis · 55 Min. ab Osaka", maps:M("Fushimi Inari Taisha Kyoto")},
+   {id:"d5f", c:"natur", n:"Kyoto: Arashiyama-Bambuswald & Affenberg",
+    what:"Ein Wegabschnitt durch dicht stehenden Riesenbambus, dazu die Togetsukyo-Brücke über den Fluss. Auf dem Hügel gegenüber leben rund 120 frei lebende Japanmakaken.",
+    why:"Der Bambusweg selbst dauert nur 15 Minuten — die eigentliche Zeit steckt im Affenberg. <b>Für die Kinder:</b> oben auf dem Berg dreht sich das Verhältnis um: die Menschen sitzen in einer Gitterhütte und füttern die Affen von innen nach außen. Der Aufstieg dauert 20 Minuten und ist steil.",
+    meta:"halber Tag · Bambus gratis · Affenberg ¥800 Erw. / ¥400 Kind", maps:M("Arashiyama Bamboo Grove Kyoto")}
+  ]}
+ ]},
+
+/* ---------- 6 ---------- */
+{k:"木", dt:"Do 17.12.", title:"Nach Kinosaki Onsen",
+ img:W("8/85/Kinosaki-Onsen_Station_Sign_and_Limited_Express_%22Konotori%22.jpg/1920px-Kinosaki-Onsen_Station_Sign_and_Limited_Express_%22Konotori%22.jpg"), cr:"Kinosaki-Onsen Station · Wikimedia Commons",
+ note:"Ortswechsel. Vormittags noch Osaka, mittags in den Zug, nachmittags im Yukata durch einen Onsen-Ort im Hinterland. Größerer Kontrast geht kaum.",
+ fix:[
+  {t:"~11:00", b:"Check-out, Gepäck", s:"Fragt beim Auschecken, ob ein Koffer bis zum 25.12. im Hotel bleiben darf — das spart auf der Tokio-Runde viel"},
+  {t:"~12:30", b:"Ltd. Express Kounotori nach Kinosaki Onsen", s:"ab Osaka bzw. Shin-Osaka · 2 Std. 45 Min. · ¥6.140 Erw. res. / ¥3.070 Kind · Familie ~¥18.420"},
+  {t:"~15:15", b:"Ankunft Kinosaki Onsen", s:"Viele Ryokan holen am Bahnhof ab — vorher anfragen"}
+ ],
+ slots:[
+  {h:"Vormittag in Osaka", hint:"kurz und nah am Hotel", opts:[
+   {id:"d6a", c:"shopping", n:"Don Quijote Dotonbori",
+    what:"Ein chaotisch vollgestopftes Kaufhaus über sieben Etagen, 24 Stunden offen, mit einem eigenen Riesenrad an der Fassade. Verkauft alles von KitKat-Sondersorten bis zu Kosmetik.",
+    why:"Der beste Ort für Mitbringsel und für die Snacks, die man im Zug braucht. <b>Für die Kinder:</b> die KitKat-Wand mit 20 Sorten ist ein eigener Programmpunkt.",
+    meta:"1 Std. · Eintritt frei", maps:M("Don Quijote Dotonbori Osaka")},
+   {id:"d6b", c:"natur", n:"Spaziergang am Dotonbori-Kanal",
+    what:"Die Uferpromenade unterhalb der Neonschilder, tagsüber ruhig und leer.",
+    why:"Bei Tag sieht der Kanal völlig anders aus als am Ankunftsabend. Zehn Minuten, kostet nichts, guter Abschluss des Osaka-Blocks.",
+    meta:"30 Min. · gratis", maps:M("Dotonbori Riverwalk Osaka")},
+   {id:"d6c", c:"essen", n:"Ekiben für den Zug kaufen", tags:["tip"],
+    what:"Bahnhofs-Lunchboxen. Am Shin-Osaka-Bahnhof gibt es eine ganze Halle davon, jede Region hat ihre eigene Spezialität, alles ist kalt zu essen und sorgfältig gepackt.",
+    why:"Ekiben im Zug zu essen ist eine japanische Institution und macht aus einer Zugfahrt ein Ereignis. <b>Für die Kinder:</b> jeder sucht seine eigene Box aus — es gibt welche in Form von Zügen und Pandas.",
+    meta:"30 Min. · ~¥1.000–1.500 p.P.", maps:M("Shin-Osaka Station Ekiben")}
+  ]},
+  {h:"Nachmittag in Kinosaki", opts:[
+   {id:"d6d", c:"onsen", n:"Yukata anziehen und loslaufen", tags:["tip","kid"],
+    what:"Im Ryokan bekommt jeder einen Yukata (leichter Baumwollkimono), eine wattierte Jacke darüber und Geta (Holzsandalen). So geht man in Kinosaki den ganzen Abend durch den Ort.",
+    why:"Das ist der eigentliche Reiz von Kinosaki: der ganze Ort ist das Badehaus, die Straße der Flur. Überall klappern Geta auf dem Asphalt. <b>Für die Kinder:</b> sich in fremde Kleidung zu stecken und damit rauszudürfen ist Verkleiden mit Erlaubnis. Geta sind rutschig — die ersten Meter langsam.",
+    meta:"den ganzen Abend · im Ryokan enthalten", maps:M("Kinosaki Onsen")},
+   {id:"d6e", c:"onsen", n:"Erstes Bad: Ichino-yu oder Jizo-yu", tags:["tip"],
+    what:"Ichino-yu liegt am schönsten am Kanal und hat ein Höhlenbad, das direkt in den Fels geschlagen ist. Jizo-yu ist das Bad der Einheimischen und hat als einziges ein eigenes Kinderbecken.",
+    why:"<b>Achtung, Donnerstag ist Ruhetag:</b> Goshono-yu und Yanagi-yu haben heute zu. Offen sind Ichino-yu, Jizo-yu, Mandara-yu und Kono-yu. Für den Einstieg mit Kindern ist Jizo-yu das entspannteste Haus. <b>Wichtig für euch:</b> gebadet wird nackt und nach Geschlecht getrennt. Kind 2 (9) darf mit auf die Frauenseite, Kind 1 (11) muss auf die Männerseite — das vorher besprechen, nicht am Eingang.",
+    meta:"1–1,5 Std. · Yumepa ¥1.500 Erw. / ¥750 Kind, für Ryokan-Gäste gratis", maps:M("Ichino-yu Kinosaki Onsen")},
+   {id:"d6f", c:"essen", n:"Kaiseki-Abendessen im Ryokan", tags:["tip"],
+    what:"Ein mehrgängiges Menü, das im Ryokan-Preis meist enthalten ist. In der Krabbensaison steht Matsuba-Krabbe im Zentrum: roh, gegrillt, im Sud und als Reisgericht.",
+    why:"Die Saison läuft vom 7.11. bis 31.3., ihr seid mittendrin. <b>Für die Kinder:</b> Kaiseki ist für Kinder oft schwierig — die meisten Häuser bieten ein eigenes Kindermenü an, das muss man bei der Buchung mitbestellen. Nicht davon ausgehen, dass es automatisch kommt.",
+    meta:"2 Std. · im Ryokan-Preis · Kindermenü separat bestellen", maps:M("Kinosaki Onsen ryokan")}
+  ]}
+ ]},
+
+/* ---------- 7 ---------- */
+{k:"金", dt:"Fr 18.12.", title:"Ein ganzer Tag Onsen",
+ img:W("3/35/Kinosaki_Onsen_by_day.jpg/1920px-Kinosaki_Onsen_by_day.jpg"), cr:"Kinosaki Onsen · Wikimedia Commons",
+ note:"Der langsamste Tag der Reise, und das ist Absicht. Nichts muss. Jedes der sieben Bäder hat einen festen Ruhetag pro Woche — morgens im Ryokan kurz durchfragen, welche heute offen sind.",
+ fix:[],
+ slots:[
+  {h:"Baden", hint:"heute sind alle sechs offen", opts:[
+   {id:"d7a", c:"onsen", n:"Onsen-Hopping: die sechs offenen Bäder", tags:["tip"],
+    what:"Kinosaki hat sieben öffentliche Badehäuser, aber Satono-yu ist seit April 2024 geschlossen — es sind also sechs. Goshono-yu hat einen Wasserfall im Außenbad, Mandara-yu ein Zedernholz-Fass, Kono-yu liegt am ruhigsten am Ortsende, Yanagi-yu ist das kleinste und heißeste, Jizo-yu hat ein Kinderbecken, Ichino-yu ein Höhlenbad.",
+    why:"Der Freitag ist euer guter Tag: alle sechs haben offen, gestern waren zwei zu. Alle sind tattoo-freundlich. <b>Für die Kinder:</b> zwei bis drei sind realistisch, dann ist die Luft raus. Zwischen den Bädern laufen und abkühlen, sonst wird es zu viel. Genug trinken.",
+    meta:"je 30–45 Min. · Yumepa ¥1.500 / ¥750, für Ryokan-Gäste gratis", maps:M("Kinosaki Onsen public bathhouses")},
+   {id:"d7b", c:"onsen", n:"Goshono-yu — das schönste",
+    what:"Das prächtigste der Häuser, gebaut nach dem Vorbild des Kaiserpalasts von Kyoto. Im Außenbereich fällt ein kleiner Wasserfall neben das Becken.",
+    why:"Wenn ihr nur ein einziges Bad macht, dann dieses. Draußen im heißen Wasser sitzen, während es kalt ist und vielleicht schneit — dafür fährt man nach Kinosaki.",
+    meta:"1 Std. · im Yumepa", maps:M("Goshono-yu Kinosaki Onsen")},
+   {id:"d7c", c:"onsen", n:"Ashi-yu — Fußbäder für zwischendurch",
+    what:"Über den Ort verteilt gibt es kostenlose öffentliche Fußbäder, oft direkt an der Straße. Anziehen bleibt an.",
+    why:"Der Kompromiss, wenn jemand keine Lust auf ein volles Bad hat oder nach dem dritten Mal genug ist. <b>Für die Kinder:</b> Fußbad geht immer, auch angezogen, auch nur fünf Minuten.",
+    meta:"10 Min. · gratis", maps:M("Kinosaki Onsen foot bath")}
+  ]},
+  {h:"Zwischen den Bädern", opts:[
+   {id:"d7d", c:"aussicht", n:"Kinosaki-Seilbahn auf den Daishi-yama",
+    what:"Eine kleine Gondelbahn fährt in zwei Etappen den Hausberg hinauf. Auf halber Höhe ein Tempel, oben eine Aussichtsplattform mit Café über dem ganzen Tal.",
+    why:"Von oben sieht man, wie klein der Ort eigentlich ist und wie er zwischen die Berge geklemmt liegt. Bei Schnee ist es besonders schön. <b>Für die Kinder:</b> die Fahrt selbst ist kurz und aufregend genug.",
+    meta:"1–1,5 Std. · ~¥1.200 Erw. / ~¥600 Kind hin und zurück", maps:M("Kinosaki Ropeway")},
+   {id:"d7e", c:"kids", n:"Yumepa-Spielhallen und Kanalgassen", tags:["kid"],
+    what:"An mehreren Stellen im Ort gibt es kleine Retro-Spielhallen mit Ballwurf- und Angelspielen, dazu Läden mit Onsen-Eiern und Sojasauce-Softeis.",
+    why:"Kinosaki ist ein Kurort, aber kein Museumsdorf — es gibt Sachen für Kinder zwischen den Bädern. <b>Für die Kinder:</b> das ist der Teil, der sie über einen ganzen Bade-Tag rettet.",
+    meta:"1 Std. · Kleingeld", maps:M("Kinosaki Onsen shopping street")},
+   {id:"d7f", c:"museum", n:"Genbudo-Höhlen",
+    what:"Sechs Basalthöhlen aus erstarrter Lava, 20 Minuten mit dem Zug oder Bus entfernt. Die sechseckigen Säulen sehen aus, als hätte sie jemand gestapelt.",
+    why:"Der Ausflug für den Fall, dass jemand vom Baden genug hat. Geologisch beeindruckend und in einer Stunde erledigt. <b>Für die Kinder:</b> es sieht künstlich aus und ist es nicht — genau die Art Ort, an dem man Fragen stellt.",
+    meta:"2 Std. inkl. Anfahrt · ~¥500", maps:M("Genbudo Cave Toyooka")},
+   {id:"d7g", c:"essen", n:"Zweiter Krabbenabend oder Tajima-Rind", tags:["lux"],
+    what:"Tajima-Rind aus der Region ist die Ursprungsrasse des Kobe-Rinds. Viele Ryokan bieten als Alternative zum Krabben-Kaiseki ein Menü mit Tajima-Beef an.",
+    why:"Wenn ihr an einem Abend richtig zulangen wollt, ist das der. <b>Für die Kinder:</b> Rind auf dem heißen Stein funktioniert erfahrungsgemäß deutlich besser als ein Krabben-Kaiseki mit acht Gängen. Bei der Ryokan-Buchung als Menüwunsch angeben.",
+    meta:"2 Std. · Aufpreis je Haus", maps:M("Tajima beef Kinosaki")}
+  ]}
+ ]},
+
+/* ---------- 8 ---------- */
+{k:"土", dt:"Sa 19.12.", title:"Kinosaki → Tokio",
+ img:W("e/ef/JR_Series-N700S-J30_Nozomi-4.jpg/1920px-JR_Series-N700S-J30_Nozomi-4.jpg"), cr:"N700S Nozomi · Wikimedia Commons",
+ note:"Der lange Transfertag: knapp fünf Stunden Bahn mit einem Umstieg in Kyoto. Dafür fahrt ihr auf der schönen Strecke durch die Berge und steigt in Kyoto in den Shinkansen um.",
+ fix:[
+  {t:"~10:30", b:"Ltd. Express Kinosaki → Kyoto", s:"2 Std. 20 Min. · ¥5.170–5.770 Erw. res. · Familie ~¥17.300"},
+  {t:"Kyoto", b:"Umstieg in den Shinkansen", s:"Gleiche Bahnhofsebene, großzügig Zeit einplanen — Kyoto ist unübersichtlich"},
+  {t:"~16:00", b:"Nozomi Kyoto → Tokio", s:"2 Std. 20 Min. · ~¥14.200 Erw. res. / ~¥7.100 Kind · Familie ~¥42.600"}
+ ],
+ slots:[
+  {h:"Umstieg in Kyoto gestalten", hint:"eine Variante wählen", opts:[
+   {id:"d8a", c:"transfer", n:"Direkt durchfahren", tags:["tip"],
+    what:"In Kyoto nur umsteigen, in den nächsten Nozomi und um kurz nach 15 Uhr in Tokio sein.",
+    why:"Nach zwei Tagen Onsen und mit Gepäck ist Durchfahren oft klüger als ein Zwischenprogramm. Ihr gewinnt einen halben Nachmittag in Tokio und kommt entspannt an. <b>Für die Kinder:</b> der Shinkansen ist ohnehin ein eigener Programmpunkt.",
+    meta:"kein Aufenthalt · Ankunft Tokio ~15:00", maps:M("Kyoto Station")},
+   {id:"d8b", c:"tempel", n:"3 Stunden Kyoto: Fushimi Inari",
+    what:"Gepäck in die Schließfächer am Kyoto-Bahnhof, mit der JR Nara-Linie zwei Stationen bis Inari, dann direkt vor den Torii-Toren stehen.",
+    why:"Die schnellste Art, Kyoto trotzdem mitzunehmen — Hin- und Rückweg zusammen 30 Minuten. <b>Ehrlich:</b> Samstagnachmittag ist der untere Abschnitt sehr voll. Wenn ihr das macht, geht mindestens 20 Minuten bergauf, dann wird es merklich ruhiger.",
+    meta:"3 Std. · gratis · Schließfach ~¥700", maps:M("Fushimi Inari Taisha Kyoto")},
+   {id:"d8c", c:"essen", n:"3 Stunden Kyoto: Nishiki-Markt & Bahnhof",
+    what:"Der Nishiki-Markt ist eine 400 m lange überdachte Gasse mit Ständen für eingelegtes Gemüse, Tofu, Süßigkeiten und Messerläden. Der Kyoto-Bahnhof selbst ist ein spektakulärer Betonbau mit einer 171-stufigen Lichttreppe.",
+    why:"Beides ist nah am Gepäck und wetterunabhängig. <b>Für die Kinder:</b> die große Treppe im Bahnhof wird abends als Lichtinstallation bespielt, und man darf sie hochlaufen.",
+    meta:"3 Std. · gratis, Essen extra", maps:M("Nishiki Market Kyoto")}
+  ]},
+  {h:"Abend in Tokio", opts:[
+   {id:"d8d", c:"licht", n:"Marunouchi-Illumination", tags:["tip"],
+    what:"Die Allee vor dem Tokioter Hauptbahnhof wird über 1,2 km mit rund 340 Bäumen in champagnerfarbenem Licht bespielt. Direkt am Bahnhofsausgang, an dem ihr sowieso ankommt.",
+    why:"Ihr steigt aus dem Shinkansen und steht mitten drin — kein Umweg, kein Eintritt. Die Backsteinfassade des Bahnhofs von 1914 ist dabei angestrahlt. <b>Für die Kinder:</b> zehn Minuten reichen, dann ist es genug und alle wollen ins Hotel.",
+    meta:"30 Min. · gratis · läuft üblicherweise bis Mitte Februar", maps:M("Marunouchi Naka-dori Tokyo")},
+   {id:"d8e", c:"essen", n:"Ramen Street im Bahnhofsuntergeschoss",
+    what:"Unter dem Tokioter Hauptbahnhof liegt eine Gasse mit acht renommierten Ramen-Läden nebeneinander, alle mit Ticketautomat.",
+    why:"Man muss nirgends hin, es ist warm, es geht schnell. <b>Für die Kinder:</b> jeder darf sich einen anderen Laden aussuchen — die Gasse ist kurz genug, dass man sich nicht verliert.",
+    meta:"1 Std. · ~¥1.200–1.800 p.P.", maps:M("Tokyo Ramen Street Tokyo Station")},
+   {id:"d8f", c:"transfer", n:"Einfach ins Hotel und ausruhen",
+    what:"Vom Tokioter Hauptbahnhof je nach Hotel 15–25 Minuten mit der Bahn.",
+    why:"Fünf Stunden Zug mit Kindern sind fünf Stunden Zug. Es ist völlig in Ordnung, den Abend zu streichen — Tokio läuft euch nicht weg, ihr habt noch sechs Nächte.",
+    meta:"—", maps:M("Shinjuku Station Tokyo")}
+  ]}
+ ]},
+
+/* ---------- 9 ---------- */
+{k:"日", dt:"So 20.12.", title:"Tokio kennenlernen",
+ img:W("8/8b/Meiji_Jingu_2023-3.jpg/1920px-Meiji_Jingu_2023-3.jpg"), cr:"Meiji Jingu · Wikimedia Commons",
+ note:"Bewusst ohne Ticket und ohne Zeitfenster — der Tag zum Ankommen. Alles unten liegt an der Yamanote-Linie, ihr könnt spontan umentscheiden.",
+ fix:[],
+ slots:[
+  {h:"Vormittag", opts:[
+   {id:"d9a", c:"tempel", n:"Meiji Jingu", tags:["tip"],
+    what:"Ein Shinto-Schrein mitten in einem 70 Hektar großen Wald, der vor gut hundert Jahren komplett von Hand gepflanzt wurde — 100.000 Bäume aus ganz Japan. Vom Bahnhof Harajuku führt ein breiter Kiesweg unter riesigen Holz-Torii hindurch.",
+    why:"Man geht drei Minuten und hört die Stadt nicht mehr. Sonntags finden hier oft traditionelle Hochzeitszüge statt, das ist Zufall und kostet nichts. <b>Für die Kinder:</b> am Schrein kann jeder ein Ema-Holztäfelchen kaufen, einen Wunsch daraufschreiben und aufhängen — ein schönes Familienritual zum Reisestart. Dazu die Wand aus gestifteten Sake-Fässern gleich am Eingang.",
+    meta:"1,5–2 Std. · gratis · ab Sonnenaufgang offen", maps:M("Meiji Jingu Shrine Tokyo")},
+   {id:"d9b", c:"natur", n:"Yoyogi-Park",
+    what:"Direkt neben dem Schrein: große Wiesen, Radwege, an Sonntagen Straßenmusiker, Jongleure und Tanzgruppen.",
+    why:"Tokio im Freizeitmodus. Kostet nichts, man kann sitzen und gucken. <b>Für die Kinder:</b> nach einem stillen Schrein genau der richtige Ausgleich.",
+    meta:"1 Std. · gratis", maps:M("Yoyogi Park Tokyo")}
+  ]},
+  {h:"Nachmittag", opts:[
+   {id:"d9c", c:"kids", n:"Takeshita Street, Harajuku", tags:["tip","kid"],
+    what:"Eine 350 m lange Fußgängergasse voller Crêperien, Süßwarenläden, Second-Hand-Mode und Purikura-Fotoautomaten. Sehr eng, sehr bunt, sehr laut.",
+    why:"Der grellste Ort der Reise, und für Kinder in dem Alter genau richtig. <b>Für die Kinder:</b> Purikura sind Fotoautomaten, die Augen vergrößern und Sticker aufkleben — man geht zu viert rein und kommt mit einem albernen Bogen Fotos raus. Das ist das Souvenir, das übrig bleibt. Dazu die Regenbogen-Käsetoasts und meterhohen Zuckerwatten.",
+    meta:"1,5–2 Std. · gratis, Snacks extra · Purikura ~¥500", maps:M("Takeshita Street Harajuku")},
+   {id:"d9d", c:"shopping", n:"Kiddy Land Omotesando",
+    what:"Fünf Etagen Spielzeug, jede Etage einer Marke gewidmet: Sanrio, Studio Ghibli, Snoopy, Pokémon, Rilakkuma.",
+    why:"Es ist der beste Spielzeugladen der Stadt, und die Ghibli-Etage ist auch dann schön, wenn ihr das Museum später sowieso besucht. <b>Tipp:</b> Budget vorher festlegen.",
+    meta:"1 Std. · Eintritt frei", maps:M("Kiddy Land Omotesando Tokyo")},
+   {id:"d9e", c:"kids", n:"Nintendo TOKYO & Pokémon Center Shibuya",
+    what:"Beide im 6. Stock des Shibuya Parco, nebeneinander. Nintendo TOKYO ist der einzige offizielle Nintendo-Store Japans.",
+    why:"Wenn die Kinder USJ und Super Nintendo World geliebt haben, ist das der Nachschlag. <b>Ehrlich:</b> es kann voll sein und es gibt manchmal Einlasskarten — kurz vor Ladenschluss ist es am ruhigsten.",
+    meta:"1–1,5 Std. · Eintritt frei", maps:M("Nintendo TOKYO Shibuya Parco")},
+   {id:"d9f", c:"viertel", n:"Shibuya Crossing & Hachiko",
+    what:"Die berühmteste Kreuzung der Welt: bei jeder Grünphase gehen mehrere tausend Menschen gleichzeitig in alle Richtungen. Daneben die Bronzestatue des Hundes Hachiko, der neun Jahre lang auf sein verstorbenes Herrchen wartete.",
+    why:"Man läuft zwei-, dreimal mit und schaut dann aus dem Starbucks im ersten Stock von oben zu — das ist gratis und der beste Blick. <b>Für die Kinder:</b> die Hachiko-Geschichte erzählen, bevor ihr an der Statue steht. Dann ist es nicht nur ein Hund aus Metall.",
+    meta:"45 Min. · gratis", maps:M("Shibuya Scramble Crossing")}
+  ]},
+  {h:"Abend", opts:[
+   {id:"d9g", c:"aussicht", n:"Shibuya Sky", tags:["lux"],
+    what:"Ein offenes Dach im 47. Stock, 229 m über der Kreuzung. Keine Scheibe, nur ein Netz — man steht wirklich im Wind über Tokio. Bei klarem Wetter ist im Dezember der Fuji zu sehen.",
+    why:"Der beste Aussichtspunkt der Stadt, und im Winter ist die Luft am klarsten. Sonnenuntergang gegen 16:30 — der Slot davor ist der begehrteste und muss vorab gebucht werden. <b>Für die Kinder:</b> es ist offen und hoch; wer Höhenangst hat, bleibt drinnen im verglasten Stockwerk darunter, von dort sieht man auch viel.",
+    meta:"1,5 Std. · Erw. ¥3.400 / Kind ¥1.200 (ab 15:00) · Familie ~¥9.200 · Slot vorab", maps:M("Shibuya Sky Tokyo")},
+   {id:"d9h", c:"essen", n:"Kaitenzushi — Sushi vom Band", tags:["kid"],
+    what:"Sushi-Restaurants, in denen man am Tablet bestellt und die Teller auf einem Band oder einem kleinen Shinkansen an den Platz gefahren kommen. Ketten wie Sushiro oder Kura Sushi gibt es überall.",
+    why:"Günstig, schnell, und jeder isst genau das, was er will. <b>Für die Kinder:</b> bei Kura Sushi wirft man die leeren Teller in einen Schlitz — nach fünf Tellern läuft ein Gewinnspiel auf dem Bildschirm. Das allein trägt einen ganzen Abend.",
+    meta:"1 Std. · ~¥1.500–2.500 p.P.", maps:M("Kura Sushi Shibuya")}
+  ]}
+ ]},
+
+/* ---------- 10 ---------- */
+{k:"月", dt:"Mo 21.12.", title:"Ghibli & Aussicht",
+ img:W("4/45/Ghibli_Museum_2024.JPG/1920px-Ghibli_Museum_2024.JPG"), cr:"Ghibli Museum Mitaka · Wikimedia Commons",
+ note:"Bewusst Montag: das Ghibli-Museum ist dienstags geschlossen, und ab dem 27.12. beginnt die Winterschließung. Ihr erwischt eines der letzten offenen Zeitfenster des Jahres.",
+ fix:[
+  {t:"Zeitfenster", b:"Ghibli Museum Mitaka", s:"Nur mit vorab gebuchtem Zeitfenster-Ticket · JR Chuo-Linie bis Mitaka, dann Bus oder 15 Min. zu Fuß am Fluss entlang"}
+ ],
+ slots:[
+  {h:"Vormittag", opts:[
+   {id:"d10a", c:"museum", n:"Ghibli Museum Mitaka", tags:["tip","kid"],
+    what:"Das Museum von Studio Ghibli, entworfen von Hayao Miyazaki selbst. Verwinkelt gebaut, mit Wendeltreppen, Brücken und Geheimgängen, einem nachgebauten Animationsstudio und einem kleinen Kino, in dem ausschließlich Kurzfilme laufen, die es sonst nirgends gibt. Auf dem Dach steht der Roboter aus „Das Schloss im Himmel“ in Originalgröße.",
+    why:"Fotografieren ist drinnen verboten — das klingt streng, sorgt aber dafür, dass alle wirklich schauen. Das Haus ist absichtlich so gebaut, dass Kinder Wege finden, die Erwachsene nicht nehmen können. <b>Für die Kinder:</b> es gibt einen begehbaren Katzenbus aus Plüsch (offiziell bis 12 Jahre — Kind 2 passt, Kind 1 gerade so). Die Kurzfilme laufen ohne Sprache und funktionieren auf Japanisch problemlos.",
+    meta:"2–2,5 Std. · Erw. ¥1.000 / Kind ¥400 · Familie ¥2.800 · Ticket 10.11. sichern", maps:M("Ghibli Museum Mitaka")},
+   {id:"d10b", c:"natur", n:"Inokashira-Park",
+    what:"Direkt neben dem Museum: ein großer Park um einen See, mit Ruder- und Schwanentretbooten, einem kleinen Schrein auf einer Insel und einem Zoo mit Streichelgehege.",
+    why:"Der Weg vom Bahnhof zum Museum führt ohnehin am Park entlang. <b>Für die Kinder:</b> Tretboot fahren nach dem Museum ist der perfekte Abschluss — und im Dezember ist wenig los. Warm anziehen, auf dem Wasser zieht es.",
+    meta:"1–1,5 Std. · Park gratis · Boot ~¥800/30 Min.", maps:M("Inokashira Park Tokyo")},
+   {id:"d10c", c:"viertel", n:"Kichijoji & Sun Road",
+    what:"Das Viertel um den Bahnhof Kichijoji, eine Station vor Mitaka: überdachte Einkaufsstraße, Straßenimbisse, viele kleine Läden. Gilt bei Tokiotern als das lebenswerteste Viertel der Stadt.",
+    why:"Es ist Tokio ohne Touristen. <b>Für die Kinder:</b> in der Sun Road gibt es die berühmten Menchi-Katsu-Fleischkrapfen, für die man kurz ansteht — das gehört dazu.",
+    meta:"1 Std. · gratis", maps:M("Kichijoji Sun Road Tokyo")}
+  ]},
+  {h:"Nachmittag & Abend", opts:[
+   {id:"d10d", c:"aussicht", n:"Shibuya Sky zum Sonnenuntergang", tags:["lux","tip"],
+    what:"Siehe gestern — falls ihr es auf heute legt: von Mitaka mit der Chuo-Linie 25 Minuten bis Shibuya.",
+    why:"Sonnenuntergang gegen 16:30. Wer das Ghibli-Museum am Vormittag hat, kommt zeitlich perfekt hin.",
+    meta:"1,5 Std. · Familie ~¥9.200 · Slot vorab", maps:M("Shibuya Sky Tokyo")},
+   {id:"d10e", c:"licht", n:"Blue Cave Shibuya", tags:["kid"],
+    what:"Eine Allee zwischen Shibuya und Yoyogi-Park, deren Bäume komplett in blaues Licht getaucht werden — der Weg wirkt wie ein Tunnel unter Wasser.",
+    why:"Nah an Shibuya Sky, kostenlos und in 20 Minuten erledigt. <b>Für die Kinder:</b> visuell der stärkste Weihnachtseffekt in Tokio. Termin 2026 noch nicht veröffentlicht, läuft aber seit Jahren im Dezember.",
+    meta:"30 Min. · gratis · Termin 2026 offen", maps:M("Ao no Dokutsu Shibuya")},
+   {id:"d10f", c:"kultur", n:"Karaoke-Box als Familie", tags:["kid"],
+    what:"Ein privater Raum für die Familie, stundenweise gemietet, mit Getränkeflatrate und Tamburinen. Ketten wie Big Echo oder Karaoke Kan haben deutsche und englische Titel im Katalog.",
+    why:"Nicht die öffentliche Bühne, die man aus Filmen kennt — ein eigener Raum, in dem euch niemand hört. <b>Für die Kinder:</b> das ist erfahrungsgemäß der Abend, über den zuhause am meisten erzählt wird. Nachmittags ist es deutlich billiger als abends.",
+    meta:"1–2 Std. · ~¥1.000–1.500 p.P. inkl. Getränke", maps:M("Karaoke Kan Shibuya")}
+  ]}
+ ]},
+
+/* ---------- 11 ---------- */
+{k:"火", dt:"Di 22.12.", title:"Alt-Tokio: Asakusa & Skytree",
+ img:W("4/43/Sensoji_2023.jpg/1920px-Sensoji_2023.jpg"), cr:"Sensō-ji Asakusa · Wikimedia Commons",
+ note:"Der Osten der Stadt, zu Fuß und mit kurzen Wegen. Dienstag gewählt, weil Ghibli und Miraikan heute zu haben — hier ist alles offen.",
+ fix:[],
+ slots:[
+  {h:"Vormittag", opts:[
+   {id:"d11a", c:"tempel", n:"Senso-ji & Nakamise-Straße", tags:["tip"],
+    what:"Tokios ältester Tempel, gegründet 645. Man betritt ihn durch das Kaminarimon-Tor mit der riesigen roten Papierlaterne, dann führt die 250 m lange Nakamise-Straße mit rund 90 kleinen Ständen zum Haupttempel.",
+    why:"Der komplette Kontrast zu Shibuya. <b>Für die Kinder:</b> drei Rituale zum Mitmachen — Räucherwerk am Kessel über den Kopf wedeln (soll gesund machen), Hände am Brunnen waschen, und ein Omikuji-Orakel ziehen: man schüttelt einen Zinnbehälter, zieht ein Stäbchen und bekommt sein Los. Bei einem schlechten Los bindet man den Zettel an ein Gestell und lässt das Unglück dort — das nehmen Kinder sehr ernst. Auf der Nakamise: frische Ningyo-yaki und Melonpan.",
+    meta:"2–3 Std. · gratis · Stände ab ca. 9:30", maps:M("Sensoji Temple Asakusa")},
+   {id:"d11b", c:"kultur", n:"Kimono- oder Yukata-Verleih",
+    what:"Rund um Senso-ji gibt es Dutzende Verleihe. Man wird eingekleidet, bekommt die Haare gemacht und gibt alles am Abend zurück.",
+    why:"In Kinosaki hattet ihr Yukata im Ryokan — hier geht es um die Fotos vor der Pagode. <b>Für die Kinder:</b> Kind 2 wird das lieben, Kind 1 vielleicht nicht. Vorher fragen, nicht überrumpeln. Vorab reservieren.",
+    meta:"2–3 Std. · ab ~¥3.000 p.P.", maps:M("kimono rental Asakusa")},
+   {id:"d11c", c:"viertel", n:"Kappabashi-Küchenstraße",
+    what:"Eine 800 m lange Straße, in der sich Läden für Gastronomiebedarf aneinanderreihen: Messer, Geschirr, Kochwerkzeug — und vor allem die täuschend echten Plastik-Speisemodelle, die in japanischen Schaufenstern stehen.",
+    why:"Skurril und sehr fotogen. <b>Für die Kinder:</b> in manchen Läden kann man in einem kurzen Workshop selbst ein Plastik-Tempura oder ein Wachs-Eis herstellen und mitnehmen — das ist ein echtes Souvenir. Vorab anmelden.",
+    meta:"1–1,5 Std. · gratis · Workshop ~¥2.500 p.P.", maps:M("Kappabashi Street Tokyo")}
+  ]},
+  {h:"Nachmittag", opts:[
+   {id:"d11d", c:"aussicht", n:"Tokyo Skytree", tags:["tip"],
+    what:"Mit 634 m der höchste Turm der Welt. Zwei Plattformen: das Tembo Deck auf 350 m mit einem Glasboden-Abschnitt, und das Tembo Galleria auf 450 m, eine spiralförmig ansteigende Glasröhre.",
+    why:"Bei klarer Winterluft ist der Fuji von hier gut zu sehen, oft besser als von Shibuya Sky. Online-Ticket spart Schlange und Geld. <b>Für die Kinder:</b> der Glasboden auf 350 m ist der Moment, auf den es ankommt. Wer nicht will, muss nicht drübergehen — er ist nur ein kleines Feld.",
+    meta:"2 Std. · Tembo Deck online Erw. ¥2.100 / Kind ¥850 · Familie ¥5.900", maps:M("Tokyo Skytree")},
+   {id:"d11e", c:"kids", n:"Kirby Café im Solamachi", tags:["kid"],
+    what:"Ein Themen-Café am Fuß des Skytree, komplett in Kirby-Rosa, mit Gerichten in Figurenform. Reservierung ist praktisch Pflicht.",
+    why:"Liegt direkt im Skytree-Komplex, also kein Umweg. <b>Ehrlich:</b> das Essen ist Nebensache, es geht um die Optik. Plätze online reservieren, sobald das Zeitfenster aufgeht.",
+    meta:"1 Std. · à la carte · Reservierung nötig", maps:M("Kirby Cafe Tokyo Solamachi")},
+   {id:"d11f", c:"kids", n:"Hanayashiki",
+    what:"Japans ältester Vergnügungspark, eröffnet 1853, mitten in Asakusa auf sehr kleiner Fläche. Die Achterbahn von 1953 fährt zwischen Häuserdächern hindurch.",
+    why:"Winzig, altmodisch und charmant — das Gegenteil von USJ. <b>Für die Kinder:</b> mit 9 und 11 ist es eher nostalgisch als aufregend, aber die Achterbahn durch die Nachbarschaft ist eine Erfahrung für sich.",
+    meta:"1,5 Std. · Eintritt ¥1.200 Erw. / ¥600 Kind + Fahrchips", maps:M("Asakusa Hanayashiki")},
+   {id:"d11g", c:"aktiv", n:"Wasserbus über den Sumida",
+    what:"Die Tokyo-Cruise-Boote fahren ab Asakusa flussabwärts Richtung Hamarikyu und Odaiba. Einige Schiffe sind futuristische Entwürfe des Manga-Zeichners Leiji Matsumoto.",
+    why:"Die Skyline vom Wasser, unter zwölf verschieden gefärbten Brücken hindurch. <b>Für die Kinder:</b> das Raumschiff-Boot „Himiko“ ist das Ziel — welches fährt, steht im Fahrplan.",
+    meta:"40–60 Min. · ~¥1.200–2.000 p.P. je Strecke", maps:M("Tokyo Cruise Asakusa Pier")}
+  ]},
+  {h:"Abend", opts:[
+   {id:"d11h", c:"essen", n:"Monjayaki in Tsukishima",
+    what:"Tokios eigene Antwort auf Okonomiyaki: ein flüssigerer Teig, den man auf der Tischplatte mit kleinen Metallspateln festbrät und direkt von der Platte isst. In Tsukishima gibt es eine ganze Straße davon.",
+    why:"Sehr lokal, sehr wenig touristisch. <b>Für die Kinder:</b> es ist Essen zum Selbermachen, mit Werkzeug, das man sonst nicht kennt. Das Personal zeigt die ersten Schritte.",
+    meta:"1,5 Std. · ~¥1.500–2.500 p.P.", maps:M("Tsukishima Monja Street Tokyo")},
+   {id:"d11i", c:"licht", n:"Skytree bei Nacht",
+    what:"Der Turm wechselt seine Beleuchtung täglich zwischen zwei Grundmustern in Blau und Violett, im Dezember kommen Sonderfarben dazu.",
+    why:"Falls ihr nachmittags nicht hochgefahren seid: von der Brücke am Sumida sieht man den Turm gespiegelt im Wasser. Kostet nichts.",
+    meta:"20 Min. · gratis", maps:M("Sumida Park Tokyo Skytree view")}
+  ]}
+ ]},
+
+/* ---------- 12 ---------- */
+{k:"水", dt:"Mi 23.12.", title:"Tokyo DisneySea",
+ img:W("b/b9/Mediterranean_Harbor_%28DisneySea%29_at_Night_-_Dec_2019.jpg/1920px-Mediterranean_Harbor_%28DisneySea%29_at_Night_-_Dec_2019.jpg"), cr:"DisneySea Mediterranean Harbor im Dezember · Wikimedia Commons",
+ note:"Ganzer Tag, ein Termin. Der Mittwoch ist bewusst gewählt: die japanischen Schulferien starten erst am 24./25.12., heute ist noch Schultag. Ticketverkauf öffnet exakt zwei Monate vorher — 23.10., 14:00 JST.",
+ fix:[
+  {t:"~08:00", b:"Anreise nach Maihama", s:"JR Keiyo-Linie ab Tokyo Station, 15 Min., dann Disney Resort Line · ab Shinjuku gesamt ~50 Min."},
+  {t:"bei Öffnung", b:"In der App die Standby Pass / DPA-Lage prüfen", s:"Die beliebtesten Attraktionen werden über die offizielle App gesteuert"}
+ ],
+ slots:[
+  {h:"Der Tag", hint:"was ihr nicht auslassen solltet", opts:[
+   {id:"d12a", c:"kids", n:"Fantasy Springs", tags:["tip","kid"],
+    what:"Der neueste und größte Bereich des Parks, eröffnet 2024: drei Welten nach „Frozen“, „Rapunzel“ und „Peter Pan“, jede mit eigener Hauptattraktion. Aufwendigste Themengestaltung, die Disney je gebaut hat.",
+    why:"Wenn ihr nur einen Bereich schafft, dann diesen. <b>Für die Kinder:</b> „Anna and Elsa's Frozen Journey“ ist eine ruhige Bootsfahrt mit erstaunlich guten Animatronics, „Peter Pan's Never Land Adventure“ arbeitet mit einer Art VR-Effekt ohne Brille. Der Zugang wird über die App gesteuert — direkt bei Parköffnung reingehen.",
+    meta:"3–4 Std. · im Ticket · Zugang über App", maps:M("Fantasy Springs Tokyo DisneySea")},
+   {id:"d12b", c:"aktiv", n:"Journey to the Center of the Earth & Mount Prometheus",
+    what:"Ein künstlicher Vulkan bildet die Mitte des Parks. Durch ihn hindurch fährt eine Achterbahn, die am Ende oben aus dem Krater schießt.",
+    why:"Die Signature-Attraktion von DisneySea. <b>Für die Kinder:</b> Mindestgröße 117 cm, beide passen. Es ist dunkel und der Schluss ist schnell — aber kurz.",
+    meta:"1 Std. inkl. Warten", maps:M("Journey to the Center of the Earth Tokyo DisneySea")},
+   {id:"d12c", c:"kultur", n:"Mediterranean Harbor & Venezianische Gondeln",
+    what:"Der Eingangsbereich ist als italienische Hafenstadt gebaut, mit einem echten Kanal, auf dem Gondoliere singend durch den Park rudern.",
+    why:"Selbst wer keine Achterbahn fährt, hat hier einen schönen Tag — die Kulisse ist wirklich außergewöhnlich. <b>Für die Kinder:</b> die Gondelfahrt ist ruhig, kurz und die Gondoliere machen Witze auf Englisch.",
+    meta:"1 Std. · im Ticket", maps:M("Mediterranean Harbor Tokyo DisneySea")},
+   {id:"d12d", c:"licht", n:"Weihnachtsprogramm & Abendshow", tags:["tip"],
+    what:"Das Weihnachtsprogramm läuft bis einschließlich 25.12.: Dekoration im ganzen Park, saisonale Shows und abends eine Wasser- und Lichtshow im Hafenbecken.",
+    why:"Der Park nach Einbruch der Dunkelheit ist der eigentliche Grund, bis zum Schluss zu bleiben — der Vulkan wird angestrahlt, der Hafen gespiegelt. <b>Für die Kinder:</b> es wird kalt und windig am Wasser. Decke oder Extrajacke einpacken, dann hält man die Show durch.",
+    meta:"bis Parkschluss · im Ticket · Showplan 2026 noch offen", maps:M("Tokyo DisneySea")},
+   {id:"d12e", c:"aktiv", n:"Disney Premier Access dazubuchen", tags:["lux"],
+    what:"In der App lassen sich einzelne Attraktionen gegen Aufpreis mit garantiertem Zeitfenster buchen — pro Person und pro Attraktion.",
+    why:"An einem Dezember-Mittwoch braucht ihr das vermutlich nicht flächendeckend. <b>Sinnvoll gezielt:</b> ein einziger Premier Access für eine Fantasy-Springs-Attraktion, falls die App am Morgen schon ausgebucht meldet. Das ist die Ausgabe, die einen Tag rettet.",
+    meta:"~¥1.500–2.500 p.P. und Attraktion · nur in der App", maps:M("Tokyo DisneySea")}
+  ]},
+  {h:"Wenn DisneySea nicht passt", hint:"Alternative für den ganzen Tag", opts:[
+   {id:"d12f", c:"kids", n:"Tokyo Disneyland statt DisneySea",
+    what:"Der klassische Park nebenan, mit Cinderella-Schloss, Parade und den bekannten Fahrgeschäften.",
+    why:"Vertrauter und etwas jünger im Zuschnitt. <b>Ehrlich:</b> DisneySea ist der originellere Park und gibt es nur in Tokio — Disneyland ähnelt Paris. Mit 9 und 11 würde ich bei DisneySea bleiben.",
+    meta:"ganzer Tag · ~¥32.000 Familie", maps:M("Tokyo Disneyland")},
+   {id:"d12g", c:"kids", n:"KidZania Tokyo",
+    what:"Eine Stadt im Maßstab für Kinder, in der sie in rund 100 Berufen arbeiten: Pilotin, Feuerwehr, Sushi-Koch, Nachrichtensprecher. Bezahlt wird in einer eigenen Währung.",
+    why:"Ein völlig anderes Konzept als ein Freizeitpark. <b>Für die Kinder:</b> 9 und 11 ist die ideale Altersspanne. Die englischsprachigen Zeitfenster sind begrenzt — vorher prüfen und reservieren.",
+    meta:"halber Tag · Slot-Preise online · Reservierung nötig", maps:M("KidZania Tokyo Toyosu")}
+  ]}
+ ]},
+
+/* ---------- 13 ---------- */
+{k:"木", dt:"Do 24.12.", title:"Odaiba & Heiligabend",
+ img:W("4/4a/Odaiba_close_up_-_2025_Jan_14_01-27PM.jpeg/1920px-Odaiba_close_up_-_2025_Jan_14_01-27PM.jpeg"), cr:"Odaiba · Wikimedia Commons",
+ note:"Alles heute liegt auf einer Linie: Toyosu und Odaiba, verbunden durch die fahrerlose Yurikamome-Hochbahn. Miraikan ist dienstags zu — deshalb liegt es hier. Abends dann Heiligabend, so wie ihr ihn haben wollt: Gottesdienst, Essen, Illuminationen oder Christmas Cake im Hotelzimmer.",
+ fix:[
+  {t:"Zeitfenster", b:"teamLab Planets Toyosu", s:"Slot vorab buchen · hochkrempelbare Hosen anziehen, man geht barfuß durch Wasser"}
+ ],
+ slots:[
+  {h:"Vormittag", opts:[
+   {id:"d13a", c:"museum", n:"Miraikan — Museum der Zukunft", tags:["tip","kid"],
+    what:"Japans nationales Wissenschaftsmuseum. Im Zentrum hängt der „Geo-Cosmos“, eine sechs Meter große Kugel aus über zehntausend OLED-Panels, die die Erde in Echtzeit zeigt. Dazu Robotik — darunter der humanoide Roboter ASIMO —, Raumfahrt und ein begehbares Modell einer Raumstation.",
+    why:"Eines der besten Wissenschaftsmuseen weltweit und fast alles ist zum Anfassen. <b>Für die Kinder:</b> mit 9 und 11 sind sie genau in der Zielgruppe. Fast alle Stationen sind zweisprachig, und es gibt englischsprachige Erklär-Guides. Rechnet mit drei Stunden.",
+    meta:"3 Std. · Erw. ~¥630 / bis 18 J. ~¥210 · Familie ~¥1.700 · Di geschlossen", maps:M("Miraikan Odaiba Tokyo")},
+   {id:"d13b", c:"kids", n:"Unicorn Gundam Statue",
+    what:"Vor dem Einkaufszentrum DiverCity steht eine 20 m hohe Gundam-Statue. Mehrmals täglich fährt sie zu einer Musik- und Lichtinszenierung ihre Panzerung aus und wechselt in den „Destroy Mode“.",
+    why:"Kostet nichts, dauert fünf Minuten, und die Verwandlung ist absurd beeindruckend. <b>Für die Kinder:</b> Zeiten vorher checken, sonst steht man vor einem stillen Riesen. Im Gebäude ist eine Gundam-Ausstellung mit Modellbau-Werkstatt.",
+    meta:"45 Min. · gratis", maps:M("Unicorn Gundam Statue Odaiba")}
+  ]},
+  {h:"Nachmittag", opts:[
+   {id:"d13c", c:"kids", n:"teamLab Planets Toyosu", tags:["tip","kid"],
+    what:"Kein Museum, sondern eine Folge begehbarer digitaler Räume. Man zieht Schuhe und Socken aus und geht barfuß: durch knietiefes warmes Wasser, in dem projizierte Koi schwimmen und zu Blüten zerplatzen, wenn man sie berührt; über einen weichen Boden, in dem man einsinkt; in einen Raum voller schwebender Orchideen; in einen Spiegelraum ohne erkennbare Grenzen.",
+    why:"Der Wow-Moment der Reise, und der einzige Ort, an dem Erwachsene und Kinder exakt dasselbe erleben. <b>Für die Kinder:</b> es gibt nichts zu verstehen, nur zu machen — anfassen ist ausdrücklich erwünscht. <b>Praktisch:</b> Hosen bis übers Knie hochkrempelbar anziehen (Leihshorts gibt es), Röcke sind wegen der Spiegelböden ungeeignet, Schließfächer sind vorhanden. Zeitfenster ist Pflicht.",
+    meta:"2 Std. · Erw. ab ¥3.800 / Kind ¥1.500 · Familie ~¥10.600 · Slot vorab", maps:M("teamLab Planets Toyosu")},
+   {id:"d13d", c:"kids", n:"Small Worlds Ariake", tags:["rain"],
+    what:"Eines der größten Miniaturmuseen der Welt: Sailor-Moon-Tokio, Evangelion-Hangars und ein Raumbahnhof im Maßstab 1:80, alles beweglich und mit Tag-Nacht-Wechsel.",
+    why:"Liegt zwischen teamLab und Odaiba. <b>Für die Kinder:</b> man kann sich für ~¥6.000 als Miniaturfigur scannen lassen und wird dauerhaft in einer der Welten aufgestellt — kitschig und ein sehr gutes Souvenir.",
+    meta:"2 Std. · Erw. ~¥2.700 / Kind ~¥1.900", maps:M("Small Worlds Tokyo Ariake")},
+   {id:"d13e", c:"aussicht", n:"Odaiba Seaside Park & Regenbogenbrücke",
+    what:"Ein Sandstrand mit Blick auf die Skyline, die Rainbow Bridge und eine verkleinerte Freiheitsstatue. Die Brücke wird abends beleuchtet.",
+    why:"Kostenlos, und die Aussicht auf Tokio über das Wasser ist einer der besten Blicke der Stadt. <b>Für die Kinder:</b> Steine ins Wasser werfen funktioniert überall auf der Welt.",
+    meta:"1 Std. · gratis", maps:M("Odaiba Seaside Park Tokyo")}
+  ]},
+  {h:"Heiligabend", hint:"euer Abend — hier darf auch mehreres zusammen", opts:[
+   {id:"d13f", c:"essen", n:"Weihnachtsessen im Restaurant reservieren", tags:["lux","tip"],
+    what:"Heiligabend ist in Japan kein Familien-, sondern ein Pärchenabend — Restaurants sind voll und bieten Sondermenüs. Reservierung ist deshalb nötig, nicht optional.",
+    why:"Wenn ihr einen richtigen Weihnachtsabend wollt, ist das die Ausgabe, die sich lohnt. <b>Vorschlag:</b> ein Teppanyaki-Restaurant, bei dem der Koch am Tisch kocht — das ist Essen und Show zugleich und funktioniert mit Kindern deutlich besser als ein stilles Menü.",
+    meta:"2 Std. · ~¥6.000–15.000 p.P. · unbedingt reservieren", maps:M("teppanyaki restaurant Shinjuku Tokyo")},
+   {id:"d13g", c:"essen", n:"Christmas Cake & KFC — der japanische Heiligabend", tags:["kid"],
+    what:"In Japan isst man am 24.12. Erdbeer-Sahne-Torte und, dank einer Werbekampagne von 1974, Hähnchen von KFC. Beides muss man vorbestellen, sonst bekommt man nichts.",
+    why:"Es ist albern und es ist echt — genau das, was eine Familie Jahre später noch erzählt. <b>Für die Kinder:</b> die Torte im Hotelzimmer, Geschenke daneben, und draußen leuchtet Tokio. Christmas Cake gibt es in jeder Konditorei und in jedem Konbini, ab ca. 20.12. vorbestellen.",
+    meta:"Abend im Hotel · Torte ~¥4.000–6.000", maps:M("Christmas cake Tokyo department store")},
+   {id:"d13i", c:"kultur", n:"Christvesper auf Deutsch — Kreuzkirche Tokyo", tags:["tip"],
+    what:"Die Evangelische Gemeinde Deutscher Sprache Tokyo–Yokohama hat eine eigene Kirche in Shinagawa: Kita-Shinagawa 6-5-26, 141-0001 Tokyo. Gottesdienste sind auf Deutsch, sonntags um 10:30 Uhr.",
+    why:"Wenn Heiligabend für euch zur Christvesper gehört, ist das die einzige deutschsprachige Möglichkeit in Tokio — und für die Kinder nach zwölf Tagen Japanisch und Englisch ein vertrauter Anker. <b>Wichtig:</b> Die Zeiten für Heiligabend 2026 sind noch nicht veröffentlicht. Im Advent auf kreuzkirche-tokyo.jp nachsehen oder vorher schreiben an pfarramt@kreuzkirche-tokyo.jp, Tel. +81 3 3441 0673.",
+    meta:"1–1,5 Std. · Termin 2026 noch offen · Shinagawa", maps:M("Kreuzkirche Tokyo Kita-Shinagawa 6-5-26 Shinagawa")},
+   {id:"d13j", c:"kultur", n:"Candlelight Service auf Englisch — St. Paul International Lutheran",
+    what:"Lutherische Gemeinde im Tokyo Lutheran Center, 1-2-32 Fujimi, Chiyoda-ku, 102-0071 — angeschlossen an die Japanische Lutherische Kirche (NRK). 2025 gab es am 24.12. um 19:00 Uhr einen „Christmas Eve Candlelight Service“ mit Musik, Gebeten und Weihnachtslesungen, zweisprachig Japanisch und Englisch.",
+    why:"Deutlich zentraler als die Kreuzkirche und sehr gut zu erreichen: JR Iidabashi 2–3 Min., die U-Bahnhöfe Iidabashi und Kudanshita je 3 Min. Ein Kerzenschein-Gottesdienst mit Musik trägt auch, wenn man der Sprache nur halb folgt. <b>Wichtig:</b> 19:00 Uhr ist der Termin von 2025 — für 2026 vorher auf spilchurchtokyo.org prüfen.",
+    meta:"1 Std. · 2025 um 19:00 Uhr · Iidabashi", maps:M("St. Paul International Lutheran Church Tokyo Lutheran Center Fujimi Chiyoda")},
+   {id:"d13h", c:"licht", n:"Illuminationen an einem Abend abklappern",
+    what:"Die drei stärksten in Tokio: Marunouchi (champagnerfarbene Allee am Hauptbahnhof), Roppongi Hills Keyakizaka (blaue Allee mit Tokyo Tower im Hintergrund) und Shibuyas Blue Cave.",
+    why:"Kostenlos, draußen, und am 24. sind sie am aufwendigsten bespielt. <b>Für die Kinder:</b> Roppongi Keyakizaka ist der beste Fotospot der Stadt — die Straße fällt ab und der rot leuchtende Tokyo Tower steht genau am Ende.",
+    meta:"2 Std. · gratis", maps:M("Roppongi Hills Keyakizaka Illumination")}
+  ]}
+ ]},
+
+/* ---------- 14 ---------- */
+{k:"金", dt:"Fr 25.12.", title:"Zurück nach Osaka",
+ img:W("f/f4/Osaka_Dotonbori_Ebisu_Bridge.jpg/1920px-Osaka_Dotonbori_Ebisu_Bridge.jpg"), cr:"Dotonbori · Wikimedia Commons",
+ note:"Vormittags noch Tokio, nachmittags Shinkansen, abends letzter Abend in Osaka. Sitzplätze für diesen Zug ab 25.11. reservieren — der 25.12. ist ein Freitag kurz vor der Neujahrswelle.",
+ fix:[
+  {t:"~11:00", b:"Check-out Tokio", s:"Gepäck kann bis nachmittags im Hotel bleiben"},
+  {t:"~14:00", b:"Nozomi Tokio → Shin-Osaka", s:"2 Std. 30 Min. · ¥14.720 Erw. res. / ¥7.360 Kind · Familie ¥44.160"},
+  {t:"~17:00", b:"Check-in Osaka, Namba", s:"Nah an der Nankai-Linie — morgen früh geht es zeitig zum Flughafen"}
+ ],
+ slots:[
+  {h:"Letzter Vormittag in Tokio", opts:[
+   {id:"d14a", c:"shopping", n:"Don Quijote Souvenir-Run", tags:["tip"],
+    what:"Der letzte Einkauf: KitKat-Sondersorten, Snacks, Kosmetik, alberne Mitbringsel. Es gibt Filialen in Shinjuku, Shibuya und Asakusa.",
+    why:"Effizient und an einem Ort. <b>Tipp:</b> vorher prüfen, ob alles in die Koffer passt — sonst kauft man dort gleich eine Zusatztasche. Ab ¥5.000 gibt es gegen Pass tax-free.",
+    meta:"1–1,5 Std.", maps:M("Don Quijote Shinjuku")},
+   {id:"d14b", c:"natur", n:"Ueno-Park & Nationalmuseum",
+    what:"Ein großer Park mit mehreren Museen, einem Zoo und einem Teich. Das Tokyo National Museum zeigt Samurai-Rüstungen, Schwerter und Kimonos.",
+    why:"Liegt am Weg, wenn ihr über Ueno fahrt. <b>Für die Kinder:</b> die Schwerter- und Rüstungshalle ist überschaubar und beeindruckend, man braucht keine Stunde dafür.",
+    meta:"2 Std. · Museum Erw. ¥1.000, unter 18 frei", maps:M("Ueno Park Tokyo")},
+   {id:"d14c", c:"essen", n:"Depachika — Feinkostkeller",
+    what:"In den Untergeschossen der großen Kaufhäuser liegen riesige Lebensmittelabteilungen mit hunderten Ständen, jeder auf eine Sache spezialisiert.",
+    why:"Der beste Ort für das Zug-Picknick. <b>Für die Kinder:</b> jeder sucht sich seine eigene Box aus, dann isst man sie im Shinkansen — das ist die schönste Art, diese Fahrt zu verbringen.",
+    meta:"1 Std. · nach Appetit", maps:M("Isetan Shinjuku depachika")}
+  ]},
+  {h:"Letzter Abend in Osaka", opts:[
+   {id:"d14d", c:"licht", n:"Dotonbori & Midosuji noch einmal", tags:["tip"],
+    what:"Zurück an den Ort, an dem die Reise angefangen hat — nur diesmal ohne Jetlag und mit zwei Wochen Japan im Rücken.",
+    why:"Der Kreis schließt sich, und die Kinder erkennen alles wieder. Die Illuminationen laufen noch. <b>Für die Kinder:</b> das ist der Abend für die Frage, was das Beste war — jeder nennt drei Sachen.",
+    meta:"1,5 Std. · gratis", maps:M("Dotonbori Osaka")},
+   {id:"d14e", c:"essen", n:"Abschiedsessen: das Beste wiederholen",
+    what:"Okonomiyaki, Kushikatsu, Sushi vom Band oder Ramen — was in den zwei Wochen am besten ankam.",
+    why:"Nichts Neues mehr ausprobieren am letzten Abend. Das, was allen geschmeckt hat, noch einmal.",
+    meta:"1,5 Std.", maps:M("Dotonbori restaurants Osaka")},
+   {id:"d14f", c:"transfer", n:"Koffer packen und früh ins Bett",
+    what:"Morgen klingelt der Wecker um sechs.",
+    why:"Souvenir-Inventur, Handgepäck sortieren, Reisepässe und QR-Codes bereitlegen. <b>Wichtig:</b> AirAsia hat 20 kg pro Person aufgegeben und nur 5 kg Handgepäck — das ist wenig. Vor dem Packen einmal wiegen.",
+    meta:"1 Std. · im Hotel", maps:M("Namba Station Osaka")}
+  ]}
+ ]},
+
+/* ---------- 15 ---------- */
+{k:"土", dt:"Sa 26.12.", title:"Rückflug",
+ img:W("5/56/%E9%96%A2%E8%A5%BF%E5%9B%BD%E9%9A%9B%E7%A9%BA%E6%B8%AF%E5%85%A8%E4%BD%93%E5%86%99%E7%9C%9F20220811.jpg/1920px-%E9%96%A2%E8%A5%BF%E5%9B%BD%E9%9A%9B%E7%A9%BA%E6%B8%AF%E5%85%A8%E4%BD%93%E5%86%99%E7%9C%9F20220811.jpg"), cr:"Kansai International Airport · Wikimedia Commons",
+ note:"Früher Start. Abflug 10:55 heißt Check-in-Schluss 09:55 — plant, um 08:30 am Flughafen zu sein.",
+ fix:[
+  {t:"06:15", b:"Aufstehen, Check-out", s:"Gepäck am Vorabend fertig gepackt"},
+  {t:"07:15", b:"Nankai Airport Express ab Namba", s:"45 Min. · ¥970 Erw. / ¥490 Kind · alternativ Rapi:t 07:30 → 08:07"},
+  {t:"08:30", b:"Am Flughafen", s:"AirAsia Check-in Terminal 1 · Tax-Free-Formalitäten vor der Sicherheitskontrolle erledigen"},
+  {t:"10:55", b:"Abflug KIX → KUL", s:"AirAsia X D7533 · 7 Std. 25 Min. · Ankunft KUL 17:20"}
+ ],
+ slots:[
+  {h:"Am Flughafen", hint:"falls Zeit bleibt", opts:[
+   {id:"d15a", c:"shopping", n:"Letzte Souvenirs im Terminal",
+    what:"KIX Terminal 1 hat eine große Auswahl an Kansai-Spezialitäten: Osaka-Kekse, Kobe-Süßigkeiten, Matcha-Produkte.",
+    why:"Für alles, was zuhause noch verteilt werden muss. <b>Praktisch:</b> hier gibt es die haltbaren Sachen, die im Koffer nicht kaputtgehen.",
+    meta:"30 Min.", maps:M("Kansai International Airport Terminal 1 shops")},
+   {id:"d15b", c:"essen", n:"Letztes japanisches Frühstück",
+    what:"Im Terminal gibt es Udon, Onigiri und Kaffee — meist ab 6 Uhr geöffnet.",
+    why:"Um halb sieben aus dem Hotel heißt: Frühstück fällt aus. Am Flughafen holt man es nach. <b>Für die Kinder:</b> eine warme Udon-Schale vor einem 7-Stunden-Flug ist eine gute Idee.",
+    meta:"30 Min. · ~¥800–1.200 p.P.", maps:M("Kansai International Airport restaurants")}
+  ]}
+ ]}
+];
+
+/* ================= CHECKLISTE ================= */
+const CHECKS = [
+ {g:"Sofort — je früher, desto besser", items:[
+  {id:"c1", t:"Ryokan Kinosaki für 17.–19.12. — direkt anfragen, nicht über Portale", s:"Der knappste Posten der Reise, und ihr seid spät dran: Kinosaki-Ryokan öffnen Buchungen üblicherweise 4 bis 6 Monate im Voraus, das Fenster für Dezember ist also seit dem Sommer offen. Eine Testabfrage über das offizielle Ortsportal lieferte für den 17.12. keine Verfügbarkeit — ob ausgebucht oder eine Grenze des Portals, ist offen. Deshalb: mehrere Häuser parallel per E-Mail oder Telefon anfragen. Kandidaten stehen im Reiter Infos.", due:"sofort", hard:1},
+  {id:"c1b", t:"Bei der Ryokan-Anfrage diese vier Dinge mitschreiben", s:"1. Familienzimmer für 4 in einem Raum. 2. Kindermenü für beide Kinder statt Krabben-Kaiseki — kommt nicht automatisch. 3. Altersgrenze prüfen: mehrere Häuser nehmen unter 10 oder unter 12 Jahren niemanden auf. 4. Abholung am Bahnhof, und bis wann der Shuttle fährt.", due:"sofort", hard:1},
+  {id:"c2", t:"Hotel Osaka für 12.–17.12. buchen", s:"Namba oder Nipponbashi, max. 5 Gehminuten zur Station. Kandidaten mit Links stehen im Reiter Infos. Immer vier Personen angeben, nicht zwei Erwachsene. Mit kostenloser Stornierung buchen, dann kann man später noch tauschen.", due:"jetzt", hard:1},
+  {id:"c3", t:"Hotel Tokio für 19.–25.12. buchen", s:"Shinjuku empfohlen, Ueno als günstigere Alternative — kostet aber am Ghibli-Tag rund 46 Minuten extra. Kandidaten im Reiter Infos. Weihnachtswoche, je früher desto besser.", due:"jetzt", hard:1},
+  {id:"c4", t:"Hotel Osaka für die Abreisenacht 25.–26.12.", s:"Unbedingt an der Nankai-Linie. Wenn dasselbe Haus wie im ersten Block: schriftlich bestätigen lassen, dass ein Koffer die zwölf Tage dazwischen bleiben darf — das ist kein Standardservice. Und prüfen, ob das Haus Einzelnächte annimmt.", due:"jetzt", hard:1},
+  {id:"c5", t:"Flugstatus prüfen", s:"Die Buchung stand zuletzt auf „Bestätigung ausstehend“ (Booking.com, Referenz [privat]). Nachhaken, falls noch keine Bestätigungsmail kam.", due:"jetzt", hard:1}
+ ]},
+ {g:"Oktober", items:[
+  {id:"c6", t:"USJ-Tickets für Mo 14.12.", s:"Verkauf läuft ca. 2–3 Monate im Voraus, Preise sind datumsabhängig. Beide Kinder zählen noch als Kind (4–11 J.). Express Pass nur, wenn ihr auf Nummer sicher gehen wollt — muss zusammen mit dem Eintritt gebucht werden.", due:"Mitte Okt."},
+  {id:"c7", t:"Tokyo DisneySea für Mi 23.12.", s:"Verkauf startet exakt zwei Monate vorher: 23.10., 14:00 JST = 13:00 Uhr KL-Zeit. Vorher einen Account anlegen und eingeloggt bereitstehen.", due:"23.10., 13:00 KL", hard:1},
+  {id:"c8", t:"teamLab Planets Zeitslot für Do 24.12.", s:"Tickets erscheinen ca. zwei Monate vorher. Nachmittagsslot wählen, dann passt Miraikan davor.", due:"Ende Okt."}
+ ]},
+ {g:"November — die harten Termine", items:[
+  {id:"c9", t:"Ghibli Museum für Mo 21.12.", s:"Verkauf über Lawson Ticket am 10. des Vormonats, 10:00 JST = 09:00 Uhr KL-Zeit. Dezember-Termine sind schnell weg. Lawson-Account vorher anlegen, mehrere Geräte gleichzeitig bereithalten.", due:"10.11., 09:00 KL", hard:1},
+  {id:"c10", t:"Kounotori Sitzplätze für Do 17.12.", s:"Reservierung öffnet einen Monat vorher, 10:00 JST. Vier Plätze zusammen mit Gepäckablage.", due:"ab 17.11."},
+  {id:"c11", t:"Kinosaki→Kyoto und Nozomi Kyoto→Tokio für Sa 19.12.", s:"Beide Reservierungen am selben Tag machen, mit genug Umsteigezeit in Kyoto.", due:"ab 19.11."},
+  {id:"c12", t:"Tokyo Skytree für Di 22.12.", s:"Online 30 Tage vorher, günstiger als vor Ort und ohne Schlange.", due:"ab 24.11."},
+  {id:"c13", t:"Nozomi Tokio→Shin-Osaka für Fr 25.12.", s:"Der wichtigste Zug der Reise: Freitag kurz vor der Neujahrswelle. Nachmittagsabfahrt, vier Plätze zusammen.", due:"ab 25.11.", hard:1},
+  {id:"c14", t:"Shibuya Sky Zeitslot", s:"Sonnenuntergangs-Slots gehen zuerst weg. Ca. vier Wochen vorher buchen.", due:"ab Ende Nov."},
+  {id:"c15", t:"Kansai WIDE Area Pass prüfen", s:"¥12.000 Erw. / ¥6.000 Kind für 5 aufeinanderfolgende Tage, deckt Nara, Kyoto und Kinosaki. Rechnet sich knapp — durchrechnen, sobald die Route final steht.", due:"Nov."}
+ ]},
+ {g:"Dezember — kurz vorher", items:[
+  {id:"c16", t:"Kaiyukan und Miraikan online", s:"Beide unkritisch, aber online spart Anstehen.", due:"Anfang Dez."},
+  {id:"c17", t:"Restaurant für Heiligabend reservieren", s:"Der 24.12. ist in Japan ein Pärchenabend — Restaurants sind ausgebucht. Alternativ Christmas Cake und KFC vorbestellen (geht ab ca. 20.12.).", due:"Anfang Dez."},
+  {id:"c18", t:"Visit Japan Web für alle vier ausfüllen", s:"Einreise- und Zoll-QR-Codes vorab erstellen. Spart am 12.12. abends viel Zeit an der Immigration.", due:"vor Abflug", hard:1},
+  {id:"c19", t:"Suica in Apple Wallet + eSIM", s:"Suica lässt sich direkt im iPhone anlegen und aufladen — für vier Personen je eine. Datenlösung für die Geräte klären.", due:"vor Abflug"},
+  {id:"c20", t:"Reisepässe prüfen und Gepäck wiegen", s:"AirAsia: 20 kg aufgegeben und nur 5 kg Handgepäck pro Person. Souvenirs einkalkulieren.", due:"vor Abflug"}
+ ]}
+];
+
+/* ================= INFOS ================= */
+const HOTELS = [
+ {name:"Osaka — Block 1", nights:"5 Nächte · Sa 12.12. → Do 17.12.",
+  lage:"Namba / Nipponbashi / Shinsaibashi",
+  warum:"Nankai-Linie direkt zum Flughafen (Ankunft und Abreise), Midosuji-U-Bahn nach Umeda, Chuo- und Yotsubashi-Linie zum Aquarium, JR-Loop nach USJ. Dotonbori und Kuromon-Markt zu Fuß.",
+  typ:"Apartment-Hotel, ein Vierbett-Raum mit Küchenzeile und Waschmaschine",
+  krit:"max. 5 Gehminuten zu Namba, Nipponbashi oder Shinsaibashi Station",
+  budget:"¥18.000–29.000 pro Nacht · ~¥90.000–145.000 gesamt",
+  alt:"Umeda / Osaka Station, wenn ihr mehr Tagesausflüge wollt — größerer Bahnknoten, ruhiger, aber weiter zum Flughafen",
+  kand:[
+   {n:"&Here OSAKA NAMBA", m:"Nankai Namba 3 Min. · 38 m², 4 Betten", w:"Kürzester belegter Weg zum Nankai-Bahnhof im ganzen Feld. Haken: Inside Osaka nennt ausdrücklich dünne Wände, und ob das Familienzimmer eine Küchenzeile hat, ist widersprüchlich belegt — vorher fragen.", u:"https://andherehotels-osakanamba.com/en/"},
+   {n:"Fraser Residence Nankai Osaka", m:"Namba 2–3 Min. · Küche + Waschtrockner in jeder Einheit", w:"Erfüllt eure Ausstattungswünsche am vollständigsten und liegt praktisch am Bahnhof. Haken: die Zwei-Zimmer-Varianten trennen euch auf zwei Räume — gezielt nach einer Ein-Schlafzimmer-Variante mit Sofabett fragen.", u:"https://www.frasershospitality.com/en/japan/osaka/fraser-residence-nankai-osaka/"},
+   {n:"Mercure Tokyu Stay Osaka Namba", m:"Namba (Metro) 5 Min. · Privilege Family Room 41 m²", w:"Bester Kompromiss aus Ausstattung und Preis: Küchenzeile und Waschmaschine im Zimmer. Haken: ein Queensize-Bett plus Zustellbetten statt vier echter Betten, und der Weg zum Nankai-Terminal ist nicht belegt.", u:"https://www.mercure-tokyustay-osaka.com/our-rooms/privilege-family-room/"},
+   {n:"Citadines Namba Osaka", m:"Nipponbashi 5 Min., Namba 8–10 Min. · Family Room 28 m²", w:"Preislich der beste Treffer im Apartment-Segment, das Haus ist ein eingetragenes Kulturdenkmal. Haken: 28 m² für vier sind eng, und der Weg nach Namba reißt euer 5-Minuten-Limit.", u:"https://www.discoverasr.com/en/citadines/japan/citadines-namba-osaka"},
+   {n:"MIMARU Osaka Namba Station", m:"Nankai Namba 4 Min. · 35–41 m²", w:"Genau der Apartment-Zuschnitt, den ihr sucht, in perfekter Lage. Haken: Tripadvisor nennt 279–464 USD pro Nacht — rund doppelt so teuer wie euer Korridor. Waschmaschine nur als Münzwäscherei.", u:"https://mimaruhotels.com/en/hotel/namba-station/"},
+   {n:"MIMARU Namba Station Annex", m:"Nankai Namba 5 Min. · bis 45 m², 4 Einzelbetten", w:"Eröffnet am 1.10.2026, also zwei Monate vor eurer Reise, und hat als einziges MIMARU einen Waschtrockner im Zimmer. Haken: Preis völlig unbekannt, bei einem Neubau eher MIMARU-Niveau.", u:"https://mimaruhotels.com/en/hotel/namba-station-annex/"},
+   {n:"WELLSTAY Namba", m:"Nankai Namba 7 Min. · echte Vierbettzimmer · Waschmaschine gratis", w:"Mit Abstand am günstigsten, hier bleibt Budget für anderes. Haken: 7 Minuten reißen euer Limit, die Ausstattung ist hostelnah, Zimmergrößen nirgends belegt.", u:"https://well-stay.com/en/namba/"}
+  ]},
+ {name:"Kinosaki Onsen", nights:"2 Nächte · Do 17.12. → Sa 19.12.",
+  lage:"Ortskern Kinosaki, Gehweite vom Bahnhof",
+  warum:"Der ganze Ort ist zu Fuß machbar; viele Ryokan holen am Bahnhof ab. Als Ryokan-Gast ist der Yumepa für alle sechs offenen Badehäuser kostenlos.",
+  typ:"Klassisches Ryokan mit Halbpension, Familienzimmer, eigenes Bad im Haus",
+  krit:"Familienzimmer für 4 · Kindermenü ausdrücklich mitbestellen · Bahnhofsabholung erfragen",
+  budget:"¥15.000–25.000 p.P./Nacht in der Krabbensaison · ~¥55.000–85.000 pro Nacht für vier",
+  alt:"Einfacheres Minshuku ab ~¥10.000 p.P. mit Halbpension · oder nur an einem Abend volles Krabben-Kaiseki, am zweiten Tajima-Rind",
+  warn:"Mehrere gute Häuser nehmen Kind 2 mit 9 Jahren nicht auf: Nishimuraya Honkan hat ein Mindestalter von 10, Sensui und Tsuchiya von 12 Jahren. Die Kandidaten unten sind auf diese Altersgrenzen geprüft.",
+  kand:[
+   {n:"Kinsui (錦水)", m:"Bahnhof 6 Min. · Familienzimmer 1–4 Pers. · 3 Vermietbäder", w:"Das einzige Haus, dessen Familienzimmer nachweislich für Kinder gebaut wurde — Bilderbuchwelt, Kletterbank, Lesecke. Kindermenü belegt. Haken: kein großes eigenes Gemeinschaftsbad, ihr seid auf die Außenbäder angewiesen.", u:"https://visitkinosaki.com/stay/kinsui/"},
+   {n:"Nishimuraya Hotel Shogetsutei", m:"Shuttle ab Bahnhof 5 Min. · Zimmer 1–4 Pers. · große Bäder + private Familienbäder", w:"Das einzige Haus mit schriftlich dokumentierten Kinderpreisen, die exakt auf eure beiden passen: 10–12 Jahre 70 %, 6–9 Jahre 50 % inklusive Kindermenü. Haken: liegt außerhalb des Ortskerns, der Yukata-Bummel durch die Altstadt fällt weg, und der Shuttle fährt nur bis 18 Uhr.", u:"https://visitkinosaki.com/stay/nishimuraya_hotel_shogetsutei/"},
+   {n:"Mikuniya (三國屋)", m:"Bahnhof 3 Min. · japanische Zimmer 1–4 Pers. · 3 Privatbäder gratis", w:"Löst euer Kernproblem: Kinder bekommen zum Abendessen einen westlichen Kinderteller statt Krabben-Kaiseki. Kürzester Weg vom Bahnhof. Haken: nur gut ein Dutzend Zimmer, kein großes eigenes Bad, und es gibt eine Adults-only-Kategorie — nicht versehentlich buchen.", u:"https://kinosaki3928.com/en/"},
+   {n:"Morizuya (森津屋)", m:"Bahnhof 10 Min. + Shuttle · ausgewiesenes 4-Personen-Zimmer · Felsenbad", w:"Das einzige Haus mit einem als solchem benannten Vierpersonenzimmer, dazu ein aus dem Fels geschlagenes Freiluftbad. Haken: nur 12 Zimmer, Abendessen im Restaurant statt im Zimmer, und Check-in nur bis 17 Uhr — das kann mit einem späten Kounotori kollidieren.", u:"https://www.kinosaki-web.com/en/yado/index.php?mode=yado_detail&YadoNo=76"},
+   {n:"Sennen no Yu Koman (古まん)", m:"Zimmer 2–5 Pers. · eigenes Onsen + Familienbad · ab ¥12.100 p.P. mit HP", w:"Bestes belegtes Preis-Leistungs-Verhältnis und das älteste Gasthaus des Ortes, gegründet 717. Haken: ausgerechnet Kindermenü und Gehweg vom Bahnhof sind nicht dokumentiert — beides erfragen.", u:"https://www.sennennoyu-koman.com/"}
+  ]},
+ {name:"Tokio", nights:"6 Nächte · Sa 19.12. → Fr 25.12.",
+  lage:"Shinjuku",
+  warum:"Beste Anbindung der Stadt: JR Chuo direkt nach Mitaka (Ghibli, 20 Min.), Yamanote nach Shibuya, Harajuku und Ueno, Marunouchi-Linie in die Mitte, DisneySea in ~50 Min.",
+  typ:"Apartment-Hotel, Vierbett-Raum",
+  krit:"max. 7 Gehminuten zu Shinjuku, Shinjuku-Sanchome oder Nishi-Shinjuku Station",
+  budget:"¥18.000–29.000 pro Nacht · ~¥110.000–175.000 gesamt",
+  alt:"Ueno — bei MIMARU tendenziell mehr Quadratmeter fürs Geld, kostet aber am Ghibli-Tag rund 23 Minuten pro Richtung extra · Asakusa fällt durch: schlechteste Fahrzeiten zu beiden Zielen",
+  kand:[
+   {n:"&Here SHINJUKU", m:"Shinjuku-sanchome 3 Min. · 39–40 m² · Küche + Waschmaschine im Zimmer", w:"Das einzige Haus im Kern von Shinjuku, das beide Ausstattungswünsche erfüllt. Haken: zur JR-Chuo-Linie Richtung Ghibli müsst ihr erst nach JR Shinjuku, zu Fuß etwa 12 Minuten oder eine Station mit der Marunouchi-Linie.", u:"https://andherehotels-shinjuku.com/en/"},
+   {n:"Citadines Shinjuku Tokyo", m:"Shinjuku-Gyoemmae 5 Min. · 50 m², 4 Betten", w:"Die großzügigste Lösung im engeren Shinjuku und eine verlässliche Marke. Haken: Waschmaschine nur im Haus, nicht im Zimmer, und Citadines liegt preislich meist über MIMARU.", u:"https://www.discoverasr.com/en/citadines/japan/citadines-shinjuku-tokyo"},
+   {n:"Citadines North Shinjuku Tokyo", m:"JR Okubo 3 Min. · 54–59 m² · Waschmaschine in einzelnen Kategorien", w:"Die größten Zimmer im Vergleich, und Okubo liegt an der Chuo-Sobu-Linie mit Direktverbindung Richtung Mitaka. Haken: Hyakunincho liegt direkt hinter Kabukicho, lebhaft und nachts laut, und ihr sitzt eine Station außerhalb des Knotens.", u:"https://www.discoverasr.com/en/citadines/japan/citadines-north-shinjuku-tokyo"},
+   {n:"MIMARU Tokyo Ueno East", m:"JR Ueno 3 Min. · 38–40 m² · Pokémon-Zimmer", w:"Bester Ueno-Kandidat, und das Pokémon-Zimmer ist bei 9 und 11 ein echtes Argument. Haken: der Ghibli-Tag kostet rund 46 Minuten extra hin und zurück.", u:"https://mimaruhotels.com/en/hotel/ueno-east/"},
+   {n:"MIMARU Tokyo Ueno North", m:"JR Ueno 4 Min. · Premium 50 m² · Zimmer mit Gleisblick", w:"Die Premium-Kategorien sind die geräumigste Ueno-Option, und das Train-View-Zimmer ist für Kinder ein Erlebnis. Haken: die Standard-Familienzimmer sind mit 34 m² die kleinsten im Vergleich.", u:"https://mimaruhotels.com/en/hotel/ueno-north/"},
+   {n:"MIMARU Tokyo Shinjuku West", m:"Tochomae 8 Min. laut Haus, real eher 10–15 · 40–42 m²", w:"Inhaltlich genau euer Wunschformat und laut Reiseführern am unteren Rand der Mittelklasse. Haken: reißt euer 7-Minuten-Kriterium, und die Quellen zur Gehzeit widersprechen sich deutlich.", u:"https://mimaruhotels.com/en/hotel/shinjuku-west/"}
+  ]},
+ {name:"Osaka — Abreisenacht", nights:"1 Nacht · Fr 25.12. → Sa 26.12.",
+  lage:"Namba, direkt an der Nankai-Linie",
+  warum:"Am 26.12. geht es um 07:15 los. Jede Minute Weg zum Bahnhof zählt.",
+  typ:"Einfaches Hotel reicht — ihr seid nur zum Schlafen da",
+  krit:"max. 5 Gehminuten zu Namba Station (Nankai)",
+  budget:"¥18.000–25.000",
+  alt:"Wenn dasselbe Haus wie in Block 1 frei ist: dort buchen und beim Check-out am 17.12. fragen, ob ein Koffer bleiben darf",
+  warn:"Ob ein Haus Gepäck über zwölf Tage zwischen zwei Aufenthalten einlagert, ist bei keinem der Kandidaten belegt — das ist kein Standardservice und muss vorher schriftlich bestätigt werden. Ebenso ist bei den Apartment-Häusern offen, ob sie Einzelnächte überhaupt annehmen.",
+  kand:[
+   {n:"&Here OSAKA NAMBA", m:"Nankai Namba 3 Min.", w:"Für diese eine Nacht die beste Wahl: der kürzeste belegte Weg zum Bahnhof, und um 07:15 zählt jede Minute.", u:"https://andherehotels-osakanamba.com/en/"},
+   {n:"Fraser Residence Nankai Osaka", m:"Namba 2–3 Min.", w:"Gleichwertig kurz, zusätzlich Waschtrockner — praktisch, wenn ihr vor dem Rückflug noch Wäsche machen wollt.", u:"https://www.frasershospitality.com/en/japan/osaka/fraser-residence-nankai-osaka/"},
+   {n:"MIMARU Osaka Namba Station", m:"Nankai Namba 4 Min.", w:"Wenn ihr Block A schon dort gebucht habt, ist die Wiederholung naheliegend — dann auch gleich nach dem Koffer-Depot fragen.", u:"https://mimaruhotels.com/en/hotel/namba-station/"}
+  ]}
+];
+
+const TRAINS = [
+ ["KIX → Namba","Nankai Airport Express","45 Min.","¥970","¥490","¥2.920"],
+ ["Osaka → Kinosaki","Ltd. Exp. Kounotori","2:45","¥6.140","¥3.070","¥18.420"],
+ ["Kinosaki → Kyoto","Ltd. Exp. Kinosaki","2:20","¥5.170–5.770","~½","~¥17.300"],
+ ["Kyoto → Tokio","Nozomi, reserviert","2:20","~¥14.200","~¥7.100","~¥42.600"],
+ ["Tokio → Shin-Osaka","Nozomi, reserviert","2:30","¥14.720","¥7.360","¥44.160"],
+ ["Namba → KIX","Nankai Airport Express","45 Min.","¥970","¥490","¥2.920"],
+ ["Nara hin & zurück","Kintetsu","40 Min.","¥680","¥340","¥4.080"],
+ ["Nahverkehr 14 Tage","Suica","—","—","—","~¥20.000"]
+];
+
+const TICKETS = [
+ ["USJ 1-Day Studio Pass ⚠","¥8.900–10.900","¥5.400–6.300","~¥30.000"],
+ ["Kaiyukan","¥2.400–2.700","¥1.200–1.400","~¥8.000"],
+ ["Todai-ji Nara","¥800","¥400","¥2.400"],
+ ["Kinosaki Yumepa","¥1.500","¥750","¥4.500 (bei Ryokan gratis)"],
+ ["Ghibli Museum","¥1.000","¥400","¥2.800"],
+ ["Tokyo Skytree (online)","¥2.100","¥850","¥5.900"],
+ ["Shibuya Sky (ab 15:00)","¥3.400","¥1.200","~¥9.200"],
+ ["Tokyo DisneySea ⚠","¥9.900–10.900","ab ¥5.300","~¥32.000"],
+ ["teamLab Planets ⚠","ab ¥3.800","¥1.500","~¥10.600"],
+ ["Miraikan","~¥630","~¥210","~¥1.700"]
+];
+
+/* Farbton-Paare und Kanji für den Fall, dass die Fotos nicht geladen werden können */
+const HUES = [[218,262],[28,8],[276,320],[196,214],[96,72],[10,340],[192,168],[222,244],[142,168],[36,16],[350,18],[206,258],[266,300],[330,354],[212,238]];
+const K2 = ["空","城","魔","魚","鹿","湯","湯","車","杜","森","寺","海","光","帰","空"];
+DAYS.forEach((d,i)=>{ d.k2 = K2[i]; });
+
+/* ================= STATE & SPEICHER ================= */
+let state = {sel:{}, chk:{}};
+let store = {mode:"memory"};
+const KEY = "japan-trip-dez-2026";
+
+function loadInto(raw){
+  try{ const p = JSON.parse(raw); state = {sel:(p&&p.sel)||{}, chk:(p&&p.chk)||{}}; }catch(e){}
+}
+function localOK(){
+  try{ localStorage.setItem("__t__","1"); localStorage.removeItem("__t__"); return true; }catch(e){ return false; }
+}
+async function initStorage(){
+  try{
+    if(window.storage){
+      const r = await window.storage.get(KEY).catch(()=>null);
+      if(r && r.value) loadInto(r.value);
+      store.mode = "cloud";
+    }
+  }catch(e){}
+  if(store.mode!=="cloud" && localOK()){
+    store.mode = "local";
+    const raw = (()=>{ try{ return localStorage.getItem(KEY); }catch(e){ return null; } })();
+    if(raw) loadInto(raw);
+  }
+  const msg = {
+    cloud:"Auswahl wird gespeichert",
+    local:"Auswahl wird auf diesem Gerät gespeichert",
+    memory:"Auswahl gilt nur für diese Sitzung"
+  };
+  document.getElementById("savestate").textContent = msg[store.mode];
+}
+let saveT = null;
+function save(){
+  clearTimeout(saveT);
+  saveT = setTimeout(async ()=>{
+    const data = JSON.stringify(state);
+    if(store.mode==="cloud"){ try{ await window.storage.set(KEY, data); }catch(e){} }
+    else if(store.mode==="local"){ try{ localStorage.setItem(KEY, data); }catch(e){} }
+  }, 350);
+}
+
+/* ================= RENDER ================= */
+const main = document.getElementById("main");
+const daybar = document.getElementById("daybar");
+const foot = document.getElementById("foot");
+let curDay = 0, curView = "days";
+
+const esc = s => String(s);
+
+/* Euro hinter jeden Yen-Betrag — ein Kurs, überall gleich */
+const YEN_PER_EUR = 179;
+function fmtEur(n){
+  if(n < 1) return "<1";
+  if(n < 10) return n.toFixed(2).replace(".", ",");
+  return Math.round(n).toLocaleString("de-DE");
+}
+function yenToEur(str){
+  const num = t => parseInt(String(t).replace(/\./g, ""), 10);
+  return str.replace(
+    /¥\s?(\d{1,3}(?:\.\d{3})+|\d+)(?:\s?[–—-]\s?(?:¥\s?)?(\d{1,3}(?:\.\d{3})+|\d+))?/g,
+    (m, a, b) => {
+      const v1 = num(a);
+      if(!v1) return m;
+      if(b === undefined) return m + ' <span class="eur">(≈ €' + fmtEur(v1 / YEN_PER_EUR) + ')</span>';
+      const v2 = num(b);
+      if(!v2) return m;
+      return m + ' <span class="eur">(≈ €' + fmtEur(v1 / YEN_PER_EUR) + '–' + fmtEur(v2 / YEN_PER_EUR) + ')</span>';
+    }
+  );
+}
+function countPicks(di){ return DAYS[di].slots.flatMap(s=>s.opts).filter(o=>state.sel[o.id]).length; }
+
+function renderDaybar(){
+  daybar.innerHTML = "";
+  DAYS.forEach((d,i)=>{
+    const b = document.createElement("button");
+    b.className = "daychip"+(i===curDay?" active":"")+(countPicks(i)?" has-picks":"");
+    b.setAttribute("role","tab");
+    b.innerHTML = '<span class="kanji">'+d.k+'</span><span class="dt">'+d.dt.split(" ")[1]+'</span><span class="dot"></span>';
+    b.onclick = ()=>{ curDay=i; if(curView!=="days"){ switchView("days"); } else { render(); } };
+    daybar.appendChild(b);
+  });
+}
+
+const TAGLABEL = {tip:"◆ Tipp", kid:"Kids", lux:"Gönn-Option", rain:"Regentauglich"};
+function optCard(o){
+  const cat = CATS[o.c] || ["·",""];
+  const tags = (o.tags||[]).map(t=>'<span class="tag '+t+'">'+TAGLABEL[t]+'</span>').join("");
+  return '<div class="opt'+(state.sel[o.id]?" picked":"")+'" data-opt="'+o.id+'" role="button" tabindex="0" aria-pressed="'+(!!state.sel[o.id])+'">'
+   + '<span class="hanko">行く</span>'
+   + '<div class="o-eyebrow"><span class="cat-k">'+cat[0]+'</span>'+cat[1]+tags+'</div>'
+   + '<h4>'+o.n+'</h4>'
+   + '<p class="what">'+o.what+'</p>'
+   + '<p class="why">'+o.why+'</p>'
+   + '<div class="o-meta"><span>'+o.meta+'</span><a class="maps" href="'+o.maps+'" target="_blank" rel="noopener">Karte ↗</a></div>'
+   + '</div>';
+}
+
+function renderDay(){
+  const d = DAYS[curDay];
+  const picks = d.slots.flatMap(s=>s.opts).filter(o=>state.sel[o.id]);
+  main.innerHTML =
+    '<div class="dayhero'+(d.img?"":" noimg")+'" style="--h:'+HUES[curDay][0]+';--h2:'+HUES[curDay][1]+'">'
+    + (d.img?'<img src="'+d.img+'" alt="" loading="lazy" onerror="this.closest(\'.dayhero\').classList.add(\'noimg\')">':"")
+    + '<span class="dh-kanji">'+d.k2+'</span>'
+    + '<div class="dh-veil"></div>'
+    + '<span class="dh-num">Tag '+(curDay+1)+'</span>'
+    + (d.cr?'<span class="credit">'+d.cr+'</span>':"")
+    + '<div class="dh-txt"><div class="d-eyebrow">Tag '+(curDay+1)+' · '+d.dt+'</div><h2>'+d.title+'</h2></div>'
+    + '</div>'
+    + '<div class="d-note">'+d.note+'</div>'
+    + d.fix.map(f=>'<div class="fix"><span class="ft">'+f.t+'</span><span class="fb"><strong>'+f.b+'</strong><span>'+f.s+'</span></span></div>').join("")
+    + '<div class="myplan"><div class="mp-title">Euer Plan für den Tag</div>'
+    + (picks.length ? picks.map(o=>"行 "+o.n).join("  ·  ") : "<em>Noch nichts gestempelt — tippt unten auf das, was ihr machen wollt.</em>")
+    + '</div>'
+    + d.slots.map(s=>'<section class="slot"><div class="slot-h"><h3>'+s.h+'</h3>'+(s.hint?'<span class="hint">'+s.hint+'</span>':"")+'</div><div class="opts">'+s.opts.map(optCard).join("")+'</div></section>').join("");
+}
+
+function renderChecks(){
+  const total = CHECKS.flatMap(g=>g.items).length;
+  const done = CHECKS.flatMap(g=>g.items).filter(i=>state.chk[i.id]).length;
+  main.innerHTML =
+    '<div class="section-intro"><b>'+done+' von '+total+' erledigt.</b> Die Reihenfolge ist nach Dringlichkeit sortiert — was oben steht, ist knapp. Zeiten in KL-Zeit, wo es auf die Minute ankommt.</div>'
+    + CHECKS.map(g=>
+        '<div class="chk-group-h">'+g.g+'</div>'
+        + g.items.map(c=>
+            '<div class="chk'+(state.chk[c.id]?" done":"")+'" data-chk="'+c.id+'" role="button" tabindex="0">'
+            + '<span class="box">✓</span>'
+            + '<span class="c-body"><span class="c-t">'+c.t+'</span><div class="c-s">'+c.s+'</div>'
+            + (c.due?'<span class="c-due'+(c.hard?" hard":"")+'">'+c.due+'</span>':"")
+            + '</span></div>'
+          ).join("")
+      ).join("");
+}
+
+function renderInfo(){
+  main.innerHTML =
+  '<div class="section-intro">Recherchestand 11.09.2026. Hinter jedem Yen-Betrag steht der Euro-Wert, gerechnet mit <b>1 € ≈ 179 ¥</b> (Kurs 10.09.2026, xe.com) — als Größenordnung brauchbar, als Abrechnung nicht. Umrechnung mit <b>1 € ≈ 179 ¥</b>. Was mit ⚠ markiert ist, hat für Dezember 2026 noch keinen freigeschalteten Tagespreis — dort steht die aktuelle Preisspanne.</div>'
+
+  + '<div class="info-card"><h3><span class="k">宿</span>Unterkünfte — Kandidaten</h3>'
+  + '<p>Hartes Kriterium überall: <b>direkt am Nahverkehrsnetz</b>. Alle Kandidaten unten sind darauf geprüft; wo ein Haus das Kriterium reißt, steht es dabei.</p>'
+  + '<p><b>Preise für Dezember 2026 sind nirgends öffentlich abrufbar.</b> Booking.com und Agoda geben ihre Raten nicht automatisiert heraus, und mehrere Häuser hatten noch keine Dezember-Preise freigeschaltet. Die Budgetangaben sind Zielkorridore, keine Angebote — die echten Preise bekommt ihr nur über die verlinkten Seiten mit euren Daten.</p>'
+  + '<p><b>Wichtig beim Buchen:</b> Kind 1 und Kind 2 zählen in Japan als vollwertige Gäste. MIMARU hat die Grenze 2022 ausdrücklich von unter 12 auf unter 6 Jahre gesenkt, WELLSTAY liegt bei 7 Jahren. Gebt immer <b>vier Personen</b> an — sonst steht ihr mit einem zu kleinen Zimmer an der Rezeption.</p>'
+  + HOTELS.map(h=>
+      '<div class="hotel"><div class="h-top"><span class="h-name">'+h.name+'</span><span class="h-nights">'+h.nights+'</span></div>'
+      + '<dl>'
+      + '<dt>Lage</dt><dd>'+h.lage+'</dd>'
+      + '<dt>Warum</dt><dd>'+h.warum+'</dd>'
+      + '<dt>Typ</dt><dd>'+h.typ+'</dd>'
+      + '<dt>Kriterium</dt><dd>'+h.krit+'</dd>'
+      + '<dt>Budget</dt><dd>'+h.budget+'</dd>'
+      + '<dt>Alternative</dt><dd>'+h.alt+'</dd>'
+      + '</dl>'
+      + (h.warn?'<div class="hwarn">'+h.warn+'</div>':"")
+      + (h.kand?'<div class="kand-h">Konkrete Kandidaten, geprüft auf euer Kriterium</div>'
+          + h.kand.map(k=>'<div class="kand"><div class="k-top"><a href="'+k.u+'" target="_blank" rel="noopener">'+k.n+'</a><span class="k-meta">'+k.m+'</span></div><p>'+k.w+'</p></div>').join(""):"")
+      + '<div class="slotline">Gebucht: ________________________  ·  Adresse: ________________________  ·  Bestätigungsnr.: ____________</div>'
+      + '</div>').join("")
+  + '<p><b>Gesamt Unterkunft geschätzt:</b> ¥370.000–490.000.</p></div>'
+
+  + '<div class="info-card"><h3><span class="k">車</span>Züge & Preise</h3>'
+  + '<p>Kinder von 6 bis 11 Jahren zahlen bei JR den halben Fahrpreis — beide fallen noch hinein. Alle Fernzüge mit reserviertem Sitzplatz.</p>'
+  + '<div class="tbl-wrap"><table><thead><tr><th>Strecke</th><th>Zug</th><th>Dauer</th><th class="num">Erw.</th><th class="num">Kind</th><th class="num">Familie</th></tr></thead><tbody>'
+  + TRAINS.map(r=>'<tr><td>'+r[0]+'</td><td>'+r[1]+'</td><td>'+r[2]+'</td><td class="num">'+r[3]+'</td><td class="num">'+r[4]+'</td><td class="num">'+r[5]+'</td></tr>').join("")
+  + '<tr class="sum"><td colspan="5">Summe</td><td class="num">≈ ¥152.000</td></tr>'
+  + '</tbody></table></div>'
+  + '<p><b>JR Pass lohnt sich nicht.</b> 14 Tage kosten ab 01.10.2026 ¥84.000 Erw. und ¥42.000 Kind, macht ¥252.000 für euch vier — und Nozomi ist damit nur gegen Zuschlag nutzbar. Einzeltickets sparen rund ¥100.000.</p>'
+  + '<p><b>Zu prüfen: Kansai WIDE Area Pass.</b> ¥12.000 Erw. / ¥6.000 Kind für fünf aufeinanderfolgende Tage, deckt Nara, Kyoto, Osaka und Kinosaki inklusive Limited Express mit kostenloser Sitzplatzreservierung. Bei einem Fenster 15.–19.12. deckt er Nara, die Hinfahrt nach Kinosaki und die Rückfahrt nach Kyoto: rund ¥37.300 an Einzeltickets gegen ¥36.000 Pass. Rechnet sich also knapp und wird deutlicher, sobald ein Kyoto-Tag dazukommt.</p></div>'
+
+  + '<div class="info-card"><h3><span class="k">券</span>Eintritte</h3>'
+  + '<div class="tbl-wrap"><table><thead><tr><th>&nbsp;</th><th class="num">Erw.</th><th class="num">Kind (9 &amp; 11)</th><th class="num">Familie</th></tr></thead><tbody>'
+  + TICKETS.map(r=>'<tr><td>'+r[0]+'</td><td class="num">'+r[1]+'</td><td class="num">'+r[2]+'</td><td class="num">'+r[3]+'</td></tr>').join("")
+  + '<tr class="sum"><td colspan="3">Summe</td><td class="num">≈ ¥107.000</td></tr>'
+  + '</tbody></table></div>'
+  + '<p><b>Gut zu wissen:</b> Kind 1 ist mit 11 bei USJ und DisneySea noch in der Kinderstufe — die gilt bis einschließlich 11 Jahre. Ab 12 wird es deutlich teurer. Ihr erwischt das letzte günstige Jahr.</p></div>'
+
+  + '<div class="info-card"><h3><span class="k">湯</span>Onsen-Knigge, besonders mit Kindern</h3>'
+  + '<ul>'
+  + '<li><b>Getrennt nach Geschlecht, und man badet nackt.</b> Badekleidung ist nicht erlaubt. Das kleine Handtuch nimmt man mit, legt es aber nicht ins Wasser — es kommt auf den Kopf oder an den Beckenrand.</li>'
+  + '<li><b>Vorher waschen.</b> An den Duschplätzen sitzt man auf einem Hocker und wäscht sich gründlich, bevor man ins Becken steigt. Das Becken ist zum Liegen, nicht zum Reinigen.</li>'
+  + '<li><b>Für euch konkret:</b> Kinder bis einschließlich 10 Jahre dürfen mit auf die Seite des anderen Geschlechts. Kind 2 (9) kann also mit Mama, <b>Kind 1 (11) muss auf die Männerseite</b> — mit Papa. Das vorher zuhause besprechen, nicht am Eingang.</li>'
+  + '<li><b>Alle Bäder in Kinosaki sind tattoo-freundlich</b> — das ist in Japan nicht selbstverständlich.</li>'
+  + '<li><b>Nicht springen, nicht tauchen, nicht rennen.</b> Es ist ruhig dort, und das wird ernst genommen. Leise sprechen reicht.</li>'
+  + '<li><b>Feste Ruhetage:</b> Jizo-yu montags, Kono-yu dienstags, Mandara-yu und Ichino-yu mittwochs, Goshono-yu und Yanagi-yu donnerstags. Für euch heißt das: <b>am Donnerstag 17.12. sind Goshono-yu und Yanagi-yu zu</b>, am Freitag 18.12. ist alles offen.</li>\n  <li><b>Satono-yu ist seit dem 1. April 2024 geschlossen</b> — beim Abriss wurde Asbest gefunden, die Wiedereröffnung ist auf etwa 2030 verschoben. Es sind also sechs Bäder, nicht sieben. Viele Reiseführer sind noch nicht aktualisiert.</li>'
+  + '<li><b>Genug trinken.</b> Zwei oder drei Bäder an einem Tag sind für Kinder das Maximum, dazwischen abkühlen und laufen.</li>'
+  + '</ul></div>'
+
+  + '<div class="info-card"><h3><span class="k">冬</span>Wetter & Packliste</h3>'
+  + '<p>Dezember in Japan ist trocken, oft sonnig und kalt. Osaka und Tokio tagsüber 4–12 °C, nachts um den Gefrierpunkt. Kinosaki liegt im Bergland und ist deutlich kälter, Schnee ist möglich. Sonnenuntergang gegen 16:50 — Aussichtspunkte gehören auf den frühen Nachmittag.</p>'
+  + '<ul>'
+  + '<li><b>Zwiebelprinzip.</b> Drinnen ist überall stark geheizt, draußen ist es kalt. Was man schnell aus- und wieder anzieht, ist Gold wert.</li>'
+  + '<li><b>Bequeme, eingelaufene Schuhe.</b> Ihr werdet an vielen Tagen 12–15 km laufen.</li>'
+  + '<li><b>Schuhe, die man leicht aus- und anzieht.</b> Ryokan, Tempel und teamLab Planets verlangen das ständig.</li>'
+  + '<li><b>Mützen, Schals, dünne Handschuhe</b> — für die Abende an Illuminationen und im DisneySea.</li>'
+  + '<li><b>Hosen, die sich übers Knie hochkrempeln lassen</b> — für teamLab Planets. Röcke gehen dort wegen der Spiegelböden nicht.</li>'
+  + '<li><b>Wärmepflaster (Kairo)</b> gibt es in jedem Konbini für ein paar Yen, kleben in die Schuhe oder Jackentasche.</li>'
+  + '<li><b>Kleiner Rucksack pro Kind</b> für Souvenirs, Trinkflasche und die eigene Suica.</li>'
+  + '<li><b>Powerbank.</b> Ihr braucht das Handy für Suica, Karten, USJ-App und Disney-App — der Akku ist der Engpass des Tages.</li>'
+  + '<li><b>Müllbeutel.</b> In Japan gibt es kaum öffentliche Mülleimer, man trägt seinen Abfall mit.</li>'
+  + '<li><b>Gepäck:</b> AirAsia gibt 20 kg aufgegeben und nur 5 kg Handgepäck pro Person. Vor dem Rückflug wiegen.</li>'
+  + '</ul></div>'
+
+  + '<div class="info-card"><h3><span class="k">実</span>Praktisches</h3>'
+  + '<ul>'
+  + '<li><b>Visit Japan Web</b> vor dem Abflug für alle vier ausfüllen — Einreise- und Zoll-QR-Codes. Spart am 12.12. abends viel Zeit.</li>'
+  + '<li><b>Suica</b> lässt sich direkt in Apple Wallet anlegen und mit Kreditkarte aufladen, eine pro Person. Funktioniert in Osaka, Kinosaki und Tokio gleichermaßen und auch im Konbini.</li>'
+  + '<li><b>Bargeld:</b> vieles geht bargeldlos, aber kleine Läden, Tempel-Eintritte und die Badehäuser in Kinosaki oft nicht. Am 7-Eleven-Automaten mit ausländischer Karte abheben.</li>'
+  + '<li><b>Tax free</b> ab ¥5.000 Einkauf gegen Vorlage des Passes. Am Abreisetag vor der Sicherheitskontrolle erledigen.</li>'
+  + '<li><b>Erste Abfahrt Nankai am 26.12.:</b> die frühen Abfahrtszeiten waren nicht abrufbar. Vor der Buchung der Abreisenacht auf nankai.co.jp prüfen, ob ein Zug vor 07:30 fährt.</li>\n  <li><b>Notruf:</b> Polizei 110, Feuerwehr und Rettung 119. Japan Visitor Hotline rund um die Uhr auf Englisch: 050-3816-2787.</li>'
+  + '<li><b>Gepäcktransport (Takkyubin):</b> Koffer lassen sich für ~¥2.000 pro Stück über Nacht von Hotel zu Hotel schicken. Für die Kinosaki-Etappe eine Überlegung wert — dann fahrt ihr nur mit Handgepäck.</li>'
+  + '<li><b>Weihnachten ist in Japan kein Feiertag.</b> Am 24. und 25.12. hat alles normal geöffnet. Erst ab ca. 28.12. beginnt die Neujahrswelle — ihr seid davor zurück.</li>'
+  + '</ul></div>'
+
+  + '<div class="info-card"><h3><span class="k">計</span>Grobe Gesamtkosten ohne Flug</h3>'
+  + '<div class="tbl-wrap"><table><tbody>'
+  + '<tr><td>Unterkunft</td><td class="num">¥370.000–490.000</td></tr>'
+  + '<tr><td>Züge</td><td class="num">~¥152.000</td></tr>'
+  + '<tr><td>Eintritte</td><td class="num">~¥107.000</td></tr>'
+  + '<tr><td>Essen (~¥15.000/Tag)</td><td class="num">~¥210.000</td></tr>'
+  + '<tr class="sum"><td>Summe</td><td class="num">~¥840.000–960.000</td></tr>'
+  + '</tbody></table></div>'
+  + '<p>Der Flug ist mit MYR 14.878 bereits bezahlt (AirAsia X D7378 / D7533, Booking.com Referenz [privat]).</p></div>';
+}
+
+function renderFoot(){
+  foot.innerHTML =
+   '<b>Quellen:</b> Flugdaten aus der Booking.com-Bestätigung im selben Ordner · '
+   + 'Nankai- und Kounotori-Tarife: osakastation.com · '
+   + 'Shinkansen-Preise: japantrain.net · '
+   + 'Kansai WIDE Area Pass: japan-guide.com · '
+   + 'Kinosaki Krabbensaison und Ryokan-Preise: japanactivity.com · '
+   + 'Wechselkurs: xe.com, 10.09.2026 · '
+   + 'Eintritte und Termine: offizielle Seiten von USJ, Kaiyukan, Ghibli Museum, Tokyo Disney Resort, Tokyo Skytree, teamLab, Shibuya Sky, Todai-ji · '
+   + 'Fotos: Wikimedia Commons · Gottesdienste: kreuzkirche-tokyo.jp, spilchurchtokyo.org · '
+   + 'Unterkünfte und Badehaus-Ruhetage: visitkinosaki.com, Stadt Toyooka, mimaruhotels.com, discoverasr.com, frasershospitality.com, andherehotels, well-stay.com, kinosaki-web.com, japan-guide.com.<br><br>'
+   + 'Preise für Dezember 2026 sind bei USJ, DisneySea und teamLab noch nicht freigeschaltet, Illuminationstermine für 2026 noch nicht veröffentlicht — dort stehen die jeweils aktuellen Werte als Orientierung. '
+   + 'Erstellt am 10.09.2026, Unterkunfts-Recherche und Onsen-Korrektur vom 11.09.2026.';
+}
+
+/* ================= INTERAKTION ================= */
+function render(){
+  renderDaybar();
+  if(curView==="days") renderDay();
+  else if(curView==="checks") renderChecks();
+  else renderInfo();
+  main.innerHTML = yenToEur(main.innerHTML);
+  window.scrollTo({top:0, behavior:"instant"});
+}
+
+function switchView(v){
+  curView = v;
+  document.getElementById("tab-days").classList.toggle("active", v==="days");
+  document.getElementById("tab-checks").classList.toggle("active", v==="checks");
+  document.getElementById("tab-info").classList.toggle("active", v==="info");
+  daybar.classList.toggle("hidden", v!=="days");
+  render();
+}
+
+document.getElementById("tab-days").onclick   = ()=>switchView("days");
+document.getElementById("tab-checks").onclick = ()=>switchView("checks");
+document.getElementById("tab-info").onclick   = ()=>switchView("info");
+
+main.addEventListener("click", e=>{
+  const o = e.target.closest("[data-opt]");
+  if(o){
+    if(e.target.closest("a")) return;
+    const id = o.dataset.opt;
+    state.sel[id] = !state.sel[id];
+    save(); render();
+    return;
+  }
+  const c = e.target.closest("[data-chk]");
+  if(c){
+    const id = c.dataset.chk;
+    state.chk[id] = !state.chk[id];
+    save(); render();
+  }
+});
+main.addEventListener("keydown", e=>{
+  if(e.key!=="Enter" && e.key!==" ") return;
+  const t = e.target.closest("[data-opt],[data-chk]");
+  if(!t) return;
+  e.preventDefault();
+  t.click();
+});
+
+/* ================= START ================= */
+(async ()=>{
+  await initStorage();
+  renderFoot();
+  render();
+})();
+
+</script>
+</body>
+</html>
