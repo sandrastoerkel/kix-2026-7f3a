@@ -256,6 +256,10 @@ tr.sum td{font-weight:700; border-bottom:0; border-top:2px solid var(--line)}
 .hotel dt{color:var(--ink3); white-space:nowrap}
 .hotel dd{margin:0; color:var(--ink2)}
 .hotel .hwarn{margin-top:10px; padding:10px 12px; background:var(--seal-soft); border-left:3px solid var(--seal); border-radius:0 8px 8px 0; font-size:13.5px; line-height:1.55; color:var(--ink2)}
+.hbooked{margin-top:10px; padding:10px 12px; background:transparent; background:color-mix(in srgb, var(--green) 13%, transparent); border-left:3px solid var(--green); border-radius:0 8px 8px 0; font-size:13.5px; line-height:1.55; color:var(--ink2)}
+.hbooked .hb-label{display:block; margin-bottom:3px; font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; font-weight:700; color:var(--green)}
+.hbooked .hb-name{font-weight:700}
+.hbooked .hb-note{display:block; margin-top:6px}
 .kand-h{margin:14px 0 8px; font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink3); font-weight:700}
 .kand{padding:10px 0; border-top:1px solid var(--line)}
 .kand .k-top{display:flex; justify-content:space-between; gap:10px; align-items:baseline; flex-wrap:wrap; margin-bottom:4px}
@@ -311,20 +315,20 @@ const DAYS = [
 /* ---------- 1 ---------- */
 {k:"土", dt:"Sa 12.12.", title:"Ankunft in Osaka",
  img:W("5/56/%E9%96%A2%E8%A5%BF%E5%9B%BD%E9%9A%9B%E7%A9%BA%E6%B8%AF%E5%85%A8%E4%BD%93%E5%86%99%E7%9C%9F20220811.jpg/1920px-%E9%96%A2%E8%A5%BF%E5%9B%BD%E9%9A%9B%E7%A9%BA%E6%B8%AF%E5%85%A8%E4%BD%93%E5%86%99%E7%9C%9F20220811.jpg"), cr:"Kansai International Airport · Wikimedia Commons",
- note:"Ein reiner Ankunftstag. Landung erst 19:20 — mit Immigration und Bahn seid ihr gegen 21:30 im Hotel. Nichts vornehmen außer ankommen.",
+ note:"Ein reiner Ankunftstag. Landung erst 19:20 — mit Immigration und Bahn seid ihr gegen 21:30 im Hotel, also nach dem bestätigten Anreisefenster 20:00–21:00. Dem Hotel die späte Ankunft vorher melden. Nichts vornehmen außer ankommen.",
  fix:[
   {t:"09:30", b:"Abflug KUL → KIX", s:"AirAsia X D7378 · 8 Std. 50 Min. · eine technische Zwischenlandung · Sitze 36A–36D"},
   {t:"19:20", b:"Landung Kansai International", s:"Immigration mit Visit-Japan-Web-QR ca. 30–45 Min., dann Gepäck und Zoll"},
-  {t:"~21:30", b:"Check-in Hotel Osaka", s:"Platzhalter — Lage Namba/Nipponbashi, siehe Reiter „Infos“"}
+  {t:"~21:30", b:"Check-in APA Midosuji Hommachi Ekimae Tower", s:"Gebucht und bestätigt für 12.–17.12. Anreisefenster laut Bestätigung 20:00–21:00 — ihr seid später dran, also vorab Bescheid geben"}
  ],
  slots:[
   {h:"Vom Flughafen in die Stadt", hint:"eine Option wählen", opts:[
    {id:"d1a", c:"transfer", n:"Nankai Airport Express nach Namba", tags:["tip"],
-    what:"Der normale Nahverkehrszug der Nankai-Linie, fährt alle 15–20 Min. direkt von der Ankunftshalle bis Namba. Keine Reservierung, keine Sitzplatzgarantie.",
+    what:"Der normale Nahverkehrszug der Nankai-Linie, fährt alle 15–20 Min. direkt von der Ankunftshalle bis Namba. Keine Reservierung, keine Sitzplatzgarantie. Ab Namba noch zwei Stationen mit der Midosuji-Linie bis Hommachi zum Hotel.",
     why:"Mit Abstand das beste Preis-Leistungs-Verhältnis, und um diese Uhrzeit ist der Zug leer genug, dass ihr mit vier Koffern bequem sitzt. <b>Für die Kinder:</b> nach neun Stunden Flug ist ein Zug, in dem man aufstehen und aus dem Fenster gucken kann, angenehmer als ein enges Taxi.",
     meta:"45 Min. · ¥970 Erw. / ¥490 Kind · Familie ¥2.920", maps:M("Kansai Airport Station Nankai")},
    {id:"d1b", c:"transfer", n:"Nankai Rapi:t — der blaue Schnellzug",
-    what:"Der Designzug der Nankai-Linie mit runden Bullaugen-Fenstern und reservierten Ledersitzen. Sieht aus wie ein U-Boot auf Schienen.",
+    what:"Der Designzug der Nankai-Linie mit runden Bullaugen-Fenstern und reservierten Ledersitzen. Sieht aus wie ein U-Boot auf Schienen. Endet ebenfalls in Namba — von dort zwei Stationen Midosuji bis Hommachi.",
     why:"Zehn Minuten schneller und garantierte Sitzplätze nebeneinander. <b>Für die Kinder:</b> der Zug selbst ist die Attraktion — die Bullaugen und die Retro-Futurismus-Nase sind das erste richtige Japan-Foto der Reise.",
     meta:"34–39 Min. · ¥1.670 Erw. / ¥840 Kind · Familie ~¥5.020", maps:M("Nankai Rapi:t Kansai Airport")},
    {id:"d1c", c:"transfer", n:"Taxi direkt zum Hotel",
@@ -528,7 +532,7 @@ const DAYS = [
  img:W("8/85/Kinosaki-Onsen_Station_Sign_and_Limited_Express_%22Konotori%22.jpg/1920px-Kinosaki-Onsen_Station_Sign_and_Limited_Express_%22Konotori%22.jpg"), cr:"Kinosaki-Onsen Station · Wikimedia Commons",
  note:"Ortswechsel. Vormittags noch Osaka, mittags in den Zug, nachmittags im Yukata durch einen Onsen-Ort im Hinterland. Größerer Kontrast geht kaum.",
  fix:[
-  {t:"~11:00", b:"Check-out, Gepäck", s:"Fragt beim Auschecken, ob ein Koffer bis zum 25.12. im Hotel bleiben darf — das spart auf der Tokio-Runde viel"},
+  {t:"~11:00", b:"Check-out APA Hommachi, Gepäck", s:"Fragt beim Auschecken, ob ein Koffer bis zum 25.12. im Hotel bleiben darf — das spart auf der Tokio-Runde viel. Falls ja, für die Abreisenacht wieder hierher buchen; sonst ein Haus direkt an der Nankai-Linie nehmen"},
   {t:"~12:30", b:"Ltd. Express Kounotori nach Kinosaki Onsen", s:"ab Osaka bzw. Shin-Osaka · 2 Std. 45 Min. · ¥6.140 Erw. res. / ¥3.070 Kind · Familie ~¥18.420"},
   {t:"~15:15", b:"Ankunft Kinosaki Onsen", s:"Viele Ryokan holen am Bahnhof ab — vorher anfragen"}
  ],
@@ -945,9 +949,9 @@ const CHECKS = [
  {g:"Sofort — je früher, desto besser", items:[
   {id:"c1", t:"Ryokan Kinosaki für 17.–19.12. — direkt anfragen, nicht über Portale", s:"Der knappste Posten der Reise, und ihr seid spät dran: Kinosaki-Ryokan öffnen Buchungen üblicherweise 4 bis 6 Monate im Voraus, das Fenster für Dezember ist also seit dem Sommer offen. Eine Testabfrage über das offizielle Ortsportal lieferte für den 17.12. keine Verfügbarkeit — ob ausgebucht oder eine Grenze des Portals, ist offen. Deshalb: mehrere Häuser parallel per E-Mail oder Telefon anfragen. Kandidaten stehen im Reiter Infos.", due:"sofort", hard:1},
   {id:"c1b", t:"Bei der Ryokan-Anfrage diese vier Dinge mitschreiben", s:"1. Familienzimmer für 4 in einem Raum. 2. Kindermenü für beide Kinder statt Krabben-Kaiseki — kommt nicht automatisch. 3. Altersgrenze prüfen: mehrere Häuser nehmen unter 10 oder unter 12 Jahren niemanden auf. 4. Abholung am Bahnhof, und bis wann der Shuttle fährt.", due:"sofort", hard:1},
-  {id:"c2", t:"Hotel Osaka für 12.–17.12. buchen", s:"Namba oder Nipponbashi, max. 5 Gehminuten zur Station. Kandidaten mit Links stehen im Reiter Infos. Immer vier Personen angeben, nicht zwei Erwachsene. Mit kostenloser Stornierung buchen, dann kann man später noch tauschen.", due:"jetzt", hard:1},
+  {id:"c2", t:"Hotel Osaka 12.–17.12. — gebucht ✓, jetzt späte Ankunft melden", s:"Gebucht und bestätigt: APA Hotel &amp; Resort Midosuji Hommachi Ekimae Tower für 12.–17.12. Offen ist nur noch die Uhrzeit: Das bestätigte Anreisefenster ist 20:00–21:00, ihr landet aber erst 19:20 und seid realistisch gegen 21:30 am Hotel. Meldet die späte Ankunft schriftlich, sonst kann das Zimmer am Abend verfallen.", due:"jetzt", hard:1},
   {id:"c3", t:"Hotel Tokio für 19.–25.12. buchen", s:"Shinjuku empfohlen, Ueno als günstigere Alternative — kostet aber am Ghibli-Tag rund 46 Minuten extra. Kandidaten im Reiter Infos. Weihnachtswoche, je früher desto besser.", due:"jetzt", hard:1},
-  {id:"c4", t:"Hotel Osaka für die Abreisenacht 25.–26.12.", s:"Unbedingt an der Nankai-Linie. Wenn dasselbe Haus wie im ersten Block: schriftlich bestätigen lassen, dass ein Koffer die zwölf Tage dazwischen bleiben darf — das ist kein Standardservice. Und prüfen, ob das Haus Einzelnächte annimmt.", due:"jetzt", hard:1},
+  {id:"c4", t:"Hotel Osaka für die Abreisenacht 25.–26.12.", s:"Unbedingt an der Nankai-Linie — das gebuchte APA in Hommachi liegt nicht daran, für die 07:15-Abfahrt kämen zwei Stationen Midosuji dazu. Wenn ihr trotzdem wieder ins APA wollt: schriftlich bestätigen lassen, dass ein Koffer die zwölf Tage dazwischen bleiben darf — das ist kein Standardservice. Und prüfen, ob das Haus Einzelnächte annimmt.", due:"jetzt", hard:1},
   {id:"c5", t:"Flugstatus prüfen", s:"Die Buchung stand zuletzt auf „Bestätigung ausstehend“ (Booking.com, Referenz [privat]). Nachhaken, falls noch keine Bestätigungsmail kam.", due:"jetzt", hard:1}
  ]},
  {g:"Oktober", items:[
@@ -976,6 +980,7 @@ const CHECKS = [
 /* ================= INFOS ================= */
 const HOTELS = [
  {name:"Osaka — Block 1", img:W("f/f4/Osaka_Dotonbori_Ebisu_Bridge.jpg/1200px-Osaka_Dotonbori_Ebisu_Bridge.jpg"), cr:"Dotonbori, Ebisu-Brücke · Wikimedia Commons", nights:"5 Nächte · Sa 12.12. → Do 17.12.",
+  booked:{h:"APA Hotel &amp; Resort Midosuji Hommachi Ekimae Tower", d:"12.12. → 17.12.2026 · Buchung bestätigt", ci:"Bestätigtes Anreisefenster: 20:00–21:00 Uhr", note:"<b>Zwei Dinge weichen vom ursprünglichen Plan ab.</b> Erstens die Uhrzeit: Der Anreisetag rechnet mit Ankunft im Hotel gegen 21:30 — das liegt nach dem bestätigten Fenster. Meldet dem Haus die späte Ankunft schriftlich. Zweitens die Lage: Hommachi statt Namba. Hommachi liegt auf der Midosuji-Linie zwei Stationen nördlich von Namba, der Weg zum Nankai-Flughafenzug geht also über Namba."},
   lage:"Namba / Nipponbashi / Shinsaibashi",
   warum:"Nankai-Linie direkt zum Flughafen (Ankunft und Abreise), Midosuji-U-Bahn nach Umeda, Chuo- und Yotsubashi-Linie zum Aquarium, JR-Loop nach USJ. Dotonbori und Kuromon-Markt zu Fuß.",
   typ:"Apartment-Hotel, ein Vierbett-Raum mit Küchenzeile und Waschmaschine",
@@ -1027,12 +1032,12 @@ const HOTELS = [
   typ:"Einfaches Hotel reicht — ihr seid nur zum Schlafen da",
   krit:"max. 5 Gehminuten zu Namba Station (Nankai)",
   budget:"¥18.000–25.000",
-  alt:"Wenn dasselbe Haus wie in Block 1 frei ist: dort buchen und beim Check-out am 17.12. fragen, ob ein Koffer bleiben darf",
+  alt:"Wieder ins APA Hommachi aus Block 1: beim Check-out am 17.12. nach dem Koffer-Depot fragen. Es liegt aber nicht an der Nankai-Linie — für die 07:15-Abfahrt zwei Stationen Midosuji zusätzlich einplanen",
   warn:"Ob ein Haus Gepäck über zwölf Tage zwischen zwei Aufenthalten einlagert, ist bei keinem der Kandidaten belegt — das ist kein Standardservice und muss vorher schriftlich bestätigt werden. Ebenso ist bei den Apartment-Häusern offen, ob sie Einzelnächte überhaupt annehmen.",
   kand:[
    {n:"&Here OSAKA NAMBA", m:"Nankai Namba 3 Min.", w:"Für diese eine Nacht die beste Wahl: der kürzeste belegte Weg zum Bahnhof, und um 07:15 zählt jede Minute.", u:"https://andherehotels-osakanamba.com/en/"},
    {n:"Fraser Residence Nankai Osaka", m:"Namba 2–3 Min.", w:"Gleichwertig kurz, zusätzlich Waschtrockner — praktisch, wenn ihr vor dem Rückflug noch Wäsche machen wollt.", u:"https://www.frasershospitality.com/en/japan/osaka/fraser-residence-nankai-osaka/"},
-   {n:"MIMARU Osaka Namba Station", m:"Nankai Namba 4 Min.", w:"Wenn ihr Block A schon dort gebucht habt, ist die Wiederholung naheliegend — dann auch gleich nach dem Koffer-Depot fragen.", u:"https://mimaruhotels.com/en/hotel/namba-station/"},
+   {n:"MIMARU Osaka Namba Station", m:"Nankai Namba 4 Min.", w:"Block 1 liegt inzwischen im APA Hommachi, ein Wiederholungs-Bonus entfällt hier also — dafür kurzer Weg zum Nankai-Terminal am Abreisemorgen.", u:"https://mimaruhotels.com/en/hotel/namba-station/"},
    {n:"MIMARU Namba Station Annex", m:"Nankai Namba 5 Min.", w:"Liegt mit 5 Minuten noch im Limit und ist am 1.10.2026 neu eröffnet, also zwei Monate vor eurer Reise. Haken: der Preis ist nirgends belegt, und ob ein Neubau dieser Kategorie einzelne Nächte annimmt, ist offen — vorher anfragen.", u:"https://mimaruhotels.com/en/hotel/namba-station-annex/"}
   ]}
 ];
@@ -1203,7 +1208,7 @@ function renderChecks(){
 
 function renderInfo(){
   main.innerHTML =
-  '<div class="section-intro">Recherchestand 11.09.2026. Hinter jedem Yen-Betrag steht der Euro-Wert, gerechnet mit <b>1 € ≈ 179 ¥</b> (Kurs 10.09.2026, xe.com) — als Größenordnung brauchbar, als Abrechnung nicht. Umrechnung mit <b>1 € ≈ 179 ¥</b>. Was mit ⚠ markiert ist, hat für Dezember 2026 noch keinen freigeschalteten Tagespreis — dort steht die aktuelle Preisspanne.</div>'
+  '<div class="section-intro">Recherchestand 11.09.2026, Buchungsstand 14.09.2026 — Osaka Block 1 ist gebucht. Hinter jedem Yen-Betrag steht der Euro-Wert, gerechnet mit <b>1 € ≈ 179 ¥</b> (Kurs 10.09.2026, xe.com) — als Größenordnung brauchbar, als Abrechnung nicht. Umrechnung mit <b>1 € ≈ 179 ¥</b>. Was mit ⚠ markiert ist, hat für Dezember 2026 noch keinen freigeschalteten Tagespreis — dort steht die aktuelle Preisspanne.</div>'
 
   + '<div class="info-card"><h3><span class="k">宿</span>Unterkünfte — Kandidaten</h3>'
   + '<p>Hartes Kriterium überall: <b>direkt am Nahverkehrsnetz</b>. Alle Kandidaten unten sind darauf geprüft; wo ein Haus das Kriterium reißt, steht es dabei.</p>'
@@ -1213,6 +1218,7 @@ function renderInfo(){
       '<div class="hotel">'
       + (h.img?'<div class="hbanner"><img src="'+h.img+'" alt="" loading="lazy" onerror="this.closest(\'.hbanner\').classList.add(\'noimg\')"><div class="hb-veil"></div><span class="hb-cr">'+h.cr+'</span></div>':"")
       + '<div class="h-top"><span class="h-name">'+h.name+'</span><span class="h-nights">'+h.nights+'</span></div>'
+      + (h.booked?'<div class="hbooked"><span class="hb-label">Gebucht</span><span class="hb-name">'+h.booked.h+'</span> · '+h.booked.d+'<br>'+h.booked.ci+'<span class="hb-note">'+h.booked.note+'</span></div>':"")
       + '<dl>'
       + '<dt>Lage</dt><dd>'+h.lage+'</dd>'
       + '<dt>Warum</dt><dd>'+h.warum+'</dd>'
@@ -1222,9 +1228,9 @@ function renderInfo(){
       + '<dt>Alternative</dt><dd>'+h.alt+'</dd>'
       + '</dl>'
       + (h.warn?'<div class="hwarn">'+h.warn+'</div>':"")
-      + (h.kand?'<div class="kand-h">Konkrete Kandidaten, geprüft auf euer Kriterium</div>'
+      + (h.kand?'<div class="kand-h">'+(h.booked?"Damalige Kandidaten — die Auswahl ist getroffen":"Konkrete Kandidaten, geprüft auf euer Kriterium")+'</div>'
           + h.kand.map(k=>'<div class="kand"><div class="k-top"><a href="'+k.u+'" target="_blank" rel="noopener">'+k.n+'</a><span class="k-meta">'+k.m+'</span></div><p>'+k.w+'</p></div>').join(""):"")
-      + '<div class="slotline">Gebucht: ________________________  ·  Adresse: ________________________  ·  Bestätigungsnr.: ____________</div>'
+      + (h.booked?"":'<div class="slotline">Gebucht: ________________________  ·  Adresse: ________________________  ·  Bestätigungsnr.: ____________</div>')
       + '</div>').join("")
   + '<p><b>Gesamt Unterkunft geschätzt:</b> ¥370.000–490.000.</p></div>'
 
