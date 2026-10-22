@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="robots" content="noindex, nofollow, noarchive">
-<meta name="googlebot" content="noindex, nofollow">
-<title>Japan 2026 · Osaka · Kinosaki · Tokio · Familienplaner</title>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Japan-Planer Dezember 2026</title>
 <style>
 :root{
   --ink:#1b1a22; --ink2:#4a4757; --ink3:#7d7a8c;
@@ -244,11 +238,6 @@ td.num{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap}
 tr.sum td{font-weight:700; border-bottom:0; border-top:2px solid var(--line)}
 
 .hotel{border:1px solid var(--line); border-left:3px solid var(--gold); border-radius:10px; padding:13px 15px; margin-bottom:10px; background:var(--paper)}
-.hotel .hbanner{position:relative; margin:-13px -15px 12px; height:132px; overflow:hidden; border-radius:8px 8px 0 0; background:var(--line)}
-.hotel .hbanner img{width:100%; height:100%; object-fit:cover; display:block}
-.hotel .hbanner.noimg img{display:none}
-.hotel .hbanner .hb-veil{position:absolute; inset:auto 0 0 0; height:56%; background:linear-gradient(transparent, rgba(0,0,0,.55))}
-.hotel .hbanner .hb-cr{position:absolute; right:7px; bottom:5px; font-size:10px; color:rgba(255,255,255,.8); letter-spacing:.02em}
 .hotel .h-top{display:flex; justify-content:space-between; gap:10px; align-items:baseline; flex-wrap:wrap}
 .hotel .h-name{font-size:15.5px; font-weight:700}
 .hotel .h-nights{font-size:12.5px; color:var(--ink3); white-space:nowrap}
@@ -256,10 +245,6 @@ tr.sum td{font-weight:700; border-bottom:0; border-top:2px solid var(--line)}
 .hotel dt{color:var(--ink3); white-space:nowrap}
 .hotel dd{margin:0; color:var(--ink2)}
 .hotel .hwarn{margin-top:10px; padding:10px 12px; background:var(--seal-soft); border-left:3px solid var(--seal); border-radius:0 8px 8px 0; font-size:13.5px; line-height:1.55; color:var(--ink2)}
-.hbooked{margin-top:10px; padding:10px 12px; background:transparent; background:color-mix(in srgb, var(--green) 13%, transparent); border-left:3px solid var(--green); border-radius:0 8px 8px 0; font-size:13.5px; line-height:1.55; color:var(--ink2)}
-.hbooked .hb-label{display:block; margin-bottom:3px; font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; font-weight:700; color:var(--green)}
-.hbooked .hb-name{font-weight:700}
-.hbooked .hb-note{display:block; margin-top:6px}
 .kand-h{margin:14px 0 8px; font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink3); font-weight:700}
 .kand{padding:10px 0; border-top:1px solid var(--line)}
 .kand .k-top{display:flex; justify-content:space-between; gap:10px; align-items:baseline; flex-wrap:wrap; margin-bottom:4px}
@@ -267,8 +252,30 @@ tr.sum td{font-weight:700; border-bottom:0; border-top:2px solid var(--line)}
 .kand .k-top a:hover{text-decoration:underline}
 .kand .k-meta{font-size:12px; color:var(--ink3); font-variant-numeric:tabular-nums}
 .kand p{margin:0; font-size:13.5px; line-height:1.55; color:var(--ink2)}
+.hotel.isbooked{border-left-color:var(--green)}
+.hotel .booked{margin-top:10px; padding:10px 12px; background:var(--card); border:1px solid var(--green); border-radius:8px; font-size:13.5px; line-height:1.55; color:var(--ink2)}
+.hotel .booked b{color:var(--green)}
 .hotel .slotline{margin-top:10px; padding:9px 11px; border:1px dashed var(--ink3); border-radius:8px; font-size:13px; color:var(--ink3)}
 
+
+/* ---------- KARTE ---------- */
+.map-card{background:var(--card); border:1px solid var(--line); border-radius:var(--r); padding:14px; margin-top:14px}
+.map-card h3{margin:0 0 4px; font-size:17px; font-weight:700}
+.map-card .sub{margin:0 0 10px; font-size:13px; color:var(--ink3)}
+.map-svg{width:100%; height:auto; display:block; border-radius:10px; background:var(--indigo-soft); border:1px solid var(--line)}
+.map-svg .land{fill:var(--card); stroke:var(--ink3); stroke-width:1.4}
+.map-svg .route{fill:none; stroke:var(--seal); stroke-width:4; stroke-dasharray:12 9}
+.map-svg .pt-booked{fill:var(--green); stroke:var(--card); stroke-width:3}
+.map-svg .pt-open{fill:var(--gold); stroke:var(--card); stroke-width:3}
+.map-svg .pt-sight{fill:var(--indigo); stroke:var(--card); stroke-width:1.5}
+.map-svg text{font:700 26px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; fill:var(--ink); paint-order:stroke; stroke:var(--indigo-soft); stroke-width:7px; stroke-linejoin:round}
+.map-svg text.small{font-size:23px; font-weight:500; fill:var(--ink2)}
+.legend{display:flex; flex-wrap:wrap; gap:8px 16px; margin-top:10px; font-size:12.5px; color:var(--ink2)}
+.legend span::before{content:""; display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:6px; vertical-align:-1px; background:var(--c)}
+.places{margin:8px 0 0; padding:0; list-style:none}
+.places li{display:flex; justify-content:space-between; gap:12px; align-items:baseline; padding:9px 0; border-top:1px solid var(--line); font-size:14px; color:var(--ink2)}
+.places li b{color:var(--ink)}
+.places a{color:var(--indigo); font-weight:650; text-decoration:none; white-space:nowrap; font-size:13px}
 footer{max-width:760px; margin:0 auto; padding:26px 16px 40px; font-size:12px; line-height:1.65; color:var(--ink3)}
 footer b{color:var(--ink2)}
 .eur{color:var(--ink3); font-size:.88em; white-space:nowrap}
@@ -276,13 +283,11 @@ footer b{color:var(--ink2)}
 :focus-visible{outline:2px solid var(--seal); outline-offset:2px; border-radius:6px}
 @media (prefers-reduced-motion: reduce){ *{transition:none !important; animation:none !important} }
 </style>
-</head>
-<body>
 
 <header>
   <div class="kanjibg">日本</div>
-  <div class="eyebrow">KUL ⇄ KIX · Dezember 2026</div>
-  <h1>Japan 2026 <span class="sub">· Osaka · Kinosaki · Tokio</span></h1>
+  <div class="eyebrow">Familie · KUL ⇄ KIX</div>
+  <h1>Japan 2026 <span class="sub">· Osaka · Kyoto · Tokio</span></h1>
   <div class="dates">Sa 12. – Sa 26. Dezember 2026 · 14 Nächte · 2 Erwachsene + Kind 1 (11) &amp; Kind 2 (9)</div>
   <div class="savestate" id="savestate">Speicher: wird geprüft…</div>
 </header>
@@ -291,6 +296,7 @@ footer b{color:var(--ink2)}
   <button id="tab-days"  class="active" role="tab"><span class="k">旅</span>Tage</button>
   <button id="tab-checks" role="tab"><span class="k">✓</span>Buchen</button>
   <button id="tab-info"  role="tab"><span class="k">〒</span>Infos</button>
+  <button id="tab-map"   role="tab"><span class="k">地</span>Karte</button>
 </nav>
 
 <div id="daybar" role="tablist"></div>
@@ -315,20 +321,20 @@ const DAYS = [
 /* ---------- 1 ---------- */
 {k:"土", dt:"Sa 12.12.", title:"Ankunft in Osaka",
  img:W("5/56/%E9%96%A2%E8%A5%BF%E5%9B%BD%E9%9A%9B%E7%A9%BA%E6%B8%AF%E5%85%A8%E4%BD%93%E5%86%99%E7%9C%9F20220811.jpg/1920px-%E9%96%A2%E8%A5%BF%E5%9B%BD%E9%9A%9B%E7%A9%BA%E6%B8%AF%E5%85%A8%E4%BD%93%E5%86%99%E7%9C%9F20220811.jpg"), cr:"Kansai International Airport · Wikimedia Commons",
- note:"Ein reiner Ankunftstag. Landung erst 19:20 — mit Immigration und Bahn seid ihr gegen 21:30 im Hotel, also nach dem bestätigten Anreisefenster 20:00–21:00. Dem Hotel die späte Ankunft vorher melden. Nichts vornehmen außer ankommen.",
+ note:"Ein reiner Ankunftstag. Landung erst 19:20 — mit Immigration und Bahn seid ihr gegen 21:45 im Hotel in Hommachi. Nichts vornehmen außer ankommen.",
  fix:[
-  {t:"09:30", b:"Abflug KUL → KIX", s:"AirAsia X D7378 · 8 Std. 50 Min. · eine technische Zwischenlandung · Sitze 36A–36D"},
+  {t:"09:30", b:"Abflug KUL → KIX", s:"AirAsia X D7378 · bestätigt ✓ · 8 Std. 50 Min. · eine technische Zwischenlandung · Sitze 36A–36D"},
   {t:"19:20", b:"Landung Kansai International", s:"Immigration mit Visit-Japan-Web-QR ca. 30–45 Min., dann Gepäck und Zoll"},
-  {t:"~21:30", b:"Check-in APA Midosuji Hommachi Ekimae Tower", s:"Gebucht und bestätigt für 12.–17.12. Anreisefenster laut Bestätigung 20:00–21:00 — ihr seid später dran, also vorab Bescheid geben"}
+  {t:"~21:45", b:"Check-in APA Hotel & Resort Midosuji Hommachi Ekimae Tower", s:"Gebucht ✓ · Nankai bis Namba, dort in die Midosuji-Linie Richtung Umeda, 2 Stationen bis Hommachi · Das Hotel ist direkt mit der Station verbunden"}
  ],
  slots:[
   {h:"Vom Flughafen in die Stadt", hint:"eine Option wählen", opts:[
    {id:"d1a", c:"transfer", n:"Nankai Airport Express nach Namba", tags:["tip"],
-    what:"Der normale Nahverkehrszug der Nankai-Linie, fährt alle 15–20 Min. direkt von der Ankunftshalle bis Namba. Keine Reservierung, keine Sitzplatzgarantie. Ab Namba noch zwei Stationen mit der Midosuji-Linie bis Hommachi zum Hotel.",
+    what:"Der normale Nahverkehrszug der Nankai-Linie, fährt alle 15–20 Min. direkt von der Ankunftshalle bis Namba. Keine Reservierung, keine Sitzplatzgarantie. In Namba umsteigen in die Midosuji-Linie, 2 Stationen bis Hommachi.",
     why:"Mit Abstand das beste Preis-Leistungs-Verhältnis, und um diese Uhrzeit ist der Zug leer genug, dass ihr mit vier Koffern bequem sitzt. <b>Für die Kinder:</b> nach neun Stunden Flug ist ein Zug, in dem man aufstehen und aus dem Fenster gucken kann, angenehmer als ein enges Taxi.",
     meta:"45 Min. · ¥970 Erw. / ¥490 Kind · Familie ¥2.920", maps:M("Kansai Airport Station Nankai")},
    {id:"d1b", c:"transfer", n:"Nankai Rapi:t — der blaue Schnellzug",
-    what:"Der Designzug der Nankai-Linie mit runden Bullaugen-Fenstern und reservierten Ledersitzen. Sieht aus wie ein U-Boot auf Schienen. Endet ebenfalls in Namba — von dort zwei Stationen Midosuji bis Hommachi.",
+    what:"Der Designzug der Nankai-Linie mit runden Bullaugen-Fenstern und reservierten Ledersitzen. Sieht aus wie ein U-Boot auf Schienen.",
     why:"Zehn Minuten schneller und garantierte Sitzplätze nebeneinander. <b>Für die Kinder:</b> der Zug selbst ist die Attraktion — die Bullaugen und die Retro-Futurismus-Nase sind das erste richtige Japan-Foto der Reise.",
     meta:"34–39 Min. · ¥1.670 Erw. / ¥840 Kind · Familie ~¥5.020", maps:M("Nankai Rapi:t Kansai Airport")},
    {id:"d1c", c:"transfer", n:"Taxi direkt zum Hotel",
@@ -393,7 +399,7 @@ const DAYS = [
   {h:"Abend", hint:"Dezember-Highlight", opts:[
    {id:"d2h", c:"licht", n:"Midosuji-Illumination", tags:["tip"],
     what:"Die Midosuji ist Osakas Prachtstraße. Vier Kilometer Ginkgo-Bäume werden von Umeda bis Namba komplett in Licht gehüllt — offiziell die längste beleuchtete Straße der Welt.",
-    why:"Ihr wohnt an einem Ende und müsst nur die Straße entlanggehen. Kostet nichts, dauert so lange wie ihr wollt, und es gibt an jedem Abschnitt eine andere Lichtfarbe. <b>Für die Kinder:</b> zwischendurch Konbini-Kakao, dann läuft es sich gut.",
+    why:"Euer Hotel liegt an der Station Hommachi, die unter der Midosuji liegt — ihr müsst nur hinaus und die Straße entlanggehen. Kostet nichts, dauert so lange wie ihr wollt, und es gibt an jedem Abschnitt eine andere Lichtfarbe. <b>Für die Kinder:</b> zwischendurch Konbini-Kakao, dann läuft es sich gut.",
     meta:"1 Std. · gratis · voraussichtlich bis 31.12., 2026er Termin noch offen", maps:M("Midosuji Osaka")},
    {id:"d2i", c:"licht", n:"Osaka Hikari Renaissance, Nakanoshima",
     what:"Osakas großes Winterlichtfest: die Fassade der Zentralen Öffentlichen Halle wird bespielt, dazu eine Lichtallee entlang des Flusses und Buden mit Glühwein und Suppe.",
@@ -411,7 +417,7 @@ const DAYS = [
  img:"https://upload.wikimedia.org/wikipedia/commons/f/fd/USJ_5years.JPG", cr:"Universal Studios Japan · Wikimedia Commons",
  note:"Der Tag, auf den die Kinder hinfiebern. Bewusst auf Montag gelegt: unter der Woche im Dezember ist USJ am leersten und in der günstigsten Preisstufe des Jahres. Park öffnet meist 9 Uhr — um 8:15 am Tor stehen.",
  fix:[
-  {t:"08:15", b:"Am Eingang sein", s:"JR-Loop bis Nishikujo, umsteigen in die Yumesaki-Linie bis Universal City · ~20 Min. ab Namba"},
+  {t:"08:15", b:"Am Eingang sein", s:"Ab Hommachi: Chuo-Linie bis Bentencho, dort JR-Loop bis Nishikujo, dann Yumesaki-Linie bis Universal City · Fahrzeit am Vorabend in Google Maps prüfen"},
   {t:"direkt nach Eintritt", b:"Super-Nintendo-World-Zeitfenster ziehen", s:"Kostenlos über die USJ-App im Park — das ist der einzige Schritt, den man nicht verschieben kann"}
  ],
  slots:[
@@ -450,7 +456,7 @@ const DAYS = [
  img:W("f/f4/Kaiy%C5%ABkan.jpg/1920px-Kaiy%C5%ABkan.jpg"), cr:"Osaka Aquarium Kaiyukan · Wikimedia Commons",
  note:"Nach dem Parktag ein ruhigerer Rhythmus: vormittags Aquarium, nachmittags Hafen, abends Aussicht. Alles indoor-tauglich.",
  fix:[
-  {t:"~10:00", b:"Kaiyukan", s:"U-Bahn Chuo-Linie bis Osakako, 5 Min. zu Fuß · ~25 Min. ab Namba"}
+  {t:"~10:00", b:"Kaiyukan", s:"Ab Hommachi direkt mit der Chuo-Linie bis Osakako, ohne Umsteigen · dann 5 Min. zu Fuß"}
  ],
  slots:[
   {h:"Vormittag", opts:[
@@ -494,7 +500,7 @@ const DAYS = [
  img:W("b/b4/Nara_Park_-_panoramio_%282%29.jpg/1920px-Nara_Park_-_panoramio_%282%29.jpg"), cr:"Nara Park · Wikimedia Commons",
  note:"Der erste richtige Ausflugstag. Nara ist 40 Minuten weg und lässt sich komplett zu Fuß erlaufen — Bahnhof, Park, Tempel und zurück liegen auf einer Linie.",
  fix:[
-  {t:"~09:30", b:"Kintetsu Namba → Kintetsu Nara", s:"40 Min. · ¥680 Erw. / ¥340 Kind · Familie ¥2.040 je Richtung"}
+  {t:"~09:30", b:"Kintetsu Namba → Kintetsu Nara", s:"Ab Hommachi erst 2 Stationen Midosuji-Linie bis Namba · dann 40 Min. · ¥680 Erw. / ¥340 Kind · Familie ¥2.040 je Richtung"}
  ],
  slots:[
   {h:"In Nara", hint:"lässt sich alles kombinieren", opts:[
@@ -514,122 +520,133 @@ const DAYS = [
     what:"Ein kahler Grashügel direkt hinter dem Park, 342 m hoch, in 30 Minuten zu erwandern.",
     why:"Oben sieht man ganz Nara und das Umland, und meistens grasen Rehe mit auf der Wiese. Kostet fast nichts und bringt Bewegung in den Tag. <b>Für die Kinder:</b> runter kann man rennen.",
     meta:"1,5 Std. · ¥150 p.P.", maps:M("Mount Wakakusa Nara")}
-  ]},
-  {h:"Statt Nara", hint:"Alternative für den ganzen Tag", opts:[
-   {id:"d5e", c:"tempel", n:"Kyoto: Fushimi Inari",
-    what:"Ein Schrein am Berghang, durch den sich mehrere tausend zinnoberrote Torii-Tore zu einem kilometerlangen Tunnel reihen. Der volle Rundweg zum Gipfel dauert 2–3 Stunden, der schöne Teil beginnt aber schon nach 15 Minuten.",
-    why:"Das bekannteste Japan-Bild überhaupt, und es funktioniert auch in echt. <b>Für die Kinder:</b> es ist ein Wanderweg, kein Museum — man läuft, klettert Stufen, findet Steinfüchse. Ab dem mittleren Abschnitt wird es deutlich leerer, das lohnt sich.",
-    meta:"halber Tag · gratis · 55 Min. ab Osaka", maps:M("Fushimi Inari Taisha Kyoto")},
-   {id:"d5f", c:"natur", n:"Kyoto: Arashiyama-Bambuswald & Affenberg",
-    what:"Ein Wegabschnitt durch dicht stehenden Riesenbambus, dazu die Togetsukyo-Brücke über den Fluss. Auf dem Hügel gegenüber leben rund 120 frei lebende Japanmakaken.",
-    why:"Der Bambusweg selbst dauert nur 15 Minuten — die eigentliche Zeit steckt im Affenberg. <b>Für die Kinder:</b> oben auf dem Berg dreht sich das Verhältnis um: die Menschen sitzen in einer Gitterhütte und füttern die Affen von innen nach außen. Der Aufstieg dauert 20 Minuten und ist steil.",
-    meta:"halber Tag · Bambus gratis · Affenberg ¥800 Erw. / ¥400 Kind", maps:M("Arashiyama Bamboo Grove Kyoto")}
   ]}
  ]},
 
 /* ---------- 6 ---------- */
-{k:"木", dt:"Do 17.12.", title:"Nach Kinosaki Onsen",
- img:W("8/85/Kinosaki-Onsen_Station_Sign_and_Limited_Express_%22Konotori%22.jpg/1920px-Kinosaki-Onsen_Station_Sign_and_Limited_Express_%22Konotori%22.jpg"), cr:"Kinosaki-Onsen Station · Wikimedia Commons",
- note:"Ortswechsel. Vormittags noch Osaka, mittags in den Zug, nachmittags im Yukata durch einen Onsen-Ort im Hinterland. Größerer Kontrast geht kaum.",
+{k:"木", dt:"Do 17.12.", title:"Nach Kyoto",
+ img:W("1/1b/Fushimi_Inari_Taisha_tunnel_sombre.jpg/1920px-Fushimi_Inari_Taisha_tunnel_sombre.jpg"), cr:"Fushimi Inari Taisha · Wikimedia Commons",
+ note:"Ortswechsel, aber ein kurzer: Kyoto ist von Osaka nur eine halbe Stunde entfernt. Mittags seid ihr da, Gepäck ins Hotel, dann ein Fixpunkt am Nachmittag und abends baden.",
  fix:[
-  {t:"~11:00", b:"Check-out APA Hommachi, Gepäck", s:"Fragt beim Auschecken, ob ein Koffer bis zum 25.12. im Hotel bleiben darf — das spart auf der Tokio-Runde viel. Falls ja, für die Abreisenacht wieder hierher buchen; sonst ein Haus direkt an der Nankai-Linie nehmen"},
-  {t:"~12:30", b:"Ltd. Express Kounotori nach Kinosaki Onsen", s:"ab Osaka bzw. Shin-Osaka · 2 Std. 45 Min. · ¥6.140 Erw. res. / ¥3.070 Kind · Familie ~¥18.420"},
-  {t:"~15:15", b:"Ankunft Kinosaki Onsen", s:"Viele Ryokan holen am Bahnhof ab — vorher anfragen"}
+  {t:"bis 10:00", b:"Check-out APA Hommachi", s:"Check-out ist um 10 Uhr. Gepäckaufbewahrung an der Rezeption ist laut APA-Website möglich — beim Check-in kurz bestätigen lassen. Wenn ihr die letzte Nacht am 25.12. wieder hier bucht: vorher schriftlich fragen, ob ein Koffer bis dahin bleiben darf"},
+  {t:"~10:30", b:"Hommachi → Umeda → JR nach Kyoto", s:"Midosuji-Linie 2 Stationen bis Umeda, dann JR Special Rapid ab Osaka Station bis Kyoto · ca. 30 Min. · ¥580 Erw. / ¥290 Kind · Familie ¥1.740"},
+  {t:"~12:00", b:"Gepäck ins Hotel in Kyoto", s:"Hotel noch nicht gebucht — Kandidaten im Reiter Infos"}
  ],
  slots:[
-  {h:"Vormittag in Osaka", hint:"kurz und nah am Hotel", opts:[
-   {id:"d6a", c:"shopping", n:"Don Quijote Dotonbori",
-    what:"Ein chaotisch vollgestopftes Kaufhaus über sieben Etagen, 24 Stunden offen, mit einem eigenen Riesenrad an der Fassade. Verkauft alles von KitKat-Sondersorten bis zu Kosmetik.",
-    why:"Der beste Ort für Mitbringsel und für die Snacks, die man im Zug braucht. <b>Für die Kinder:</b> die KitKat-Wand mit 20 Sorten ist ein eigener Programmpunkt.",
-    meta:"1 Std. · Eintritt frei", maps:M("Don Quijote Dotonbori Osaka")},
-   {id:"d6b", c:"natur", n:"Spaziergang am Dotonbori-Kanal",
-    what:"Die Uferpromenade unterhalb der Neonschilder, tagsüber ruhig und leer.",
-    why:"Bei Tag sieht der Kanal völlig anders aus als am Ankunftsabend. Zehn Minuten, kostet nichts, guter Abschluss des Osaka-Blocks.",
-    meta:"30 Min. · gratis", maps:M("Dotonbori Riverwalk Osaka")},
-   {id:"d6c", c:"essen", n:"Ekiben für den Zug kaufen", tags:["tip"],
-    what:"Bahnhofs-Lunchboxen. Am Shin-Osaka-Bahnhof gibt es eine ganze Halle davon, jede Region hat ihre eigene Spezialität, alles ist kalt zu essen und sorgfältig gepackt.",
-    why:"Ekiben im Zug zu essen ist eine japanische Institution und macht aus einer Zugfahrt ein Ereignis. <b>Für die Kinder:</b> jeder sucht seine eigene Box aus — es gibt welche in Form von Zügen und Pandas.",
-    meta:"30 Min. · ~¥1.000–1.500 p.P.", maps:M("Shin-Osaka Station Ekiben")}
+  {h:"Nachmittag", hint:"eines aussuchen", opts:[
+   {id:"k1a", c:"tempel", n:"Fushimi Inari", tags:["tip","kid"],
+    what:"Ein Schrein am Berghang, durch den sich tausende zinnoberrote Torii-Tore zu einem Tunnel reihen. Überall stehen steinerne Füchse, die Boten der Reisgottheit Inari.",
+    why:"Das bekannteste Japan-Bild, und es funktioniert auch in echt. Bis zur Kreuzung Yotsutsuji sind es 30–45 Minuten bergauf, dort drehen die meisten um; danach wird es deutlich leerer. <b>Für die Kinder:</b> eine kleine Bergexpedition, die man jederzeit abbrechen kann.",
+    meta:"ca. 2 Std. · gratis, immer offen · JR Nara-Linie bis Inari, 5 Min., ¥150", maps:M("Fushimi Inari Taisha")},
+   {id:"k1b", c:"museum", n:"Kyoto Railway Museum", tags:["kid","rain"],
+    what:"54 echte Fahrzeuge von der Dampflok bis zum Shinkansen, ein historischer Lokschuppen und eine kurze Fahrt mit einer echten Dampflok.",
+    why:"Mittwoch ist Ruhetag, Donnerstag also offen. <b>Für die Kinder:</b> nach einer Woche mit Zügen in Japan der Blick hinter die Kulissen — Führerstände, Simulatoren, Shinkansen zum Anfassen.",
+    meta:"2–3 Std. · Erw. ¥1.500 / Schüler ¥500 · Dampflok ¥300 / ¥100 · 10–17 Uhr · JR bis Umekoji-Kyotonishi, 3 Min.", maps:M("Kyoto Railway Museum")},
+   {id:"k1c", c:"kids", n:"Kyoto Aquarium", tags:["rain"],
+    what:"Direkt neben dem Eisenbahnmuseum: Riesensalamander aus Japans Flüssen, ein Quallenraum und eine Delfinshow.",
+    why:"Gut bei Regen und mit dem Museum kombinierbar. <b>Ehrlich:</b> nach dem Kaiyukan in Osaka eher die zweite Wahl.",
+    meta:"1,5–2,5 Std. · Erw. ¥2.200 / Schüler ¥1.100 · wochentags 10–18 Uhr", maps:M("Kyoto Aquarium")}
   ]},
-  {h:"Nachmittag in Kinosaki", opts:[
-   {id:"d6d", c:"onsen", n:"Yukata anziehen und loslaufen", tags:["tip","kid"],
-    what:"Im Ryokan bekommt jeder einen Yukata (leichter Baumwollkimono), eine wattierte Jacke darüber und Geta (Holzsandalen). So geht man in Kinosaki den ganzen Abend durch den Ort.",
-    why:"Das ist der eigentliche Reiz von Kinosaki: der ganze Ort ist das Badehaus, die Straße der Flur. Überall klappern Geta auf dem Asphalt. <b>Für die Kinder:</b> sich in fremde Kleidung zu stecken und damit rauszudürfen ist Verkleiden mit Erlaubnis. Geta sind rutschig — die ersten Meter langsam.",
-    meta:"den ganzen Abend · im Ryokan enthalten", maps:M("Kinosaki Onsen")},
-   {id:"d6e", c:"onsen", n:"Erstes Bad: Ichino-yu oder Jizo-yu", tags:["tip"],
-    what:"Ichino-yu liegt am schönsten am Kanal und hat ein Höhlenbad, das direkt in den Fels geschlagen ist. Jizo-yu ist das Bad der Einheimischen und hat als einziges ein eigenes Kinderbecken.",
-    why:"<b>Achtung, Donnerstag ist Ruhetag:</b> Goshono-yu und Yanagi-yu haben heute zu. Offen sind Ichino-yu, Jizo-yu, Mandara-yu und Kono-yu. Für den Einstieg mit Kindern ist Jizo-yu das entspannteste Haus. <b>Wichtig für euch:</b> gebadet wird nackt und nach Geschlecht getrennt. Kind 2 (9) darf mit auf die Frauenseite, Kind 1 (11) muss auf die Männerseite — das vorher besprechen, nicht am Eingang.",
-    meta:"1–1,5 Std. · Yumepa ¥1.500 Erw. / ¥750 Kind, für Ryokan-Gäste gratis", maps:M("Ichino-yu Kinosaki Onsen")},
-   {id:"d6f", c:"essen", n:"Kaiseki-Abendessen im Ryokan", tags:["tip"],
-    what:"Ein mehrgängiges Menü, das im Ryokan-Preis meist enthalten ist. In der Krabbensaison steht Matsuba-Krabbe im Zentrum: roh, gegrillt, im Sud und als Reisgericht.",
-    why:"Die Saison läuft vom 7.11. bis 31.3., ihr seid mittendrin. <b>Für die Kinder:</b> Kaiseki ist für Kinder oft schwierig — die meisten Häuser bieten ein eigenes Kindermenü an, das muss man bei der Buchung mitbestellen. Nicht davon ausgehen, dass es automatisch kommt.",
-    meta:"2 Std. · im Ryokan-Preis · Kindermenü separat bestellen", maps:M("Kinosaki Onsen ryokan")}
+  {h:"Abend", hint:"Onsen und Lichter", opts:[
+   {id:"k1d", c:"onsen", n:"Funaoka Onsen — Kyotos berühmtestes Badehaus", tags:["tip"],
+    what:"Ein altes öffentliches Badehaus (Sento) mit vielen Becken, Holzbad und Außenbad. Kein Thermalwasser, aber ein Stück Alltagsjapan, wie es kaum noch eines gibt.",
+    why:"Günstig, echt und tattoo-freundlich. <b>Wichtig für euch:</b> gebadet wird nackt und nach Geschlecht getrennt — Kind 2 (9) mit Mama, Kind 1 (11) mit Papa. Das vorher besprechen, nicht am Eingang.",
+    meta:"1–1,5 Std. · ab 12 J. ¥550, 6–11 J. ¥200 · 15–23:30 Uhr · Bus 206 ab Kyoto Station ca. 25 Min.", maps:M("Funaoka Onsen Kyoto")},
+   {id:"k1e", c:"onsen", n:"Thermalbad im eigenen Hotel",
+    what:"Einige Hotels in Kyoto haben ein eigenes Thermalbad mit Außenbecken, etwa Kyoto Umekoji Kadensho mit kostenlosen Familien-Privatbädern oder Dormy Inn Premium Kyoto Ekimae mit Dachbad.",
+    why:"Der bequemste Weg zum täglichen Onsen. <b>Für die Kinder:</b> in einem Privatbad kann die ganze Familie zusammen baden — das geht in öffentlichen Bädern nicht.",
+    meta:"nur für Hotelgäste · teurer als die übrigen Kandidaten · Reiter Infos", maps:M("Kyoto Umekoji Kadensho")},
+   {id:"k1f", c:"licht", n:"Lichtshow auf der großen Treppe im Bahnhof", tags:["kid"],
+    what:"Die 171 Stufen der großen Treppe im Bahnhofsgebäude von Kyoto werden vom 1. bis 25.12.2026 abends mit wechselnden Lichtbildern bespielt.",
+    why:"Kostenlos, drinnen und direkt am Bahnhof. <b>Für die Kinder:</b> man darf die Treppe hochlaufen, oben gibt es einen Blick über die Stadt.",
+    meta:"30 Min. · gratis · Treppe 15–22 Uhr", maps:M("Kyoto Station Grand Stairway")}
   ]}
  ]},
 
 /* ---------- 7 ---------- */
-{k:"金", dt:"Fr 18.12.", title:"Ein ganzer Tag Onsen",
- img:W("3/35/Kinosaki_Onsen_by_day.jpg/1920px-Kinosaki_Onsen_by_day.jpg"), cr:"Kinosaki Onsen · Wikimedia Commons",
- note:"Der langsamste Tag der Reise, und das ist Absicht. Nichts muss. Jedes der sieben Bäder hat einen festen Ruhetag pro Woche — morgens im Ryokan kurz durchfragen, welche heute offen sind.",
- fix:[],
+{k:"金", dt:"Fr 18.12.", title:"Arashiyama & Onsen",
+ img:W("4/4a/Bamboo_Forest%2C_Arashiyama%2C_Kyoto%2C_Japan.jpg/1920px-Bamboo_Forest%2C_Arashiyama%2C_Kyoto%2C_Japan.jpg"), cr:"Bambuswald Arashiyama · Wikimedia Commons",
+ note:"Der volle Kyoto-Tag. Früh in den Bambuswald, solange es leer ist, mittags ins Onsen, und wer mag, fährt am späten Nachmittag mit der beleuchteten Bummelbahn. Alternativ ein Bergtag mit Außenbad in Kurama.",
+ fix:[
+  {t:"~08:30", b:"Bambuswald Arashiyama", s:"JR Sagano-Linie ab Kyoto Station bis Saga-Arashiyama · 15 Min. · ¥240 Erw. · früh ist es deutlich leerer"}
+ ],
  slots:[
-  {h:"Baden", hint:"heute sind alle sechs offen", opts:[
-   {id:"d7a", c:"onsen", n:"Onsen-Hopping: die sechs offenen Bäder", tags:["tip"],
-    what:"Kinosaki hat sieben öffentliche Badehäuser, aber Satono-yu ist seit April 2024 geschlossen — es sind also sechs. Goshono-yu hat einen Wasserfall im Außenbad, Mandara-yu ein Zedernholz-Fass, Kono-yu liegt am ruhigsten am Ortsende, Yanagi-yu ist das kleinste und heißeste, Jizo-yu hat ein Kinderbecken, Ichino-yu ein Höhlenbad.",
-    why:"Der Freitag ist euer guter Tag: alle sechs haben offen, gestern waren zwei zu. Alle sind tattoo-freundlich. <b>Für die Kinder:</b> zwei bis drei sind realistisch, dann ist die Luft raus. Zwischen den Bädern laufen und abkühlen, sonst wird es zu viel. Genug trinken.",
-    meta:"je 30–45 Min. · Yumepa ¥1.500 / ¥750, für Ryokan-Gäste gratis", maps:M("Kinosaki Onsen public bathhouses")},
-   {id:"d7b", c:"onsen", n:"Goshono-yu — das schönste",
-    what:"Das prächtigste der Häuser, gebaut nach dem Vorbild des Kaiserpalasts von Kyoto. Im Außenbereich fällt ein kleiner Wasserfall neben das Becken.",
-    why:"Wenn ihr nur ein einziges Bad macht, dann dieses. Draußen im heißen Wasser sitzen, während es kalt ist und vielleicht schneit — dafür fährt man nach Kinosaki.",
-    meta:"1 Std. · im Yumepa", maps:M("Goshono-yu Kinosaki Onsen")},
-   {id:"d7c", c:"onsen", n:"Ashi-yu — Fußbäder für zwischendurch",
-    what:"Über den Ort verteilt gibt es kostenlose öffentliche Fußbäder, oft direkt an der Straße. Anziehen bleibt an.",
-    why:"Der Kompromiss, wenn jemand keine Lust auf ein volles Bad hat oder nach dem dritten Mal genug ist. <b>Für die Kinder:</b> Fußbad geht immer, auch angezogen, auch nur fünf Minuten.",
-    meta:"10 Min. · gratis", maps:M("Kinosaki Onsen foot bath")}
+  {h:"Vormittag in Arashiyama", hint:"lässt sich kombinieren", opts:[
+   {id:"k2a", c:"natur", n:"Bambuswald, Togetsukyo-Brücke & Tenryu-ji", tags:["tip"],
+    what:"Ein Weg durch dicht stehenden Riesenbambus, die Holzbrücke Togetsukyo über den Fluss und der Zen-Tempel Tenryu-ji mit Landschaftsgarten.",
+    why:"Der Bambusweg selbst dauert nur 15 Minuten, morgens hört man noch das Rauschen statt der Menge. <b>Für die Kinder:</b> von der Brücke sieht man schon den Affenberg gegenüber.",
+    meta:"1,5–2 Std. · Bambus gratis · Tenryu-ji-Garten ¥500 · 8:30–17 Uhr", maps:M("Arashiyama Bamboo Grove")},
+   {id:"k2b", c:"kids", n:"Affenpark Iwatayama", tags:["tip","kid"],
+    what:"Auf dem Hügel südlich der Togetsukyo-Brücke leben frei lebende Japanmakaken. Oben sitzen die Menschen in einer Gitterhütte und füttern die Affen von innen nach außen.",
+    why:"Der Aufstieg dauert 10–20 Minuten und ist steil, oben gibt es einen Blick über Kyoto. <b>Für die Kinder:</b> der verkehrte Zoo — davon erzählen sie zuhause.",
+    meta:"1–1,5 Std. · Erw. ¥800, Kinderpreis [OFFEN] · 9–16:30 Uhr, bei Starkregen oder Schnee zu", maps:M("Arashiyama Monkey Park Iwatayama")}
   ]},
-  {h:"Zwischen den Bädern", opts:[
-   {id:"d7d", c:"aussicht", n:"Kinosaki-Seilbahn auf den Daishi-yama",
-    what:"Eine kleine Gondelbahn fährt in zwei Etappen den Hausberg hinauf. Auf halber Höhe ein Tempel, oben eine Aussichtsplattform mit Café über dem ganzen Tal.",
-    why:"Von oben sieht man, wie klein der Ort eigentlich ist und wie er zwischen die Berge geklemmt liegt. Bei Schnee ist es besonders schön. <b>Für die Kinder:</b> die Fahrt selbst ist kurz und aufregend genug.",
-    meta:"1–1,5 Std. · ~¥1.200 Erw. / ~¥600 Kind hin und zurück", maps:M("Kinosaki Ropeway")},
-   {id:"d7e", c:"kids", n:"Yumepa-Spielhallen und Kanalgassen", tags:["kid"],
-    what:"An mehreren Stellen im Ort gibt es kleine Retro-Spielhallen mit Ballwurf- und Angelspielen, dazu Läden mit Onsen-Eiern und Sojasauce-Softeis.",
-    why:"Kinosaki ist ein Kurort, aber kein Museumsdorf — es gibt Sachen für Kinder zwischen den Bädern. <b>Für die Kinder:</b> das ist der Teil, der sie über einen ganzen Bade-Tag rettet.",
-    meta:"1 Std. · Kleingeld", maps:M("Kinosaki Onsen shopping street")},
-   {id:"d7f", c:"museum", n:"Genbudo-Höhlen",
-    what:"Sechs Basalthöhlen aus erstarrter Lava, 20 Minuten mit dem Zug oder Bus entfernt. Die sechseckigen Säulen sehen aus, als hätte sie jemand gestapelt.",
-    why:"Der Ausflug für den Fall, dass jemand vom Baden genug hat. Geologisch beeindruckend und in einer Stunde erledigt. <b>Für die Kinder:</b> es sieht künstlich aus und ist es nicht — genau die Art Ort, an dem man Fragen stellt.",
-    meta:"2 Std. inkl. Anfahrt · ~¥500", maps:M("Genbudo Cave Toyooka")},
-   {id:"d7g", c:"essen", n:"Zweiter Krabbenabend oder Tajima-Rind", tags:["lux"],
-    what:"Tajima-Rind aus der Region ist die Ursprungsrasse des Kobe-Rinds. Viele Ryokan bieten als Alternative zum Krabben-Kaiseki ein Menü mit Tajima-Beef an.",
-    why:"Wenn ihr an einem Abend richtig zulangen wollt, ist das der. <b>Für die Kinder:</b> Rind auf dem heißen Stein funktioniert erfahrungsgemäß deutlich besser als ein Krabben-Kaiseki mit acht Gängen. Bei der Ryokan-Buchung als Menüwunsch angeben.",
-    meta:"2 Std. · Aufpreis je Haus", maps:M("Tajima beef Kinosaki")}
+  {h:"Mittags ins Onsen", hint:"eines aussuchen", opts:[
+   {id:"k2c", c:"onsen", n:"FuFu no Yu", tags:["tip"],
+    what:"Ein Tagesbad mit Thermalwasser am Fluss in Arashiyama, drei Minuten vom Bahnhof Hankyu Arashiyama.",
+    why:"Liegt zwischen Bambuswald und Bummelbahn, also kein Umweg. Getrennt nach Geschlecht. <b>Tattoos:</b> nur kleine, mit Sticker abgedeckt.",
+    meta:"1–1,5 Std. · Erw. ¥1.100, Kinder 3–12 J. ¥600 · Handtuch ¥200 · 12–22 Uhr", maps:M("Fufu no Yu Arashiyama")},
+   {id:"k2d", c:"onsen", n:"Hanaikada",
+    what:"Ein Ryokan in Arashiyama, dessen Thermalbad mittags für Tagesgäste offen ist, auf Wunsch mit Mittagessen.",
+    why:"Ruhiger als ein großes Badehaus. Das Mittagessen-Paket vorher reservieren. Kinderpreis und Tattoo-Regel sind nicht eindeutig [OFFEN].",
+    meta:"1 Std. · Bad ¥900, mit Mittagessen ab ¥3.300 · 11–15 Uhr", maps:M("Arashiyama Onsen Hanaikada")},
+   {id:"k2e", c:"onsen", n:"Sagano Onsen Tenzan-no-Yu",
+    what:"Ein großes Badehaus mit Thermalwasser westlich der Innenstadt, an der kleinen Randen-Straßenbahn.",
+    why:"Bis Mitternacht offen, also auch abends noch möglich. Laut Touristenamt tattoo-freundlich.",
+    meta:"1–1,5 Std. · Erw. ¥1.200, Kinder ¥550 · 10–24 Uhr · Randen bis Arisugawa, 3 Min. zu Fuß", maps:M("Sagano Onsen Tenzan no Yu")}
+  ]},
+  {h:"Nachmittag", opts:[
+   {id:"k2f", c:"aktiv", n:"Sagano-Bummelbahn mit Lichtaktion", tags:["tip","kid"],
+    what:"Eine offene Nostalgiebahn fährt in 25 Minuten durch die Hozu-Schlucht nach Kameoka. Vom 24.10. bis 29.12.2026 ist die Fahrt ab 16:30 als „Light Fantasy Train“ beleuchtet.",
+    why:"Am 17.–19.12. fährt sie (nur am 16.12. nicht), und es ist das letzte Jahr der alten Wagen. <b>Für die Kinder:</b> offene Wagen im Dunkeln mit Lichtern in der Schlucht — warm anziehen. <b>Tickets</b> gibt es online genau einen Monat vorher.",
+    meta:"25 Min. je Richtung · Erw. ¥880 / Kind ¥440 einfach · zurück mit der JR", maps:M("Torokko Saga Station")},
+   {id:"k2g", c:"aktiv", n:"Hozugawa-Bootsfahrt", tags:["lux"],
+    what:"Zwei Stunden im Holzboot von Kameoka den Fluss hinunter zurück nach Arashiyama, im Winter beheizt.",
+    why:"Zusammen mit der Bummelbahn der Klassiker: Bahn hin, Boot zurück. Geht nur bis zum frühen Nachmittag, die Boote fahren ab Mitte Dezember 10:00–14:30. Teuer.",
+    meta:"2 Std. · Erw. ¥6.000 / Kind ¥4.500", maps:M("Hozugawa River Boat Ride Kameoka")}
+  ]},
+  {h:"Statt Arashiyama", hint:"Alternativen für den ganzen Tag", opts:[
+   {id:"k2h", c:"onsen", n:"Kurama: Tempel, Bergonsen und Kibune", tags:["tip"],
+    what:"Ein Bergdorf nördlich der Stadt: der Tempel Kurama-dera am Hang und darunter Kurama Onsen mit Außenbad im Wald. Wer mag, wandert in ca. 1,5 Std. über den Berg nach Kibune, teils steil.",
+    why:"Der nächste Ersatz für Kinosaki: heißes Wasser draußen zwischen Zedern. Seit November 2024 wieder geöffnet. <b>Für die Kinder:</b> die Fahrt mit der kleinen Eizan-Bahn durch den Wald gehört dazu.",
+    meta:"ganzer Tag · Bad komplett Erw. ¥2.500, Kinder 3–12 J. ¥1.300 · Kurama-dera ¥500 · ca. 60–75 Min. ab Kyoto Station", maps:M("Kurama Onsen Kyoto")},
+   {id:"k2i", c:"kids", n:"UZUMASA KYOTO VILLAGE (früher Toei Studio Park)", tags:["kid"],
+    what:"Eine Edo-Filmkulisse, die 2026 umgebaut wieder eröffnet hat: Ninja-Show ohne Sprache, Ninja-Parcours, Labyrinth, Samurai-Training und Bogenschießen.",
+    why:"Ruhetag ist Dienstag, Freitag also offen. <b>Für die Kinder:</b> mit 9 und 11 genau das richtige Alter; einige Mitmach-Angebote kosten extra.",
+    meta:"halber Tag · ab Mittelschule ¥2.800, Kinder ¥1.600 · 10–21 Uhr", maps:M("Uzumasa Kyoto Village")},
+   {id:"k2j", c:"kids", n:"Nintendo Museum (Uji)",
+    what:"Das Museum von Nintendo mit Spielgeschichte und Mitmach-Stationen.",
+    why:"<b>Nur mit Glück:</b> Tickets werden verlost, die Verlosung für Dezember ist vorbei. Freigewordene Tickets erscheinen auf der Ticketseite — ab und zu nachsehen.",
+    meta:"halber Tag · Erw. ¥3.300, 6–11 J. ¥1.100 · Di Ruhetag · Kintetsu bis Ogura", maps:M("Nintendo Museum Uji")}
   ]}
  ]},
 
 /* ---------- 8 ---------- */
-{k:"土", dt:"Sa 19.12.", title:"Kinosaki → Tokio",
+{k:"土", dt:"Sa 19.12.", title:"Kyoto → Tokio",
  img:W("e/ef/JR_Series-N700S-J30_Nozomi-4.jpg/1920px-JR_Series-N700S-J30_Nozomi-4.jpg"), cr:"N700S Nozomi · Wikimedia Commons",
- note:"Der lange Transfertag: knapp fünf Stunden Bahn mit einem Umstieg in Kyoto. Dafür fahrt ihr auf der schönen Strecke durch die Berge und steigt in Kyoto in den Shinkansen um.",
+ note:"Kein langer Transfer mehr: vormittags noch Kyoto, nachmittags in gut zwei Stunden mit dem Nozomi nach Tokio.",
  fix:[
-  {t:"~10:30", b:"Ltd. Express Kinosaki → Kyoto", s:"2 Std. 20 Min. · ¥5.170–5.770 Erw. res. · Familie ~¥17.300"},
-  {t:"Kyoto", b:"Umstieg in den Shinkansen", s:"Gleiche Bahnhofsebene, großzügig Zeit einplanen — Kyoto ist unübersichtlich"},
-  {t:"~16:00", b:"Nozomi Kyoto → Tokio", s:"2 Std. 20 Min. · ~¥14.200 Erw. res. / ~¥7.100 Kind · Familie ~¥42.600"}
+  {t:"~14:00", b:"Nozomi Kyoto → Tokio", s:"ca. 2 Std. 15 Min. · ¥14.170 Erw. res. / ~¥7.080 Kind · Familie ~¥42.500"},
+  {t:"abends", b:"Check-in APA Hotel & Resort Nishishinjuku Gochome Ekimae Tower", s:"Gebucht ✓ · 2 Zimmer · Honmachi 3-14-1, Shibuya-ku, Tokio 151-0071 · laut APA 1 Gehminute zur Station Nishi-shinjuku-gochome (Oedo-Linie) · Weg ab Tokyo Station am Tag selbst in Google Maps prüfen"}
  ],
  slots:[
-  {h:"Umstieg in Kyoto gestalten", hint:"eine Variante wählen", opts:[
-   {id:"d8a", c:"transfer", n:"Direkt durchfahren", tags:["tip"],
-    what:"In Kyoto nur umsteigen, in den nächsten Nozomi und um kurz nach 15 Uhr in Tokio sein.",
-    why:"Nach zwei Tagen Onsen und mit Gepäck ist Durchfahren oft klüger als ein Zwischenprogramm. Ihr gewinnt einen halben Nachmittag in Tokio und kommt entspannt an. <b>Für die Kinder:</b> der Shinkansen ist ohnehin ein eigener Programmpunkt.",
-    meta:"kein Aufenthalt · Ankunft Tokio ~15:00", maps:M("Kyoto Station")},
-   {id:"d8b", c:"tempel", n:"3 Stunden Kyoto: Fushimi Inari",
-    what:"Gepäck in die Schließfächer am Kyoto-Bahnhof, mit der JR Nara-Linie zwei Stationen bis Inari, dann direkt vor den Torii-Toren stehen.",
-    why:"Die schnellste Art, Kyoto trotzdem mitzunehmen — Hin- und Rückweg zusammen 30 Minuten. <b>Ehrlich:</b> Samstagnachmittag ist der untere Abschnitt sehr voll. Wenn ihr das macht, geht mindestens 20 Minuten bergauf, dann wird es merklich ruhiger.",
-    meta:"3 Std. · gratis · Schließfach ~¥700", maps:M("Fushimi Inari Taisha Kyoto")},
-   {id:"d8c", c:"essen", n:"3 Stunden Kyoto: Nishiki-Markt & Bahnhof",
-    what:"Der Nishiki-Markt ist eine 400 m lange überdachte Gasse mit Ständen für eingelegtes Gemüse, Tofu, Süßigkeiten und Messerläden. Der Kyoto-Bahnhof selbst ist ein spektakulärer Betonbau mit einer 171-stufigen Lichttreppe.",
-    why:"Beides ist nah am Gepäck und wetterunabhängig. <b>Für die Kinder:</b> die große Treppe im Bahnhof wird abends als Lichtinstallation bespielt, und man darf sie hochlaufen.",
-    meta:"3 Std. · gratis, Essen extra", maps:M("Nishiki Market Kyoto")}
+  {h:"Letzter Vormittag in Kyoto", hint:"eines oder zwei", opts:[
+   {id:"k3a", c:"tempel", n:"Kiyomizu-dera & die Gassen Sannenzaka/Ninenzaka", tags:["tip"],
+    what:"Die große Holzterrasse des Tempels hängt über dem Hang, darunter führen die alten Gassen Sannenzaka und Ninenzaka mit kleinen Läden bergab.",
+    why:"Ab 6 Uhr offen, früh ist es am schönsten. <b>Für die Kinder:</b> in der Zuigudo-Halle führt ein stockdunkler Gang hindurch, für eine kleine Gebühr. Samstags fährt der Schnellbus EX100/EX101 ab Kyoto Station.",
+    meta:"2 Std. · Erw. ¥400, Schüler ¥200 (Angaben schwanken) · 6–18 Uhr", maps:M("Kiyomizu-dera")},
+   {id:"k3b", c:"essen", n:"Nishiki-Markt",
+    what:"Eine überdachte Marktstraße mit Ständen für eingelegtes Gemüse, Tofu, Süßes und Spieße.",
+    why:"Mittagessen im Stehen, bevor es zum Zug geht. <b>Regel:</b> nicht im Gehen essen, sondern am Stand.",
+    meta:"1 Std. · meist 10–18 Uhr · U-Bahn bis Shijo", maps:M("Nishiki Market Kyoto")},
+   {id:"k3c", c:"kultur", n:"Samurai & Ninja Museum", tags:["kid"],
+    what:"Ein kleines Museum in der Innenstadt mit Führung auf Englisch: Wurfsterne, Blasrohr, Schwert-Vorführung, Verkleiden.",
+    why:"Eine Stunde, zentral, passt genau vor den Zug. Vorher reservieren. Kinderpreis [OFFEN].",
+    meta:"1 Std. · ca. ¥2.400 Erw. · 10:30–20:30 Uhr", maps:M("Samurai Ninja Museum Kyoto")},
+   {id:"k3d", c:"tempel", n:"Kinkaku-ji — der Goldene Pavillon",
+    what:"Der mit Blattgold überzogene Pavillon am Teich.",
+    why:"Ikonisch, aber weit draußen: der Bus 205 braucht ca. 40 Minuten und ist oft voll. Nur, wenn der Zug spät fährt.",
+    meta:"15–45 Min. vor Ort · Erw. ¥500, Schüler ¥300 · 9–17 Uhr", maps:M("Kinkaku-ji")}
   ]},
   {h:"Abend in Tokio", opts:[
    {id:"d8d", c:"licht", n:"Marunouchi-Illumination", tags:["tip"],
@@ -641,9 +658,9 @@ const DAYS = [
     why:"Man muss nirgends hin, es ist warm, es geht schnell. <b>Für die Kinder:</b> jeder darf sich einen anderen Laden aussuchen — die Gasse ist kurz genug, dass man sich nicht verliert.",
     meta:"1 Std. · ~¥1.200–1.800 p.P.", maps:M("Tokyo Ramen Street Tokyo Station")},
    {id:"d8f", c:"transfer", n:"Einfach ins Hotel und ausruhen",
-    what:"Vom Tokioter Hauptbahnhof je nach Hotel 15–25 Minuten mit der Bahn.",
+    what:"Vom Tokioter Hauptbahnhof mit der Bahn zum APA Nishishinjuku Gochome — das Hotel liegt direkt an der Station Nishi-shinjuku-gochome der Oedo-Linie.",
     why:"Fünf Stunden Zug mit Kindern sind fünf Stunden Zug. Es ist völlig in Ordnung, den Abend zu streichen — Tokio läuft euch nicht weg, ihr habt noch sechs Nächte.",
-    meta:"—", maps:M("Shinjuku Station Tokyo")}
+    meta:"—", maps:M("APA Hotel & Resort Nishishinjuku Gochome Ekimae Tower Tokyo")}
   ]}
  ]},
 
@@ -744,7 +761,7 @@ const DAYS = [
     meta:"2–3 Std. · gratis · Stände ab ca. 9:30", maps:M("Sensoji Temple Asakusa")},
    {id:"d11b", c:"kultur", n:"Kimono- oder Yukata-Verleih",
     what:"Rund um Senso-ji gibt es Dutzende Verleihe. Man wird eingekleidet, bekommt die Haare gemacht und gibt alles am Abend zurück.",
-    why:"In Kinosaki hattet ihr Yukata im Ryokan — hier geht es um die Fotos vor der Pagode. <b>Für die Kinder:</b> Kind 2 wird das lieben, Kind 1 vielleicht nicht. Vorher fragen, nicht überrumpeln. Vorab reservieren.",
+    why:"Hier geht es um die Fotos vor der Pagode. <b>Für die Kinder:</b> Kind 2 wird das lieben, Kind 1 vielleicht nicht. Vorher fragen, nicht überrumpeln. Vorab reservieren.",
     meta:"2–3 Std. · ab ~¥3.000 p.P.", maps:M("kimono rental Asakusa")},
    {id:"d11c", c:"viertel", n:"Kappabashi-Küchenstraße",
     what:"Eine 800 m lange Straße, in der sich Läden für Gastronomiebedarf aneinanderreihen: Messer, Geschirr, Kochwerkzeug — und vor allem die täuschend echten Plastik-Speisemodelle, die in japanischen Schaufenstern stehen.",
@@ -885,9 +902,9 @@ const DAYS = [
  img:W("f/f4/Osaka_Dotonbori_Ebisu_Bridge.jpg/1920px-Osaka_Dotonbori_Ebisu_Bridge.jpg"), cr:"Dotonbori · Wikimedia Commons",
  note:"Vormittags noch Tokio, nachmittags Shinkansen, abends letzter Abend in Osaka. Sitzplätze für diesen Zug ab 25.11. reservieren — der 25.12. ist ein Freitag kurz vor der Neujahrswelle.",
  fix:[
-  {t:"~11:00", b:"Check-out Tokio", s:"Gepäck kann bis nachmittags im Hotel bleiben"},
+  {t:"~11:00", b:"Check-out APA Nishishinjuku Gochome", s:"Gepäck kann bis nachmittags im Hotel bleiben"},
   {t:"~14:00", b:"Nozomi Tokio → Shin-Osaka", s:"2 Std. 30 Min. · ¥14.720 Erw. res. / ¥7.360 Kind · Familie ¥44.160"},
-  {t:"~17:00", b:"Check-in Osaka, Namba", s:"Nah an der Nankai-Linie — morgen früh geht es zeitig zum Flughafen"}
+  {t:"~17:00", b:"Check-in Osaka — noch nicht gebucht", s:"Kandidaten im Reiter Infos: APA Namba Ekimae Tower oder noch einmal APA Hommachi"}
  ],
  slots:[
   {h:"Letzter Vormittag in Tokio", opts:[
@@ -926,9 +943,9 @@ const DAYS = [
  note:"Früher Start. Abflug 10:55 heißt Check-in-Schluss 09:55 — plant, um 08:30 am Flughafen zu sein.",
  fix:[
   {t:"06:15", b:"Aufstehen, Check-out", s:"Gepäck am Vorabend fertig gepackt"},
-  {t:"07:15", b:"Nankai Airport Express ab Namba", s:"45 Min. · ¥970 Erw. / ¥490 Kind · alternativ Rapi:t 07:30 → 08:07"},
+  {t:"07:15", b:"Nankai Airport Express ab Namba", s:"Wer in Hommachi schläft: vorher 2 Stationen Midosuji-Linie bis Namba einplanen · 45 Min. · ¥970 Erw. / ¥490 Kind · alternativ Rapi:t 07:30 → 08:07"},
   {t:"08:30", b:"Am Flughafen", s:"AirAsia Check-in Terminal 1 · Tax-Free-Formalitäten vor der Sicherheitskontrolle erledigen"},
-  {t:"10:55", b:"Abflug KIX → KUL", s:"AirAsia X D7533 · 7 Std. 25 Min. · Ankunft KUL 17:20"}
+  {t:"10:55", b:"Abflug KIX → KUL", s:"AirAsia X D7533 · bestätigt ✓ · 7 Std. 25 Min. · Ankunft KUL 17:20"}
  ],
  slots:[
   {h:"Am Flughafen", hint:"falls Zeit bleibt", opts:[
@@ -946,27 +963,28 @@ const DAYS = [
 
 /* ================= CHECKLISTE ================= */
 const CHECKS = [
+ {g:"Gebucht ✓", items:[
+  {id:"c5", t:"Flug KUL ⇄ KIX — bestätigt", s:"AirAsia X D7378 am 12.12. und D7533 am 26.12., 4 Reisende. gebucht über Booking.com.", done:1},
+  {id:"c2", t:"Hotel Osaka 12.–17.12. — bestätigt", s:"APA Hotel & Resort Midosuji Hommachi Ekimae Tower, Zimmer für alle vier, MYR 3.855 für 5 Nächte, kostenlos stornierbar. Direkt an der Station Hommachi (Midosuji-Linie).", done:1},
+  {id:"c3", t:"Hotel Tokio 19.–25.12. — bestätigt", s:"APA Hotel & Resort Nishishinjuku Gochome Ekimae Tower, 2 Zimmer, MYR 5.412 für 6 Nächte, bereits bezahlt. Kostenlos stornierbar bis 18.12., 23:59 Uhr japanischer Zeit. Buchungsnummer und PIN stehen in der Booking.com-App.", done:1}
+ ]},
  {g:"Sofort — je früher, desto besser", items:[
-  {id:"c1", t:"Ryokan Kinosaki für 17.–19.12. — direkt anfragen, nicht über Portale", s:"Der knappste Posten der Reise, und ihr seid spät dran: Kinosaki-Ryokan öffnen Buchungen üblicherweise 4 bis 6 Monate im Voraus, das Fenster für Dezember ist also seit dem Sommer offen. Eine Testabfrage über das offizielle Ortsportal lieferte für den 17.12. keine Verfügbarkeit — ob ausgebucht oder eine Grenze des Portals, ist offen. Deshalb: mehrere Häuser parallel per E-Mail oder Telefon anfragen. Kandidaten stehen im Reiter Infos.", due:"sofort", hard:1},
-  {id:"c1b", t:"Bei der Ryokan-Anfrage diese vier Dinge mitschreiben", s:"1. Familienzimmer für 4 in einem Raum. 2. Kindermenü für beide Kinder statt Krabben-Kaiseki — kommt nicht automatisch. 3. Altersgrenze prüfen: mehrere Häuser nehmen unter 10 oder unter 12 Jahren niemanden auf. 4. Abholung am Bahnhof, und bis wann der Shuttle fährt.", due:"sofort", hard:1},
-  {id:"c2", t:"Hotel Osaka 12.–17.12. — gebucht ✓, jetzt späte Ankunft melden", s:"Gebucht und bestätigt: APA Hotel &amp; Resort Midosuji Hommachi Ekimae Tower für 12.–17.12. Offen ist nur noch die Uhrzeit: Das bestätigte Anreisefenster ist 20:00–21:00, ihr landet aber erst 19:20 und seid realistisch gegen 21:30 am Hotel. Meldet die späte Ankunft schriftlich, sonst kann das Zimmer am Abend verfallen.", due:"jetzt", hard:1},
-  {id:"c3", t:"Hotel Tokio für 19.–25.12. buchen", s:"Shinjuku empfohlen, Ueno als günstigere Alternative — kostet aber am Ghibli-Tag rund 46 Minuten extra. Kandidaten im Reiter Infos. Weihnachtswoche, je früher desto besser.", due:"jetzt", hard:1},
-  {id:"c4", t:"Hotel Osaka für die Abreisenacht 25.–26.12.", s:"Unbedingt an der Nankai-Linie — das gebuchte APA in Hommachi liegt nicht daran, für die 07:15-Abfahrt kämen zwei Stationen Midosuji dazu. Wenn ihr trotzdem wieder ins APA wollt: schriftlich bestätigen lassen, dass ein Koffer die zwölf Tage dazwischen bleiben darf — das ist kein Standardservice. Und prüfen, ob das Haus Einzelnächte annimmt.", due:"jetzt", hard:1},
-  {id:"c5", t:"Flugstatus prüfen", s:"Die Buchung stand zuletzt auf „Bestätigung ausstehend“ (Booking.com, Referenz [privat]). Nachhaken, falls noch keine Bestätigungsmail kam.", due:"jetzt", hard:1}
+  {id:"c1", t:"Hotel Kyoto für 17.–19.12. buchen", s:"Stand 22.10.: viele gut bewertete Hotels am Bahnhof sind frei, ab MYR 626 für beide Nächte. Fünf Kandidaten und zwei Hotels mit Thermalbad im Reiter Infos.", due:"jetzt", hard:1},
+  {id:"c4", t:"Hotel Osaka für die Abreisenacht 25.–26.12.", s:"Zwei Kandidaten im Reiter Infos. Wenn ihr wieder im APA Hommachi bucht: schriftlich fragen, ob ein Koffer vom 17. bis 25.12. bleiben darf.", due:"jetzt", hard:1}
  ]},
  {g:"Oktober", items:[
-  {id:"c6", t:"USJ-Tickets für Mo 14.12.", s:"Verkauf läuft ca. 2–3 Monate im Voraus, Preise sind datumsabhängig. Beide Kinder zählen noch als Kind (4–11 J.). Express Pass nur, wenn ihr auf Nummer sicher gehen wollt — muss zusammen mit dem Eintritt gebucht werden.", due:"Mitte Okt."},
+  {id:"c6", t:"USJ-Tickets für Mo 14.12.", s:"Verkauf läuft ca. 2–3 Monate im Voraus, Preise sind datumsabhängig. Beide Kinder zählen noch als Kind (4–11 J.). Express Pass nur, wenn ihr auf Nummer sicher gehen wollt — muss zusammen mit dem Eintritt gebucht werden.", due:"jetzt", hard:1},
   {id:"c7", t:"Tokyo DisneySea für Mi 23.12.", s:"Verkauf startet exakt zwei Monate vorher: 23.10., 14:00 JST = 13:00 Uhr KL-Zeit. Vorher einen Account anlegen und eingeloggt bereitstehen.", due:"23.10., 13:00 KL", hard:1},
   {id:"c8", t:"teamLab Planets Zeitslot für Do 24.12.", s:"Tickets erscheinen ca. zwei Monate vorher. Nachmittagsslot wählen, dann passt Miraikan davor.", due:"Ende Okt."}
  ]},
  {g:"November — die harten Termine", items:[
   {id:"c9", t:"Ghibli Museum für Mo 21.12.", s:"Verkauf über Lawson Ticket am 10. des Vormonats, 10:00 JST = 09:00 Uhr KL-Zeit. Dezember-Termine sind schnell weg. Lawson-Account vorher anlegen, mehrere Geräte gleichzeitig bereithalten.", due:"10.11., 09:00 KL", hard:1},
-  {id:"c10", t:"Kounotori Sitzplätze für Do 17.12.", s:"Reservierung öffnet einen Monat vorher, 10:00 JST. Vier Plätze zusammen mit Gepäckablage.", due:"ab 17.11."},
-  {id:"c11", t:"Kinosaki→Kyoto und Nozomi Kyoto→Tokio für Sa 19.12.", s:"Beide Reservierungen am selben Tag machen, mit genug Umsteigezeit in Kyoto.", due:"ab 19.11."},
+  {id:"c10", t:"Sagano-Bummelbahn für Fr 18.12.", s:"Online-Verkauf genau einen Monat vorher, ab 0:00 Uhr japanischer Zeit. Einen Zug ab 16:30 wählen, dann fahrt ihr mit Lichtaktion.", due:"ab 18.11.", hard:1},
+  {id:"c11", t:"Nozomi Kyoto → Tokio für Sa 19.12.", s:"Nachmittagsabfahrt, vier Plätze zusammen. Bei großen Koffern einen Platz mit Gepäckfläche reservieren.", due:"ab 19.11."},
   {id:"c12", t:"Tokyo Skytree für Di 22.12.", s:"Online 30 Tage vorher, günstiger als vor Ort und ohne Schlange.", due:"ab 24.11."},
   {id:"c13", t:"Nozomi Tokio→Shin-Osaka für Fr 25.12.", s:"Der wichtigste Zug der Reise: Freitag kurz vor der Neujahrswelle. Nachmittagsabfahrt, vier Plätze zusammen.", due:"ab 25.11.", hard:1},
   {id:"c14", t:"Shibuya Sky Zeitslot", s:"Sonnenuntergangs-Slots gehen zuerst weg. Ca. vier Wochen vorher buchen.", due:"ab Ende Nov."},
-  {id:"c15", t:"Kansai WIDE Area Pass prüfen", s:"¥12.000 Erw. / ¥6.000 Kind für 5 aufeinanderfolgende Tage, deckt Nara, Kyoto und Kinosaki. Rechnet sich knapp — durchrechnen, sobald die Route final steht.", due:"Nov."}
+  {id:"c15", t:"Nintendo Museum: freie Tickets prüfen", s:"Die Verlosung für Dezember ist vorbei. Freigewordene Tickets erscheinen auf museum.nintendo.com — ab und zu nachsehen, ob Do 17. oder Fr 18.12. auftaucht.", due:"laufend"}
  ]},
  {g:"Dezember — kurz vorher", items:[
   {id:"c16", t:"Kaiyukan und Miraikan online", s:"Beide unkritisch, aber online spart Anstehen.", due:"Anfang Dez."},
@@ -979,74 +997,68 @@ const CHECKS = [
 
 /* ================= INFOS ================= */
 const HOTELS = [
- {name:"Osaka — Block 1", img:W("f/f4/Osaka_Dotonbori_Ebisu_Bridge.jpg/1200px-Osaka_Dotonbori_Ebisu_Bridge.jpg"), cr:"Dotonbori, Ebisu-Brücke · Wikimedia Commons", nights:"5 Nächte · Sa 12.12. → Do 17.12.",
-  booked:{h:"APA Hotel &amp; Resort Midosuji Hommachi Ekimae Tower", d:"12.12. → 17.12.2026 · Buchung bestätigt", ci:"Bestätigtes Anreisefenster: 20:00–21:00 Uhr", note:"<b>Zwei Dinge weichen vom ursprünglichen Plan ab.</b> Erstens die Uhrzeit: Der Anreisetag rechnet mit Ankunft im Hotel gegen 21:30 — das liegt nach dem bestätigten Fenster. Meldet dem Haus die späte Ankunft schriftlich. Zweitens die Lage: Hommachi statt Namba. Hommachi liegt auf der Midosuji-Linie zwei Stationen nördlich von Namba, der Weg zum Nankai-Flughafenzug geht also über Namba."},
-  lage:"Namba / Nipponbashi / Shinsaibashi",
-  warum:"Nankai-Linie direkt zum Flughafen (Ankunft und Abreise), Midosuji-U-Bahn nach Umeda, Chuo- und Yotsubashi-Linie zum Aquarium, JR-Loop nach USJ. Dotonbori und Kuromon-Markt zu Fuß.",
-  typ:"Apartment-Hotel, ein Vierbett-Raum mit Küchenzeile und Waschmaschine",
-  krit:"max. 5 Gehminuten zu Namba, Nipponbashi oder Shinsaibashi Station",
-  budget:"¥18.000–29.000 pro Nacht · ~¥90.000–145.000 gesamt",
-  alt:"Umeda / Osaka Station, wenn ihr mehr Tagesausflüge wollt — größerer Bahnknoten, ruhiger, aber weiter zum Flughafen",
+ {name:"Osaka — Block 1", nights:"5 Nächte · Sa 12.12. → Do 17.12.",
+  booked:"<b>Gebucht ✓</b> APA Hotel &amp; Resort Midosuji Hommachi Ekimae Tower · 4-2-9 Minamihommachi, Chuo-ku, Osaka 541-0054 · Zimmer für alle vier · MYR 3.855 für 5 Nächte (≈ MYR 771 pro Nacht) · kostenlos stornierbar · Check-in 15:00, Check-out 10:00",
+  lage:"Hommachi, direkt mit der Station der Midosuji-Linie verbunden",
+  warum:"Midosuji-Linie ohne Umsteigen nach Namba (2 Stationen), Umeda und Shin-Osaka · Chuo-Linie ohne Umsteigen zum Aquarium (Osakako)",
+  typ:"Großes Kettenhotel (APA), Booking-Bewertung 8,3",
+  krit:"Dieses Hotel ist der Maßstab für die übrigen Unterkünfte: Preisniveau um MYR 770 pro Nacht, Kettenhotel mit guter Bewertung, direkt an der Bahn",
+  budget:"MYR 3.855 gesamt",
+  alt:"—"},
+ {name:"Kyoto", nights:"2 Nächte · Do 17.12. → Sa 19.12.",
+  lage:"rund um Kyoto Station — von dort fahren die JR nach Inari, Arashiyama und Umekoji und der Shinkansen nach Tokio",
+  warum:"Kurze Wege mit Gepäck: Ankunft und Abfahrt am selben Bahnhof",
+  typ:"Kettenhotel oder Familienzimmer; als Gönn-Option ein Hotel mit eigenem Thermalbad",
+  krit:"zu Fuß zur Bahn · Booking-Bewertung ab 8 · 500–1.000 MYR pro Nacht",
+  budget:"Kyoto ist Mitte Dezember günstig: die Kandidaten unten kosten MYR 626–802 für beide Nächte zusammen.",
+  alt:"Mit Thermalbad: Kyoto Umekoji Kadensho (Booking 9,1, kostenlose Familien-Privatbäder, 1 Min. vom JR-Bahnhof Umekoji-Kyotonishi) — Vierbettzimmer laut Hotelseite MYR 3.382 für 2 Nächte · Dormy Inn Premium Kyoto Ekimae (Booking 8,7, Dachbad, 3 Min. vom Bahnhof) — Preis für 2 Zimmer zu viert in der Liste nicht angezeigt, auf der Hotelseite prüfen",
+  warn:"Preise abgerufen am 22.10.2026 auf Booking.com für 2 Erwachsene + 2 Kinder (11 und 9), Gesamtpreis für beide Nächte. Die Gehminuten zur Station habe ich nicht einzeln geprüft — vor dem Buchen auf der Hotelseite ansehen.",
   kand:[
-   {n:"&Here OSAKA NAMBA", m:"Nankai Namba 3 Min. · 38 m², 4 Betten", w:"Kürzester belegter Weg zum Nankai-Bahnhof im ganzen Feld. Haken: Inside Osaka nennt ausdrücklich dünne Wände, und ob das Familienzimmer eine Küchenzeile hat, ist widersprüchlich belegt — vorher fragen.", u:"https://andherehotels-osakanamba.com/en/"},
-   {n:"Fraser Residence Nankai Osaka", m:"Namba 2–3 Min. · Küche + Waschtrockner in jeder Einheit", w:"Erfüllt eure Ausstattungswünsche am vollständigsten und liegt praktisch am Bahnhof. Haken: die Zwei-Zimmer-Varianten trennen euch auf zwei Räume — gezielt nach einer Ein-Schlafzimmer-Variante mit Sofabett fragen.", u:"https://www.frasershospitality.com/en/japan/osaka/fraser-residence-nankai-osaka/"},
-   {n:"Mercure Tokyu Stay Osaka Namba", m:"Namba (Metro) 5 Min. · Privilege Family Room 41 m²", w:"Bester Kompromiss aus Ausstattung und Preis: Küchenzeile und Waschmaschine im Zimmer. Haken: ein Queensize-Bett plus Zustellbetten statt vier echter Betten, und der Weg zum Nankai-Terminal ist nicht belegt.", u:"https://www.mercure-tokyustay-osaka.com/our-rooms/privilege-family-room/"},
-   {n:"Citadines Namba Osaka", m:"Nipponbashi 5 Min., Namba 8–10 Min. · Family Room 28 m²", w:"Preislich der beste Treffer im Apartment-Segment, das Haus ist ein eingetragenes Kulturdenkmal. Haken: 28 m² für vier sind eng, und der Weg nach Namba reißt euer 5-Minuten-Limit.", u:"https://www.discoverasr.com/en/citadines/japan/citadines-namba-osaka"},
-   {n:"MIMARU Osaka Namba Station", m:"Nankai Namba 4 Min. · 35–41 m²", w:"Genau der Apartment-Zuschnitt, den ihr sucht, in perfekter Lage. Haken: Tripadvisor nennt 279–464 USD pro Nacht — rund doppelt so teuer wie euer Korridor. Waschmaschine nur als Münzwäscherei.", u:"https://mimaruhotels.com/en/hotel/namba-station/"},
-   {n:"MIMARU Namba Station Annex", m:"Nankai Namba 5 Min. · bis 45 m², 4 Einzelbetten", w:"Eröffnet am 1.10.2026, also zwei Monate vor eurer Reise, und hat als einziges MIMARU einen Waschtrockner im Zimmer. Haken: Preis völlig unbekannt, bei einem Neubau eher MIMARU-Niveau.", u:"https://mimaruhotels.com/en/hotel/namba-station-annex/"},
-   {n:"WELLSTAY Namba", m:"Nankai Namba 7 Min. · echte Vierbettzimmer · Waschmaschine gratis", w:"Mit Abstand am günstigsten, hier bleibt Budget für anderes. Haken: 7 Minuten reißen euer Limit, die Ausstattung ist hostelnah, Zimmergrößen nirgends belegt.", u:"https://well-stay.com/en/namba/"}
+   {n:"The Garden Hotel Kyoto Gojo", m:"Booking 8,8 (519) · Familienzimmer, 4 Betten · MYR 626 / 2 N inkl. Steuern", w:"Ein Zimmer für alle vier, kostenlos stornierbar, keine Vorauszahlung. Am günstigsten. Liegt an der Karasuma-Straße bei der U-Bahn-Station Gojo, eine Station nördlich von Kyoto Station.", u:"https://www.booking.com/hotel/jp/hauza-kyoto-gojo-karasuma.de.html?checkin=2026-12-17&checkout=2026-12-19&group_adults=2&group_children=2&age=11&age=9&no_rooms=1&selected_currency=MYR"},
+   {n:"Kyoto Plaza Hotel Kintetsu Jujo", m:"Booking 8,3 (2.317) · japanisches Zimmer, 4 Futons · MYR 710 / 2 N", w:"Japanisches Zimmer für alle vier, kostenlos stornierbar, keine Vorauszahlung. Nach dem Namen bei der Kintetsu-Station Jujo, Fußweg nicht geprüft.", u:"https://www.booking.com/hotel/jp/jing-du-purazahoterujin-tie-shi-tiao.de.html?checkin=2026-12-17&checkout=2026-12-19&group_adults=2&group_children=2&age=11&age=9&no_rooms=1&selected_currency=MYR"},
+   {n:"Comfort Hotel ERA Kyoto Toji", m:"Booking 9,0 (3.899) · 2 Doppelzimmer · MYR 760 / 2 N", w:"Sehr gut bewertet mit sehr vielen Bewertungen. Südlich von Kyoto Station beim Tempel To-ji, Fußweg nicht geprüft. Booking zeigt „es können zusätzliche Gebühren anfallen“.", u:"https://www.booking.com/hotel/jp/comfort-kyoto-toji.de.html?checkin=2026-12-17&checkout=2026-12-19&group_adults=2&group_children=2&age=11&age=9&no_rooms=2&selected_currency=MYR"},
+   {n:"Wander Kyoto Nanajo", m:"Booking 9,0 (4.172) · 2 Zweibettzimmer, 4 Einzelbetten · MYR 765 / 2 N", w:"Ebenfalls 9,0 mit vielen Bewertungen, jeder hat ein eigenes Bett. Kostenlos stornierbar.", u:"https://www.booking.com/hotel/jp/m-39-s-est-nanajo.de.html?checkin=2026-12-17&checkout=2026-12-19&group_adults=2&group_children=2&age=11&age=9&no_rooms=2&selected_currency=MYR"},
+   {n:"Hotel Glad One Kyoto Shichijo", m:"Booking 8,7 (895) · 2 Zweibettzimmer · MYR 802 / 2 N", w:"Kostenlos stornierbar, jeder hat ein eigenes Bett.", u:"https://www.booking.com/hotel/jp/glad-one-kyoto-shichijo.de.html?checkin=2026-12-17&checkout=2026-12-19&group_adults=2&group_children=2&age=11&age=9&no_rooms=2&selected_currency=MYR"}
   ]},
- {name:"Kinosaki Onsen", img:W("3/35/Kinosaki_Onsen_by_day.jpg/1200px-Kinosaki_Onsen_by_day.jpg"), cr:"Kinosaki Onsen · Wikimedia Commons", nights:"2 Nächte · Do 17.12. → Sa 19.12.",
-  lage:"Ortskern Kinosaki, Gehweite vom Bahnhof",
-  warum:"Der ganze Ort ist zu Fuß machbar; viele Ryokan holen am Bahnhof ab. Als Ryokan-Gast ist der Yumepa für alle sechs offenen Badehäuser kostenlos.",
-  typ:"Klassisches Ryokan mit Halbpension, Familienzimmer, eigenes Bad im Haus",
-  krit:"Familienzimmer für 4 · Kindermenü ausdrücklich mitbestellen · Bahnhofsabholung erfragen",
-  budget:"¥15.000–25.000 p.P./Nacht in der Krabbensaison · ~¥55.000–85.000 pro Nacht für vier",
-  alt:"Einfacheres Minshuku ab ~¥10.000 p.P. mit Halbpension · oder nur an einem Abend volles Krabben-Kaiseki, am zweiten Tajima-Rind",
-  warn:"Mehrere gute Häuser nehmen Kind 2 mit 9 Jahren nicht auf: Nishimuraya Honkan hat ein Mindestalter von 10, Sensui und Tsuchiya von 12 Jahren. Die Kandidaten unten sind auf diese Altersgrenzen geprüft.",
-  kand:[
-   {n:"Kinsui (錦水)", m:"Bahnhof 6 Min. · Familienzimmer 1–4 Pers. · 3 Vermietbäder", w:"Das einzige Haus, dessen Familienzimmer nachweislich für Kinder gebaut wurde — Bilderbuchwelt, Kletterbank, Lesecke. Kindermenü belegt. Haken: kein großes eigenes Gemeinschaftsbad, ihr seid auf die Außenbäder angewiesen.", u:"https://visitkinosaki.com/stay/kinsui/"},
-   {n:"Nishimuraya Hotel Shogetsutei", m:"Shuttle ab Bahnhof 5 Min. · Zimmer 1–4 Pers. · große Bäder + private Familienbäder", w:"Das einzige Haus mit schriftlich dokumentierten Kinderpreisen, die exakt auf eure beiden passen: 10–12 Jahre 70 %, 6–9 Jahre 50 % inklusive Kindermenü. Haken: liegt außerhalb des Ortskerns, der Yukata-Bummel durch die Altstadt fällt weg, und der Shuttle fährt nur bis 18 Uhr.", u:"https://visitkinosaki.com/stay/nishimuraya_hotel_shogetsutei/"},
-   {n:"Mikuniya (三國屋)", m:"Bahnhof 3 Min. · japanische Zimmer 1–4 Pers. · 3 Privatbäder gratis", w:"Löst euer Kernproblem: Kinder bekommen zum Abendessen einen westlichen Kinderteller statt Krabben-Kaiseki. Kürzester Weg vom Bahnhof. Haken: nur gut ein Dutzend Zimmer, kein großes eigenes Bad, und es gibt eine Adults-only-Kategorie — nicht versehentlich buchen.", u:"https://kinosaki3928.com/en/"},
-   {n:"Morizuya (森津屋)", m:"Bahnhof 10 Min. + Shuttle · ausgewiesenes 4-Personen-Zimmer · Felsenbad", w:"Das einzige Haus mit einem als solchem benannten Vierpersonenzimmer, dazu ein aus dem Fels geschlagenes Freiluftbad. Haken: nur 12 Zimmer, Abendessen im Restaurant statt im Zimmer, und Check-in nur bis 17 Uhr — das kann mit einem späten Kounotori kollidieren.", u:"https://www.kinosaki-web.com/en/yado/index.php?mode=yado_detail&YadoNo=76"},
-   {n:"Sennen no Yu Koman (古まん)", m:"Zimmer 2–5 Pers. · eigenes Onsen + Familienbad · ab ¥12.100 p.P. mit HP", w:"Bestes belegtes Preis-Leistungs-Verhältnis und das älteste Gasthaus des Ortes, gegründet 717. Haken: ausgerechnet Kindermenü und Gehweg vom Bahnhof sind nicht dokumentiert — beides erfragen.", u:"https://www.sennennoyu-koman.com/"}
-  ]},
- {name:"Tokio", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Night%20in%20Shinjuku%203.JPG?width=1200", cr:"Shinjuku bei Nacht · Wikimedia Commons", nights:"6 Nächte · Sa 19.12. → Fr 25.12.",
+ {name:"Tokio", nights:"6 Nächte · Sa 19.12. → Fr 25.12.",
+  booked:"<b>Gebucht ✓</b> APA Hotel &amp; Resort Nishishinjuku Gochome Ekimae Tower · Honmachi 3-14-1, Shibuya-ku, Tokio 151-0071 · Tel. +81 3-5304-7011 · 2 Zimmer, je ein Doppelzimmer mit kleinem Doppelbett (Nichtraucher) · MYR 5.412 für 6 Nächte (≈ MYR 902 pro Nacht) · bereits bezahlt · kostenlos stornierbar bis 18.12., 23:59 Uhr japanischer Zeit · laut Booking können zusätzliche Gebühren anfallen, vermutlich die Tokioter Übernachtungssteuer",
+  lage:"Nishi-Shinjuku · laut APA 1 Gehminute zur Station Nishi-shinjuku-gochome (Oedo-Linie)",
+  warum:"Mit der Oedo-Linie nach Shinjuku, von dort JR zu Ghibli (Chuo-Linie), Shibuya und Harajuku · DisneySea ab Shinjuku ~50 Min.",
+  typ:"Großes Kettenhotel (APA), Booking-Bewertung 8,3 (7.214), gleiche Marke wie in Osaka",
+  krit:"Direkt an der U-Bahn · nicht direkt an der JR · Zimmer sehr klein: je ein schmales Doppelbett für einen Erwachsenen und ein Kind",
+  budget:"MYR 5.412 gesamt",
+  alt:"—"},
+ {name:"Tokio — frühere Kandidaten", nights:"nur zur Erinnerung",
   lage:"Shinjuku",
-  warum:"Beste Anbindung der Stadt: JR Chuo direkt nach Mitaka (Ghibli, 20 Min.), Yamanote nach Shibuya, Harajuku und Ueno, Marunouchi-Linie in die Mitte, DisneySea in ~50 Min.",
-  typ:"Apartment-Hotel, Vierbett-Raum",
-  krit:"max. 7 Gehminuten zu Shinjuku, Shinjuku-Sanchome oder Nishi-Shinjuku Station",
-  budget:"¥18.000–29.000 pro Nacht · ~¥110.000–175.000 gesamt",
-  alt:"Ueno — bei MIMARU tendenziell mehr Quadratmeter fürs Geld, kostet aber am Ghibli-Tag rund 23 Minuten pro Richtung extra · Asakusa fällt durch: schlechteste Fahrzeiten zu beiden Zielen",
+  warum:"Diese Häuser standen vor der Buchung zur Wahl.",
+  typ:"Kettenhotels",
+  krit:"höchstens ~5 Gehminuten zur nächsten Station · Booking-Bewertung ab 8",
+  budget:"Preise vom 20.10.2026",
+  alt:"—",
+  warn:"Preise abgerufen am 20.10.2026 auf Booking.com für 2 Erwachsene + 2 Kinder (11 und 9), eine Buchung. Booking zeigt bei den APA-Häusern „es können zusätzliche Gebühren anfallen“ — gemeint ist vermutlich die Tokioter Übernachtungssteuer, die Höhe steht nicht dabei.",
   kand:[
-   {n:"&Here SHINJUKU", m:"Shinjuku-sanchome 3 Min. · 39–40 m² · Küche + Waschmaschine im Zimmer", w:"Das einzige Haus im Kern von Shinjuku, das beide Ausstattungswünsche erfüllt. Haken: zur JR-Chuo-Linie Richtung Ghibli müsst ihr erst nach JR Shinjuku, zu Fuß etwa 12 Minuten oder eine Station mit der Marunouchi-Linie.", u:"https://andherehotels-shinjuku.com/en/"},
-   {n:"Citadines Shinjuku Tokyo", m:"Shinjuku-Gyoemmae 5 Min. · 50 m², 4 Betten", w:"Die großzügigste Lösung im engeren Shinjuku und eine verlässliche Marke. Haken: Waschmaschine nur im Haus, nicht im Zimmer, und Citadines liegt preislich meist über MIMARU.", u:"https://www.discoverasr.com/en/citadines/japan/citadines-shinjuku-tokyo"},
-   {n:"Citadines North Shinjuku Tokyo", m:"JR Okubo 3 Min. · 54–59 m² · Waschmaschine in einzelnen Kategorien", w:"Die größten Zimmer im Vergleich, und Okubo liegt an der Chuo-Sobu-Linie mit Direktverbindung Richtung Mitaka. Haken: Hyakunincho liegt direkt hinter Kabukicho, lebhaft und nachts laut, und ihr sitzt eine Station außerhalb des Knotens.", u:"https://www.discoverasr.com/en/citadines/japan/citadines-north-shinjuku-tokyo"},
-   {n:"MIMARU Tokyo Ueno East", m:"JR Ueno 3 Min. · 38–40 m² · Pokémon-Zimmer", w:"Bester Ueno-Kandidat, und das Pokémon-Zimmer ist bei 9 und 11 ein echtes Argument. Haken: der Ghibli-Tag kostet rund 46 Minuten extra hin und zurück.", u:"https://mimaruhotels.com/en/hotel/ueno-east/"},
-   {n:"MIMARU Tokyo Ueno North", m:"JR Ueno 4 Min. · Premium 50 m² · Zimmer mit Gleisblick", w:"Die Premium-Kategorien sind die geräumigste Ueno-Option, und das Train-View-Zimmer ist für Kinder ein Erlebnis. Haken: die Standard-Familienzimmer sind mit 34 m² die kleinsten im Vergleich.", u:"https://mimaruhotels.com/en/hotel/ueno-north/"},
-   {n:"MIMARU Tokyo Shinjuku West", m:"Tochomae 8 Min. laut Haus, real eher 10–15 · 40–42 m²", w:"Inhaltlich genau euer Wunschformat und laut Reiseführern am unteren Rand der Mittelklasse. Haken: reißt euer 7-Minuten-Kriterium, und die Quellen zur Gehzeit widersprechen sich deutlich.", u:"https://mimaruhotels.com/en/hotel/shinjuku-west/"}
+   {n:"APA Hotel & Resort Nishishinjuku Gochome Eki Tower", m:"Booking 8,3 (7.214) · 2 Doppelzimmer à 10 m² · MYR 5.565 / 6 N", w:"Die gleiche Marke und Klasse wie euer Osaka-Hotel und hier das günstigste. Laut APA 1 Gehminute zur Station Nishi-shinjuku-gochome (Oedo-Linie). Kostenlos stornierbar bis 18.12., Zahlung im Hotel. Haken: nicht an der JR — für Ghibli erst mit der Oedo-Linie nach Shinjuku. Die Zimmer sind sehr klein (je ein schmales Doppelbett für einen Erwachsenen und ein Kind).", u:"https://www.booking.com/hotel/jp/apa-tokyo-nishishinjuku-gochome-eki-tower.de.html?checkin=2026-12-19&checkout=2026-12-25&group_adults=2&group_children=2&age=11&age=9&no_rooms=1&selected_currency=MYR"},
+   {n:"APA Hotel Higashi Shinjuku Kabukicho Tower", m:"Booking 8,2 (22.066) · 2 Doppelzimmer · MYR 6.113 / 6 N", w:"Ebenfalls APA, sehr viele Bewertungen. 4 Gehminuten zur Station Higashi-shinjuku. Haken: liegt in Kabukicho, Tokios Ausgehviertel — abends laut und grell.", u:"https://www.booking.com/hotel/jp/apahoteru-dong-xin-su-ge-wu-ji-ting-tawa.de.html?checkin=2026-12-19&checkout=2026-12-25&group_adults=2&group_children=2&age=11&age=9&no_rooms=1&selected_currency=MYR"},
+   {n:"Sakura Cross Hotel Shinjuku East Annex", m:"Booking 8,7 (664) · 1 Zimmer 21 m², 2 Doppelbetten + Futon · MYR 6.207 / 6 N", w:"Der einzige Kandidat, bei dem ihr zu viert in einem Zimmer schlaft, und am besten bewertet. 4 Gehminuten zur Station Higashi-shinjuku. Haken: <b>nicht kostenlos stornierbar</b>, sofortige Online-Zahlung, und Booking meldet nur noch 1 Zimmer.", u:"https://www.booking.com/hotel/jp/sakura-cross-shinjyuku-east-annex.de.html?checkin=2026-12-19&checkout=2026-12-25&group_adults=2&group_children=2&age=11&age=9&no_rooms=1&selected_currency=MYR"}
   ]},
- {name:"Osaka — Abreisenacht", img:W("5/56/%E9%96%A2%E8%A5%BF%E5%9B%BD%E9%9A%9B%E7%A9%BA%E6%B8%AF%E5%85%A8%E4%BD%93%E5%86%99%E7%9C%9F20220811.jpg/1200px-%E9%96%A2%E8%A5%BF%E5%9B%BD%E9%9A%9B%E7%A9%BA%E6%B8%AF%E5%85%A8%E4%BD%93%E5%86%99%E7%9C%9F20220811.jpg"), cr:"Kansai International Airport · Wikimedia Commons", nights:"1 Nacht · Fr 25.12. → Sa 26.12.",
-  lage:"Namba, direkt an der Nankai-Linie",
-  warum:"Am 26.12. geht es um 07:15 los. Jede Minute Weg zum Bahnhof zählt.",
-  typ:"Einfaches Hotel reicht — ihr seid nur zum Schlafen da",
-  krit:"max. 5 Gehminuten zu Namba Station (Nankai)",
-  budget:"¥18.000–25.000",
-  alt:"Wieder ins APA Hommachi aus Block 1: beim Check-out am 17.12. nach dem Koffer-Depot fragen. Es liegt aber nicht an der Nankai-Linie — für die 07:15-Abfahrt zwei Stationen Midosuji zusätzlich einplanen",
-  warn:"Ob ein Haus Gepäck über zwölf Tage zwischen zwei Aufenthalten einlagert, ist bei keinem der Kandidaten belegt — das ist kein Standardservice und muss vorher schriftlich bestätigt werden. Ebenso ist bei den Apartment-Häusern offen, ob sie Einzelnächte überhaupt annehmen.",
+ {name:"Osaka — Abreisenacht", nights:"1 Nacht · Fr 25.12. → Sa 26.12.",
+  lage:"Namba oder noch einmal Hommachi",
+  warum:"Am 26.12. geht es um 07:15 mit der Nankai-Linie ab Namba zum Flughafen.",
+  typ:"Dasselbe Niveau wie Block 1 — APA",
+  krit:"kurzer Weg zur Nankai-Linie in Namba",
+  budget:"≈ MYR 790–835 für die Nacht",
+  alt:"—",
+  warn:"Preise abgerufen am 20.10.2026 auf Booking.com für 2 Erwachsene + 2 Kinder (11 und 9). Beide Häuser bieten Verbindungszimmer für vier, kostenlos stornierbar, Zahlung im Hotel.",
   kand:[
-   {n:"&Here OSAKA NAMBA", m:"Nankai Namba 3 Min.", w:"Für diese eine Nacht die beste Wahl: der kürzeste belegte Weg zum Bahnhof, und um 07:15 zählt jede Minute.", u:"https://andherehotels-osakanamba.com/en/"},
-   {n:"Fraser Residence Nankai Osaka", m:"Namba 2–3 Min.", w:"Gleichwertig kurz, zusätzlich Waschtrockner — praktisch, wenn ihr vor dem Rückflug noch Wäsche machen wollt.", u:"https://www.frasershospitality.com/en/japan/osaka/fraser-residence-nankai-osaka/"},
-   {n:"MIMARU Osaka Namba Station", m:"Nankai Namba 4 Min.", w:"Block 1 liegt inzwischen im APA Hommachi, ein Wiederholungs-Bonus entfällt hier also — dafür kurzer Weg zum Nankai-Terminal am Abreisemorgen.", u:"https://mimaruhotels.com/en/hotel/namba-station/"},
-   {n:"MIMARU Namba Station Annex", m:"Nankai Namba 5 Min.", w:"Liegt mit 5 Minuten noch im Limit und ist am 1.10.2026 neu eröffnet, also zwei Monate vor eurer Reise. Haken: der Preis ist nirgends belegt, und ob ein Neubau dieser Kategorie einzelne Nächte annimmt, ist offen — vorher anfragen.", u:"https://mimaruhotels.com/en/hotel/namba-station-annex/"}
+   {n:"APA Hotel & Resort Osaka Namba Ekimae Tower", m:"Booking 8,4 (12.609) · 2 Zimmer mit Verbindungstür · MYR 835", w:"Gleiche Marke, näher am Flughafenzug. Laut Hotels.com 2 Min. zur U-Bahn-Station Namba und 9 Min. zu Fuß zum Nankai-Bahnhof. Adresse: 1-2-13 Minatomachi, Naniwa-ku.", u:"https://www.booking.com/hotel/jp/apahoterurizotoda-ban-nanbayi-qian-tawa.de.html?checkin=2026-12-25&checkout=2026-12-26&group_adults=2&group_children=2&age=11&age=9&no_rooms=1&selected_currency=MYR"},
+   {n:"Noch einmal APA Hommachi", m:"Booking 8,3 · Verbindungszimmer · MYR 788", w:"Ihr kennt das Haus schon. Vorteil: ihr könnt fragen, ob ein Koffer vom 17. bis 25.12. dort bleiben darf, und fahrt nur mit leichtem Gepäck nach Kinosaki und Tokio. Am Morgen kommen 2 Stationen Midosuji-Linie bis Namba dazu.", u:"https://www.booking.com/hotel/jp/apahoteru-rizoto-yu-tang-jin-ben-ting-yi-tawa.de.html?checkin=2026-12-25&checkout=2026-12-26&group_adults=2&group_children=2&age=11&age=9&no_rooms=1&selected_currency=MYR"}
   ]}
 ];
 
 const TRAINS = [
  ["KIX → Namba","Nankai Airport Express","45 Min.","¥970","¥490","¥2.920"],
- ["Osaka → Kinosaki","Ltd. Exp. Kounotori","2:45","¥6.140","¥3.070","¥18.420"],
- ["Kinosaki → Kyoto","Ltd. Exp. Kinosaki","2:20","¥5.170–5.770","~½","~¥17.300"],
- ["Kyoto → Tokio","Nozomi, reserviert","2:20","~¥14.200","~¥7.100","~¥42.600"],
+ ["Osaka → Kyoto","JR Special Rapid","30 Min.","¥580","¥290","¥1.740"],
+ ["Kyoto → Tokio","Nozomi, reserviert","2:15","¥14.170","~¥7.080","~¥42.500"],
  ["Tokio → Shin-Osaka","Nozomi, reserviert","2:30","¥14.720","¥7.360","¥44.160"],
  ["Namba → KIX","Nankai Airport Express","45 Min.","¥970","¥490","¥2.920"],
  ["Nara hin & zurück","Kintetsu","40 Min.","¥680","¥340","¥4.080"],
@@ -1057,7 +1069,9 @@ const TICKETS = [
  ["USJ 1-Day Studio Pass ⚠","¥8.900–10.900","¥5.400–6.300","~¥30.000"],
  ["Kaiyukan","¥2.400–2.700","¥1.200–1.400","~¥8.000"],
  ["Todai-ji Nara","¥800","¥400","¥2.400"],
- ["Kinosaki Yumepa","¥1.500","¥750","¥4.500 (bei Ryokan gratis)"],
+ ["Onsen-Tagesbad, z. B. FuFu no Yu","¥1.100","¥600","¥3.400"],
+ ["Kyoto Railway Museum","¥1.500","¥500","¥4.000"],
+ ["Sagano-Bummelbahn (einfach)","¥880","¥440","¥2.640"],
  ["Ghibli Museum","¥1.000","¥400","¥2.800"],
  ["Tokyo Skytree (online)","¥2.100","¥850","¥5.900"],
  ["Shibuya Sky (ab 15:00)","¥3.400","¥1.200","~¥9.200"],
@@ -1068,7 +1082,7 @@ const TICKETS = [
 
 /* Farbton-Paare und Kanji für den Fall, dass die Fotos nicht geladen werden können */
 const HUES = [[218,262],[28,8],[276,320],[196,214],[96,72],[10,340],[192,168],[222,244],[142,168],[36,16],[350,18],[206,258],[266,300],[330,354],[212,238]];
-const K2 = ["空","城","魔","魚","鹿","湯","湯","車","杜","森","寺","海","光","帰","空"];
+const K2 = ["空","城","魔","魚","鹿","稲","竹","車","杜","森","寺","海","光","帰","空"];
 DAYS.forEach((d,i)=>{ d.k2 = K2[i]; });
 
 /* ================= STATE & SPEICHER ================= */
@@ -1191,13 +1205,13 @@ function renderDay(){
 
 function renderChecks(){
   const total = CHECKS.flatMap(g=>g.items).length;
-  const done = CHECKS.flatMap(g=>g.items).filter(i=>state.chk[i.id]).length;
+  const done = CHECKS.flatMap(g=>g.items).filter(i=>state.chk[i.id]||i.done).length;
   main.innerHTML =
     '<div class="section-intro"><b>'+done+' von '+total+' erledigt.</b> Die Reihenfolge ist nach Dringlichkeit sortiert — was oben steht, ist knapp. Zeiten in KL-Zeit, wo es auf die Minute ankommt.</div>'
     + CHECKS.map(g=>
         '<div class="chk-group-h">'+g.g+'</div>'
         + g.items.map(c=>
-            '<div class="chk'+(state.chk[c.id]?" done":"")+'" data-chk="'+c.id+'" role="button" tabindex="0">'
+            '<div class="chk'+((state.chk[c.id]||c.done)?" done":"")+'" data-chk="'+c.id+'" role="button" tabindex="0">'
             + '<span class="box">✓</span>'
             + '<span class="c-body"><span class="c-t">'+c.t+'</span><div class="c-s">'+c.s+'</div>'
             + (c.due?'<span class="c-due'+(c.hard?" hard":"")+'">'+c.due+'</span>':"")
@@ -1208,17 +1222,15 @@ function renderChecks(){
 
 function renderInfo(){
   main.innerHTML =
-  '<div class="section-intro">Recherchestand 11.09.2026, Buchungsstand 14.09.2026 — Osaka Block 1 ist gebucht. Hinter jedem Yen-Betrag steht der Euro-Wert, gerechnet mit <b>1 € ≈ 179 ¥</b> (Kurs 10.09.2026, xe.com) — als Größenordnung brauchbar, als Abrechnung nicht. Umrechnung mit <b>1 € ≈ 179 ¥</b>. Was mit ⚠ markiert ist, hat für Dezember 2026 noch keinen freigeschalteten Tagespreis — dort steht die aktuelle Preisspanne.</div>'
+  '<div class="section-intro">Recherchestand 11.09.2026, Unterkünfte aktualisiert am 20.10.2026, Hotel Tokio gebucht und Kyoto statt Kinosaki am 22.10.2026. Hinter jedem Yen-Betrag steht der Euro-Wert, gerechnet mit <b>1 € ≈ 179 ¥</b> (Kurs 10.09.2026, xe.com) — als Größenordnung brauchbar, als Abrechnung nicht. Umrechnung mit <b>1 € ≈ 179 ¥</b>. Was mit ⚠ markiert ist, hat für Dezember 2026 noch keinen freigeschalteten Tagespreis — dort steht die aktuelle Preisspanne.</div>'
 
   + '<div class="info-card"><h3><span class="k">宿</span>Unterkünfte — Kandidaten</h3>'
   + '<p>Hartes Kriterium überall: <b>direkt am Nahverkehrsnetz</b>. Alle Kandidaten unten sind darauf geprüft; wo ein Haus das Kriterium reißt, steht es dabei.</p>'
-  + '<p><b>Preise für Dezember 2026 sind nirgends öffentlich abrufbar.</b> Booking.com und Agoda geben ihre Raten nicht automatisiert heraus, und mehrere Häuser hatten noch keine Dezember-Preise freigeschaltet. Die Budgetangaben sind Zielkorridore, keine Angebote — die echten Preise bekommt ihr nur über die verlinkten Seiten mit euren Daten.</p>'
-  + '<p><b>Wichtig beim Buchen:</b> Kind 1 und Kind 2 zählen in Japan als vollwertige Gäste. MIMARU hat die Grenze 2022 ausdrücklich von unter 12 auf unter 6 Jahre gesenkt, WELLSTAY liegt bei 7 Jahren. Gebt immer <b>vier Personen</b> an — sonst steht ihr mit einem zu kleinen Zimmer an der Rezeption.</p>'
+  + '<p><b>Neue Hotelsuche vom 20.10.2026:</b> Maßstab ist das gebuchte APA in Osaka (MYR 771 pro Nacht, Kettenhotel, direkt an der Bahn). Alle Preise unten sind echte Booking.com-Preise für eure Daten, abgerufen am 20.10.2026 für 2 Erwachsene + 2 Kinder (11 und 9). Sie ändern sich täglich.</p>'
+  + '<p><b>Wichtig beim Buchen:</b> Immer <b>2 Erwachsene + 2 Kinder mit Alter</b> angeben — sonst zeigt Booking zu kleine Zimmer oder falsche Preise.</p>'
   + HOTELS.map(h=>
-      '<div class="hotel">'
-      + (h.img?'<div class="hbanner"><img src="'+h.img+'" alt="" loading="lazy" onerror="this.closest(\'.hbanner\').classList.add(\'noimg\')"><div class="hb-veil"></div><span class="hb-cr">'+h.cr+'</span></div>':"")
-      + '<div class="h-top"><span class="h-name">'+h.name+'</span><span class="h-nights">'+h.nights+'</span></div>'
-      + (h.booked?'<div class="hbooked"><span class="hb-label">Gebucht</span><span class="hb-name">'+h.booked.h+'</span> · '+h.booked.d+'<br>'+h.booked.ci+'<span class="hb-note">'+h.booked.note+'</span></div>':"")
+      '<div class="hotel'+(h.booked?' isbooked':'')+'"><div class="h-top"><span class="h-name">'+h.name+'</span><span class="h-nights">'+h.nights+'</span></div>'
+      + (h.booked?'<div class="booked">'+h.booked+'</div>':'')
       + '<dl>'
       + '<dt>Lage</dt><dd>'+h.lage+'</dd>'
       + '<dt>Warum</dt><dd>'+h.warum+'</dd>'
@@ -1228,45 +1240,45 @@ function renderInfo(){
       + '<dt>Alternative</dt><dd>'+h.alt+'</dd>'
       + '</dl>'
       + (h.warn?'<div class="hwarn">'+h.warn+'</div>':"")
-      + (h.kand?'<div class="kand-h">'+(h.booked?"Damalige Kandidaten — die Auswahl ist getroffen":"Konkrete Kandidaten, geprüft auf euer Kriterium")+'</div>'
+      + (h.kand?'<div class="kand-h">Kandidaten mit echtem Preis — Link öffnet Booking.com mit euren Daten</div>'
           + h.kand.map(k=>'<div class="kand"><div class="k-top"><a href="'+k.u+'" target="_blank" rel="noopener">'+k.n+'</a><span class="k-meta">'+k.m+'</span></div><p>'+k.w+'</p></div>').join(""):"")
-      + (h.booked?"":'<div class="slotline">Gebucht: ________________________  ·  Adresse: ________________________  ·  Bestätigungsnr.: ____________</div>')
+      + (h.booked?'':'<div class="slotline">Gebucht: ________________________  ·  Adresse: ________________________  ·  Bestätigungsnr.: ____________</div>')
       + '</div>').join("")
-  + '<p><b>Gesamt Unterkunft geschätzt:</b> ¥370.000–490.000.</p></div>'
+  + '<p><b>Gesamt Unterkunft je nach Wahl:</b> ca. MYR 10.700–13.500, davon MYR 9.267 schon gebucht (Osaka MYR 3.855 + Tokio MYR 5.412). Offen sind Kyoto (MYR 626–3.382) und die letzte Nacht in Osaka (MYR 761–802), Preise vom 20. und 22.10.2026.</p></div>'
 
   + '<div class="info-card"><h3><span class="k">車</span>Züge & Preise</h3>'
   + '<p>Kinder von 6 bis 11 Jahren zahlen bei JR den halben Fahrpreis — beide fallen noch hinein. Alle Fernzüge mit reserviertem Sitzplatz.</p>'
   + '<div class="tbl-wrap"><table><thead><tr><th>Strecke</th><th>Zug</th><th>Dauer</th><th class="num">Erw.</th><th class="num">Kind</th><th class="num">Familie</th></tr></thead><tbody>'
   + TRAINS.map(r=>'<tr><td>'+r[0]+'</td><td>'+r[1]+'</td><td>'+r[2]+'</td><td class="num">'+r[3]+'</td><td class="num">'+r[4]+'</td><td class="num">'+r[5]+'</td></tr>').join("")
-  + '<tr class="sum"><td colspan="5">Summe</td><td class="num">≈ ¥152.000</td></tr>'
+  + '<tr class="sum"><td colspan="5">Summe</td><td class="num">≈ ¥118.000</td></tr>'
   + '</tbody></table></div>'
-  + '<p><b>JR Pass lohnt sich nicht.</b> 14 Tage kosten ab 01.10.2026 ¥84.000 Erw. und ¥42.000 Kind, macht ¥252.000 für euch vier — und Nozomi ist damit nur gegen Zuschlag nutzbar. Einzeltickets sparen rund ¥100.000.</p>'
-  + '<p><b>Zu prüfen: Kansai WIDE Area Pass.</b> ¥12.000 Erw. / ¥6.000 Kind für fünf aufeinanderfolgende Tage, deckt Nara, Kyoto, Osaka und Kinosaki inklusive Limited Express mit kostenloser Sitzplatzreservierung. Bei einem Fenster 15.–19.12. deckt er Nara, die Hinfahrt nach Kinosaki und die Rückfahrt nach Kyoto: rund ¥37.300 an Einzeltickets gegen ¥36.000 Pass. Rechnet sich also knapp und wird deutlicher, sobald ein Kyoto-Tag dazukommt.</p></div>'
+  + '<p><b>JR Pass lohnt sich nicht.</b> 14 Tage kosten ab 01.10.2026 ¥84.000 Erw. und ¥42.000 Kind, macht ¥252.000 für euch vier — und Nozomi ist damit nur gegen Zuschlag nutzbar. Einzeltickets sparen rund ¥130.000.</p>'
+  + '<p><b>Kansai WIDE Area Pass lohnt sich nicht mehr.</b> Ohne Kinosaki bleiben in Kansai nur Nara und Osaka–Kyoto, zusammen rund ¥5.800 an Einzeltickets.</p></div>'
 
   + '<div class="info-card"><h3><span class="k">券</span>Eintritte</h3>'
   + '<div class="tbl-wrap"><table><thead><tr><th>&nbsp;</th><th class="num">Erw.</th><th class="num">Kind (9 &amp; 11)</th><th class="num">Familie</th></tr></thead><tbody>'
   + TICKETS.map(r=>'<tr><td>'+r[0]+'</td><td class="num">'+r[1]+'</td><td class="num">'+r[2]+'</td><td class="num">'+r[3]+'</td></tr>').join("")
-  + '<tr class="sum"><td colspan="3">Summe</td><td class="num">≈ ¥107.000</td></tr>'
+  + '<tr class="sum"><td colspan="3">Summe</td><td class="num">≈ ¥113.000</td></tr>'
   + '</tbody></table></div>'
   + '<p><b>Gut zu wissen:</b> Kind 1 ist mit 11 bei USJ und DisneySea noch in der Kinderstufe — die gilt bis einschließlich 11 Jahre. Ab 12 wird es deutlich teurer. Ihr erwischt das letzte günstige Jahr.</p></div>'
 
-  + '<div class="info-card"><h3><span class="k">湯</span>Onsen-Knigge, besonders mit Kindern</h3>'
+  + '<div class="info-card"><h3><span class="k">湯</span>Onsen in Kyoto, besonders mit Kindern</h3>'
   + '<ul>'
   + '<li><b>Getrennt nach Geschlecht, und man badet nackt.</b> Badekleidung ist nicht erlaubt. Das kleine Handtuch nimmt man mit, legt es aber nicht ins Wasser — es kommt auf den Kopf oder an den Beckenrand.</li>'
-  + '<li><b>Vorher waschen.</b> An den Duschplätzen sitzt man auf einem Hocker und wäscht sich gründlich, bevor man ins Becken steigt. Das Becken ist zum Liegen, nicht zum Reinigen.</li>'
-  + '<li><b>Für euch konkret:</b> Kinder bis einschließlich 10 Jahre dürfen mit auf die Seite des anderen Geschlechts. Kind 2 (9) kann also mit Mama, <b>Kind 1 (11) muss auf die Männerseite</b> — mit Papa. Das vorher zuhause besprechen, nicht am Eingang.</li>'
-  + '<li><b>Alle Bäder in Kinosaki sind tattoo-freundlich</b> — das ist in Japan nicht selbstverständlich.</li>'
-  + '<li><b>Nicht springen, nicht tauchen, nicht rennen.</b> Es ist ruhig dort, und das wird ernst genommen. Leise sprechen reicht.</li>'
-  + '<li><b>Feste Ruhetage:</b> Jizo-yu montags, Kono-yu dienstags, Mandara-yu und Ichino-yu mittwochs, Goshono-yu und Yanagi-yu donnerstags. Für euch heißt das: <b>am Donnerstag 17.12. sind Goshono-yu und Yanagi-yu zu</b>, am Freitag 18.12. ist alles offen.</li>\n  <li><b>Satono-yu ist seit dem 1. April 2024 geschlossen</b> — beim Abriss wurde Asbest gefunden, die Wiedereröffnung ist auf etwa 2030 verschoben. Es sind also sechs Bäder, nicht sieben. Viele Reiseführer sind noch nicht aktualisiert.</li>'
-  + '<li><b>Genug trinken.</b> Zwei oder drei Bäder an einem Tag sind für Kinder das Maximum, dazwischen abkühlen und laufen.</li>'
+  + '<li><b>Vorher waschen.</b> An den Duschplätzen sitzt man auf einem Hocker und wäscht sich gründlich, bevor man ins Becken steigt.</li>'
+  + '<li><b>Für euch konkret:</b> Kind 2 (9) geht mit Mama, <b>Kind 1 (11) mit Papa</b>. Zusammen als Familie baden geht nur in einem Privatbad (kashikiri), zum Beispiel im Hotel Kyoto Umekoji Kadensho. Das vorher zuhause besprechen, nicht am Eingang.</li>'
+  + '<li><b>Die Möglichkeiten:</b> Funaoka Onsen (altes Badehaus in der Stadt, abends), FuFu no Yu und Hanaikada in Arashiyama (mittags), Sagano Onsen Tenzan-no-Yu (bis 24 Uhr) und Kurama Onsen mit Außenbad in den Bergen (halber bis ganzer Tag). Kinder zahlen überall etwa die Hälfte.</li>'
+  + '<li><b>Tattoos:</b> Funaoka Onsen und Tenzan-no-Yu laut Touristenamt erlaubt, FuFu no Yu nur kleine mit Sticker, manche Hotelbäder gar nicht.</li>'
+  + '<li><b>Nicht springen, nicht tauchen, nicht rennen.</b> Es ist ruhig dort, und das wird ernst genommen.</li>'
+  + '<li><b>Genug trinken.</b> Ein bis zwei Bäder am Tag sind für Kinder genug, dazwischen abkühlen.</li>'
   + '</ul></div>'
 
   + '<div class="info-card"><h3><span class="k">冬</span>Wetter & Packliste</h3>'
-  + '<p>Dezember in Japan ist trocken, oft sonnig und kalt. Osaka und Tokio tagsüber 4–12 °C, nachts um den Gefrierpunkt. Kinosaki liegt im Bergland und ist deutlich kälter, Schnee ist möglich. Sonnenuntergang gegen 16:50 — Aussichtspunkte gehören auf den frühen Nachmittag.</p>'
+  + '<p>Dezember in Japan ist trocken, oft sonnig und kalt. Osaka und Tokio tagsüber 4–12 °C, nachts um den Gefrierpunkt. In Kurama in den Bergen ist es kälter als in der Stadt. Sonnenuntergang gegen 16:50 — Aussichtspunkte gehören auf den frühen Nachmittag.</p>'
   + '<ul>'
   + '<li><b>Zwiebelprinzip.</b> Drinnen ist überall stark geheizt, draußen ist es kalt. Was man schnell aus- und wieder anzieht, ist Gold wert.</li>'
   + '<li><b>Bequeme, eingelaufene Schuhe.</b> Ihr werdet an vielen Tagen 12–15 km laufen.</li>'
-  + '<li><b>Schuhe, die man leicht aus- und anzieht.</b> Ryokan, Tempel und teamLab Planets verlangen das ständig.</li>'
+  + '<li><b>Schuhe, die man leicht aus- und anzieht.</b> Tempel, Badehäuser und teamLab Planets verlangen das ständig.</li>'
   + '<li><b>Mützen, Schals, dünne Handschuhe</b> — für die Abende an Illuminationen und im DisneySea.</li>'
   + '<li><b>Hosen, die sich übers Knie hochkrempeln lassen</b> — für teamLab Planets. Röcke gehen dort wegen der Spiegelböden nicht.</li>'
   + '<li><b>Wärmepflaster (Kairo)</b> gibt es in jedem Konbini für ein paar Yen, kleben in die Schuhe oder Jackentasche.</li>'
@@ -1279,23 +1291,23 @@ function renderInfo(){
   + '<div class="info-card"><h3><span class="k">実</span>Praktisches</h3>'
   + '<ul>'
   + '<li><b>Visit Japan Web</b> vor dem Abflug für alle vier ausfüllen — Einreise- und Zoll-QR-Codes. Spart am 12.12. abends viel Zeit.</li>'
-  + '<li><b>Suica</b> lässt sich direkt in Apple Wallet anlegen und mit Kreditkarte aufladen, eine pro Person. Funktioniert in Osaka, Kinosaki und Tokio gleichermaßen und auch im Konbini.</li>'
-  + '<li><b>Bargeld:</b> vieles geht bargeldlos, aber kleine Läden, Tempel-Eintritte und die Badehäuser in Kinosaki oft nicht. Am 7-Eleven-Automaten mit ausländischer Karte abheben.</li>'
+  + '<li><b>Suica</b> lässt sich direkt in Apple Wallet anlegen und mit Kreditkarte aufladen, eine pro Person. Funktioniert in Osaka, Kyoto und Tokio gleichermaßen und auch im Konbini.</li>'
+  + '<li><b>Bargeld:</b> vieles geht bargeldlos, aber kleine Läden, Tempel-Eintritte und Badehäuser oft nicht. Am 7-Eleven-Automaten mit ausländischer Karte abheben.</li>'
   + '<li><b>Tax free</b> ab ¥5.000 Einkauf gegen Vorlage des Passes. Am Abreisetag vor der Sicherheitskontrolle erledigen.</li>'
   + '<li><b>Erste Abfahrt Nankai am 26.12.:</b> die frühen Abfahrtszeiten waren nicht abrufbar. Vor der Buchung der Abreisenacht auf nankai.co.jp prüfen, ob ein Zug vor 07:30 fährt.</li>\n  <li><b>Notruf:</b> Polizei 110, Feuerwehr und Rettung 119. Japan Visitor Hotline rund um die Uhr auf Englisch: 050-3816-2787.</li>'
-  + '<li><b>Gepäcktransport (Takkyubin):</b> Koffer lassen sich für ~¥2.000 pro Stück über Nacht von Hotel zu Hotel schicken. Für die Kinosaki-Etappe eine Überlegung wert — dann fahrt ihr nur mit Handgepäck.</li>'
+  + '<li><b>Gepäcktransport (Takkyubin):</b> Koffer lassen sich für ~¥2.000 pro Stück über Nacht von Hotel zu Hotel schicken. Für die zwei Kyoto-Nächte eine Überlegung wert — dann fahrt ihr nur mit Handgepäck.</li>'
   + '<li><b>Weihnachten ist in Japan kein Feiertag.</b> Am 24. und 25.12. hat alles normal geöffnet. Erst ab ca. 28.12. beginnt die Neujahrswelle — ihr seid davor zurück.</li>'
   + '</ul></div>'
 
   + '<div class="info-card"><h3><span class="k">計</span>Grobe Gesamtkosten ohne Flug</h3>'
   + '<div class="tbl-wrap"><table><tbody>'
-  + '<tr><td>Unterkunft</td><td class="num">¥370.000–490.000</td></tr>'
-  + '<tr><td>Züge</td><td class="num">~¥152.000</td></tr>'
-  + '<tr><td>Eintritte</td><td class="num">~¥107.000</td></tr>'
+  + '<tr><td>Unterkunft (siehe oben)</td><td class="num">MYR 10.700–13.500</td></tr>'
+  + '<tr><td>Züge</td><td class="num">~¥118.000</td></tr>'
+  + '<tr><td>Eintritte</td><td class="num">~¥113.000</td></tr>'
   + '<tr><td>Essen (~¥15.000/Tag)</td><td class="num">~¥210.000</td></tr>'
-  + '<tr class="sum"><td>Summe</td><td class="num">~¥840.000–960.000</td></tr>'
+  + '<tr class="sum"><td>Summe ohne Unterkunft</td><td class="num">~¥441.000</td></tr>'
   + '</tbody></table></div>'
-  + '<p>Der Flug ist mit MYR 14.878 bereits bezahlt (AirAsia X D7378 / D7533, Booking.com Referenz [privat]).</p></div>';
+  + '<p>Der Flug ist mit MYR 14.878 bereits bezahlt (AirAsia X D7378 / D7533).</p></div>';
 }
 
 function renderFoot(){
@@ -1310,14 +1322,55 @@ function renderFoot(){
    + 'Fotos: Wikimedia Commons · Gottesdienste: kreuzkirche-tokyo.jp, spilchurchtokyo.org · '
    + 'Unterkünfte und Badehaus-Ruhetage: visitkinosaki.com, Stadt Toyooka, mimaruhotels.com, discoverasr.com, frasershospitality.com, andherehotels, well-stay.com, kinosaki-web.com, japan-guide.com.<br><br>'
    + 'Preise für Dezember 2026 sind bei USJ, DisneySea und teamLab noch nicht freigeschaltet, Illuminationstermine für 2026 noch nicht veröffentlicht — dort stehen die jeweils aktuellen Werte als Orientierung. '
-   + 'Erstellt am 10.09.2026, Unterkunfts-Recherche und Onsen-Korrektur vom 11.09.2026.';
+   + 'Erstellt am 10.09.2026, Onsen-Korrektur vom 11.09.2026. Am 20.10.2026 aktualisiert: Flug und Hotel Osaka gebucht, neue Unterkunftskandidaten mit Booking.com-Preisen vom selben Tag, Zugangsangaben aus apahotel.com, hotels.com und jalan.net. Am 22.10.2026: Hotel Tokio gebucht (Daten aus der Booking.com-Bestätigung), Kyoto statt Kinosaki mit Hotelpreisen von Booking.com vom selben Tag. Kyoto-Angaben: japan-guide.com, Touristenamt Kyoto (kyoto.travel), JR West (Sagano-Bummelbahn), kyotorailwaymuseum.jp, museum.nintendo.com, Präfektur Kyoto (Badpreise), jalan.net, rurubu.jp. Karte: Küstenlinie aus Natural Earth (world-atlas), Lage der Punkte ungefähr.';
 }
 
+
+/* ================= KARTE ================= */
+const MAP = {"A":{"W":760,"H":356,"d":"M184.7 299.9L187.6 299.2L189.1 298.7L190.1 299.2L188.5 300.1L185.6 301.4L182.5 303.0L181.2 304.4L178.3 304.8L177.4 306.6L174.8 306.7L174.2 309.6L172.0 310.0L171.3 311.8L164.0 316.6L159.6 318.4L157.0 320.4L158.0 321.6L155.7 324.0L155.4 325.4L154.8 326.1L153.8 326.6L152.6 326.3L151.3 327.0L151.6 328.8L151.3 330.2L150.0 331.5L147.8 333.8L145.2 338.8L142.7 347.7L142.1 351.7L141.1 354.7L141.1 356.1L140.5 359.0L140.5 361.3L139.2 362.6L137.6 359.2L136.3 356.7L135.1 357.0L133.2 356.5L133.2 354.4L130.9 351.7L127.1 347.0L125.8 343.6L123.3 342.7L121.1 341.5L118.5 339.0L117.2 335.4L110.9 334.7L102.9 332.5L100.7 330.8L94.7 331.7L88.9 333.1L87.3 334.5L83.5 336.1L76.5 339.5L75.3 342.0L75.6 343.8L74.3 345.1L72.1 346.0L69.8 346.3L68.6 346.5L67.6 346.7L66.0 347.9L64.4 350.3L64.1 348.6L62.8 347.9L61.3 349.0L59.0 351.0L57.8 353.1L58.1 355.3L57.8 356.5L57.8 357.4L58.4 358.1L58.7 359.4L59.3 360.2L58.7 361.3L58.1 362.0L57.8 364.5L56.8 365.8L55.5 367.0L54.3 367.7L54.6 370.1L55.2 370.8L53.9 371.7L53.3 370.4L52.0 370.4L49.8 373.1L46.9 378.3L44.8 381.0L-17.6 381.0L-17.0 380.2L-15.3 381.0L-10.8 381.0L-12.2 380.4L-11.6 378.8L-11.6 377.5L-12.2 376.5L-13.2 376.1L-11.3 375.6L-10.6 375.0L-10.0 374.3L-10.6 373.3L-13.2 373.1L-14.1 372.6L-14.5 371.1L-14.5 369.9L-12.6 369.2L-13.2 368.1L-14.5 367.4L-15.7 366.5L-16.4 367.6L-17.6 367.7L-18.3 366.1L-16.1 365.4L-13.5 366.0L-12.6 366.0L-12.2 367.4L-10.6 368.5L-10.0 369.7L-8.4 368.5L-8.7 366.7L-7.5 365.1L-5.6 364.5L-4.6 363.6L-5.6 362.0L-6.8 361.1L-5.2 359.9L-6.8 359.7L-8.1 360.4L-8.7 359.4L-9.7 359.0L-10.3 358.3L-10.3 356.9L-8.4 355.4L-6.8 355.1L-10.0 354.2L-16.1 355.4L-17.6 354.9L-18.6 354.2L-19.6 353.8L-18.9 352.6L-17.0 352.0L-16.4 351.5L-15.7 347.9L-17.3 349.4L-18.6 347.9L-18.6 345.6L-17.0 343.6L-18.3 342.9L-18.0 342.0L-17.3 341.3L-15.7 340.6L-19.2 338.3L-20.8 338.1L-22.4 338.3L-23.4 338.6L-24.6 339.2L-25.0 335.2L-16.7 330.9L-15.1 329.7L-14.5 327.9L-14.1 327.0L-11.6 324.0L-10.6 323.2L-8.7 321.4L0.2 317.7L1.8 316.2L4.0 314.6L6.9 311.8L8.4 307.5L8.4 304.4L7.8 301.4L8.8 297.6L9.4 294.7L10.0 291.8L13.9 291.1L13.9 288.6L15.1 286.3L15.1 281.9L17.7 280.1L21.8 277.3L23.1 275.6L28.2 274.4L28.5 272.6L29.1 271.5L28.8 269.7L27.2 269.5L26.3 269.5L26.3 268.4L27.8 268.8L29.1 268.8L30.4 266.4L31.3 268.2L32.3 269.3L33.3 270.0L38.0 276.0L40.6 282.5L41.5 284.3L42.2 285.9L43.1 287.0L45.0 287.9L46.6 288.8L48.2 288.9L50.8 287.9L53.9 287.2L56.8 286.3L57.4 284.3L60.0 283.4L61.9 283.6L63.8 282.7L65.4 282.7L67.3 283.4L72.1 283.0L74.0 283.6L78.4 285.2L80.7 285.4L82.3 284.6L83.8 283.6L85.1 282.3L86.1 280.9L87.3 279.4L90.2 276.7L91.5 275.1L92.1 273.1L92.7 268.2L92.4 263.7L92.1 261.9L91.2 260.5L90.2 259.0L88.6 257.8L87.3 256.9L86.1 255.8L84.8 253.8L86.7 254.9L89.3 256.2L91.8 256.7L93.1 256.2L94.7 257.8L97.2 256.9L100.1 254.7L102.0 252.7L104.5 250.7L109.9 248.2L112.5 246.6L113.4 245.5L114.1 243.9L114.7 242.6L116.0 242.1L118.2 241.5L119.2 241.3L121.1 242.6L122.7 243.0L123.9 243.9L124.9 244.2L127.1 243.7L130.9 244.4L131.6 243.7L132.5 241.3L134.1 243.2L134.7 240.8L135.1 239.9L136.3 239.7L137.3 240.4L137.6 241.5L137.9 242.8L137.9 245.9L138.6 246.9L139.8 247.3L140.5 246.8L142.4 244.4L143.0 243.7L144.6 245.1L146.8 245.9L147.8 247.1L146.5 250.2L150.0 252.2L151.0 252.4L152.2 252.9L154.2 254.9L155.4 255.3L157.7 254.9L158.9 254.9L159.6 256.5L160.5 257.6L162.7 259.4L165.3 259.4L167.5 257.6L173.2 258.0L175.1 257.1L176.1 256.9L177.4 254.7L177.7 256.0L176.7 257.2L176.1 258.7L177.7 258.5L179.3 256.7L180.9 256.0L180.2 257.6L179.3 259.2L179.0 260.1L179.3 261.6L177.4 261.9L178.3 262.1L179.3 262.7L180.6 262.5L179.9 263.9L179.0 265.5L178.6 266.6L177.1 269.7L177.1 272.6L177.4 274.4L176.4 276.7L176.4 278.3L176.7 280.5L177.1 281.4L177.7 281.9L179.0 281.8L179.0 280.7L179.9 280.5L181.2 283.0L182.1 284.8L185.3 286.8L184.7 287.7L186.0 288.2L185.6 290.0L186.0 291.6L184.7 292.7L184.4 293.6L183.1 294.2L182.1 294.9L180.9 297.2L182.1 297.9L187.2 297.8L186.3 298.5L185.3 299.0L184.7 299.9ZM46.0 53.9L47.3 56.1L46.3 58.9L44.1 61.6L42.5 63.5L42.2 60.3L42.5 57.0L43.8 54.6L46.0 53.9ZM43.4 52.9L45.3 53.3L43.4 53.9L43.4 52.9ZM41.8 51.8L43.1 51.8L43.1 52.9L41.8 54.1L40.6 54.6L39.9 56.5L40.3 57.6L40.3 58.5L39.3 59.8L37.7 59.6L36.8 58.7L36.8 57.6L36.1 56.8L34.5 57.4L34.8 58.5L35.8 60.5L34.8 61.6L33.6 61.4L32.3 60.5L31.0 59.0L32.6 56.8L36.8 53.7L38.7 51.5L40.3 52.2L41.8 51.8ZM72.7 233.9L71.8 236.3L65.4 244.4L64.1 245.7L61.6 246.9L60.3 247.3L59.3 247.1L58.7 246.2L59.3 245.3L60.3 245.0L61.6 244.8L62.2 244.2L63.2 242.4L62.2 241.2L60.3 240.6L58.1 240.8L58.1 239.9L59.7 238.6L59.0 236.6L57.1 235.9L55.5 241.3L54.3 242.8L52.7 243.9L51.4 245.1L53.3 246.6L53.9 248.8L53.3 250.7L51.7 251.6L50.1 250.4L49.2 250.4L48.2 251.5L46.3 252.0L44.4 254.2L43.4 254.5L42.2 253.8L41.5 252.0L41.8 247.7L43.1 246.8L44.4 244.8L45.3 244.1L45.7 245.0L45.7 246.8L45.3 248.0L47.3 247.7L48.5 244.1L50.1 243.7L50.1 242.8L48.8 241.7L47.3 240.8L46.3 240.4L45.3 240.6L44.4 240.4L43.4 239.9L42.5 240.8L42.8 244.1L40.6 246.0L37.1 247.1L27.5 248.0L25.0 249.1L22.4 250.9L20.8 248.4L19.3 249.1L17.7 251.3L15.8 252.4L14.5 252.7L15.1 254.5L15.8 255.6L15.1 256.5L13.9 256.7L11.3 256.9L9.1 257.4L4.9 260.3L2.4 260.5L1.8 259.2L1.1 258.3L-0.1 258.9L-0.5 259.8L-3.0 261.0L-4.0 261.0L-4.9 259.8L-3.6 258.3L-4.3 256.9L-5.9 255.4L-6.8 252.7L-8.1 251.3L-8.4 249.5L-8.1 248.6L-8.4 246.6L-6.8 245.9L-6.5 244.6L-7.1 243.9L-9.1 242.8L-10.6 243.7L-12.2 244.2L-14.1 244.2L-17.3 242.2L-19.2 242.4L-22.4 244.2L-25.0 246.4L-25.0 167.7L-24.0 164.4L-21.5 162.3L-19.6 160.9L-18.6 159.8L-18.9 158.7L-17.3 157.1L-17.0 155.4L-11.6 151.4L-9.1 149.2L-6.2 147.9L-5.9 146.5L-4.3 145.9L-2.1 144.8L1.8 143.5L3.4 142.4L4.6 140.6L5.6 138.8L6.2 136.0L6.5 134.0L6.5 132.7L6.2 131.1L4.6 130.4L2.7 128.9L2.1 127.8L3.0 126.7L4.9 126.3L7.2 125.8L9.1 125.8L11.9 125.8L13.2 125.4L12.9 124.1L11.0 123.4L11.9 123.2L13.5 122.7L15.4 122.3L18.0 120.8L20.8 119.6L23.4 119.0L28.5 118.8L30.7 118.3L32.6 118.5L32.9 115.7L34.5 115.3L36.8 115.9L38.3 115.2L39.0 113.5L39.9 112.2L41.2 111.5L42.5 112.0L43.4 110.8L43.4 109.3L44.7 109.7L46.0 110.9L47.9 112.6L49.2 113.5L52.0 112.4L53.6 112.4L55.2 111.3L55.2 112.8L56.5 113.3L59.0 112.2L60.6 112.0L62.5 111.9L64.1 112.8L62.8 113.5L61.9 113.9L60.6 114.4L59.3 114.8L58.1 116.3L57.8 117.9L58.4 119.2L58.7 120.7L61.3 122.3L64.4 124.0L67.3 124.5L68.9 125.1L70.8 125.2L72.4 124.9L74.3 121.2L78.8 119.2L81.9 117.7L86.7 116.6L91.2 117.9L100.1 119.9L116.0 118.6L124.6 116.3L126.8 118.1L139.2 116.3L144.6 115.2L146.8 114.4L148.7 113.1L149.7 110.9L154.2 110.0L155.7 109.8L157.0 108.2L160.2 107.1L165.0 105.2L167.8 103.6L171.3 101.6L175.8 102.9L180.9 102.3L184.7 102.5L191.4 102.1L194.2 102.3L195.5 102.7L197.4 103.2L198.1 104.5L200.0 103.0L201.6 103.2L201.9 104.3L203.1 104.0L204.7 104.5L205.7 104.9L207.3 103.4L208.9 102.7L208.6 101.4L211.1 99.6L213.0 99.6L214.6 99.2L216.2 98.3L219.7 95.7L219.4 94.2L223.8 92.9L228.3 92.0L230.5 91.6L232.1 90.5L234.3 92.2L235.3 94.2L236.6 95.1L237.8 97.2L239.1 99.7L239.1 101.6L238.5 103.0L236.9 101.9L235.0 103.2L234.0 105.4L233.4 106.9L232.7 107.8L230.2 110.8L228.6 113.1L228.6 115.3L229.6 115.9L230.5 115.7L230.5 113.9L231.8 112.8L232.7 111.1L234.0 110.2L234.6 112.6L235.6 113.0L235.3 114.1L234.3 114.1L233.4 113.9L233.1 115.7L238.8 118.8L240.0 118.3L240.7 117.5L241.6 119.4L241.3 120.8L240.7 121.8L240.0 123.8L239.7 124.7L240.4 126.0L241.3 125.2L242.3 123.4L243.2 121.6L244.8 121.8L247.0 122.9L247.7 122.1L247.7 119.6L245.1 120.1L242.9 119.2L242.0 116.3L243.9 114.4L245.1 114.1L247.7 113.9L249.0 113.5L249.6 112.6L250.5 111.5L250.9 110.4L253.1 109.1L252.5 110.8L252.1 112.4L253.7 113.1L254.7 113.9L254.4 115.5L254.7 116.6L254.4 117.7L255.3 117.9L256.6 116.8L257.2 115.0L257.2 117.0L256.9 119.0L257.2 120.5L258.8 121.0L261.4 121.2L262.3 121.0L264.9 119.7L265.5 118.5L267.4 116.8L269.3 115.5L271.2 116.4L268.7 117.9L268.0 121.0L267.1 121.8L269.0 122.3L273.8 121.2L276.0 121.2L277.3 120.3L278.2 118.8L278.2 116.6L275.7 117.9L274.7 115.9L273.1 115.3L274.4 113.5L277.3 112.6L278.2 113.3L278.9 115.0L280.8 114.8L282.4 116.8L283.6 117.4L285.9 116.4L284.9 116.1L284.3 115.2L283.0 112.8L284.3 111.9L285.2 112.8L286.2 112.2L287.8 111.7L286.8 110.2L286.2 109.5L285.9 108.0L284.3 106.0L284.0 104.7L284.9 104.5L286.5 105.8L287.5 106.7L288.7 107.4L291.9 106.7L292.5 107.8L293.5 108.6L295.1 107.4L296.0 106.2L298.0 106.5L298.9 106.0L298.9 104.7L297.3 103.4L298.0 101.0L298.3 99.6L298.0 98.3L296.7 98.5L296.7 95.3L298.9 94.2L302.1 91.5L303.4 93.5L303.4 94.4L304.0 96.1L304.6 98.1L304.3 99.4L303.4 99.4L302.7 100.7L304.3 101.8L304.6 103.0L306.5 102.7L307.2 100.8L307.8 100.3L307.8 98.1L308.8 96.8L308.8 95.9L308.8 93.9L309.4 92.0L309.4 90.2L308.1 88.2L307.2 86.3L306.5 84.8L304.6 83.4L301.5 79.9L299.9 78.4L300.2 75.3L299.9 72.9L298.0 70.1L296.7 68.8L297.3 65.9L299.2 64.6L300.5 63.1L302.1 59.6L303.4 57.0L304.3 53.7L308.8 48.1L310.0 45.6L311.0 43.9L312.3 41.3L311.0 38.9L311.3 38.2L313.2 38.0L314.8 38.2L318.0 36.9L325.0 30.6L326.9 27.8L331.0 25.7L334.2 23.0L338.4 18.3L357.1 -6.9L361.3 -14.4L365.6 -25.0L390.7 -25.0L393.4 -23.3L395.9 -20.9L400.1 -19.4L402.6 -17.7L406.1 -17.4L410.3 -18.1L415.3 -17.4L418.2 -17.9L419.8 -20.2L422.7 -22.0L423.6 -25.0L723.3 -25.0L720.4 -20.3L719.5 -18.5L715.4 -1.9L710.3 6.6L709.0 10.4L707.7 18.3L708.0 20.0L709.0 24.3L709.3 25.9L708.4 28.9L705.2 32.4L703.9 34.8L703.9 38.9L705.2 48.1L707.7 55.3L710.9 64.4L723.6 86.7L727.4 91.8L728.4 93.9L729.4 94.4L730.3 94.8L731.3 95.3L731.6 96.2L730.6 98.8L730.0 99.9L728.7 99.0L728.1 98.1L727.1 97.0L724.9 97.5L722.0 98.8L717.6 100.5L717.3 98.6L712.5 99.7L706.8 103.8L696.6 113.1L691.5 121.2L688.0 133.1L689.9 138.8L690.5 141.7L689.6 146.3L689.3 150.3L688.6 153.0L687.4 155.2L684.8 154.9L683.2 157.2L683.5 159.1L682.3 160.3L680.7 160.0L680.0 158.5L678.5 160.2L676.2 159.8L675.0 162.2L671.8 162.0L667.6 161.6L665.7 161.1L663.2 163.8L662.9 166.2L660.6 168.0L658.7 168.0L655.9 170.2L653.0 172.2L652.4 173.5L651.7 175.5L650.8 176.9L650.8 178.7L650.5 180.8L649.8 182.0L648.9 183.1L647.6 184.4L645.0 184.8L643.5 184.9L642.5 184.6L641.2 184.9L640.0 185.1L638.4 183.8L638.4 182.8L638.4 181.3L637.1 180.4L634.5 179.3L632.3 179.1L632.0 178.2L632.0 176.9L633.3 176.9L634.9 177.1L635.8 177.3L637.1 176.9L638.0 176.4L638.7 175.5L640.0 175.3L641.5 175.8L642.2 175.3L642.5 174.4L642.2 172.9L641.2 172.0L639.3 171.5L639.3 170.4L640.3 169.3L640.6 168.0L640.6 166.9L639.6 164.9L639.3 163.6L639.6 159.8L638.0 157.2L638.4 156.0L638.0 154.3L638.4 152.9L640.9 151.2L642.2 150.1L642.2 147.7L640.6 145.0L640.6 142.6L637.1 141.3L634.5 140.4L636.5 140.1L638.4 138.8L638.4 136.8L639.6 135.5L640.3 133.7L644.4 134.9L645.7 133.5L645.7 131.8L645.0 128.5L646.3 127.4L648.9 126.5L650.5 125.1L652.4 124.7L654.6 123.0L655.9 121.2L657.8 118.8L660.3 115.5L661.9 115.9L662.5 114.2L662.9 113.0L661.6 113.0L661.3 110.9L661.0 108.9L659.7 107.6L658.1 106.0L656.8 104.9L654.6 102.9L653.6 103.2L652.4 101.9L649.5 101.6L647.0 102.7L648.5 105.4L646.3 106.7L644.7 107.8L644.4 106.9L643.5 106.7L642.5 106.0L640.6 105.2L640.0 106.2L639.6 107.8L638.4 106.9L638.0 105.2L636.8 105.2L636.5 107.3L635.2 109.1L633.9 107.4L634.2 104.9L633.3 103.6L632.6 106.0L633.6 109.3L634.9 111.5L634.9 112.8L636.1 115.9L635.2 117.4L635.2 118.8L634.2 120.1L631.4 121.9L628.8 124.1L626.3 124.5L624.4 123.8L623.1 124.1L622.5 125.2L624.0 126.0L625.6 126.9L626.3 127.6L626.0 129.1L626.3 131.1L625.3 130.9L623.1 130.0L621.8 130.9L622.5 132.4L623.7 133.7L623.4 137.7L623.1 139.0L623.1 140.8L622.8 142.1L623.7 143.4L624.4 142.1L625.3 142.8L626.9 145.4L630.4 145.7L631.4 147.4L629.8 149.2L630.4 150.3L629.8 151.9L626.6 151.8L624.4 153.4L624.0 155.0L624.7 157.1L625.6 158.1L626.3 159.2L625.3 159.6L624.4 159.8L622.1 159.2L620.9 160.2L619.9 159.8L619.9 157.8L619.9 155.6L618.6 152.5L620.9 151.4L620.2 150.7L619.0 150.1L618.3 148.5L615.8 145.4L615.8 144.5L615.1 143.4L614.2 143.2L613.5 141.0L612.3 141.7L610.4 141.5L608.5 141.9L606.9 140.4L602.1 139.9L594.8 141.5L590.6 142.3L586.2 143.5L581.7 145.9L578.6 149.0L578.2 154.5L579.5 159.6L576.3 158.1L573.5 162.5L572.5 166.2L572.2 168.5L575.1 169.1L574.4 171.1L574.1 173.1L573.1 174.6L574.4 177.1L577.3 178.0L578.2 180.6L578.6 184.6L577.9 188.2L576.0 188.6L574.4 189.8L573.5 191.3L573.1 192.8L572.2 194.9L570.9 196.8L570.3 198.2L569.3 199.3L568.1 199.7L567.1 200.8L566.5 201.7L565.5 203.1L565.8 204.4L565.2 205.1L564.6 206.6L564.2 208.4L564.6 210.4L564.9 212.0L563.9 212.6L562.3 211.8L560.4 210.9L556.3 214.4L553.4 216.0L550.9 217.8L549.6 217.1L548.3 216.0L547.4 214.5L545.5 212.4L546.1 210.6L545.5 209.8L544.8 209.3L543.6 208.6L543.2 207.7L543.2 205.7L542.9 203.5L544.2 202.6L544.5 201.5L545.8 201.1L544.2 197.8L543.2 194.4L544.2 192.8L544.5 190.9L544.5 188.4L543.9 187.3L544.5 185.8L545.8 184.6L547.1 184.4L546.1 182.8L545.5 181.7L544.8 179.1L544.5 176.6L545.8 174.0L546.7 171.5L550.2 171.8L552.8 172.4L554.7 172.2L556.3 172.2L557.6 171.1L552.8 165.8L551.2 163.6L548.3 161.3L542.9 159.8L538.8 159.4L535.9 160.7L533.4 161.8L528.9 162.0L526.1 164.0L523.8 168.9L521.3 170.9L521.0 174.2L521.9 175.3L521.9 173.1L523.2 172.2L524.2 172.6L522.6 176.6L518.7 178.7L515.2 180.4L512.7 181.7L509.5 183.3L508.6 184.8L507.9 186.4L507.0 187.8L506.3 190.0L506.3 190.9L507.3 193.1L506.0 195.1L505.1 196.0L503.2 199.7L499.3 202.4L496.2 205.3L494.9 210.9L494.2 212.9L494.9 215.1L497.1 215.6L498.4 217.1L497.7 218.0L493.9 217.3L481.5 211.5L474.2 210.2L467.8 210.2L458.9 213.1L449.4 209.8L441.4 209.1L437.3 209.1L426.5 210.2L418.8 212.4L401.3 218.5L397.2 218.2L392.8 219.4L391.5 219.6L390.2 219.6L390.8 218.4L391.5 217.6L392.4 215.5L393.4 212.4L395.3 210.4L397.8 213.3L398.5 214.7L399.4 213.8L401.0 212.6L402.3 211.8L403.6 211.3L406.4 209.5L410.3 206.9L411.8 206.2L413.8 203.3L415.3 203.7L415.3 205.8L415.0 207.7L416.3 206.0L416.3 203.8L418.2 204.4L418.8 203.8L416.3 202.7L417.3 200.8L417.6 199.5L415.0 196.2L413.4 194.9L412.5 195.5L410.6 194.9L408.7 194.2L407.1 195.7L406.1 195.1L405.8 197.1L405.5 199.1L403.9 199.8L403.9 197.7L402.6 197.8L401.3 197.1L399.4 197.1L397.8 197.5L396.6 198.4L395.3 197.5L393.4 198.4L391.5 198.0L390.5 197.7L388.9 195.7L388.3 194.9L386.7 193.1L385.1 192.4L385.4 189.7L387.3 185.3L387.0 182.6L386.1 183.8L385.1 186.8L383.5 189.3L382.9 190.9L382.3 192.9L381.3 198.6L382.3 199.8L383.2 201.7L385.4 202.9L386.4 205.3L386.4 207.1L384.2 206.7L381.3 205.5L378.1 203.7L376.2 202.4L375.3 200.9L374.9 199.3L375.9 197.3L376.2 195.3L376.9 193.7L376.9 192.0L376.2 189.8L374.9 188.2L373.7 188.2L373.0 185.7L373.0 182.9L373.0 180.9L373.4 179.3L374.0 177.3L374.9 175.5L376.2 173.5L376.9 171.6L378.1 169.6L378.4 166.7L378.8 164.7L377.5 164.4L376.2 167.6L375.6 170.0L374.9 167.8L374.9 166.2L373.7 165.8L374.6 170.9L372.4 171.5L372.1 169.1L371.1 169.1L371.1 171.8L369.2 172.2L367.0 171.5L364.4 171.5L360.6 174.2L358.7 176.0L357.8 177.7L357.4 179.5L357.4 180.6L359.0 180.8L357.4 181.8L357.8 183.8L356.8 186.4L354.9 190.2L350.4 195.8L347.6 199.7L346.9 204.4L346.6 206.4L346.3 208.7L347.6 210.9L348.9 211.8L348.5 213.1L348.2 214.5L348.2 215.6L349.2 217.3L350.8 217.8L354.6 217.8L356.5 218.4L357.8 219.6L359.0 221.1L360.3 222.3L367.0 226.7L371.4 228.7L372.4 229.6L373.4 229.2L374.6 229.2L375.9 229.6L376.5 230.3L377.2 231.6L377.5 232.7L377.8 233.7L378.4 234.8L379.7 235.2L380.7 235.2L382.3 236.3L382.3 237.5L381.6 241.3L380.4 240.8L379.4 240.8L378.4 241.2L377.8 242.1L378.8 243.5L379.7 243.7L381.0 243.7L379.4 245.0L378.4 246.6L379.1 247.7L379.7 249.5L380.0 251.5L379.7 253.1L378.8 253.8L375.6 254.9L374.3 255.3L372.7 255.1L370.8 254.5L368.9 253.6L368.9 252.4L370.2 252.0L372.1 252.4L373.7 253.1L374.9 253.8L374.6 252.2L375.6 252.4L376.2 250.2L375.3 248.8L373.7 248.2L371.8 248.8L372.1 249.8L371.8 250.9L368.9 248.8L367.3 250.0L364.8 250.6L362.5 250.0L363.2 248.4L364.4 246.2L362.9 245.9L360.3 246.8L357.8 248.0L359.4 248.6L359.4 249.8L358.4 251.1L355.5 252.2L354.3 253.3L352.7 253.4L351.1 251.6L350.4 252.5L350.1 253.8L347.6 252.5L346.6 252.4L346.3 253.6L345.7 254.7L345.0 255.3L346.0 257.1L345.0 257.1L342.2 256.2L338.4 258.7L337.4 259.8L334.5 259.8L330.1 261.9L326.9 265.2L326.6 268.2L327.9 269.0L328.8 270.0L328.2 271.5L326.9 272.4L325.6 272.9L324.7 272.4L323.4 270.4L322.1 270.6L320.9 272.7L319.9 273.6L321.2 274.4L322.1 274.7L322.4 275.6L322.8 276.9L324.4 278.5L325.3 279.8L324.7 280.9L324.7 283.7L324.7 284.6L323.4 285.2L322.4 284.6L321.5 283.4L320.9 282.3L319.9 283.6L318.6 284.6L320.5 285.7L321.2 287.2L320.5 288.2L319.3 287.5L318.6 289.3L318.0 290.0L315.1 290.6L313.9 291.6L313.2 292.9L311.6 293.3L309.7 293.1L306.5 297.9L302.1 310.0L299.9 315.0L298.9 318.6L297.0 319.7L296.7 321.4L294.8 322.3L295.1 323.8L297.0 324.8L295.7 326.5L292.9 329.7L291.3 330.2L290.3 331.7L285.2 333.3L283.6 334.2L282.7 335.2L281.4 337.6L282.0 339.7L281.7 341.0L280.5 340.6L279.2 341.9L278.9 339.9L280.1 338.1L279.8 336.7L271.2 335.8L268.4 335.2L255.3 330.4L251.5 329.3L248.3 326.8L247.4 325.9L246.4 324.7L246.4 323.2L246.7 322.2L245.8 320.2L245.1 319.5L243.9 318.4L242.3 318.0L241.0 316.6L242.3 314.1L245.5 313.7L247.7 313.4L246.7 312.1L242.3 308.7L240.4 307.8L239.7 306.6L238.1 306.7L235.6 304.9L232.7 304.8L232.4 303.0L229.6 301.4L227.3 298.8L225.7 294.9L222.6 292.9L221.0 293.3L217.8 293.8L217.1 294.3L217.5 293.3L218.1 292.5L217.1 292.0L219.1 291.6L219.1 290.2L218.1 288.9L219.7 287.7L221.0 286.4L219.1 285.9L218.7 283.9L220.3 282.5L222.2 282.3L223.5 281.8L225.7 280.5L226.4 278.9L226.4 277.4L225.7 276.4L223.8 275.5L221.9 274.5L220.3 274.4L222.2 270.8L223.2 270.2L223.5 268.6L222.9 267.0L225.1 266.8L228.6 267.2L228.9 265.5L228.0 263.9L226.7 261.6L225.1 261.8L224.1 257.2L222.6 255.8L220.3 253.8L217.5 253.1L218.4 251.1L221.3 247.7L230.5 245.0L234.6 241.3L236.9 239.2L240.4 235.7L243.2 231.6L245.1 229.8L245.1 227.2L245.1 226.1L246.7 225.6L247.4 224.5L248.3 223.8L248.6 222.0L248.6 219.6L249.0 216.4L248.0 213.6L247.7 211.1L248.6 207.5L247.4 208.2L245.8 208.7L244.2 207.8L242.3 205.7L240.0 205.8L237.5 206.0L237.5 208.7L234.6 209.1L234.6 206.6L231.5 207.7L233.4 212.0L230.8 211.5L230.2 209.1L228.6 209.3L228.3 211.8L221.9 213.1L219.1 214.4L216.2 214.7L213.6 212.9L210.1 212.9L208.6 212.7L206.6 210.2L203.8 209.1L202.2 207.7L197.4 204.4L194.6 203.3L191.1 200.6L189.5 199.5L185.3 198.4L173.9 199.5L172.6 198.9L171.6 199.1L170.7 199.8L169.7 200.2L168.5 200.0L167.5 199.7L167.2 198.8L167.2 197.3L165.9 197.8L165.3 199.1L165.3 200.0L164.0 200.2L161.8 203.3L161.2 203.8L159.9 203.8L158.9 203.3L158.3 202.6L157.3 202.4L156.4 202.7L155.4 203.7L154.8 204.9L155.1 206.0L152.6 206.2L148.1 204.9L145.6 204.7L143.3 203.7L142.1 203.7L143.0 205.3L143.7 205.8L148.4 206.9L145.9 207.3L143.7 210.2L142.4 210.7L141.1 211.8L139.5 212.2L137.3 213.5L137.9 214.0L138.9 214.0L140.5 213.5L139.5 215.8L136.7 217.6L133.8 218.9L131.2 219.4L130.0 218.9L128.1 216.9L126.2 216.4L123.3 216.5L122.0 216.7L119.8 218.2L118.2 218.7L117.2 219.8L117.6 221.6L118.5 222.2L120.1 221.3L122.3 218.5L123.9 218.0L125.5 217.8L126.8 218.2L127.7 219.4L127.7 221.3L126.8 222.5L125.2 223.4L124.2 224.5L124.9 226.0L122.3 225.1L120.7 227.4L119.8 230.9L118.2 233.4L111.2 232.1L108.0 232.1L108.3 234.8L105.5 234.3L104.2 232.1L103.2 229.4L101.0 227.4L100.4 228.0L99.7 227.4L99.4 226.3L99.4 225.2L98.8 226.0L97.2 225.4L95.9 226.0L94.7 227.0L92.1 228.0L88.0 229.9L87.0 230.7L86.4 232.1L83.8 232.7L83.2 233.2L82.3 233.9L76.8 236.3L80.3 232.1L81.6 229.9L79.7 229.0L78.8 229.2L76.8 230.7L75.6 231.0L73.3 231.0L72.4 231.6L72.1 233.4L72.7 233.9ZM635.5 373.3L637.4 374.5L639.6 375.2L641.9 376.3L643.1 378.3L642.5 379.7L641.5 381.0L635.0 381.0L634.2 379.1L631.4 375.0L631.0 373.4L632.0 372.2L633.3 371.7L635.5 373.3ZM-25.0 291.5L-24.3 292.5L-23.1 292.5L-21.8 291.8L-19.9 290.4L-18.0 290.6L-17.0 289.8L-16.7 288.6L-15.1 288.0L-12.9 288.2L-11.6 288.2L-12.6 289.3L-14.5 291.8L-16.1 291.6L-18.3 292.4L-18.9 292.9L-19.6 296.3L-19.6 297.4L-19.9 298.5L-20.8 298.1L-23.1 298.1L-24.0 296.9L-24.0 296.0L-24.0 294.9L-25.0 294.0ZM608.8 275.1L609.4 271.7L612.0 269.5L614.8 269.5L616.4 272.0L615.1 275.5L612.9 277.6L610.4 277.8L608.8 275.1ZM-4.0 274.0L-5.9 272.7L-10.6 272.9L-12.9 272.2L-11.3 270.4L-9.1 269.1L-8.1 267.5L-9.1 264.8L-8.1 263.7L-7.1 263.0L-5.9 262.7L-4.9 262.7L-4.3 263.4L-4.6 264.3L-5.6 264.8L-4.6 266.1L-4.6 267.3L-4.6 268.6L-4.3 270.0L-2.1 269.0L-1.7 270.9L-2.7 273.5L-4.0 274.0ZM35.2 259.4L32.3 261.0L31.3 260.5L32.0 258.3L32.6 257.8L34.2 257.4L34.5 255.8L33.6 254.7L32.6 254.5L34.2 252.4L36.1 250.6L38.0 250.0L39.3 252.4L40.3 255.6L39.9 257.8L38.3 259.4L35.2 259.4ZM589.4 239.4L590.3 238.6L591.3 237.4L592.2 237.0L592.2 238.8L591.9 242.2L590.6 245.7L589.4 247.1L588.1 245.1L588.1 243.9L589.1 240.1ZM212.4 216.5L214.6 218.4L214.6 219.6L213.6 221.1L212.4 222.5L211.7 224.9L210.8 227.6L208.2 229.8L206.0 233.0L203.5 236.8L203.1 240.8L202.8 241.7L203.1 243.0L203.1 244.2L204.7 245.5L205.1 247.3L205.7 248.6L207.6 250.9L208.6 252.7L206.6 253.4L204.1 254.2L201.9 255.4L199.3 256.3L197.4 257.4L194.6 260.1L190.1 261.0L188.2 261.2L187.9 259.2L186.0 258.3L186.9 256.0L187.6 254.5L184.4 255.6L182.5 253.3L181.8 250.7L182.8 249.3L184.1 246.6L186.0 247.1L187.6 246.4L194.2 233.7L196.5 232.3L198.1 231.4L199.0 230.7L200.3 228.1L200.6 227.0L201.9 224.9L205.4 223.2L206.6 222.7L208.9 219.4L210.5 217.1L212.4 216.5ZM602.4 198.0L604.3 198.9L605.3 200.6L605.9 202.6L606.2 205.1L605.9 207.7L605.6 208.9L604.6 209.1L602.7 209.1L597.3 206.4L596.7 204.6L596.7 199.5L597.0 196.2L601.1 197.1L602.4 198.0ZM36.4 64.2L37.4 62.9L39.3 63.7L41.2 65.1L42.5 66.4L41.2 66.4L37.7 66.4L36.8 65.7L36.4 64.9ZM67.9 35.7L69.2 37.6L68.9 43.0L68.3 44.3L67.3 44.8L66.7 43.5L65.7 43.5L64.8 44.1L64.1 44.8L65.1 45.6L65.4 46.7L65.1 47.8L64.1 48.5L60.0 47.8L58.1 47.8L53.3 43.7L52.3 43.3L52.0 42.2L52.7 35.4L53.9 33.3L61.3 28.3L61.3 29.6L61.9 30.2L62.8 30.4L63.8 30.6L64.1 31.9L65.1 32.8L66.0 33.2L67.0 34.3L67.6 35.2ZM156.1 222.3L155.7 223.2L156.1 224.2L156.4 225.4L156.7 226.7L156.4 229.8L154.5 235.6L153.8 234.7L153.2 234.1L151.9 233.9L150.7 233.9L152.6 233.0L152.9 232.1L151.9 231.4L150.0 231.9L148.7 233.2L148.1 235.0L146.8 236.6L145.2 237.0L145.6 233.2L145.2 231.9L143.3 231.0L141.7 231.2L140.2 231.8L138.9 231.8L137.9 230.3L138.9 229.6L138.9 228.5L138.9 227.2L139.2 226.0L141.7 226.9L144.0 226.1L147.8 223.8L148.7 223.4L151.9 223.1L155.1 222.3L156.1 222.3ZM620.5 293.8L621.2 295.2L620.5 296.9L619.6 297.2L618.0 297.0L617.0 296.1L616.7 294.3L618.0 292.7L619.6 292.5L620.2 293.3ZM3.7 280.1L4.0 281.6L3.7 282.7L3.4 283.7L3.0 285.4L1.8 286.4L0.2 287.0L-1.1 286.3L-1.1 284.8L-0.5 283.6L0.5 282.7L1.4 282.1L3.4 280.7ZM43.8 263.0L43.8 264.5L39.3 269.0L37.7 269.7L36.8 269.0L36.8 267.0L37.1 265.5L38.0 265.2L38.3 264.3L37.7 262.8L38.3 261.4L40.3 260.8L41.5 261.6L42.2 262.3L42.8 262.8L43.8 263.0ZM12.3 260.5L13.9 261.4L14.2 262.7L13.9 263.7L12.9 264.3L12.3 263.6L11.0 263.4L8.8 262.3L7.8 261.4L8.4 260.3L9.7 259.9L11.3 260.3L12.3 260.5ZM28.5 252.0L29.1 251.3L29.4 252.2L29.1 254.7L28.2 256.7L27.8 258.0L26.9 258.9L25.0 259.2L23.4 259.4L22.1 258.7L21.5 257.2L21.8 256.0L22.4 255.4L25.3 254.2L26.3 254.2L27.2 253.4L28.5 252.0ZM-23.1 249.1L-22.7 250.0L-22.4 250.9L-24.3 253.3L-25.0 253.9L-25.0 249.4L-24.0 248.9L-23.1 249.1ZM98.5 239.2L99.4 240.4L99.4 241.9L99.1 242.8L97.8 243.7L96.9 243.7L96.2 242.4L96.6 241.2L97.5 239.7L98.5 239.2ZM230.2 235.6L233.4 233.0L235.0 235.0L231.8 237.0L230.8 236.5L230.2 235.6ZM128.1 230.9L127.1 230.5L127.7 229.4L128.7 229.4L130.0 228.3L131.2 228.1L132.2 229.0L132.8 230.1L131.2 232.5L129.7 231.8L128.1 230.9ZM379.4 228.5L380.0 227.8L380.7 228.7L380.4 229.6L379.1 230.3L378.4 230.9L378.1 229.9L377.5 229.0L379.4 228.5ZM379.1 224.7L379.7 224.0L381.0 223.8L380.4 224.7L379.1 225.8L377.8 226.7L376.2 227.0L375.6 226.5L376.9 225.8L379.1 224.7ZM371.1 187.7L372.1 187.7L373.4 189.3L373.4 190.6L372.4 190.9L371.8 191.7L371.1 187.7Z","p":{"kix":[232.6,235.2],"hommachi":[256.3,208.6],"usj":[250.3,210.3],"kaiyukan":[250,211.5],"nara":[286.6,208.3],"kyoto":[279.2,176],"inari":[280.4,177.9],"arashi":[271.5,172.5],"kiyo":[281.5,174.9],"tokyo":[625.9,98.8],"disney":[643.8,106.4],"ghibli":[616,98.9],"asakusa":[636,96.9],"toyosu":[635.4,104]}},"B":{"W":760,"H":763,"d":"M785.0 -25.0L785.0 788.0L101.8 788.0L123.8 766.5L161.5 729.6L192.2 684.8L212.8 665.4L212.8 638.1L212.8 626.4L229.9 620.6L236.7 608.9L247.0 601.1L250.4 581.7L250.4 556.3L253.8 521.3L243.5 492.0L240.1 464.7L250.4 425.7L236.7 433.5L219.6 439.4L202.5 429.6L182.0 406.2L158.0 408.1L130.7 410.1L130.7 439.4L99.9 443.3L99.9 415.9L65.7 427.7L86.2 474.5L58.9 468.6L52.0 443.3L34.9 445.2L31.5 472.5L-25.0 483.8L-25.0 -25.0ZM52.0 727.6L86.2 700.4L103.3 721.8L69.1 743.2L58.9 737.4L52.0 727.6Z","p":{"kix":[77.9,723.8],"hommachi":[332.5,437.7],"usj":[267.9,456.2],"kaiyukan":[265.1,468.9],"nara":[658.3,434.2],"kyoto":[578.5,87],"inari":[591.9,107.9],"arashi":[495.9,49.9],"kiyo":[603.3,75.4],"tokyo":[4306.4,-742.2],"disney":[4498.3,-660.4],"ghibli":[4199,-741],"asakusa":[4414.7,-763.3],"toyosu":[4408,-686.1]}}};
+function renderMap(){
+  const pt=(map,k,cls,label,dx,dy,anchor,small)=>{const p=MAP[map].p[k];
+    return '<circle class="'+cls+'" cx="'+p[0]+'" cy="'+p[1]+'" r="'+(cls==="pt-sight"?8:12)+'"/>'
+      + '<text'+(small?' class="small"':'')+' x="'+(p[0]+dx)+'" y="'+(p[1]+dy)+'" text-anchor="'+(anchor||"start")+'">'+label+'</text>';};
+  const line=(map,keys)=>'<polyline class="route" points="'+keys.map(k=>MAP[map].p[k].join(",")).join(" ")+'"/>';
+  const A=MAP.A, Bm=MAP.B;
+  const svgA='<svg class="map-svg" viewBox="0 0 '+A.W+' '+A.H+'" role="img" aria-label="Karte der Route von Osaka über Kyoto nach Tokio"><path class="land" d="'+A.d+'"/>'
+    + line("A",["kix","hommachi","kyoto","tokyo"])
+    + pt("A","nara","pt-sight","Nara",16,40,"start",true)
+    + pt("A","hommachi","pt-booked","Osaka",-24,36,"end")
+    + pt("A","kyoto","pt-open","Kyoto",-12,-24,"end")
+    + pt("A","tokyo","pt-booked","Tokio",0,-28,"middle")
+    + '</svg>';
+  const svgB='<svg class="map-svg" viewBox="0 0 '+Bm.W+' '+Bm.H+'" role="img" aria-label="Detailkarte Osaka, Kyoto, Nara"><path class="land" d="'+Bm.d+'"/>'
+    + line("B",["kix","hommachi","kyoto"])
+    + pt("B","kix","pt-sight","Flughafen KIX",24,10,"start")
+    + pt("B","usj","pt-sight","USJ · Kaiyukan",-24,20,"end",true)
+    + pt("B","nara","pt-sight","Nara-Park",0,-28,"middle",true)
+    + pt("B","arashi","pt-sight","Arashiyama",-24,10,"end",true)
+    + pt("B","kiyo","pt-sight","Kiyomizu-dera",0,-24,"middle",true)
+    + pt("B","inari","pt-sight","Fushimi Inari",24,32,"start",true)
+    + pt("B","kyoto","pt-open","Kyoto Station · Hotel offen",-28,44,"end")
+    + pt("B","hommachi","pt-booked","APA Hommachi ✓",28,-20,"start")
+    + '</svg>';
+  const G=q=>"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q);
+  main.innerHTML =
+    '<div class="section-intro">Die Route auf einen Blick. Grün ist gebucht, gelb noch offen, blau sind Ausflugsziele. Die Küstenlinie stammt aus Natural Earth, die Punkte sind ungefähr gesetzt — für den genauen Weg die Google-Maps-Links unten nehmen.</div>'
+    + '<div class="map-card"><h3>Die ganze Strecke</h3><p class="sub">Osaka → Kyoto → Tokio → Osaka, rund 500 km zwischen Osaka und Tokio</p>'+svgA
+    + '<div class="legend"><span style="--c:var(--green)">gebucht</span><span style="--c:var(--gold)">noch offen</span><span style="--c:var(--indigo)">Ausflugsziel</span><span style="--c:var(--seal)">Route</span></div></div>'
+    + '<div class="map-card"><h3>Kansai im Detail</h3><p class="sub">Flughafen, Osaka, Nara und Kyoto</p>'+svgB+'</div>'
+    + '<div class="map-card"><h3>Unterkünfte</h3><ul class="places">'
+    + '<li><span><b>Osaka, 12.–17.12.</b> · APA Hommachi ✓</span><a href="'+G("APA Hotel & Resort Midosuji Hommachi Ekimae Tower")+'" target="_blank" rel="noopener">Karte ↗</a></li>'
+    + '<li><span><b>Kyoto, 17.–19.12.</b> · noch offen</span><a href="'+G("Kyoto Station")+'" target="_blank" rel="noopener">Karte ↗</a></li>'
+    + '<li><span><b>Tokio, 19.–25.12.</b> · APA Nishishinjuku Gochome ✓</span><a href="'+G("APA Hotel & Resort Nishishinjuku Gochome Ekimae Tower")+'" target="_blank" rel="noopener">Karte ↗</a></li>'
+    + '<li><span><b>Osaka, 25.–26.12.</b> · noch offen</span><a href="'+G("Namba Station Osaka")+'" target="_blank" rel="noopener">Karte ↗</a></li>'
+    + '</ul></div>';
+}
 /* ================= INTERAKTION ================= */
 function render(){
   renderDaybar();
   if(curView==="days") renderDay();
   else if(curView==="checks") renderChecks();
+  else if(curView==="map") renderMap();
   else renderInfo();
   main.innerHTML = yenToEur(main.innerHTML);
   window.scrollTo({top:0, behavior:"instant"});
@@ -1328,6 +1381,7 @@ function switchView(v){
   document.getElementById("tab-days").classList.toggle("active", v==="days");
   document.getElementById("tab-checks").classList.toggle("active", v==="checks");
   document.getElementById("tab-info").classList.toggle("active", v==="info");
+  document.getElementById("tab-map").classList.toggle("active", v==="map");
   daybar.classList.toggle("hidden", v!=="days");
   render();
 }
@@ -1335,6 +1389,7 @@ function switchView(v){
 document.getElementById("tab-days").onclick   = ()=>switchView("days");
 document.getElementById("tab-checks").onclick = ()=>switchView("checks");
 document.getElementById("tab-info").onclick   = ()=>switchView("info");
+document.getElementById("tab-map").onclick    = ()=>switchView("map");
 
 main.addEventListener("click", e=>{
   const o = e.target.closest("[data-opt]");
@@ -1368,5 +1423,5 @@ main.addEventListener("keydown", e=>{
 })();
 
 </script>
-</body>
-</html>
+
+</body></html>
