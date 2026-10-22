@@ -1578,13 +1578,13 @@ const DAYS = [
    {id:"d12e", c:"aktiv", n:"Disney Premier Access dazubuchen", tags:["lux"],
     what:"In der App lassen sich einzelne Attraktionen gegen Aufpreis mit garantiertem Zeitfenster buchen — pro Person und pro Attraktion.",
     why:"An einem Dezember-Mittwoch braucht ihr das vermutlich nicht flächendeckend. <b>Sinnvoll gezielt:</b> ein einziger Premier Access für eine Fantasy-Springs-Attraktion, falls die App am Morgen schon ausgebucht meldet. Das ist die Ausgabe, die einen Tag rettet.",
-    meta:"~¥1.500–2.500 p.P. und Attraktion · nur in der App", maps:M("Tokyo DisneySea")}
+    meta:"Fantasy Springs ¥2.000 p.P. und Attraktion · erst im Park, nur in der App", maps:M("Tokyo DisneySea")}
   ]},
   {h:"Wenn DisneySea nicht passt", hint:"Alternative für den ganzen Tag", opts:[
    {id:"d12f", c:"kids", n:"Tokyo Disneyland statt DisneySea",
     what:"Der klassische Park nebenan, mit Cinderella-Schloss, Parade und den bekannten Fahrgeschäften.",
     why:"Vertrauter und etwas jünger im Zuschnitt. <b>Ehrlich:</b> DisneySea ist der originellere Park und gibt es nur in Tokio — Disneyland ähnelt Paris. Mit 9 und 11 würde ich bei DisneySea bleiben.",
-    meta:"ganzer Tag · ~¥32.000 Familie", maps:M("Tokyo Disneyland")},
+    meta:"ganzer Tag · ~¥33.000–36.600 Familie", maps:M("Tokyo Disneyland")},
    {id:"d12g", c:"kids", n:"KidZania Tokyo",
     what:"Eine Stadt im Maßstab für Kinder, in der sie in rund 100 Berufen arbeiten: Pilotin, Feuerwehr, Sushi-Koch, Nachrichtensprecher. Bezahlt wird in einer eigenen Währung.",
     why:"Ein völlig anderes Konzept als ein Freizeitpark. <b>Für die Kinder:</b> 9 und 11 ist die ideale Altersspanne. Die englischsprachigen Zeitfenster sind begrenzt — vorher prüfen und reservieren.",
@@ -1725,7 +1725,7 @@ const CHECKS = [
  ]},
  {g:"Oktober", items:[
   {id:"c6", t:"USJ-Tickets für Mo 14.12.", s:"Verkauf läuft ca. 2–3 Monate im Voraus, Preise sind datumsabhängig. Beide Kinder zählen noch als Kind (4–11 J.). Express Pass nur, wenn ihr auf Nummer sicher gehen wollt — muss zusammen mit dem Eintritt gebucht werden.", due:"jetzt", hard:1},
-  {id:"c7", t:"Tokyo DisneySea für Mi 23.12.", s:"Verkauf startet exakt zwei Monate vorher: 23.10., 14:00 JST = 13:00 Uhr KL-Zeit. Vorher einen Account anlegen und eingeloggt bereitstehen.", due:"23.10., 13:00 KL", hard:1},
+  {id:"c7", t:"Tokyo DisneySea für Mi 23.12.", s:"Verkauf startet exakt zwei Monate vorher: 23.10., 14:00 JST = 13:00 Uhr KL-Zeit. Vorher MyDisney-Account anlegen und eingeloggt bereitstehen. 1-Day Passport · 2 Erwachsene + 2 Kinder (4–11) in einer Bestellung. Kreditkarte auf den eigenen Namen, 3-D Secure — Handy mit Banking-App bereithalten. Seit Oktober teurer: Erwachsene ¥8.900–12.400, Kinder ¥5.300–5.900. Keine Erstattung, aber Datum online kostenlos änderbar.", due:"23.10., 13:00 KL", hard:1},
   {id:"c21", t:"Harry-Potter-Studio (Warner Bros. Studio Tour) für Di 22.12.", s:"Tickets gelten nur für Datum und Einlasszeit, keine Erstattung, Umbuchung ¥1.500. Über wbstudiotour.jp oder autorisierte Händler wie Klook. Dezember ist schon buchbar — die erste Einlasszeit des Tages wählen, beide Kinder zum Kinderpreis (4–11 J.).", due:"jetzt", hard:1},
   {id:"c8", t:"teamLab Planets Zeitslot für Do 24.12.", s:"Tickets erscheinen ca. zwei Monate vorher. Nachmittagsslot wählen, dann passt Miraikan davor.", due:"Ende Okt."}
  ]},
@@ -1909,7 +1909,7 @@ const TICKETS = [
  ["Warner Bros. Studio Tour (Harry Potter) ⚠","¥6.600–7.300","¥4.000–4.400","~¥21.200–23.400"],
  ["Tokyo Skytree (online)","¥2.100","¥850","¥5.900"],
  ["Shibuya Sky (ab 15:00)","¥3.400","¥1.200","~¥9.200"],
- ["Tokyo DisneySea ⚠","¥9.900–10.900","ab ¥5.300","~¥32.000"],
+ ["Tokyo DisneySea ⚠","¥8.900–12.400","¥5.300–5.900","~¥33.000–36.600"],
  ["teamLab Planets ⚠","ab ¥3.800","¥1.500","~¥10.600"],
  ["Miraikan","~¥630","~¥210","~¥1.700"]
 ];
@@ -2068,7 +2068,7 @@ function renderChecks(){
 
 function renderInfo(){
   main.innerHTML =
-  '<div class="section-intro">Recherchestand 11.09.2026, Unterkünfte aktualisiert am 20.10.2026, Hotel Tokio gebucht, Kyoto statt Kinosaki, Fuji-Tag, Harry-Potter-Studio und Varianten für 17.–19.12. am 22.10.2026. Hinter jedem Yen-Betrag steht der Euro-Wert, gerechnet mit <b>1 € ≈ 179 ¥</b> (Kurs 10.09.2026, xe.com) — als Größenordnung brauchbar, als Abrechnung nicht. Ringgit-Beträge grob mit <b>1 € ≈ 5 MYR</b>. Was mit ⚠ markiert ist, hat für Dezember 2026 noch keinen freigeschalteten Tagespreis — dort steht die aktuelle Preisspanne.</div>'
+  '<div class="section-intro">Recherchestand 11.09.2026, Unterkünfte aktualisiert am 20.10.2026, Hotel Tokio gebucht, Kyoto statt Kinosaki, Fuji-Tag, Harry-Potter-Studio und Varianten für 17.–19.12. am 22.10.2026, Disney-Preise nach der Preiserhöhung vom Oktober am 22.10.2026. Hinter jedem Yen-Betrag steht der Euro-Wert, gerechnet mit <b>1 € ≈ 179 ¥</b> (Kurs 10.09.2026, xe.com) — als Größenordnung brauchbar, als Abrechnung nicht. Ringgit-Beträge grob mit <b>1 € ≈ 5 MYR</b>. Was mit ⚠ markiert ist, hat für Dezember 2026 noch keinen freigeschalteten Tagespreis — dort steht die aktuelle Preisspanne.</div>'
 
   + variantsHTML()
   + '<div class="info-card"><h3><span class="k">宿</span>Unterkünfte — Kandidaten</h3>'
