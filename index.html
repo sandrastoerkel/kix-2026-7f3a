@@ -2149,17 +2149,12 @@ const ROUTES = [
  {d:[14], side:false, lab:"Rückflug: Namba → Flughafen", p:["st_namba","st_kix"]}
 ];
 
-/* Orientierung: Berg, Seen, Buchten, Städte (Städtenamen sitzen auf dem Hauptbahnhof) */
+/* Orientierung: Berg, Seen, Buchten (Städtenamen liefert der Kartenhintergrund) */
 const LANDMARKS = [
  {k:"lm_biwa", n:"Biwa-See", c:"water"},
  {k:"lm_kawaguchi", n:"Kawaguchiko-See", c:"water"},
  {k:"lm_osakabay", n:"Bucht von Osaka", c:"water"},
- {k:"lm_tokyobay", n:"Bucht von Tokio", c:"water"},
- {k:"st_osaka", n:"OSAKA", c:"city"},
- {k:"st_kyoto", n:"KYOTO", c:"city"},
- {k:"st_kintetsunara", n:"NARA", c:"city"},
- {k:"st_nagoya", n:"NAGOYA", c:"city"},
- {k:"st_tokyo", n:"TOKIO", c:"city"}
+ {k:"lm_tokyobay", n:"Bucht von Tokio", c:"water"}
 ];
 let mapDay = -1, lmap = null;
 function mapChips(){
@@ -2188,7 +2183,7 @@ function mapCardHTML(){
     + '<li><b>Einen Punkt antippen:</b> Name und Art des Ausflugs, Link zu Google Maps für den Weg dorthin und der Knopf „Im Tagesplan ansehen“. Dort könnt ihr stempeln.</li>'
     + '<li><b>Kleine schwarze Zahl am Punkt:</b> An diesem Ort gibt es mehrere Ausflüge, zum Beispiel in den Universal Studios.</li>'
     + '<li><b>宿-Symbol:</b> Hotels. Grün = gebucht, gold = Kandidat mit Preis.</li>'
-    + '<li><b>Zur Orientierung:</b> Der Fuji (▲, antippbar), Biwa-See, Kawaguchiko-See, die Buchten von Osaka und Tokio und die großen Städte sind immer eingezeichnet. Unten links steht der Maßstab.</li>'
+    + '<li><b>Zur Orientierung:</b> Der Fuji (▲, antippbar), Biwa-See, Kawaguchiko-See und die Buchten von Osaka und Tokio sind immer eingezeichnet, die Städtenamen stehen im Kartenhintergrund. Unten links steht der Maßstab.</li>'
     + '<li><b>„◎ Wo sind wir?“</b> (oben rechts in der Karte) zeigt euren Standort als blauen Punkt, vor Ort in Japan sehr praktisch. Der Browser fragt dafür einmal um Erlaubnis.</li>'
     + '</ul></details>'
     + '<p class="sub" style="margin-top:8px">Die Linien verbinden die Bahnhöfe auf direktem Weg. Sie zeigen nicht den Gleisverlauf.</p>'
