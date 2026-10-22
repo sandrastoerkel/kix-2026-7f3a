@@ -326,10 +326,9 @@ footer b{color:var(--ink2)}
 .mpeak{display:flex; flex-direction:column; align-items:center; color:#6b4f2a; font-size:24px; line-height:1; text-shadow:0 0 3px #fff,0 0 3px #fff}
 .mpeak em{font:700 11.5px -apple-system,sans-serif; font-style:normal; color:#1b1a22; white-space:nowrap; margin-top:2px; text-shadow:0 0 3px #fff,0 0 3px #fff,0 0 3px #fff}
 .mlocate{border:2px solid rgba(0,0,0,.2); background:#fff; color:#1b1a22; border-radius:6px; padding:6px 9px; font:600 12.5px -apple-system,sans-serif; cursor:pointer}
-@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .mlabel.city{color:#eceaf2; text-shadow:0 0 3px #000,0 0 4px #000} :root:not([data-theme="light"]) .mlabel.water{color:#8ec5e8; text-shadow:0 0 3px #000} :root:not([data-theme="light"]) .mpeak em{color:#eceaf2; text-shadow:0 0 3px #000,0 0 3px #000} :root:not([data-theme="light"]) .mpeak{color:#d8b061; text-shadow:0 0 3px #000} }
-[data-theme="dark"] .mlabel.city{color:#eceaf2; text-shadow:0 0 3px #000,0 0 4px #000}
-[data-theme="dark"] .mlabel.water{color:#8ec5e8; text-shadow:0 0 3px #000}
-[data-theme="dark"] .mpeak em{color:#eceaf2; text-shadow:0 0 3px #000}
+
+.lmap.zoomed .mlabel{display:none}
+.leaflet-control-attribution{font-size:9.5px; max-width:70%}
 
 @media (prefers-reduced-motion: reduce){ *{transition:none !important; animation:none !important} }
 </style>
@@ -2079,7 +2078,7 @@ function renderFoot(){
    + 'Fotos: Wikimedia Commons · Gottesdienste: kreuzkirche-tokyo.jp, spilchurchtokyo.org · '
    + 'Unterkünfte und Badehaus-Ruhetage: visitkinosaki.com, Stadt Toyooka, mimaruhotels.com, discoverasr.com, frasershospitality.com, andherehotels, well-stay.com, kinosaki-web.com, japan-guide.com.<br><br>'
    + 'Preise für Dezember 2026 sind bei USJ, DisneySea und teamLab noch nicht freigeschaltet, Illuminationstermine für 2026 noch nicht veröffentlicht — dort stehen die jeweils aktuellen Werte als Orientierung. '
-   + 'Erstellt am 10.09.2026, Onsen-Korrektur vom 11.09.2026. Am 20.10.2026 aktualisiert: Flug und Hotel Osaka gebucht, neue Unterkunftskandidaten mit Booking.com-Preisen vom selben Tag, Zugangsangaben aus apahotel.com, hotels.com und jalan.net. Am 22.10.2026: Hotel Tokio gebucht (Daten aus der Booking.com-Bestätigung), Kyoto statt Kinosaki mit Hotelpreisen von Booking.com vom selben Tag. Kyoto-Angaben: japan-guide.com, Touristenamt Kyoto (kyoto.travel), JR West (Sagano-Bummelbahn), kyotorailwaymuseum.jp, museum.nintendo.com, Präfektur Kyoto (Badpreise), jalan.net, rurubu.jp. Fuji-Tag: ekitan.com (Fuji Excursion), watabi.org (Seilbahn, Fuji-Q Highland), gltjp.com (Chureito-Pagode), jrpass.com (Sitzplatz für den Fuji-Blick), mileasia.com (Bus). Karte: Skizzen mit Küstenlinie aus Natural Earth (world-atlas), Punkte dort ungefähr. Interaktive Karte am 22.10.2026 ergänzt: Leaflet 1.9.4, Kartenkacheln © OpenStreetMap-Mitwirkende und © CARTO, Koordinaten über OpenStreetMap Nominatim.';
+   + 'Erstellt am 10.09.2026, Onsen-Korrektur vom 11.09.2026. Am 20.10.2026 aktualisiert: Flug und Hotel Osaka gebucht, neue Unterkunftskandidaten mit Booking.com-Preisen vom selben Tag, Zugangsangaben aus apahotel.com, hotels.com und jalan.net. Am 22.10.2026: Hotel Tokio gebucht (Daten aus der Booking.com-Bestätigung), Kyoto statt Kinosaki mit Hotelpreisen von Booking.com vom selben Tag. Kyoto-Angaben: japan-guide.com, Touristenamt Kyoto (kyoto.travel), JR West (Sagano-Bummelbahn), kyotorailwaymuseum.jp, museum.nintendo.com, Präfektur Kyoto (Badpreise), jalan.net, rurubu.jp. Fuji-Tag: ekitan.com (Fuji Excursion), watabi.org (Seilbahn, Fuji-Q Highland), gltjp.com (Chureito-Pagode), jrpass.com (Sitzplatz für den Fuji-Blick), mileasia.com (Bus). Karte: Skizzen mit Küstenlinie aus Natural Earth (world-atlas), Punkte dort ungefähr. Interaktive Karte am 22.10.2026 ergänzt: Leaflet 1.9.4, Kartenkacheln © Esri (World Street Map), Koordinaten über OpenStreetMap Nominatim.';
 }
 
 
@@ -2197,11 +2196,6 @@ function mapCardHTML(){
     + '</div>';
 }
 
-function isDark(){
-  const t = document.documentElement.getAttribute("data-theme");
-  if(t) return t==="dark";
-  return !!(window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches);
-}
 function pinIcon(day, picked, n){
   return L.divIcon({className:"", iconSize:[26,26], iconAnchor:[13,13], popupAnchor:[0,-12],
     html:'<span class="mpin'+(picked?" picked":"")+'" style="--dc:'+DAYCOL[day]+'">'+(day+1)+(n>1?'<i>'+n+'</i>':'')+'</span>'});
@@ -2217,12 +2211,12 @@ function initLeaflet(){
   const el = document.getElementById("lmap");
   if(!el || typeof L==="undefined") return;
   lmap = L.map(el, {zoomControl:true, scrollWheelZoom:false});
-  const dark = isDark();
   let loaded = 0, failed = 0;
-  const tl = L.tileLayer("https://{s}.basemaps.cartocdn.com/"+(dark?"dark_all":"rastertiles/voyager")+"/{z}/{x}/{y}{r}.png", {
-    subdomains:"abcd", maxZoom:19,
-    attribution:'© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> · © <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>'
+  const tl = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", {
+    maxZoom:19,
+    attribution:'Kartenkacheln © Esri — Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012 · Punkte: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>-Mitwirkende'
   }).addTo(lmap);
+  lmap.on("zoomend", ()=>{ el.classList.toggle("zoomed", lmap.getZoom()>=10); });
   tl.on("tileload", ()=>{ loaded++; });
   tl.on("tileerror", ()=>{ failed++; if(!loaded && failed>=4){ const n=document.getElementById("lmap-note"); if(n) n.classList.remove("hidden"); } });
 
