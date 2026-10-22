@@ -329,6 +329,8 @@ footer b{color:var(--ink2)}
 
 .lmap.zoomed .mlabel{display:none}
 .leaflet-control-attribution{font-size:9.5px; max-width:70%}
+.hotel.var{border-left-color:var(--indigo)}
+.hotel.var dd{line-height:1.55}
 
 @media (prefers-reduced-motion: reduce){ *{transition:none !important; animation:none !important} }
 </style>
@@ -1254,7 +1256,7 @@ const DAYS = [
  fix:[
   {t:"bis 10:00", b:"Check-out APA Hommachi", s:"Check-out ist um 10 Uhr. Gepäckaufbewahrung an der Rezeption ist laut APA-Website möglich — beim Check-in kurz bestätigen lassen. Wenn ihr die letzte Nacht am 25.12. wieder hier bucht: vorher schriftlich fragen, ob ein Koffer bis dahin bleiben darf"},
   {t:"~10:30", b:"Hommachi → Umeda → JR nach Kyoto", s:"Midosuji-Linie 2 Stationen bis Umeda, dann JR Special Rapid ab Osaka Station bis Kyoto · ca. 30 Min. · ¥580 Erw. / ¥290 Kind · Familie ¥1.740"},
-  {t:"~12:00", b:"Gepäck ins Hotel in Kyoto", s:"Hotel noch nicht gebucht — Kandidaten im Reiter Infos"}
+  {t:"~12:00", b:"Gepäck ins Hotel in Kyoto", s:"Noch nicht entschieden: Kyoto oder eine der drei Alternativen (Kanazawa, Kanazawa + Schneeaffen, Nagoya) — Vergleich mit Hotelpreisen im Reiter Infos"}
  ],
  slots:[
   {h:"Nachmittag", hint:"eines aussuchen", opts:[
@@ -1718,7 +1720,7 @@ const CHECKS = [
   {id:"c3", t:"Hotel Tokio 19.–25.12. — bestätigt", s:"APA Hotel & Resort Nishishinjuku Gochome Ekimae Tower, 2 Zimmer, MYR 5.412 für 6 Nächte, bereits bezahlt. Kostenlos stornierbar bis 18.12., 23:59 Uhr japanischer Zeit. Buchungsnummer und PIN stehen in der Booking.com-App.", done:1}
  ]},
  {g:"Sofort — je früher, desto besser", items:[
-  {id:"c1", t:"Hotel Kyoto für 17.–19.12. buchen", s:"Stand 22.10.: viele gut bewertete Hotels am Bahnhof sind frei, ab MYR 626 für beide Nächte. Fünf Kandidaten und zwei Hotels mit Thermalbad im Reiter Infos.", due:"jetzt", hard:1},
+  {id:"c1", t:"17.–19.12. entscheiden, dann Hotel buchen", s:"Vier Varianten mit Hotelpreisen im Reiter Infos: Kanazawa, Kanazawa + Schneeaffen, Nagoya mit Ghibli Park oder Kyoto. Bei Nagoya zuerst prüfen, ob es noch Ghibli-Park-Tickets für Fr 18.12. gibt.", due:"jetzt", hard:1},
   {id:"c4", t:"Hotel Osaka für die Abreisenacht 25.–26.12.", s:"Zwei Kandidaten im Reiter Infos. Wenn ihr wieder im APA Hommachi bucht: schriftlich fragen, ob ein Koffer vom 17. bis 25.12. bleiben darf.", due:"jetzt", hard:1}
  ]},
  {g:"Oktober", items:[
@@ -1805,6 +1807,84 @@ const HOTELS = [
    {n:"Noch einmal APA Hommachi", m:"Booking 8,3 · Verbindungszimmer · MYR 788", w:"Ihr kennt das Haus schon. Vorteil: ihr könnt fragen, ob ein Koffer vom 17. bis 25.12. dort bleiben darf, und fahrt nur mit leichtem Gepäck nach Kinosaki und Tokio. Am Morgen kommen 2 Stationen Midosuji-Linie bis Namba dazu.", u:"https://www.booking.com/hotel/jp/apahoteru-rizoto-yu-tang-jin-ben-ting-yi-tawa.de.html?checkin=2026-12-25&checkout=2026-12-26&group_adults=2&group_children=2&age=11&age=9&no_rooms=1&selected_currency=MYR"}
   ]}
 ];
+
+/* ================= VARIANTEN 17.–19.12. ================= */
+const BK = (ss,ci,co) => "https://www.booking.com/searchresults.de.html?ss="+encodeURIComponent(ss)+"&checkin="+ci+"&checkout="+co+"&group_adults=2&group_children=2&age=11&age=9&no_rooms=1&selected_currency=MYR";
+const VARIANTS = [
+ {n:"A) Kanazawa, 2 Nächte — entspannt", tag:"Empfehlung für Ruhe",
+  weg:"Do: Osaka → Kanazawa ca. 2¼ Std. (Thunderbird bis Tsuruga, dort am selben Bahnhof in den Hokuriku-Shinkansen) · Sa: Kagayaki ohne Umsteigen nach Tokio, ca. 2½ Std.",
+  ablauf:["<b>Do 17.12.:</b> mittags Ankunft, Kenroku-en (Schneeseile an den Bäumen), Burgpark, abends Lichter am Omicho-Markt",
+          "<b>Fr 18.12.:</b> Tagesausflug Shirakawa-go (Strohdachdorf, Bus 9:10 hin, 15:10 zurück) — oder Bäder in Kaga Onsen und 21st Century Museum (freitags bis 20 Uhr)",
+          "<b>Sa 19.12.:</b> Ninja-Tempel und Blattgold in Higashi Chaya, nachmittags nach Tokio"],
+  kids:"Ninja-Tempel mit Falltüren und Geheimgängen (nur mit telefonischer Reservierung 076-241-0888, Erw. ¥1.200 / Grundschulkind ¥800, nur bar, Führung auf Japanisch mit Begleitblatt) · Blattgold selbst auftragen (¥2.000–4.000) · Strohdachdorf, vielleicht im Schnee",
+  onsen:"Kaga Onsen (eigener Shinkansen-Halt, CANBUS-Tagespass ¥1.000): öffentliche Bäder Kinder ¥130–200, nach Geschlechtern getrennt · oder ein Hotel mit eigenem Thermalbad (Dormy Inn)",
+  hotels:[["Smile Hotel Premium Kanazawa","Booking 8,8 · 350 m vom Bahnhof · 2 Doppelzimmer","MYR 770 / 2 N"],
+          ["Via Inn Kanazawa","Booking 8,4 · 150 m · 2 Doppelzimmer","MYR 836 / 2 N"],
+          ["Super Hotel Premier Kanazawa Ekimae","Booking 8,7 · 350 m · Familienzimmer mit 2 Etagenbetten","MYR 1.133 / 2 N"],
+          ["Dormy Inn Kanazawa Natural Hot Spring","Booking 8,5 · 400 m · eigenes Thermalbad im Haus","MYR 1.148 / 2 N"]],
+  bk:BK("Bahnhof Kanazawa","2026-12-17","2026-12-19"),
+  fahrt:"≈ ¥88.800 mit Shirakawa-go, ≈ ¥72.000 ohne",
+  summe:"Hotel MYR 770–1.148 + Fahrten ¥72.000–88.800",
+  haken:"Kalt und oft nass. Schnee in Shirakawa-go möglich, aber nicht sicher; die Abendbeleuchtung dort gibt es erst im Januar/Februar."},
+ {n:"B) Kanazawa + Schneeaffen", tag:"das Tier-Erlebnis",
+  weg:"Do: Osaka → Kanazawa ca. 2¼ Std. · Fr: Kanazawa → Nagano ca. 1 Std. 5 Min., Nagaden-Express bis Yudanaka ca. 45 Min. · Sa: zurück nach Nagano, Kagayaki nach Tokio ca. 80 Min.",
+  ablauf:["<b>Do 17.12.:</b> wie A — Kenroku-en, Lichter am Omicho-Markt",
+          "<b>Fr 18.12.:</b> vormittags Ninja-Tempel, gegen 13 Uhr nach Nagano und weiter nach Shibu Onsen · abends mit dem Hotelschlüssel durch die 9 Bäder, Stempel aufs Handtuch sammeln",
+          "<b>Sa 19.12.:</b> 9 Uhr Schneeaffen, gegen 11:30 zurück, nachmittags in Tokio (Ankunft laut Fahrplan prüfen [OFFEN])"],
+  kids:"Wilde Japanmakaken baden im heißen Wasser (Jigokudani, Nov.–März 9–16 Uhr, Eintritt bisher Erw. ¥800 / Kind ¥400, neue Preise ab 1.12.2026 [OFFEN]) · Stempeljagd durch die Bäder von Shibu",
+  onsen:"Shibu Onsen: Hotelgäste baden mit dem Schlüssel in allen 9 Bädern (6–22 Uhr). Das Wasser ist sehr heiß und die Becken klein — mit Kindern kurz eintauchen.",
+  split:"<b>Wenn nicht alle zu den Affen wollen:</b> Der Weg zum Park dauert 30–45 Min. zu Fuß. Wer nicht mitgeht, bleibt am Samstagmorgen in Shibu (Bäder, Frühstück, Ortskern). Check-out-Zeit beim Ryokan vorher klären.",
+  hotels:[["Kanazawa, 1 Nacht: Smile Hotel Premium","Booking 8,8 · 350 m","MYR 379"],
+          ["Kanazawa, 1 Nacht: Dormy Inn Natural Hot Spring","Booking 8,5 · 400 m · Thermalbad","MYR 723"],
+          ["Shibu, 1 Nacht: Jinpyokaku Honten (塵表閣本店)","Booking 9,0 · Zweibettzimmer mit 4 Futons · Verpflegung [OFFEN]","MYR 1.177"],
+          ["Shibu, 1 Nacht: Kotobuki","Booking 9,8 · japanisches Zimmer · Verpflegung [OFFEN]","MYR 1.403"],
+          ["Shibu, 1 Nacht: Andaikan","Booking 9,7 · japanisches Zimmer · Verpflegung [OFFEN]","MYR 1.505"]],
+  bk:BK("Shibu Onsen","2026-12-18","2026-12-19"),
+  fahrt:"≈ ¥96.000 (Nagaden-Kinderpreis angenommen, nicht bestätigt)",
+  summe:"Hotels MYR 1.556–2.228 + Fahrten ≈ ¥96.000",
+  haken:"Vier Umstiege an zwei Tagen, glatter Fußweg (Winterschuhe, Spikes leihbar), Affen nicht garantiert, Park kann wetterbedingt schließen. Am meisten Aufwand und am teuersten."},
+ {n:"C) Nagoya, 2 Nächte — kürzeste Wege", tag:"Ghibli Park",
+  weg:"Do: Shin-Osaka → Nagoya ca. 50 Min. · Sa: Nagoya → Tokio ca. 1 Std. 35 Min.",
+  ablauf:["<b>Do 17.12.:</b> SCMaglev & Railway Park (Erw. ¥1.000 / Schulkind ¥500, Di zu), abends Lichtertunnel Nabana no Sato und Außenbad im Nagashima Resort",
+          "<b>Fr 18.12.:</b> Ghibli Park ganzer Tag (ca. 41 Min. ab Bahnhof Nagoya)",
+          "<b>Sa 19.12.:</b> entspannt nach Tokio, vorher Burg Nagoya (Erw. ¥1.000, Kinder frei)"],
+  kids:"Ghibli Park: Totoro-Haus, Howls Schloss, Katzenbus-Raum (nur bis 12 J. — beide passen) · Premium-Pass werktags Erw. ¥7.300 / Kind 4–12 J. ¥3.650, Familie ¥21.900 plus Ausstellungsgebühr · Shinkansen- und Maglev-Simulator · Nabana no Sato Vorverkauf ¥2.700 (21.11.–22.12.), Kasse ¥3.200, Kinderpreis [OFFEN]",
+  onsen:"Großes Außenbad Yuami no Shima im Nagashima Resort, nach Geschlechtern getrennt, Direktbus ab Nagoya ca. 50 Min., Preise [OFFEN]",
+  hotels:[["Four Points Flex by Sheraton Nagoya","Booking 8,2 · 350 m · 2 Doppelzimmer","MYR 1.239 / 2 N"],
+          ["Daiwa Roynet Hotel Nagoya Shinkansenguchi","Booking 8,4 · 350 m","MYR 1.300 / 2 N"],
+          ["APA Hotel Nagoya Ekimae","Booking 8,2 · 400 m · 2 Doppelzimmer","MYR 1.580 / 2 N"]],
+  bk:BK("Bahnhof Nagoya","2026-12-17","2026-12-19"),
+  fahrt:"≈ ¥54.500 (ohne Nahverkehr in Nagoya)",
+  summe:"Hotel MYR 1.239–1.580 + Fahrten ≈ ¥54.500 + Ghibli Park ≈ ¥21.900",
+  haken:"<b>Ghibli-Park-Tickets für Dezember sind seit 10.10. im Verkauf — ob es noch welche gibt, ist [OFFEN]</b> (selbst prüfen über l-tike.com oder Klook). Keine Erstattung, kein Umtausch, Pass mitbringen. In Nagoya selbst wenig Onsen-Gefühl."},
+ {n:"Kyoto, 2 Nächte — bisheriger Plan", tag:"am günstigsten",
+  weg:"Do: Osaka → Kyoto ca. 30 Min. · Sa: Nozomi nach Tokio ca. 2 Std. 15 Min.",
+  ablauf:["Tagespläne Do 17. bis Sa 19.12. stehen schon im Reiter Tage (Fushimi Inari, Arashiyama, Onsen, Bummelbahn)"],
+  kids:"Fushimi Inari, Affenpark Iwatayama, Eisenbahnmuseum, Sagano-Bummelbahn mit Lichtaktion",
+  onsen:"Badehaus Funaoka Onsen, Tagesbäder in Arashiyama, Kurama Onsen",
+  hotels:[["Kandidaten mit Preisen","siehe Abschnitt Kyoto unten","MYR 626–802 / 2 N"]],
+  bk:BK("Bahnhof Kyoto","2026-12-17","2026-12-19"),
+  fahrt:"≈ ¥44.200",
+  summe:"Hotel MYR 626–802 + Fahrten ≈ ¥44.200",
+  haken:"Viel Kultur, aber am wenigsten Onsen und Action für die Kinder."}
+];
+function variantsHTML(){
+  return '<div class="info-card"><h3><span class="k">選</span>17.–19.12.: vier Varianten zum Besprechen</h3>'
+   + '<p>Noch nicht entschieden. Alle Hotels liegen höchstens 400 m vom Bahnhof, Bewertung ab 8,0. Preise von Booking.com, abgerufen am 22.10.2026 für 2 Erwachsene + 2 Kinder (11 und 9); sie ändern sich täglich. Fahrkosten für alle vier, Kinder fahren bei JR zum halben Preis. Bei A und B würde ich die großen Koffer am 17.12. per Takkyubin direkt ins Hotel nach Tokio schicken.</p>'
+   + VARIANTS.map(v=>'<div class="hotel var"><div class="h-top"><span class="h-name">'+v.n+'</span><span class="h-nights">'+v.tag+'</span></div>'
+      + '<dl><dt>Weg</dt><dd>'+v.weg+'</dd>'
+      + '<dt>Ablauf</dt><dd>'+v.ablauf.join('<br>')+'</dd>'
+      + '<dt>Kinder</dt><dd>'+v.kids+'</dd>'
+      + '<dt>Onsen</dt><dd>'+v.onsen+'</dd>'
+      + '<dt>Fahrten</dt><dd>'+v.fahrt+'</dd>'
+      + '<dt>Gesamt</dt><dd><b>'+v.summe+'</b></dd></dl>'
+      + (v.split?'<div class="booked">'+v.split+'</div>':'')
+      + '<div class="hwarn"><b>Haken:</b> '+v.haken+'</div>'
+      + '<div class="kand-h">Hotels mit echtem Preis</div>'
+      + v.hotels.map(h=>'<div class="kand"><div class="k-top"><a href="'+v.bk+'" target="_blank" rel="noopener">'+h[0]+'</a><span class="k-meta">'+h[2]+'</span></div><p>'+h[1]+'</p></div>').join("")
+      + '</div>').join("")
+   + '<p style="margin-top:6px">Die Links öffnen die Booking.com-Suche mit euren Daten; dort das Hotel auswählen.</p></div>';
+}
 
 const TRAINS = [
  ["KIX → Namba","Nankai Airport Express","45 Min.","¥970","¥490","¥2.920"],
@@ -1988,8 +2068,9 @@ function renderChecks(){
 
 function renderInfo(){
   main.innerHTML =
-  '<div class="section-intro">Recherchestand 11.09.2026, Unterkünfte aktualisiert am 20.10.2026, Hotel Tokio gebucht, Kyoto statt Kinosaki, Fuji-Tag und Harry-Potter-Studio am 22.10.2026. Hinter jedem Yen-Betrag steht der Euro-Wert, gerechnet mit <b>1 € ≈ 179 ¥</b> (Kurs 10.09.2026, xe.com) — als Größenordnung brauchbar, als Abrechnung nicht. Ringgit-Beträge grob mit <b>1 € ≈ 5 MYR</b>. Was mit ⚠ markiert ist, hat für Dezember 2026 noch keinen freigeschalteten Tagespreis — dort steht die aktuelle Preisspanne.</div>'
+  '<div class="section-intro">Recherchestand 11.09.2026, Unterkünfte aktualisiert am 20.10.2026, Hotel Tokio gebucht, Kyoto statt Kinosaki, Fuji-Tag, Harry-Potter-Studio und Varianten für 17.–19.12. am 22.10.2026. Hinter jedem Yen-Betrag steht der Euro-Wert, gerechnet mit <b>1 € ≈ 179 ¥</b> (Kurs 10.09.2026, xe.com) — als Größenordnung brauchbar, als Abrechnung nicht. Ringgit-Beträge grob mit <b>1 € ≈ 5 MYR</b>. Was mit ⚠ markiert ist, hat für Dezember 2026 noch keinen freigeschalteten Tagespreis — dort steht die aktuelle Preisspanne.</div>'
 
+  + variantsHTML()
   + '<div class="info-card"><h3><span class="k">宿</span>Unterkünfte — Kandidaten</h3>'
   + '<p>Hartes Kriterium überall: <b>direkt am Nahverkehrsnetz</b>. Alle Kandidaten unten sind darauf geprüft; wo ein Haus das Kriterium reißt, steht es dabei.</p>'
   + '<p><b>Neue Hotelsuche vom 20.10.2026:</b> Maßstab ist das gebuchte APA in Osaka (MYR 771 pro Nacht, Kettenhotel, direkt an der Bahn). Alle Preise unten sind echte Booking.com-Preise für eure Daten, abgerufen am 20.10.2026 für 2 Erwachsene + 2 Kinder (11 und 9). Sie ändern sich täglich.</p>'
@@ -2088,7 +2169,7 @@ function renderFoot(){
    + 'Fotos: Wikimedia Commons · Gottesdienste: kreuzkirche-tokyo.jp, spilchurchtokyo.org · '
    + 'Unterkünfte und Badehaus-Ruhetage: visitkinosaki.com, Stadt Toyooka, mimaruhotels.com, discoverasr.com, frasershospitality.com, andherehotels, well-stay.com, kinosaki-web.com, japan-guide.com.<br><br>'
    + 'Preise für Dezember 2026 sind bei USJ, DisneySea und teamLab noch nicht freigeschaltet, Illuminationstermine für 2026 noch nicht veröffentlicht — dort stehen die jeweils aktuellen Werte als Orientierung. '
-   + 'Erstellt am 10.09.2026, Onsen-Korrektur vom 11.09.2026. Am 20.10.2026 aktualisiert: Flug und Hotel Osaka gebucht, neue Unterkunftskandidaten mit Booking.com-Preisen vom selben Tag, Zugangsangaben aus apahotel.com, hotels.com und jalan.net. Am 22.10.2026: Hotel Tokio gebucht (Daten aus der Booking.com-Bestätigung), Kyoto statt Kinosaki mit Hotelpreisen von Booking.com vom selben Tag. Kyoto-Angaben: japan-guide.com, Touristenamt Kyoto (kyoto.travel), JR West (Sagano-Bummelbahn), kyotorailwaymuseum.jp, museum.nintendo.com, Präfektur Kyoto (Badpreise), jalan.net, rurubu.jp. Fuji-Tag: ekitan.com (Fuji Excursion), watabi.org (Seilbahn, Fuji-Q Highland), gltjp.com (Chureito-Pagode), jrpass.com (Sitzplatz für den Fuji-Blick), mileasia.com (Bus). Harry-Potter-Studio: wbstudiotour.jp (Tickets, Ruhetage, Schließfächer, Café), san-tatsu.jp (Pressemitteilung „Magical Winter“), japanactivity.com (Preisspanne 2026). Karte: Skizzen mit Küstenlinie aus Natural Earth (world-atlas), Punkte dort ungefähr. Interaktive Karte am 22.10.2026 ergänzt: Leaflet 1.9.4, Kartenkacheln © Esri (World Street Map), Koordinaten über OpenStreetMap Nominatim.';
+   + 'Erstellt am 10.09.2026, Onsen-Korrektur vom 11.09.2026. Am 20.10.2026 aktualisiert: Flug und Hotel Osaka gebucht, neue Unterkunftskandidaten mit Booking.com-Preisen vom selben Tag, Zugangsangaben aus apahotel.com, hotels.com und jalan.net. Am 22.10.2026: Hotel Tokio gebucht (Daten aus der Booking.com-Bestätigung), Kyoto statt Kinosaki mit Hotelpreisen von Booking.com vom selben Tag. Kyoto-Angaben: japan-guide.com, Touristenamt Kyoto (kyoto.travel), JR West (Sagano-Bummelbahn), kyotorailwaymuseum.jp, museum.nintendo.com, Präfektur Kyoto (Badpreise), jalan.net, rurubu.jp. Fuji-Tag: ekitan.com (Fuji Excursion), watabi.org (Seilbahn, Fuji-Q Highland), gltjp.com (Chureito-Pagode), jrpass.com (Sitzplatz für den Fuji-Blick), mileasia.com (Bus). Harry-Potter-Studio: wbstudiotour.jp (Tickets, Ruhetage, Schließfächer, Café), san-tatsu.jp (Pressemitteilung „Magical Winter“), japanactivity.com (Preisspanne 2026). Varianten 17.–19.12.: kanazawastation.com, jr-group.jp, JR Central (Kinderpreise), visitkanazawa.jp, shiro-niwa.pref.ishikawa.lg.jp, ANA Japan Travel Planner, Hakuichi, visitkaga.jp, shirakawa-go.gr.jp, en.jigokudani-yaenkoen.co.jp, go-nagano.net, japlanease.com, jr-shinkansen.net, ghibli-park.jp, museum.jr-central.co.jp, japantravel.com, ekitan.com, Hotelpreise Booking.com vom 22.10.2026. Karte: Skizzen mit Küstenlinie aus Natural Earth (world-atlas), Punkte dort ungefähr. Interaktive Karte am 22.10.2026 ergänzt: Leaflet 1.9.4, Kartenkacheln © Esri (World Street Map), Koordinaten über OpenStreetMap Nominatim.';
 }
 
 
