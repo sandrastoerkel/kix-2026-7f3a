@@ -1256,7 +1256,7 @@ const DAYS = [
  fix:[
   {t:"bis 10:00", b:"Check-out APA Hommachi", s:"Check-out ist um 10 Uhr. Gepäckaufbewahrung an der Rezeption ist laut APA-Website möglich — beim Check-in kurz bestätigen lassen. Wenn ihr die letzte Nacht am 25.12. wieder hier bucht: vorher schriftlich fragen, ob ein Koffer bis dahin bleiben darf"},
   {t:"~10:30", b:"Hommachi → Umeda → JR nach Kyoto", s:"Midosuji-Linie 2 Stationen bis Umeda, dann JR Special Rapid ab Osaka Station bis Kyoto · ca. 30 Min. · ¥580 Erw. / ¥290 Kind · Familie ¥1.740"},
-  {t:"~12:00", b:"Gepäck ins Hotel in Kyoto", s:"Noch nicht entschieden: Kyoto oder eine der drei Alternativen (Kanazawa, Kanazawa + Schneeaffen, Nagoya) — Vergleich mit Hotelpreisen im Reiter Infos"}
+  {t:"~12:00", b:"Gepäck ins The Garden Hotel Kyoto Gojo", s:"Gebucht ✓ · Shimogyo-ku, Yokosuwancho 318 · ab Kyoto Station 1 Station mit der U-Bahn (Karasuma-Linie) bis Gojo, von dort ca. 100 m · Check-in ab 15:00 — ob ihr die Koffer vorher abgeben könnt, beim Hotel erfragen · kein Frühstück im Hotel"}
  ],
  slots:[
   {h:"Nachmittag", hint:"eines aussuchen", opts:[
@@ -1278,10 +1278,6 @@ const DAYS = [
     what:"Ein altes öffentliches Badehaus (Sento) mit vielen Becken, Holzbad und Außenbad. Kein Thermalwasser, aber ein Stück Alltagsjapan, wie es kaum noch eines gibt.",
     why:"Günstig, echt und tattoo-freundlich. <b>Wichtig für euch:</b> gebadet wird nackt und nach Geschlecht getrennt — Kind 2 (9) mit Mama, Kind 1 (11) mit Papa. Das vorher besprechen, nicht am Eingang.",
     meta:"1–1,5 Std. · ab 12 J. ¥550, 6–11 J. ¥200 · 15–23:30 Uhr · Bus 206 ab Kyoto Station ca. 25 Min.", maps:M("Funaoka Onsen Kyoto")},
-   {id:"k1e", c:"onsen", n:"Thermalbad im eigenen Hotel",
-    what:"Einige Hotels in Kyoto haben ein eigenes Thermalbad mit Außenbecken, etwa Kyoto Umekoji Kadensho mit kostenlosen Familien-Privatbädern oder Dormy Inn Premium Kyoto Ekimae mit Dachbad.",
-    why:"Der bequemste Weg zum täglichen Onsen. <b>Für die Kinder:</b> in einem Privatbad kann die ganze Familie zusammen baden — das geht in öffentlichen Bädern nicht.",
-    meta:"nur für Hotelgäste · teurer als die übrigen Kandidaten · Reiter Infos", maps:M("Kyoto Umekoji Kadensho")},
    {id:"k1f", c:"licht", n:"Lichtshow auf der großen Treppe im Bahnhof", tags:["kid"],
     what:"Die 171 Stufen der großen Treppe im Bahnhofsgebäude von Kyoto werden vom 1. bis 25.12.2026 abends mit wechselnden Lichtbildern bespielt.",
     why:"Kostenlos, drinnen und direkt am Bahnhof. <b>Für die Kinder:</b> man darf die Treppe hochlaufen, oben gibt es einen Blick über die Stadt.",
@@ -1717,10 +1713,10 @@ const CHECKS = [
  {g:"Gebucht ✓", items:[
   {id:"c5", t:"Flug KUL ⇄ KIX — bestätigt", s:"AirAsia X D7378 am 12.12. und D7533 am 26.12., 4 Reisende. gebucht über Booking.com.", done:1},
   {id:"c2", t:"Hotel Osaka 12.–17.12. — bestätigt", s:"APA Hotel & Resort Midosuji Hommachi Ekimae Tower, Zimmer für alle vier, MYR 3.855 für 5 Nächte, kostenlos stornierbar. Direkt an der Station Hommachi (Midosuji-Linie).", done:1},
-  {id:"c3", t:"Hotel Tokio 19.–25.12. — bestätigt", s:"APA Hotel & Resort Nishishinjuku Gochome Ekimae Tower, 2 Zimmer, MYR 5.412 für 6 Nächte, bereits bezahlt. Kostenlos stornierbar bis 18.12., 23:59 Uhr japanischer Zeit. Buchungsnummer und PIN stehen in der Booking.com-App.", done:1}
+  {id:"c3", t:"Hotel Tokio 19.–25.12. — bestätigt", s:"APA Hotel & Resort Nishishinjuku Gochome Ekimae Tower, 2 Zimmer, MYR 5.412 für 6 Nächte, bereits bezahlt. Kostenlos stornierbar bis 18.12., 23:59 Uhr japanischer Zeit. Buchungsnummer und PIN stehen in der Booking.com-App.", done:1},
+  {id:"c1", t:"Hotel Kyoto 17.–19.12. — bestätigt", s:"The Garden Hotel Kyoto Gojo, Deluxe Familienzimmer (47 m², 2 Einzelbetten, Schlafsofa und 2 Futons, eigene Küche) für alle vier, ca. MYR 1.038 für 2 Nächte. U-Bahn-Station Gojo ca. 100 m. Stornierungsbedingungen und Buchungsnummer stehen in der Booking.com-App.", done:1}
  ]},
  {g:"Sofort — je früher, desto besser", items:[
-  {id:"c1", t:"17.–19.12. entscheiden, dann Hotel buchen", s:"Vier Varianten mit Hotelpreisen im Reiter Infos: Kanazawa, Kanazawa + Schneeaffen, Nagoya mit Ghibli Park oder Kyoto. Bei Nagoya zuerst prüfen, ob es noch Ghibli-Park-Tickets für Fr 18.12. gibt.", due:"jetzt", hard:1},
   {id:"c4", t:"Hotel Osaka für die Abreisenacht 25.–26.12.", s:"Zwei Kandidaten im Reiter Infos. Wenn ihr wieder im APA Hommachi bucht: schriftlich fragen, ob ein Koffer vom 17. bis 25.12. bleiben darf.", due:"jetzt", hard:1}
  ]},
  {g:"Oktober", items:[
@@ -1759,20 +1755,13 @@ const HOTELS = [
   budget:"MYR 3.855 gesamt",
   alt:"—"},
  {name:"Kyoto", nights:"2 Nächte · Do 17.12. → Sa 19.12.",
-  lage:"rund um Kyoto Station — von dort fahren die JR nach Inari, Arashiyama und Umekoji und der Shinkansen nach Tokio",
-  warum:"Kurze Wege mit Gepäck: Ankunft und Abfahrt am selben Bahnhof",
-  typ:"Kettenhotel oder Familienzimmer; als Gönn-Option ein Hotel mit eigenem Thermalbad",
-  krit:"zu Fuß zur Bahn · Booking-Bewertung ab 8 · 500–1.000 MYR pro Nacht",
-  budget:"Kyoto ist Mitte Dezember günstig: die Kandidaten unten kosten MYR 626–802 für beide Nächte zusammen.",
-  alt:"Mit Thermalbad: Kyoto Umekoji Kadensho (Booking 9,1, kostenlose Familien-Privatbäder, 1 Min. vom JR-Bahnhof Umekoji-Kyotonishi) — Vierbettzimmer laut Hotelseite MYR 3.382 für 2 Nächte · Dormy Inn Premium Kyoto Ekimae (Booking 8,7, Dachbad, 3 Min. vom Bahnhof) — Preis für 2 Zimmer zu viert in der Liste nicht angezeigt, auf der Hotelseite prüfen",
-  warn:"Preise abgerufen am 22.10.2026 auf Booking.com für 2 Erwachsene + 2 Kinder (11 und 9), Gesamtpreis für beide Nächte. Die Gehminuten zur Station habe ich nicht einzeln geprüft — vor dem Buchen auf der Hotelseite ansehen.",
-  kand:[
-   {n:"The Garden Hotel Kyoto Gojo", m:"Booking 8,8 (519) · Familienzimmer, 4 Betten · MYR 626 / 2 N inkl. Steuern", w:"Ein Zimmer für alle vier, kostenlos stornierbar, keine Vorauszahlung. Am günstigsten. Liegt an der Karasuma-Straße bei der U-Bahn-Station Gojo, eine Station nördlich von Kyoto Station.", u:"https://www.booking.com/hotel/jp/hauza-kyoto-gojo-karasuma.de.html?checkin=2026-12-17&checkout=2026-12-19&group_adults=2&group_children=2&age=11&age=9&no_rooms=1&selected_currency=MYR"},
-   {n:"Kyoto Plaza Hotel Kintetsu Jujo", m:"Booking 8,3 (2.317) · japanisches Zimmer, 4 Futons · MYR 710 / 2 N", w:"Japanisches Zimmer für alle vier, kostenlos stornierbar, keine Vorauszahlung. Nach dem Namen bei der Kintetsu-Station Jujo, Fußweg nicht geprüft.", u:"https://www.booking.com/hotel/jp/jing-du-purazahoterujin-tie-shi-tiao.de.html?checkin=2026-12-17&checkout=2026-12-19&group_adults=2&group_children=2&age=11&age=9&no_rooms=1&selected_currency=MYR"},
-   {n:"Comfort Hotel ERA Kyoto Toji", m:"Booking 9,0 (3.899) · 2 Doppelzimmer · MYR 760 / 2 N", w:"Sehr gut bewertet mit sehr vielen Bewertungen. Südlich von Kyoto Station beim Tempel To-ji, Fußweg nicht geprüft. Booking zeigt „es können zusätzliche Gebühren anfallen“.", u:"https://www.booking.com/hotel/jp/comfort-kyoto-toji.de.html?checkin=2026-12-17&checkout=2026-12-19&group_adults=2&group_children=2&age=11&age=9&no_rooms=2&selected_currency=MYR"},
-   {n:"Wander Kyoto Nanajo", m:"Booking 9,0 (4.172) · 2 Zweibettzimmer, 4 Einzelbetten · MYR 765 / 2 N", w:"Ebenfalls 9,0 mit vielen Bewertungen, jeder hat ein eigenes Bett. Kostenlos stornierbar.", u:"https://www.booking.com/hotel/jp/m-39-s-est-nanajo.de.html?checkin=2026-12-17&checkout=2026-12-19&group_adults=2&group_children=2&age=11&age=9&no_rooms=2&selected_currency=MYR"},
-   {n:"Hotel Glad One Kyoto Shichijo", m:"Booking 8,7 (895) · 2 Zweibettzimmer · MYR 802 / 2 N", w:"Kostenlos stornierbar, jeder hat ein eigenes Bett.", u:"https://www.booking.com/hotel/jp/glad-one-kyoto-shichijo.de.html?checkin=2026-12-17&checkout=2026-12-19&group_adults=2&group_children=2&age=11&age=9&no_rooms=2&selected_currency=MYR"}
-  ]},
+  booked:"<b>Gebucht ✓</b> The Garden Hotel Kyoto Gojo (früher HAUZA Kyoto Gojo Karasuma) · Shimogyo-ku, Yokosuwancho 318, Kyoto · Deluxe Familienzimmer, 47 m², 2 Einzelbetten, Schlafsofa und 2 Futons, eigene Küche · ca. MYR 1.038 für 2 Nächte · Check-in 15:00–24:00, Check-out bis 10:00 · Lichtbildausweis und Kreditkarte beim Check-in vorzeigen · die Kyoto-Übernachtungssteuer wird im Hotel bezahlt · Stornierungsbedingungen in der Booking.com-App",
+  lage:"Shimogyo, an der Karasuma-Straße · laut Booking ca. 100 m zur U-Bahn-Station Gojo (Karasuma-Linie), eine Station nördlich von Kyoto Station",
+  warum:"Ein großes Zimmer für alle vier, ruhige Seitenstraße · Kyoto Station mit JR (Inari, Arashiyama, Umekoji, Shinkansen nach Tokio) eine U-Bahn-Station entfernt",
+  typ:"Kleines Stadthotel, Booking-Bewertung 8,8 (519)",
+  krit:"Direkt an der U-Bahn · kein Frühstück im Hotel — Frühstücksideen: Ogawa Coffee Sakaimachi Nishiki (ab 7:00) und Nishiki Hirano (japanisches Frühstück, 8:30–10:30) bei Shijo-Karasuma, eine Station nördlich; Inoda Coffee (ab 8:00) und Kamado-Takitate-Gohan Doi (Frühstück 9:00–10:30) an Kyoto Station",
+  budget:"ca. MYR 1.038 gesamt",
+  alt:"—"},
  {name:"Tokio", nights:"6 Nächte · Sa 19.12. → Fr 25.12.",
   booked:"<b>Gebucht ✓</b> APA Hotel &amp; Resort Nishishinjuku Gochome Ekimae Tower · Honmachi 3-14-1, Shibuya-ku, Tokio 151-0071 · Tel. +81 3-5304-7011 · 2 Zimmer, je ein Doppelzimmer mit kleinem Doppelbett (Nichtraucher) · MYR 5.412 für 6 Nächte (≈ MYR 902 pro Nacht) · bereits bezahlt · kostenlos stornierbar bis 18.12., 23:59 Uhr japanischer Zeit · laut Booking können zusätzliche Gebühren anfallen, vermutlich die Tokioter Übernachtungssteuer",
   lage:"Nishi-Shinjuku · laut APA 1 Gehminute zur Station Nishi-shinjuku-gochome (Oedo-Linie)",
@@ -1808,83 +1797,6 @@ const HOTELS = [
   ]}
 ];
 
-/* ================= VARIANTEN 17.–19.12. ================= */
-const BK = (ss,ci,co) => "https://www.booking.com/searchresults.de.html?ss="+encodeURIComponent(ss)+"&checkin="+ci+"&checkout="+co+"&group_adults=2&group_children=2&age=11&age=9&no_rooms=1&selected_currency=MYR";
-const VARIANTS = [
- {n:"A) Kanazawa, 2 Nächte — entspannt", tag:"Empfehlung für Ruhe",
-  weg:"Do: Osaka → Kanazawa ca. 2¼ Std. (Thunderbird bis Tsuruga, dort am selben Bahnhof in den Hokuriku-Shinkansen) · Sa: Kagayaki ohne Umsteigen nach Tokio, ca. 2½ Std.",
-  ablauf:["<b>Do 17.12.:</b> mittags Ankunft, Kenroku-en (Schneeseile an den Bäumen), Burgpark, abends Lichter am Omicho-Markt",
-          "<b>Fr 18.12.:</b> Tagesausflug Shirakawa-go (Strohdachdorf, Bus 9:10 hin, 15:10 zurück) — oder Bäder in Kaga Onsen und 21st Century Museum (freitags bis 20 Uhr)",
-          "<b>Sa 19.12.:</b> Ninja-Tempel und Blattgold in Higashi Chaya, nachmittags nach Tokio"],
-  kids:"Ninja-Tempel mit Falltüren und Geheimgängen (nur mit telefonischer Reservierung 076-241-0888, Erw. ¥1.200 / Grundschulkind ¥800, nur bar, Führung auf Japanisch mit Begleitblatt) · Blattgold selbst auftragen (¥2.000–4.000) · Strohdachdorf, vielleicht im Schnee",
-  onsen:"Kaga Onsen (eigener Shinkansen-Halt, CANBUS-Tagespass ¥1.000): öffentliche Bäder Kinder ¥130–200, nach Geschlechtern getrennt · oder ein Hotel mit eigenem Thermalbad (Dormy Inn)",
-  hotels:[["Smile Hotel Premium Kanazawa","Booking 8,8 · 350 m vom Bahnhof · 2 Doppelzimmer","MYR 770 / 2 N"],
-          ["Via Inn Kanazawa","Booking 8,4 · 150 m · 2 Doppelzimmer","MYR 836 / 2 N"],
-          ["Super Hotel Premier Kanazawa Ekimae","Booking 8,7 · 350 m · Familienzimmer mit 2 Etagenbetten","MYR 1.133 / 2 N"],
-          ["Dormy Inn Kanazawa Natural Hot Spring","Booking 8,5 · 400 m · eigenes Thermalbad im Haus","MYR 1.148 / 2 N"]],
-  bk:BK("Bahnhof Kanazawa","2026-12-17","2026-12-19"),
-  fahrt:"≈ ¥88.800 mit Shirakawa-go, ≈ ¥72.000 ohne",
-  summe:"Hotel MYR 770–1.148 + Fahrten ¥72.000–88.800",
-  haken:"Kalt und oft nass. Schnee in Shirakawa-go möglich, aber nicht sicher; die Abendbeleuchtung dort gibt es erst im Januar/Februar."},
- {n:"B) Kanazawa + Schneeaffen", tag:"das Tier-Erlebnis",
-  weg:"Do: Osaka → Kanazawa ca. 2¼ Std. · Fr: Kanazawa → Nagano ca. 1 Std. 5 Min., Nagaden-Express bis Yudanaka ca. 45 Min. · Sa: zurück nach Nagano, Kagayaki nach Tokio ca. 80 Min.",
-  ablauf:["<b>Do 17.12.:</b> wie A — Kenroku-en, Lichter am Omicho-Markt",
-          "<b>Fr 18.12.:</b> vormittags Ninja-Tempel, gegen 13 Uhr nach Nagano und weiter nach Shibu Onsen · abends mit dem Hotelschlüssel durch die 9 Bäder, Stempel aufs Handtuch sammeln",
-          "<b>Sa 19.12.:</b> 9 Uhr Schneeaffen, gegen 11:30 zurück, nachmittags in Tokio (Ankunft laut Fahrplan prüfen [OFFEN])"],
-  kids:"Wilde Japanmakaken baden im heißen Wasser (Jigokudani, Nov.–März 9–16 Uhr, Eintritt bisher Erw. ¥800 / Kind ¥400, neue Preise ab 1.12.2026 [OFFEN]) · Stempeljagd durch die Bäder von Shibu",
-  onsen:"Shibu Onsen: Hotelgäste baden mit dem Schlüssel in allen 9 Bädern (6–22 Uhr). Das Wasser ist sehr heiß und die Becken klein — mit Kindern kurz eintauchen.",
-  split:"<b>Wenn nicht alle zu den Affen wollen:</b> Der Weg zum Park dauert 30–45 Min. zu Fuß. Wer nicht mitgeht, bleibt am Samstagmorgen in Shibu (Bäder, Frühstück, Ortskern). Check-out-Zeit beim Ryokan vorher klären.",
-  hotels:[["Kanazawa, 1 Nacht: Smile Hotel Premium","Booking 8,8 · 350 m","MYR 379"],
-          ["Kanazawa, 1 Nacht: Dormy Inn Natural Hot Spring","Booking 8,5 · 400 m · Thermalbad","MYR 723"],
-          ["Shibu, 1 Nacht: Jinpyokaku Honten (塵表閣本店)","Booking 9,0 · Zweibettzimmer mit 4 Futons · Verpflegung [OFFEN]","MYR 1.177"],
-          ["Shibu, 1 Nacht: Kotobuki","Booking 9,8 · japanisches Zimmer · Verpflegung [OFFEN]","MYR 1.403"],
-          ["Shibu, 1 Nacht: Andaikan","Booking 9,7 · japanisches Zimmer · Verpflegung [OFFEN]","MYR 1.505"]],
-  bk:BK("Shibu Onsen","2026-12-18","2026-12-19"),
-  fahrt:"≈ ¥96.000 (Nagaden-Kinderpreis angenommen, nicht bestätigt)",
-  summe:"Hotels MYR 1.556–2.228 + Fahrten ≈ ¥96.000",
-  haken:"Vier Umstiege an zwei Tagen, glatter Fußweg (Winterschuhe, Spikes leihbar), Affen nicht garantiert, Park kann wetterbedingt schließen. Am meisten Aufwand und am teuersten."},
- {n:"C) Nagoya, 2 Nächte — kürzeste Wege", tag:"Ghibli Park",
-  weg:"Do: Shin-Osaka → Nagoya ca. 50 Min. · Sa: Nagoya → Tokio ca. 1 Std. 35 Min.",
-  ablauf:["<b>Do 17.12.:</b> SCMaglev & Railway Park (Erw. ¥1.000 / Schulkind ¥500, Di zu), abends Lichtertunnel Nabana no Sato und Außenbad im Nagashima Resort",
-          "<b>Fr 18.12.:</b> Ghibli Park ganzer Tag (ca. 41 Min. ab Bahnhof Nagoya)",
-          "<b>Sa 19.12.:</b> entspannt nach Tokio, vorher Burg Nagoya (Erw. ¥1.000, Kinder frei)"],
-  kids:"Ghibli Park: Totoro-Haus, Howls Schloss, Katzenbus-Raum (nur bis 12 J. — beide passen) · Premium-Pass werktags Erw. ¥7.300 / Kind 4–12 J. ¥3.650, Familie ¥21.900 plus Ausstellungsgebühr · Shinkansen- und Maglev-Simulator · Nabana no Sato Vorverkauf ¥2.700 (21.11.–22.12.), Kasse ¥3.200, Kinderpreis [OFFEN]",
-  onsen:"Großes Außenbad Yuami no Shima im Nagashima Resort, nach Geschlechtern getrennt, Direktbus ab Nagoya ca. 50 Min., Preise [OFFEN]",
-  hotels:[["Four Points Flex by Sheraton Nagoya","Booking 8,2 · 350 m · 2 Doppelzimmer","MYR 1.239 / 2 N"],
-          ["Daiwa Roynet Hotel Nagoya Shinkansenguchi","Booking 8,4 · 350 m","MYR 1.300 / 2 N"],
-          ["APA Hotel Nagoya Ekimae","Booking 8,2 · 400 m · 2 Doppelzimmer","MYR 1.580 / 2 N"]],
-  bk:BK("Bahnhof Nagoya","2026-12-17","2026-12-19"),
-  fahrt:"≈ ¥54.500 (ohne Nahverkehr in Nagoya)",
-  summe:"Hotel MYR 1.239–1.580 + Fahrten ≈ ¥54.500 + Ghibli Park ≈ ¥21.900",
-  haken:"<b>Ghibli-Park-Tickets für Dezember sind seit 10.10. im Verkauf — ob es noch welche gibt, ist [OFFEN]</b> (selbst prüfen über l-tike.com oder Klook). Keine Erstattung, kein Umtausch, Pass mitbringen. In Nagoya selbst wenig Onsen-Gefühl."},
- {n:"Kyoto, 2 Nächte — bisheriger Plan", tag:"am günstigsten",
-  weg:"Do: Osaka → Kyoto ca. 30 Min. · Sa: Nozomi nach Tokio ca. 2 Std. 15 Min.",
-  ablauf:["Tagespläne Do 17. bis Sa 19.12. stehen schon im Reiter Tage (Fushimi Inari, Arashiyama, Onsen, Bummelbahn)"],
-  kids:"Fushimi Inari, Affenpark Iwatayama, Eisenbahnmuseum, Sagano-Bummelbahn mit Lichtaktion",
-  onsen:"Badehaus Funaoka Onsen, Tagesbäder in Arashiyama, Kurama Onsen",
-  hotels:[["Kandidaten mit Preisen","siehe Abschnitt Kyoto unten","MYR 626–802 / 2 N"]],
-  bk:BK("Bahnhof Kyoto","2026-12-17","2026-12-19"),
-  fahrt:"≈ ¥44.200",
-  summe:"Hotel MYR 626–802 + Fahrten ≈ ¥44.200",
-  haken:"Viel Kultur, aber am wenigsten Onsen und Action für die Kinder."}
-];
-function variantsHTML(){
-  return '<div class="info-card"><h3><span class="k">選</span>17.–19.12.: vier Varianten zum Besprechen</h3>'
-   + '<p>Noch nicht entschieden. Alle Hotels liegen höchstens 400 m vom Bahnhof, Bewertung ab 8,0. Preise von Booking.com, abgerufen am 22.10.2026 für 2 Erwachsene + 2 Kinder (11 und 9); sie ändern sich täglich. Fahrkosten für alle vier, Kinder fahren bei JR zum halben Preis. Bei A und B würde ich die großen Koffer am 17.12. per Takkyubin direkt ins Hotel nach Tokio schicken.</p>'
-   + VARIANTS.map(v=>'<div class="hotel var"><div class="h-top"><span class="h-name">'+v.n+'</span><span class="h-nights">'+v.tag+'</span></div>'
-      + '<dl><dt>Weg</dt><dd>'+v.weg+'</dd>'
-      + '<dt>Ablauf</dt><dd>'+v.ablauf.join('<br>')+'</dd>'
-      + '<dt>Kinder</dt><dd>'+v.kids+'</dd>'
-      + '<dt>Onsen</dt><dd>'+v.onsen+'</dd>'
-      + '<dt>Fahrten</dt><dd>'+v.fahrt+'</dd>'
-      + '<dt>Gesamt</dt><dd><b>'+v.summe+'</b></dd></dl>'
-      + (v.split?'<div class="booked">'+v.split+'</div>':'')
-      + '<div class="hwarn"><b>Haken:</b> '+v.haken+'</div>'
-      + '<div class="kand-h">Hotels mit echtem Preis</div>'
-      + v.hotels.map(h=>'<div class="kand"><div class="k-top"><a href="'+v.bk+'" target="_blank" rel="noopener">'+h[0]+'</a><span class="k-meta">'+h[2]+'</span></div><p>'+h[1]+'</p></div>').join("")
-      + '</div>').join("")
-   + '<p style="margin-top:6px">Die Links öffnen die Booking.com-Suche mit euren Daten; dort das Hotel auswählen.</p></div>';
-}
 
 const TRAINS = [
  ["KIX → Namba","Nankai Airport Express","45 Min.","¥970","¥490","¥2.920"],
@@ -2068,9 +1980,8 @@ function renderChecks(){
 
 function renderInfo(){
   main.innerHTML =
-  '<div class="section-intro">Recherchestand 11.09.2026, Unterkünfte aktualisiert am 20.10.2026, Hotel Tokio gebucht, Kyoto statt Kinosaki, Fuji-Tag, Harry-Potter-Studio und Varianten für 17.–19.12. am 22.10.2026, Disney-Preise nach der Preiserhöhung vom Oktober am 22.10.2026. Hinter jedem Yen-Betrag steht der Euro-Wert, gerechnet mit <b>1 € ≈ 179 ¥</b> (Kurs 10.09.2026, xe.com) — als Größenordnung brauchbar, als Abrechnung nicht. Ringgit-Beträge grob mit <b>1 € ≈ 5 MYR</b>. Was mit ⚠ markiert ist, hat für Dezember 2026 noch keinen freigeschalteten Tagespreis — dort steht die aktuelle Preisspanne.</div>'
+  '<div class="section-intro">Recherchestand 11.09.2026, Unterkünfte aktualisiert am 20.10.2026, Hotel Tokio gebucht, Kyoto statt Kinosaki, Fuji-Tag und Harry-Potter-Studio am 22.10.2026, Disney-Preise nach der Preiserhöhung vom Oktober am 22.10.2026, Hotel Kyoto gebucht am 23.10.2026. Hinter jedem Yen-Betrag steht der Euro-Wert, gerechnet mit <b>1 € ≈ 179 ¥</b> (Kurs 10.09.2026, xe.com) — als Größenordnung brauchbar, als Abrechnung nicht. Ringgit-Beträge grob mit <b>1 € ≈ 5 MYR</b>. Was mit ⚠ markiert ist, hat für Dezember 2026 noch keinen freigeschalteten Tagespreis — dort steht die aktuelle Preisspanne.</div>'
 
-  + variantsHTML()
   + '<div class="info-card"><h3><span class="k">宿</span>Unterkünfte — Kandidaten</h3>'
   + '<p>Hartes Kriterium überall: <b>direkt am Nahverkehrsnetz</b>. Alle Kandidaten unten sind darauf geprüft; wo ein Haus das Kriterium reißt, steht es dabei.</p>'
   + '<p><b>Neue Hotelsuche vom 20.10.2026:</b> Maßstab ist das gebuchte APA in Osaka (MYR 771 pro Nacht, Kettenhotel, direkt an der Bahn). Alle Preise unten sind echte Booking.com-Preise für eure Daten, abgerufen am 20.10.2026 für 2 Erwachsene + 2 Kinder (11 und 9). Sie ändern sich täglich.</p>'
@@ -2091,7 +2002,7 @@ function renderInfo(){
           + h.kand.map(k=>'<div class="kand"><div class="k-top"><a href="'+k.u+'" target="_blank" rel="noopener">'+k.n+'</a><span class="k-meta">'+k.m+'</span></div><p>'+k.w+'</p></div>').join(""):"")
       + (h.booked?'':'<div class="slotline">Gebucht: ________________________  ·  Adresse: ________________________  ·  Bestätigungsnr.: ____________</div>')
       + '</div>').join("")
-  + '<p><b>Gesamt Unterkunft je nach Wahl:</b> ca. MYR 10.700–13.500, davon MYR 9.267 schon gebucht (Osaka MYR 3.855 + Tokio MYR 5.412). Offen sind Kyoto (MYR 626–3.382) und die letzte Nacht in Osaka (MYR 761–802), Preise vom 20. und 22.10.2026.</p></div>'
+  + '<p><b>Gesamt Unterkunft:</b> ca. MYR 11.100, davon ca. MYR 10.305 schon gebucht (Osaka MYR 3.855 + Kyoto ca. MYR 1.038 + Tokio MYR 5.412). Offen ist nur noch die letzte Nacht in Osaka (MYR 788–835, Preise vom 20.10.2026).</p></div>'
 
   + '<div class="info-card"><h3><span class="k">車</span>Züge & Preise</h3>'
   + '<p>Kinder von 6 bis 11 Jahren zahlen bei JR den halben Fahrpreis — beide fallen noch hinein. Alle Fernzüge mit reserviertem Sitzplatz.</p>'
@@ -2113,7 +2024,7 @@ function renderInfo(){
   + '<ul>'
   + '<li><b>Getrennt nach Geschlecht, und man badet nackt.</b> Badekleidung ist nicht erlaubt. Das kleine Handtuch nimmt man mit, legt es aber nicht ins Wasser — es kommt auf den Kopf oder an den Beckenrand.</li>'
   + '<li><b>Vorher waschen.</b> An den Duschplätzen sitzt man auf einem Hocker und wäscht sich gründlich, bevor man ins Becken steigt.</li>'
-  + '<li><b>Für euch konkret:</b> Kind 2 (9) geht mit Mama, <b>Kind 1 (11) mit Papa</b>. Zusammen als Familie baden geht nur in einem Privatbad (kashikiri), zum Beispiel im Hotel Kyoto Umekoji Kadensho. Das vorher zuhause besprechen, nicht am Eingang.</li>'
+  + '<li><b>Für euch konkret:</b> Kind 2 (9) geht mit Mama, <b>Kind 1 (11) mit Papa</b>. Zusammen als Familie baden geht nur in einem Privatbad (kashikiri). Das vorher zuhause besprechen, nicht am Eingang.</li>'
   + '<li><b>Die Möglichkeiten:</b> Funaoka Onsen (altes Badehaus in der Stadt, abends), FuFu no Yu und Hanaikada in Arashiyama (mittags), Sagano Onsen Tenzan-no-Yu (bis 24 Uhr) und Kurama Onsen mit Außenbad in den Bergen (halber bis ganzer Tag). Kinder zahlen überall etwa die Hälfte.</li>'
   + '<li><b>Tattoos:</b> Funaoka Onsen und Tenzan-no-Yu laut Touristenamt erlaubt, FuFu no Yu nur kleine mit Sticker, manche Hotelbäder gar nicht.</li>'
   + '<li><b>Nicht springen, nicht tauchen, nicht rennen.</b> Es ist ruhig dort, und das wird ernst genommen.</li>'
@@ -2169,7 +2080,7 @@ function renderFoot(){
    + 'Fotos: Wikimedia Commons · Gottesdienste: kreuzkirche-tokyo.jp, spilchurchtokyo.org · '
    + 'Unterkünfte und Badehaus-Ruhetage: visitkinosaki.com, Stadt Toyooka, mimaruhotels.com, discoverasr.com, frasershospitality.com, andherehotels, well-stay.com, kinosaki-web.com, japan-guide.com.<br><br>'
    + 'Preise für Dezember 2026 sind bei USJ, DisneySea und teamLab noch nicht freigeschaltet, Illuminationstermine für 2026 noch nicht veröffentlicht — dort stehen die jeweils aktuellen Werte als Orientierung. '
-   + 'Erstellt am 10.09.2026, Onsen-Korrektur vom 11.09.2026. Am 20.10.2026 aktualisiert: Flug und Hotel Osaka gebucht, neue Unterkunftskandidaten mit Booking.com-Preisen vom selben Tag, Zugangsangaben aus apahotel.com, hotels.com und jalan.net. Am 22.10.2026: Hotel Tokio gebucht (Daten aus der Booking.com-Bestätigung), Kyoto statt Kinosaki mit Hotelpreisen von Booking.com vom selben Tag. Kyoto-Angaben: japan-guide.com, Touristenamt Kyoto (kyoto.travel), JR West (Sagano-Bummelbahn), kyotorailwaymuseum.jp, museum.nintendo.com, Präfektur Kyoto (Badpreise), jalan.net, rurubu.jp. Fuji-Tag: ekitan.com (Fuji Excursion), watabi.org (Seilbahn, Fuji-Q Highland), gltjp.com (Chureito-Pagode), jrpass.com (Sitzplatz für den Fuji-Blick), mileasia.com (Bus). Harry-Potter-Studio: wbstudiotour.jp (Tickets, Ruhetage, Schließfächer, Café), san-tatsu.jp (Pressemitteilung „Magical Winter“), japanactivity.com (Preisspanne 2026). Varianten 17.–19.12.: kanazawastation.com, jr-group.jp, JR Central (Kinderpreise), visitkanazawa.jp, shiro-niwa.pref.ishikawa.lg.jp, ANA Japan Travel Planner, Hakuichi, visitkaga.jp, shirakawa-go.gr.jp, en.jigokudani-yaenkoen.co.jp, go-nagano.net, japlanease.com, jr-shinkansen.net, ghibli-park.jp, museum.jr-central.co.jp, japantravel.com, ekitan.com, Hotelpreise Booking.com vom 22.10.2026. Karte: Skizzen mit Küstenlinie aus Natural Earth (world-atlas), Punkte dort ungefähr. Interaktive Karte am 22.10.2026 ergänzt: Leaflet 1.9.4, Kartenkacheln © Esri (World Street Map), Koordinaten über OpenStreetMap Nominatim.';
+   + 'Erstellt am 10.09.2026, Onsen-Korrektur vom 11.09.2026. Am 20.10.2026 aktualisiert: Flug und Hotel Osaka gebucht, neue Unterkunftskandidaten mit Booking.com-Preisen vom selben Tag, Zugangsangaben aus apahotel.com, hotels.com und jalan.net. Am 22.10.2026: Hotel Tokio gebucht (Daten aus der Booking.com-Bestätigung), Kyoto statt Kinosaki mit Hotelpreisen von Booking.com vom selben Tag. Kyoto-Angaben: japan-guide.com, Touristenamt Kyoto (kyoto.travel), JR West (Sagano-Bummelbahn), kyotorailwaymuseum.jp, museum.nintendo.com, Präfektur Kyoto (Badpreise), jalan.net, rurubu.jp. Fuji-Tag: ekitan.com (Fuji Excursion), watabi.org (Seilbahn, Fuji-Q Highland), gltjp.com (Chureito-Pagode), jrpass.com (Sitzplatz für den Fuji-Blick), mileasia.com (Bus). Harry-Potter-Studio: wbstudiotour.jp (Tickets, Ruhetage, Schließfächer, Café), san-tatsu.jp (Pressemitteilung „Magical Winter“), japanactivity.com (Preisspanne 2026). Am 23.10.2026: Hotel Kyoto gebucht (The Garden Hotel Kyoto Gojo, Zimmerangaben von Booking.com), Frühstücksorte aus enjoy-osaka-kyoto-kobe.com, Varianten für 17.–19.12. entfernt. Karte: Skizzen mit Küstenlinie aus Natural Earth (world-atlas), Punkte dort ungefähr. Interaktive Karte am 22.10.2026 ergänzt: Leaflet 1.9.4, Kartenkacheln © Esri (World Street Map), Koordinaten über OpenStreetMap Nominatim.';
 }
 
 
@@ -2198,7 +2109,7 @@ function renderMap(){
     + pt("B","arashi","pt-sight","Arashiyama",-24,10,"end",true)
     + pt("B","kiyo","pt-sight","Kiyomizu-dera",0,-24,"middle",true)
     + pt("B","inari","pt-sight","Fushimi Inari",24,32,"start",true)
-    + pt("B","kyoto","pt-open","Kyoto Station · Hotel offen",-28,44,"end")
+    + pt("B","kyoto","pt-booked","Kyoto · Hotel gebucht",-28,44,"end")
     + pt("B","hommachi","pt-booked","APA Hommachi ✓",28,-20,"start")
     + '</svg>';
   const G=q=>"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q);
@@ -2217,16 +2128,16 @@ function renderMap(){
 }
 /* ================= ECHTE KARTE (Leaflet + OpenStreetMap) ================= */
 /* Koordinaten: OpenStreetMap / Nominatim, abgefragt am 22.10.2026. Orte ohne festen Punkt stehen in NOGEO. */
-const GEO = {"st_kix": [34.4358, 135.24354], "st_hommachi": [34.68202, 135.49872], "st_osaka": [34.70251, 135.49618], "st_shinosaka": [34.73349, 135.49789], "st_kyoto": [34.98535, 135.75877], "st_maibara": [35.31476, 136.28999], "st_gifuhashima": [35.31551, 136.68604], "st_nagoya": [35.17291, 136.88168], "st_hamamatsu": [34.70467, 137.73392], "st_shizuoka": [34.97185, 138.38985], "st_shinfuji": [35.14262, 138.66364], "st_odawara": [35.25575, 139.15666], "st_shinyokohama": [35.50814, 139.61715], "st_shinagawa": [35.63065, 139.7374], "st_tokyo": [35.6818, 139.76498], "st_shinjuku": [35.68873, 139.69876], "st_nsg": [35.68992, 139.68478], "st_otsuki": [35.61276, 138.9428], "st_shimoyoshida": [35.49773, 138.80353], "st_kawaguchiko": [35.49835, 138.76849], "st_kintetsunara": [34.68448, 135.82686], "st_maihama": [35.63606, 139.88314], "st_mitaka": [35.7023, 139.56171], "h_hommachi": [34.68264, 135.50018], "h_nsg": [35.6897, 139.68369], "h_namba": [34.66611, 135.49596], "hk_era": [34.97911, 135.75288], "hk_kadensho": [34.98855, 135.74247], "hk_dormy": [34.98746, 135.76178], "d1d": [34.668, 135.50131], "d2a": [34.68718, 135.5254], "d2b": [34.66371, 135.50693], "d2c": [34.71047, 135.51143], "d2e": [34.65254, 135.50631], "d2f": [34.6924, 135.50776], "d2g": [34.70406, 135.50038], "d2h": [34.67882, 135.50046], "d2i": [34.69354, 135.50401], "usj": [34.66564, 135.43245], "d3b": [34.66857, 135.43015], "d4b": [34.65616, 135.43045], "d4c": [34.6562, 135.43097], "d4d": [34.65505, 135.42829], "d4e": [34.65922, 135.50582], "d4f": [34.70529, 135.49053], "d5a": [34.6829, 135.8546], "d5c": [34.68051, 135.84607], "k1a": [34.96752, 135.77971], "k1b": [34.98649, 135.7427], "k1c": [34.98755, 135.74788], "k1d": [35.03695, 135.7445], "k1f": [34.98563, 135.758], "k2a2": [35.01622, 135.67294], "k2a3": [35.01287, 135.67776], "k2b": [35.00909, 135.67497], "k2c": [35.01157, 135.68026], "k2d": [35.01129, 135.67718], "k2e": [35.01388, 135.69323], "k2f": [35.01856, 135.68076], "k2f2": [35.01314, 135.60677], "k2g": [35.01743, 135.58664], "k2h": [35.11924, 135.77654], "k2h2": [35.11787, 135.77065], "k2i": [35.01646, 135.70821], "k2j": [34.89257, 135.7842], "k3a2": [34.99753, 135.78106], "k3b": [35.00502, 135.76557], "k3c": [35.00484, 135.76679], "k3d": [35.03953, 135.72954], "d8d": [35.67517, 139.76124], "d8e": [35.68038, 139.76788], "f1": [35.50129, 138.80136], "f1b": [35.50049, 138.80082], "f2": [35.50378, 138.77441], "f3": [35.48728, 138.78156], "d9a": [35.67484, 139.69963], "d9b": [35.67141, 139.69517], "d9c": [35.67116, 139.70496], "d9e": [35.66193, 139.69875], "d9f": [35.6595, 139.7005], "d9g": [35.65829, 139.70226], "d10a": [35.69625, 139.57045], "d10b": [35.69891, 139.5787], "d10c": [35.70634, 139.5812], "d10e": [35.66158, 139.7], "d11a": [35.7134, 139.79553], "d11a2": [35.71113, 139.79637], "d11c": [35.71306, 139.7885], "d11d": [35.71005, 139.81071], "d11e": [35.71024, 139.81195], "d11f": [35.7155, 139.79461], "d11g": [35.7111, 139.79908], "d11h": [35.66428, 139.78246], "d11i": [35.71551, 139.80314], "d12d": [35.62726, 139.88441], "d12a": [35.62886, 139.8781], "d12b": [35.6257, 139.88455], "d12c": [35.62645, 139.88692], "d12f": [35.63266, 139.88142], "d12g": [35.65631, 139.79135], "d13a": [35.61924, 139.77667], "d13b": [35.62444, 139.77549], "d13c": [35.64938, 139.78973], "d13d": [35.63783, 139.78825], "d13e": [35.63108, 139.77735], "d13h": [35.6592, 139.73006], "d14a": [35.6984, 139.70307], "d14b": [35.71402, 139.77393], "d14b2": [35.71904, 139.77597], "d14c": [35.69164, 139.7046], "d14d": [34.66903, 135.50157], "kix": [34.43433, 135.2442], "st_namba": [34.66366, 135.50178], "hk_wander": [34.98953, 135.76594], "d2d": [34.67326, 135.50096], "d3a": [34.66868, 135.43156], "d3c": [34.66334, 135.43265], "d4a": [34.65516, 135.42939], "d5b": [34.68824, 135.83976], "d5d": [34.69117, 135.85426], "k2a": [35.0168, 135.67127], "k2h3": [35.12189, 135.76294], "k3a": [34.9943, 135.78444], "d9d": [35.66772, 139.70654], "d9f2": [35.65906, 139.70063], "d3d": [34.66564, 135.43245], "lm_fuji": [35.36284, 138.73077], "lm_biwa": [35.24865, 136.08256], "lm_kawaguchi": [35.51306, 138.74482], "lm_osakabay": [34.51591, 135.16169], "lm_tokyobay": [35.47001, 139.8477], "wb": [35.74562, 139.64575]};
+const GEO = {"st_kix": [34.4358, 135.24354], "st_hommachi": [34.68202, 135.49872], "st_osaka": [34.70251, 135.49618], "st_shinosaka": [34.73349, 135.49789], "st_kyoto": [34.98535, 135.75877], "st_maibara": [35.31476, 136.28999], "st_gifuhashima": [35.31551, 136.68604], "st_nagoya": [35.17291, 136.88168], "st_hamamatsu": [34.70467, 137.73392], "st_shizuoka": [34.97185, 138.38985], "st_shinfuji": [35.14262, 138.66364], "st_odawara": [35.25575, 139.15666], "st_shinyokohama": [35.50814, 139.61715], "st_shinagawa": [35.63065, 139.7374], "st_tokyo": [35.6818, 139.76498], "st_shinjuku": [35.68873, 139.69876], "st_nsg": [35.68992, 139.68478], "st_otsuki": [35.61276, 138.9428], "st_shimoyoshida": [35.49773, 138.80353], "st_kawaguchiko": [35.49835, 138.76849], "st_kintetsunara": [34.68448, 135.82686], "st_maihama": [35.63606, 139.88314], "st_mitaka": [35.7023, 139.56171], "h_hommachi": [34.68264, 135.50018], "h_nsg": [35.6897, 139.68369], "h_namba": [34.66611, 135.49596], "hk_garden": [34.99494, 135.75971], "d1d": [34.668, 135.50131], "d2a": [34.68718, 135.5254], "d2b": [34.66371, 135.50693], "d2c": [34.71047, 135.51143], "d2e": [34.65254, 135.50631], "d2f": [34.6924, 135.50776], "d2g": [34.70406, 135.50038], "d2h": [34.67882, 135.50046], "d2i": [34.69354, 135.50401], "usj": [34.66564, 135.43245], "d3b": [34.66857, 135.43015], "d4b": [34.65616, 135.43045], "d4c": [34.6562, 135.43097], "d4d": [34.65505, 135.42829], "d4e": [34.65922, 135.50582], "d4f": [34.70529, 135.49053], "d5a": [34.6829, 135.8546], "d5c": [34.68051, 135.84607], "k1a": [34.96752, 135.77971], "k1b": [34.98649, 135.7427], "k1c": [34.98755, 135.74788], "k1d": [35.03695, 135.7445], "k1f": [34.98563, 135.758], "k2a2": [35.01622, 135.67294], "k2a3": [35.01287, 135.67776], "k2b": [35.00909, 135.67497], "k2c": [35.01157, 135.68026], "k2d": [35.01129, 135.67718], "k2e": [35.01388, 135.69323], "k2f": [35.01856, 135.68076], "k2f2": [35.01314, 135.60677], "k2g": [35.01743, 135.58664], "k2h": [35.11924, 135.77654], "k2h2": [35.11787, 135.77065], "k2i": [35.01646, 135.70821], "k2j": [34.89257, 135.7842], "k3a2": [34.99753, 135.78106], "k3b": [35.00502, 135.76557], "k3c": [35.00484, 135.76679], "k3d": [35.03953, 135.72954], "d8d": [35.67517, 139.76124], "d8e": [35.68038, 139.76788], "f1": [35.50129, 138.80136], "f1b": [35.50049, 138.80082], "f2": [35.50378, 138.77441], "f3": [35.48728, 138.78156], "d9a": [35.67484, 139.69963], "d9b": [35.67141, 139.69517], "d9c": [35.67116, 139.70496], "d9e": [35.66193, 139.69875], "d9f": [35.6595, 139.7005], "d9g": [35.65829, 139.70226], "d10a": [35.69625, 139.57045], "d10b": [35.69891, 139.5787], "d10c": [35.70634, 139.5812], "d10e": [35.66158, 139.7], "d11a": [35.7134, 139.79553], "d11a2": [35.71113, 139.79637], "d11c": [35.71306, 139.7885], "d11d": [35.71005, 139.81071], "d11e": [35.71024, 139.81195], "d11f": [35.7155, 139.79461], "d11g": [35.7111, 139.79908], "d11h": [35.66428, 139.78246], "d11i": [35.71551, 139.80314], "d12d": [35.62726, 139.88441], "d12a": [35.62886, 139.8781], "d12b": [35.6257, 139.88455], "d12c": [35.62645, 139.88692], "d12f": [35.63266, 139.88142], "d12g": [35.65631, 139.79135], "d13a": [35.61924, 139.77667], "d13b": [35.62444, 139.77549], "d13c": [35.64938, 139.78973], "d13d": [35.63783, 139.78825], "d13e": [35.63108, 139.77735], "d13h": [35.6592, 139.73006], "d14a": [35.6984, 139.70307], "d14b": [35.71402, 139.77393], "d14b2": [35.71904, 139.77597], "d14c": [35.69164, 139.7046], "d14d": [34.66903, 135.50157], "kix": [34.43433, 135.2442], "st_namba": [34.66366, 135.50178], "d2d": [34.67326, 135.50096], "d3a": [34.66868, 135.43156], "d3c": [34.66334, 135.43265], "d4a": [34.65516, 135.42939], "d5b": [34.68824, 135.83976], "d5d": [34.69117, 135.85426], "k2a": [35.0168, 135.67127], "k2h3": [35.12189, 135.76294], "k3a": [34.9943, 135.78444], "d9d": [35.66772, 139.70654], "d9f2": [35.65906, 139.70063], "d3d": [34.66564, 135.43245], "lm_fuji": [35.36284, 138.73077], "lm_biwa": [35.24865, 136.08256], "lm_kawaguchi": [35.51306, 138.74482], "lm_osakabay": [34.51591, 135.16169], "lm_tokyobay": [35.47001, 139.8477], "wb": [35.74562, 139.64575]};
 
 /* Ausflug-ID → Punkt. Nicht aufgeführte IDs haben keinen festen Ort. */
 const OPT_GEO = {"d1a": "st_kix", "d1b": "st_kix", "d1c": "kix", "d1d": "d1d", "d2a": "d2a", "d2b": "d2b", "d2c": "d2c", "d2d": "d2d", "d2e": "d2e", "d2f": "d2f", "d2g": "d2g", "d2h": "d2h", "d2i": "d2i", "d3a": "d3a", "d3b": "d3b", "d3c": "d3c", "d3d": "usj", "d3e": "usj", "d3f": "usj", "d4a": "d4a", "d4b": "d4b", "d4c": "d4c", "d4d": "d4d", "d4e": "d4e", "d4f": "d4f", "d4g": "d4f", "d5a": "d5a", "d5b": "d5b", "d5c": "d5c", "d5d": "d5d", "k1a": "k1a", "k1b": "k1b", "k1c": "k1c", "k1d": "k1d", "k1e": "hk_kadensho", "k1f": "k1f", "k2a": "k2a", "k2b": "k2b", "k2c": "k2c", "k2d": "k2d", "k2e": "k2e", "k2f": "k2f", "k2g": "k2g", "k2h": "k2h", "k2i": "k2i", "k2j": "k2j", "k3a": "k3a", "k3b": "k3b", "k3c": "k3c", "k3d": "k3d", "d8d": "d8d", "d8e": "d8e", "f1": "f1", "f2": "f2", "f3": "f3", "d9a": "d9a", "d9b": "d9b", "d9c": "d9c", "d9d": "d9d", "d9e": "d9e", "d9f": "d9f", "d9g": "d9g", "d10a": "d10a", "d10b": "d10b", "d10c": "d10c", "d10d": "d9g", "d10e": "d10e", "d11a": "d11a", "d11c": "d11c", "d11d": "d11d", "d11e": "d11e", "d11f": "d11f", "d11g": "d11g", "d11h": "d11h", "d11i": "d11i", "d12a": "d12a", "d12b": "d12b", "d12c": "d12c", "d12d": "d12d", "d12e": "d12d", "d12f": "d12f", "d12g": "d12g", "d13a": "d13a", "d13b": "d13b", "d13c": "d13c", "d13d": "d13d", "d13e": "d13e", "d13h": "d13h", "d14a": "d14a", "d14b": "d14b", "d14c": "d14c", "d14d": "d14d", "d15a": "kix", "d15b": "kix", "d11w": "wb"};
-const NOGEO_NOTE = "Ohne Punkt, weil es keinen festen Ort gibt: Konbini-Abendessen, Ramen in Namba, Okonomiyaki, Sushi vom Band, Karaoke, Kimono-Verleih, Weihnachtsessen, Christmas Cake, Abschiedsessen. <b>[OFFEN]</b> In OpenStreetMap nicht eindeutig gefunden, deshalb ohne Punkt: Kreuzkirche Tokyo, St. Paul International Lutheran Church sowie die Hotel-Kandidaten The Garden Hotel Kyoto Gojo, Kyoto Plaza Hotel Kintetsu Jujo und Hotel Glad One Kyoto Shichijo. Ihre Google-Maps-Links im Tagesplan und im Reiter Infos funktionieren.";
+const NOGEO_NOTE = "Ohne Punkt, weil es keinen festen Ort gibt: Konbini-Abendessen, Ramen in Namba, Okonomiyaki, Sushi vom Band, Karaoke, Kimono-Verleih, Weihnachtsessen, Christmas Cake, Abschiedsessen. <b>[OFFEN]</b> In OpenStreetMap nicht eindeutig gefunden, deshalb ohne Punkt: Kreuzkirche Tokyo, St. Paul International Lutheran Church. Ihre Google-Maps-Links im Tagesplan und im Reiter Infos funktionieren.";
 
 const DAYCOL = ["#5c677d","#e03131","#f08c00","#1971c2","#2f9e44","#c2255c","#0c8599","#7048e8","#e8590c","#ae3ec9","#1864ab","#d6336c","#099268","#5f3dc4","#5c677d"];
 
 /* Unterkünfte: booked = gebucht, sonst Kandidat */
-const STAYS = [{"k": "h_hommachi", "n": "APA Hotel & Resort Midosuji Hommachi Ekimae Tower", "when": "Osaka · 12.–17.12.", "booked": true, "days": [0, 1, 2, 3, 4, 5], "note": "Zimmer für alle vier · MYR 3.855 (≈ €771) für 5 Nächte"}, {"k": "hk_era", "n": "Comfort Hotel ERA Kyoto Toji", "when": "Kyoto · 17.–19.12.", "booked": false, "days": [5, 6, 7], "note": "Booking 9,0 · 2 Doppelzimmer · MYR 760 (≈ €152) für 2 Nächte"}, {"k": "hk_wander", "n": "Wander Kyoto Nanajo", "when": "Kyoto · 17.–19.12.", "booked": false, "days": [5, 6, 7], "note": "Booking 9,0 · 2 Zweibettzimmer · MYR 765 (≈ €153) für 2 Nächte"}, {"k": "hk_kadensho", "n": "Kyoto Umekoji Kadensho", "when": "Kyoto · 17.–19.12. · mit Thermalbad", "booked": false, "days": [5, 6, 7], "note": "Booking 9,1 · Familien-Privatbäder · MYR 3.382 (≈ €676) für 2 Nächte"}, {"k": "hk_dormy", "n": "Dormy Inn Premium Kyoto Ekimae", "when": "Kyoto · 17.–19.12. · mit Thermalbad", "booked": false, "days": [5, 6, 7], "note": "Booking 8,7 · Dachbad · Preis auf der Hotelseite prüfen"}, {"k": "h_nsg", "n": "APA Hotel & Resort Nishishinjuku Gochome Ekimae Tower", "when": "Tokio · 19.–25.12.", "booked": true, "days": [7, 8, 9, 10, 11, 12, 13], "note": "2 Zimmer · MYR 5.412 (≈ €1.082) für 6 Nächte"}, {"k": "h_namba", "n": "APA Hotel & Resort Osaka Namba Ekimae Tower", "when": "Osaka · 25.–26.12.", "booked": false, "days": [13, 14], "note": "Booking 8,4 · Verbindungszimmer · MYR 835 (≈ €167)"}, {"k": "h_hommachi", "n": "Noch einmal APA Hommachi", "q": "APA Hotel & Resort Midosuji Hommachi Ekimae Tower", "when": "Osaka · 25.–26.12.", "booked": false, "days": [13, 14], "note": "Verbindungszimmer · MYR 788 (≈ €158)"}];
+const STAYS = [{"k": "h_hommachi", "n": "APA Hotel & Resort Midosuji Hommachi Ekimae Tower", "when": "Osaka · 12.–17.12.", "booked": true, "days": [0, 1, 2, 3, 4, 5], "note": "Zimmer für alle vier · MYR 3.855 (≈ €771) für 5 Nächte"}, {"k": "hk_garden", "n": "The Garden Hotel Kyoto Gojo", "when": "Kyoto · 17.–19.12.", "booked": true, "days": [5, 6, 7], "note": "Deluxe Familienzimmer · ca. MYR 1.038 (≈ €208) für 2 Nächte · Punkt an der U-Bahn-Station Gojo, Hotel ca. 100 m entfernt"}, {"k": "h_nsg", "n": "APA Hotel & Resort Nishishinjuku Gochome Ekimae Tower", "when": "Tokio · 19.–25.12.", "booked": true, "days": [7, 8, 9, 10, 11, 12, 13], "note": "2 Zimmer · MYR 5.412 (≈ €1.082) für 6 Nächte"}, {"k": "h_namba", "n": "APA Hotel & Resort Osaka Namba Ekimae Tower", "when": "Osaka · 25.–26.12.", "booked": false, "days": [13, 14], "note": "Booking 8,4 · Verbindungszimmer · MYR 835 (≈ €167)"}, {"k": "h_hommachi", "n": "Noch einmal APA Hommachi", "q": "APA Hotel & Resort Midosuji Hommachi Ekimae Tower", "when": "Osaka · 25.–26.12.", "booked": false, "days": [13, 14], "note": "Verbindungszimmer · MYR 788 (≈ €158)"}];
 
 /* Fahrten: Linien verbinden die Bahnhöfe, sie folgen nicht dem Gleis */
 const ROUTES = [
